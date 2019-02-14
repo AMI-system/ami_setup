@@ -16,11 +16,14 @@ if [[ "$system_time" -lt "$cutoff_datetime" ]]; then
 	echo "Setting system time via cellular"
 	
 	# Retrieve time from cellular
-	current_datetime=$(python3 /home/pi/scripts/retrieve_cellular_time.py)
+	current_datetime=$(sudo python3 /home/pi/scripts/retrieve_cellular_time.py)
+	#current_datetime="2024-09-18 16:38:29"
 	echo "$current_datetime"
+	echo "I have just printed the current datetime"
 	
 	# Set datetime from cellular
 	sudo date -s "${current_datetime}"
+	echo "I have just set the date from cellular"
 	
 	# What about setting rtc time after this??
     expect <<EOF
