@@ -25,8 +25,8 @@ class AmiTrap:
         wittypi_path (str): The path to the WittyPi utilities.
         audio_path (str): The path to the directory where audio files are stored.
         audio_format (str): The format of the audio files.
-        ultrasonic_path (str): The path to the directory where ultrasonic files are stored.
-        ultrasonic_format (str): The format of the ultrasonic files.
+        ultrasound_path (str): The path to the directory where ultrasound files are stored.
+        ultrasound_format (str): The format of the ultrasound files.
     """
 
     def __init__(self,
@@ -39,8 +39,8 @@ class AmiTrap:
                  wittypi_path="/home/pi/wittypi",
                  audio_path="/media/pi/PiImages/audio",
                  audio_format="*.wav",
-                 ultrasonic_path="/media/pi/PiImages/ultrasonic",
-                 ultrasonic_format="*.wav"
+                 ultrasound_path="/media/pi/PiImages/ultrasound",
+                 ultrasound_format="*.wav"
                  ):
         """
         Initializes the Amitrap class.
@@ -55,8 +55,8 @@ class AmiTrap:
             wittypi_path (str, optional): The path to the WittyPi utilities. Defaults to "/home/pi/wittypi".
             audio_path (str, optional): The path to the directory where audio files are stored. Defaults to "/media/pi/PiImages/audio".
             audio_format (str, optional): The naming convention of the audio files. Defaults to "*.wav".
-            ultrasonic_path (str, optional): The path to the directory where ultrasonic files are stored. Defaults to "/media/pi/PiImages/ultrasonic".
-            ultrasonic_format (str, optional): The naming convention of the ultrasonic files. Defaults to "*.wav".
+            ultrasound_path (str, optional): The path to the directory where ultrasound files are stored. Defaults to "/media/pi/PiImages/ultrasound".
+            ultrasound_format (str, optional): The naming convention of the ultrasound files. Defaults to "*.wav".
         """
         self.camera_path = camera_path
         self.camera_config_path = camera_config_path
@@ -68,8 +68,8 @@ class AmiTrap:
         self.wittypi_path = wittypi_path
         self.audio_path = audio_path
         self.audio_format = audio_format
-        self.ultrasonic_path = ultrasonic_path
-        self.ultrasonic_format = ultrasonic_format
+        self.ultrasound_path = ultrasound_path
+        self.ultrasound_format = ultrasound_format
 
     def get_software_version(self):
         return __version__
@@ -704,7 +704,7 @@ class AmiTrap:
         
     def get_microphone_info(self):
         """
-        Gets information about the microphone and audio and ultrasonic files.
+        Gets information about the microphone and audio and ultrasound files.
 
         Returns:
             dict: A dictionary containing status information.
@@ -738,33 +738,33 @@ class AmiTrap:
             microphone_info["last_audio_size"] = None
             microphone_info["audio_count_last_24h"] = 0
             microphone_info["audio_count_last_24h_below_1kb"] = 0
-        if os.path.exists(self.ultrasonic_path):
+        if os.path.exists(self.ultrasound_path):
             try:
-                ultrasonic_files = glob.glob(os.path.join(self.ultrasonic_path, "**", self.ultrasonic_format), recursive=True)
-                microphone_info["ultrasonic_count"] = len(ultrasonic_files)
-                if len(ultrasonic_files) > 0:
-                    most_recent_ultrasonic_file = max(ultrasonic_files, key=os.path.getmtime)
-                    microphone_info["last_ultrasonic_timestamp"] = os.path.getmtime(most_recent_ultrasonic_file)
-                    microphone_info["last_ultrasonic_size"] = os.path.getsize(most_recent_ultrasonic_file)
+                ultrasound_files = glob.glob(os.path.join(self.ultrasound_path, "**", self.ultrasound_format), recursive=True)
+                microphone_info["ultrasound_count"] = len(ultrasound_files)
+                if len(ultrasound_files) > 0:
+                    most_recent_ultrasound_file = max(ultrasound_files, key=os.path.getmtime)
+                    microphone_info["last_ultrasound_timestamp"] = os.path.getmtime(most_recent_ultrasound_file)
+                    microphone_info["last_ultrasound_size"] = os.path.getsize(most_recent_ultrasound_file)
                 else:
-                    microphone_info["last_ultrasonic_timestamp"] = None
-                    microphone_info["last_ultrasonic_size"] = None
-                ultrasonic_files_last_24h = len([f for f in ultrasonic_files if os.path.getmtime(f) > time.time() - 24 * 3600])
-                microphone_info["ultrasonic_count_last_24h"] = len(ultrasonic_files_last_24h)
-                # Count ultrasonic files from last 24 h below 1 KB
-                microphone_info["ultrasonic_count_last_24h_below_1kb"] = len([f for f in ultrasonic_files_last_24h if os.path.getsize(f) < 1 * 1024])
+                    microphone_info["last_ultrasound_timestamp"] = None
+                    microphone_info["last_ultrasound_size"] = None
+                ultrasound_files_last_24h = len([f for f in ultrasound_files if os.path.getmtime(f) > time.time() - 24 * 3600])
+                microphone_info["ultrasound_count_last_24h"] = len(ultrasound_files_last_24h)
+                # Count ultrasound files from last 24 h below 1 KB
+                microphone_info["ultrasound_count_last_24h_below_1kb"] = len([f for f in ultrasound_files_last_24h if os.path.getsize(f) < 1 * 1024])
             except:
-                microphone_info["ultrasonic_count"] = 0
-                microphone_info["last_ultrasonic_timestamp"] = None
-                microphone_info["last_ultrasonic_size"] = None
-                microphone_info["ultrasonic_count_last_24h"] = 0
-                microphone_info["ultrasonic_count_last_24h_below_1kb"] = 0
+                microphone_info["ultrasound_count"] = 0
+                microphone_info["last_ultrasound_timestamp"] = None
+                microphone_info["last_ultrasound_size"] = None
+                microphone_info["ultrasound_count_last_24h"] = 0
+                microphone_info["ultrasound_count_last_24h_below_1kb"] = 0
         else:
-            microphone_info["ultrasonic_count"] = 0
-            microphone_info["last_ultrasonic_timestamp"] = None
-            microphone_info["last_ultrasonic_size"] = None
-            microphone_info["ultrasonic_count_last_24h"] = 0
-            microphone_info["ultrasonic_count_last_24h_below_1kb"] = 0
+            microphone_info["ultrasound_count"] = 0
+            microphone_info["last_ultrasound_timestamp"] = None
+            microphone_info["last_ultrasound_size"] = None
+            microphone_info["ultrasound_count_last_24h"] = 0
+            microphone_info["ultrasound_count_last_24h_below_1kb"] = 0
     
         microphone_info["frequencies"] = self._get_microphone_frequencies()
 
@@ -785,9 +785,9 @@ class AmiTrap:
             # Find line that starts with "hw:" and extract next line. Check if "AudioMoth USB microphone" is in the next line.
             for line in output.split("\n"):
                 if line.startswith("hw:"):
-                    found_hw = "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+                    found_hw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]
                 if line.startswith("plughw:"):
-                    found_plughw = "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+                    found_plughw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]
         except subprocess.CalledProcessError:
             return False
         return found_hw and found_plughw
@@ -806,11 +806,11 @@ class AmiTrap:
             # Find line that starts with "hw:" and extract next line. Check if "AudioMoth USB microphone" is in the next line. If so, extract the frequencies.
             for line in output.split("\n"):
                 if line.startswith("hw:"):
-                    if "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
+                    if "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
                         # Find the first number in the line
                         hw_frequency = int(re.search(r'\d+', output.split("\n")[output.split("\n").index(line) + 1]).group())
                 if line.startswith("plughw:"):
-                    if "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
+                    if "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
                         # Find the first number in the line
                         plughw_frequency = int(re.search(r'\d+', output.split("\n")[output.split("\n").index(line) + 1]).group())
         except subprocess.CalledProcessError:
