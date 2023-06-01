@@ -1,0 +1,25 @@
+{
+   "location":{
+      "lat":51.754845,
+      "lon":-1.254449
+   },
+   "system":{
+      "LID":"LID_test",
+      "SID":"SID_test"
+   },
+   "birds":{
+         "interval": 5,
+         "sunrise":{
+            "start":"00::45::00",
+            "end":"02::00::00"
+         },
+         "sunset":{
+            "start":"02::00::00",
+            "end":"01::00::00"
+         }
+   },
+   "motion":{
+      "start":"01::00::00",
+      "end":"01::00::00"
+   }
+}
