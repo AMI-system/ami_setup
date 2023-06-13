@@ -75,10 +75,10 @@ def calculate_motion_times(sunset, sunrise, config_start, config_end):
         Exact time to stop running the job. 
     """
     time_start = datetime.strptime(config_start, '%H::%M::%S').time()
-    start = sunset + timedelta(hours=time_start.hour, minutes=time_start.minute)
+    start = sunset - timedelta(hours=time_start.hour, minutes=time_start.minute) # changed from plus to minus
 
     time_end = datetime.strptime(config_end, '%H::%M::%S').time()
-    end = sunrise - timedelta(hours=time_end.hour, minutes=time_end.minute)
+    end = sunrise + timedelta(hours=time_end.hour, minutes=time_end.minute) # changed from minus to plus
 
     return start, end
 
@@ -139,7 +139,7 @@ def update_crontab_motion(ami_cron, motion_start, motion_end):
             job.minute.on(motion_end.minute)
     return ami_cron
     
-def create_cron_job(ami_cron, command, comment):
+def create_cron_job(ami_cron, command, comment): # just for birds
     """
     Update the crontab schedule for the motion software. 
 
@@ -189,7 +189,7 @@ def schedule_cron_job(job, start_minute, end_minute, interval, start_hour, end_h
 
 def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
     """
-    Update the crontab schedule for the motion software. 
+    Update the crontab schedule for the birds. 
 
     Parameters
     ----------
@@ -209,13 +209,13 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
     ami_cron : crontab.CronTab
         Crontab object with the correct times. 
     """
-    # Delete the cron jobs if any of the times has changed. 
+    # Delete the old cron jobs 
     for job in ami_cron:
         if 'birds {day_time}'.format(day_time=day_time) in job.comment:
             ami_cron.remove(job)
     
     comment = 'birds {day_time} {num}'.format(day_time=day_time, num=1)
-    command = 'python /home/pi/Documents/scripts/writeDate.py'
+    command = 'python3 /home/bird-pi/ami_setup/bird_scripts/birdRecording.py'
     
     num_hours = end_time.hour - start_time.hour
     # e.g. from 3:15am to 3:55am
@@ -233,7 +233,8 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
         minutes_left = start_time.minute
         for i in range(num_hours+1):
             comment = 'birds {day_time} {num}'.format(day_time=day_time, num=i+1)
-            rest_minutes = (60 - minutes_left) % 5
+            #rest_minutes = (60 - minutes_left) % 5 ### Will this 5 need to be changed to 'interval'????? # Using the 60 bit was causing the 5am hour to be weird 
+            rest_minutes = minutes_left % 5
             # from 3:13am to 4:00am
             if i == 0:
                 job = create_cron_job(ami_cron, command, comment)
@@ -251,8 +252,7 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
                 job = create_cron_job(ami_cron, command, comment)
                 job_schedule = schedule_cron_job(job, rest_minutes, 59, interval, start_time.hour+i, start_time.hour+i)
                 job.setall(job_schedule)
-            minutes_left = (60 - minutes_left) % 5
-    
+            #minutes_left = (60 - minutes_left) % 5 ### Will this 5 need to be changed to 'interval'????? # Using the 60 bit was causing the 5am hour to be weird 
+            minutes_left = minutes_left % 5
+			
     return ami_cron
-     
-     
