@@ -10,14 +10,14 @@
    "birds":{
          "interval": 5,
          "sunrise":{
-            "start":"00::45::00",
+            "start":"01::00::00",
             "end":"02::00::00"
          },
          "sunset":{
-            "start":"02::00::00",
+            "start":"01::00::00",
             "end":"01::00::00"
          },
-         "device_name" : "plughw:1,0",
+         "device_name" : "plughw:2,0",
          "number_of_channels" : "1",
          "duration" : "60",
          "sampling_rate" : "24000",

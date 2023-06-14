@@ -63,7 +63,7 @@ def calculate_motion_times(sunset, sunrise, config_start, config_end):
     sunrise : datetime
         Sunrise time based on your location and current date. 
     config_start : time
-        How much time before sunset to start. 
+        How much time after sunset to start. 
     config_end : time
         How much time before sunrise to end. 
 
@@ -75,10 +75,10 @@ def calculate_motion_times(sunset, sunrise, config_start, config_end):
         Exact time to stop running the job. 
     """
     time_start = datetime.strptime(config_start, '%H::%M::%S').time()
-    start = sunset - timedelta(hours=time_start.hour, minutes=time_start.minute) # changed from plus to minus
+    start = sunset + timedelta(hours=time_start.hour, minutes=time_start.minute) 
 
     time_end = datetime.strptime(config_end, '%H::%M::%S').time()
-    end = sunrise + timedelta(hours=time_end.hour, minutes=time_end.minute) # changed from minus to plus
+    end = sunrise - timedelta(hours=time_end.hour, minutes=time_end.minute) 
 
     return start, end
 
@@ -91,9 +91,9 @@ def calculate_birds_time(ref_time, config_start, config_end):
     ref_time : datetime
         Sunrise or sunset time based on your location and current date. 
     config_start : time
-        How much time before sunset to start. 
+        How much time before sunrise/set to start. 
     config_end : time
-        How much time before sunrise to end. 
+        How much time before sunrise/set to end. 
 
     Returns
     -------
@@ -229,12 +229,10 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
         job_schedule = schedule_cron_job(job, 0, 59, interval, start_time.hour, end_time.hour)
         job.setall(job_schedule)
     # e.g. from 3:13am to 5:27am
-    else:       
-        minutes_left = start_time.minute
+    else:        
+        first_minute = start_time.minute # first_minute is the first minute in the hour to record at 
         for i in range(num_hours+1):
             comment = 'birds {day_time} {num}'.format(day_time=day_time, num=i+1)
-            #rest_minutes = (60 - minutes_left) % 5 ### Will this 5 need to be changed to 'interval'????? # Using the 60 bit was causing the 5am hour to be weird 
-            rest_minutes = minutes_left % 5
             # from 3:13am to 4:00am
             if i == 0:
                 job = create_cron_job(ami_cron, command, comment)
@@ -243,16 +241,21 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
             # from 4:00am to 5:00
             elif start_time.hour+i == end_time.hour and end_time.minute != 0:
                 job = create_cron_job(ami_cron, command, comment)
-                job_schedule = schedule_cron_job(job, rest_minutes, end_time.minute, interval, end_time.hour, end_time.hour)
+                job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
                 job.setall(job_schedule)
-            elif start_time.hour+i == end_time.hour :
+            elif start_time.hour+i == end_time.hour:
                 break
             # from 5:00am to 5:27
             else:
                 job = create_cron_job(ami_cron, command, comment)
-                job_schedule = schedule_cron_job(job, rest_minutes, 59, interval, start_time.hour+i, start_time.hour+i)
+                job_schedule = schedule_cron_job(job, first_minute, 59, interval, start_time.hour+i, start_time.hour+i)
                 job.setall(job_schedule)
-            #minutes_left = (60 - minutes_left) % 5 ### Will this 5 need to be changed to 'interval'????? # Using the 60 bit was causing the 5am hour to be weird 
-            minutes_left = minutes_left % 5
+            # calculate new first minute for next hour
+            mins_diff = 60 - first_minute
+            if mins_diff % interval == 0: # does the minutes difference divide wholly into the interval (i.e. no remainder)
+                first_minute = 0 # if so, the first minute in the next hour will be on the hour e.g. 06:00
+            else:
+                first_minute = interval - (mins_diff % interval) # else, need to calculate what the first minute in the next hour will be e.g. 06:03			
+				
 			
     return ami_cron
