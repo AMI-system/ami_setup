@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-"""Python script run by crontab at intervals within the targetted time for bird acoustic recording"""
+"""JUST USING TO TEST OUT WHETHER DODOTRONIC MIC CAN SWITCH BETWEEN BIRD AND BAT SAMPLING RATES - Python script run by crontab at intervals within the targetted time for bird acoustic recording"""
+# This script is currently the same as the birdRecording.py but it uses the bat smapling rate paramter from the system_config.JSON rather than the bird one 
  
 __author__ = 'Grace Skinner'
 
@@ -60,7 +61,7 @@ full_path = path_to_file_storage + "/" + file_to_store # '/media/bird-pi/PiImage
 # -D plughw:1,0 is the recording Device
 # -c 1 is the number of channels, here 1
 # -d 60 is the duration, here 60 seconds 
-# -r 24000 is the sampling rate, here 24000Hz (needs to be at least double the highest frequency bird call we want to sample)
+# -r 384000 is the sampling rate, here 384000Hz (needs to be at least double the highest frequency bat call we want to sample)
 # -f S32_LE is the format, here S32_LE
 # -t wav is the file type to save, here wav file
 # -V mono is the type, here mono (could also be stereo)
@@ -71,7 +72,7 @@ full_path = path_to_file_storage + "/" + file_to_store # '/media/bird-pi/PiImage
 #proc_args = ['arecord', '-D', 'plughw:1,0', '-c', '1', '-d', '60', '-r', '24000', '-f', 'S32_LE', '-t', 'wav', '-V', 'mono', '-v', full_path]
 
 # Arguments read in from the system_config.JSON file (which can be altered)
-proc_args = ['arecord', '-D', system_variables['birds']['device_name'], '-c', system_variables['birds']['number_of_channels'], '-d', system_variables['birds']['duration'], '-r', system_variables['birds']['sampling_rate'], '-f', system_variables['birds']['data_format'], '-t', system_variables['birds']['file_type'], '-V', system_variables['birds']['recording_type'], '-v', full_path]
+proc_args = ['arecord', '-D', system_variables['birds']['device_name'], '-c', system_variables['birds']['number_of_channels'], '-d', system_variables['birds']['duration'], '-r', system_variables['bats']['sampling_rate'], '-f', system_variables['birds']['data_format'], '-t', system_variables['birds']['file_type'], '-V', system_variables['birds']['recording_type'], '-v', full_path]
 
 ## Recording process - run the arecord function from Python
 rec_proc = subprocess.Popen(proc_args)
