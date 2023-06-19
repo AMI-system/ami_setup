@@ -23,13 +23,17 @@ def main():
 	# print(f"Motion ends: {motion_end.strftime('%H:%M:%S')}")
 
 
-	# Determine times for bird's sound recording
-	start_sunrise, end_sunrise = calculate_birds_time(sunrise, 
-													  config["birds"]['sunrise']['start'], 
-													  config["birds"]['sunrise']['end'])
-	start_sunset, end_sunset = calculate_birds_time(sunset, 
-													config["birds"]['sunset']['start'], 
-													config["birds"]['sunset']['end'])
+	# Determine times for bird's sound recording 
+	# Calculate sunrise recording times if user wants to record around sunrise
+	if config["birds"]['sunrise']['record'] == "yes":
+		start_sunrise, end_sunrise = calculate_birds_time(sunrise, 
+														  config["birds"]['sunrise']['start'], 
+														  config["birds"]['sunrise']['end'])
+	# Calculate sunset recording times if user wants to record around sunset											  
+	if config["birds"]['sunset']['record'] == "yes":
+		start_sunset, end_sunset = calculate_birds_time(sunset,
+														config["birds"]['sunset']['start'], 
+														config["birds"]['sunset']['end'])
 	# print(f"Birds sunrise starts: {start_sunrise.strftime('%H:%M:%S')}")
 	# print(f"Bird	s sunrise ends: {end_sunrise.strftime('%H:%M:%S')}")
 	# print(f"Birds sunset starts: {start_sunset.strftime('%H:%M:%S')}")
@@ -38,24 +42,36 @@ def main():
 
 	# Update contrab jobs
 	ami_cron = CronTab(user='bird-pi') 
-
+	
+	# Moth/motion jobs
 	ami_cron = update_crontab_motion(ami_cron, 
 									 motion_start, 
 									 motion_end)
 	
+	# Bird jobs
 	### Test
 	# start_sunrise = datetime(2023, 5, 31, 3, 26, 0)
 	# end_sunrise = datetime(2023, 5, 31, 6, 12, 0)
-	ami_cron = update_crontab_birds(ami_cron, 
-									start_sunrise, 
-									end_sunrise, 
-									config["birds"]['interval'], 
-									'morning')
-	ami_cron = update_crontab_birds(ami_cron, 
-									start_sunset, 
-									end_sunset, 
-									config["birds"]['interval'], 
-									'evening')
+	
+	# sunrise
+	if config["birds"]['sunrise']['record'] == "yes":
+		ami_cron = update_crontab_birds(ami_cron, 
+										start_sunrise, 
+										end_sunrise, 
+										config["birds"]['interval'], 
+										'morning')
+	else:
+		delete_job_birds(ami_cron, "morning") # delete all morning jobs
+	
+	# sunset
+	if config["birds"]['sunset']['record'] == "yes":
+		ami_cron = update_crontab_birds(ami_cron, 
+										start_sunset, 
+										end_sunset, 
+										config["birds"]['interval'], 
+										'evening')
+	else:
+		delete_job_birds(ami_cron, "evening") # delete all evening jobs 
 
 	ami_cron.write()
 

@@ -217,7 +217,12 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
     comment = 'birds {day_time} {num}'.format(day_time=day_time, num=1)
     command = 'python3 /home/bird-pi/ami_setup/bird_scripts/birdRecording.py'
     
-    num_hours = end_time.hour - start_time.hour
+    # calculate number of recording hours
+    if start_time.hour < end_time.hour: # e.g. 02:00-04:00 or 21:00-23:00
+        num_hours = end_time.hour - start_time.hour
+    else: # e.g. 23:00-04:00 or 23:00-01:00
+        num_hours = end_time.hour - start_time.hour + 24
+    # create cronjobs for each recroding hour
     # e.g. from 3:15am to 3:55am
     if num_hours == 0:
         job = create_cron_job(ami_cron, command, comment)
@@ -234,28 +239,74 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
         for i in range(num_hours+1):
             comment = 'birds {day_time} {num}'.format(day_time=day_time, num=i+1)
             # from 3:13am to 4:00am
-            if i == 0:
+            if i == 0: # first job
                 job = create_cron_job(ami_cron, command, comment)
                 job_schedule = schedule_cron_job(job, start_time.minute, 59, interval, start_time.hour, start_time.hour)
                 job.setall(job_schedule)
-            # from 4:00am to 5:00
-            elif start_time.hour+i == end_time.hour and end_time.minute != 0:
+            # from 4:00am to 5:00  
+            elif (start_time.hour+i == end_time.hour and end_time.minute != 0) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour and end_time.minute != 0): # last job # 2nd statement deals with schedules that cross midnight
                 job = create_cron_job(ami_cron, command, comment)
                 job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
                 job.setall(job_schedule)
-            elif start_time.hour+i == end_time.hour:
+            elif (start_time.hour+i == end_time.hour) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour): # don't need to make a last job # 2nd statement deals with schedules that cross midnight 
                 break
             # from 5:00am to 5:27
-            else:
+            else: # middle jobs 
+                # make sure hour is not greater than 23, and adjust if it is
+                start_hour = start_time.hour+i
+                if start_time.hour+i > 23:
+                    start_hour = start_time.hour+i-24				
                 job = create_cron_job(ami_cron, command, comment)
-                job_schedule = schedule_cron_job(job, first_minute, 59, interval, start_time.hour+i, start_time.hour+i)
+                job_schedule = schedule_cron_job(job, first_minute, 59, interval, start_hour, start_hour)
                 job.setall(job_schedule)
             # calculate new first minute for next hour
             mins_diff = 60 - first_minute
             if mins_diff % interval == 0: # does the minutes difference divide wholly into the interval (i.e. no remainder)
                 first_minute = 0 # if so, the first minute in the next hour will be on the hour e.g. 06:00
             else:
-                first_minute = interval - (mins_diff % interval) # else, need to calculate what the first minute in the next hour will be e.g. 06:03			
+                first_minute = interval - (mins_diff % interval) # else, need to calculate what the first minute in the next hour will be e.g. 06:03	
 				
 			
     return ami_cron
+    
+def delete_job_birds(ami_cron, day_time):
+    """
+    Delete the morning and/or evening jobs if user does not wish to record around sunrise and/or sunset for the birds. 
+
+    Parameters
+    ----------
+    ami_cron : crontab.CronTab
+        Crontab object to be updated. 
+    day_time : str
+        Which time of the day, valid options 'morning' and 'evening'.
+
+    Returns
+    -------
+    None
+        No explicit return. 
+    """
+    # Delete
+    for job in ami_cron:
+        if 'birds {day_time}'.format(day_time=day_time) in job.comment:
+            ami_cron.remove(job)
+    
+ 
+    return None
+
+         
+
+		
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
