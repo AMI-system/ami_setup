@@ -162,7 +162,7 @@ def create_cron_job(ami_cron, command, comment): # just for birds
 
 def schedule_cron_job(job, start_minute, end_minute, interval, start_hour, end_hour):
     """
-    Update the crontab schedule for the motion software. 
+    Update the crontab schedule for the motion/birds software when interval is needed. 
 
     Parameters
     ----------
@@ -182,10 +182,37 @@ def schedule_cron_job(job, start_minute, end_minute, interval, start_hour, end_h
     Returns
     -------
     job_schedule : str
-        String containing the schedueling information for that job.
+        String containing the scheduling information for that job.
     """
     job_schedule = '{start_minute}-{end_minute}/{interval} {hour_start}-{hour_end} * * *'.format(start_minute=start_minute, end_minute=end_minute, interval=interval, hour_start=start_hour, hour_end=end_hour)
     return job_schedule
+
+    
+def schedule_cron_job_no_interval(job, start_minute, end_minute, start_hour, end_hour):
+    """
+    Update the crontab schedule for the motion/bird software when an interval is not needed. 
+
+    Parameters
+    ----------
+    job : crontab.CronItem
+        Crontab item to be defined. 
+    start_minute : int
+        Integer minute where the job has to start from.
+    end_minute : int
+        Integer minute where the job has to finish at.
+    start_hour : int
+        Integer hour where the job has to start from.
+    end_hour : int
+        Integer hour where the job has to finish at.
+     
+    Returns
+    -------
+    job_schedule : str
+        String containing the scheduling information for that job.
+    """
+    job_schedule = '{start_minute}-{end_minute} {hour_start}-{hour_end} * * *'.format(start_minute=start_minute, end_minute=end_minute, hour_start=start_hour, hour_end=end_hour)
+    return job_schedule
+
 
 def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
     """
@@ -222,7 +249,7 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
         num_hours = end_time.hour - start_time.hour
     else: # e.g. 23:00-04:00 or 23:00-01:00
         num_hours = end_time.hour - start_time.hour + 24
-    # create cronjobs for each recroding hour
+    # create cronjobs for each recording hour
     # e.g. from 3:15am to 3:55am
     if num_hours == 0:
         job = create_cron_job(ami_cron, command, comment)
@@ -241,14 +268,22 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
             # from 3:13am to 4:00am
             if i == 0: # first job
                 job = create_cron_job(ami_cron, command, comment)
-                job_schedule = schedule_cron_job(job, start_time.minute, 59, interval, start_time.hour, start_time.hour)
-                job.setall(job_schedule)
+                if start_time.minute != 59: # add catch here to see if need cronjob with or without interval - only need interval if start and end minute are different 
+                    job_schedule = schedule_cron_job(job, start_time.minute, 59, interval, start_time.hour, start_time.hour)
+                    job.setall(job_schedule)
+                else:
+                    job_schedule = schedule_cron_job_no_interval(job, start_time.minute, 59, start_time.hour, start_time.hour)
+                    job.setall(job_schedule)
             # from 4:00am to 5:00  
             elif (start_time.hour+i == end_time.hour and end_time.minute != 0) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour and end_time.minute != 0): # last job # 2nd statement (below) deals with schedules that cross midnight
                 if (end_time.minute >= first_minute): # will catch scenarios where end_time.minute is less than first minute - can't do cronjob with 4-2 as the minutes. In these cases, no need to make last job. 
                     job = create_cron_job(ami_cron, command, comment)                
-                    job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
-                    job.setall(job_schedule)
+                    if first_minute != end_time.minute: # add catch here to see if need cronjob with or without interval - only need interval if first_minute and end_time.minute are different
+                         job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
+                         job.setall(job_schedule)
+                    else:
+                        job_schedule = schedule_cron_job_no_interval(job, first_minute, end_time.minute, end_time.hour, end_time.hour)
+                        job.setall(job_schedule)  						
             elif (start_time.hour+i == end_time.hour) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour): # don't need to make a last job # 2nd elseif statement deals with schedules that cross midnight		 
                 break
             # from 5:00am to 5:27
