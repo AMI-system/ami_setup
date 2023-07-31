@@ -40,7 +40,7 @@ def main():
 	# print(f"Birds sunset ends: {end_sunset.strftime('%H:%M:%S')}")
 
 
-	# Update contrab jobs
+	# Update contrab jobs                                                                                                                                                                          
 	ami_cron = CronTab(user='bird-pi') 
 	
 	# Moth/motion jobs

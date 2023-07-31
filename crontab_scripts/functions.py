@@ -244,11 +244,12 @@ def update_crontab_birds(ami_cron, start_time, end_time, interval, day_time):
                 job_schedule = schedule_cron_job(job, start_time.minute, 59, interval, start_time.hour, start_time.hour)
                 job.setall(job_schedule)
             # from 4:00am to 5:00  
-            elif (start_time.hour+i == end_time.hour and end_time.minute != 0) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour and end_time.minute != 0): # last job # 2nd statement deals with schedules that cross midnight
-                job = create_cron_job(ami_cron, command, comment)
-                job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
-                job.setall(job_schedule)
-            elif (start_time.hour+i == end_time.hour) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour): # don't need to make a last job # 2nd statement deals with schedules that cross midnight 
+            elif (start_time.hour+i == end_time.hour and end_time.minute != 0) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour and end_time.minute != 0): # last job # 2nd statement (below) deals with schedules that cross midnight
+                if (end_time.minute >= first_minute): # will catch scenarios where end_time.minute is less than first minute - can't do cronjob with 4-2 as the minutes. In these cases, no need to make last job. 
+                    job = create_cron_job(ami_cron, command, comment)                
+                    job_schedule = schedule_cron_job(job, first_minute, end_time.minute, interval, end_time.hour, end_time.hour)
+                    job.setall(job_schedule)
+            elif (start_time.hour+i == end_time.hour) or (start_time.hour+i > 23 and start_time.hour+i-24 == end_time.hour): # don't need to make a last job # 2nd elseif statement deals with schedules that cross midnight		 
                 break
             # from 5:00am to 5:27
             else: # middle jobs 
