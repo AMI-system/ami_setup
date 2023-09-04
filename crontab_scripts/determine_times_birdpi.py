@@ -35,7 +35,7 @@ def main():
 														config["birds"]['sunset']['start'], 
 														config["birds"]['sunset']['end'])
 	# print(f"Birds sunrise starts: {start_sunrise.strftime('%H:%M:%S')}")
-	# print(f"Bird	s sunrise ends: {end_sunrise.strftime('%H:%M:%S')}")
+	# print(f"Birds sunrise ends: {end_sunrise.strftime('%H:%M:%S')}")
 	# print(f"Birds sunset starts: {start_sunset.strftime('%H:%M:%S')}")
 	# print(f"Birds sunset ends: {end_sunset.strftime('%H:%M:%S')}")
 

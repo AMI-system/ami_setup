@@ -57,7 +57,7 @@ full_path = path_to_file_storage + "/" + file_to_store # '/media/bird-pi/PiImage
 
 # For reference:
 # (Can change these settings using the system_config.JSON file)
-# -D plughw:1,0 is the recording Device
+# -D plughw:dodoMic,0 is the recording Device - this may need to be done in set-up of each AMI? Can't use card number as it occasionally changes (usually 1). 
 # -c 1 is the number of channels, here 1
 # -d 60 is the duration, here 60 seconds 
 # -r 24000 is the sampling rate, here 24000Hz (needs to be at least double the highest frequency bird call we want to sample)
@@ -68,7 +68,7 @@ full_path = path_to_file_storage + "/" + file_to_store # '/media/bird-pi/PiImage
 # full_path specifies the file path to save the file to (as defined above) 
 
 # Arguments set at default
-#proc_args = ['arecord', '-D', 'plughw:1,0', '-c', '1', '-d', '60', '-r', '24000', '-f', 'S32_LE', '-t', 'wav', '-V', 'mono', '-v', full_path]
+#proc_args = ['arecord', '-D', 'plughw:dodoMic,0', '-c', '1', '-d', '60', '-r', '24000', '-f', 'S32_LE', '-t', 'wav', '-V', 'mono', '-v', full_path]
 
 # Arguments read in from the system_config.JSON file (which can be altered)
 proc_args = ['arecord', '-D', system_variables['birds']['device_name'], '-c', system_variables['birds']['number_of_channels'], '-d', system_variables['birds']['duration'], '-r', system_variables['birds']['sampling_rate'], '-f', system_variables['birds']['data_format'], '-t', system_variables['birds']['file_type'], '-V', system_variables['birds']['recording_type'], '-v', full_path]

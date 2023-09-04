@@ -102,10 +102,10 @@ def calculate_birds_time(ref_time, config_start, config_end):
     end : datetime
         Exact time to stop running the job. 
     """
-    time_start = datetime.strptime(config_start, '%H::%M::%S').time()
+    time_start = datetime.strptime(config_start, '%H::%M').time() # Just do hours and minutes as cron can't schedule based on seconds 
     start = ref_time - timedelta(hours=time_start.hour, minutes=time_start.minute) 
     
-    time_end = datetime.strptime(config_end, '%H::%M::%S').time()
+    time_end = datetime.strptime(config_end, '%H::%M').time()
     end = ref_time + timedelta(hours=time_end.hour, minutes=time_end.minute) 
 
     return start, end

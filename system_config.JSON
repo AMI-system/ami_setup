@@ -11,15 +11,15 @@
 	  "interval": 5,
 	  "sunrise":{
 		"record":"yes",
-		"start":"01::00::00",
-        "end":"02::00::00"
+		"start":"01::00",
+        "end":"02::00"
       },
       "sunset":{
 		 "record":"yes",
-         "start":"01::00::00",
-         "end":"01::00::00"
+         "start":"01::00",
+         "end":"01::00"
       },
-      "device_name":"plughw:1,0",
+      "device_name":"plughw:dodoMic,0",
       "number_of_channels":"1",
       "duration":"3",
       "sampling_rate":"24000",
