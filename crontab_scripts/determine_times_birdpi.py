@@ -38,6 +38,35 @@ def main():
 	# print(f"Birds sunrise ends: {end_sunrise.strftime('%H:%M:%S')}")
 	# print(f"Birds sunset starts: {start_sunset.strftime('%H:%M:%S')}")
 	# print(f"Birds sunset ends: {end_sunset.strftime('%H:%M:%S')}")
+	
+
+	# Check if the sunrise and sunset schedules overlap in the nighttime 
+	if config["birds"]['sunrise']['record'] == "yes" and config["birds"]['sunset']['record'] == "yes": # If user is recording around both sunrise and sunset
+		
+		# Need to add 1 day to the sunrise schedule so the sunrise schedule always happens the day after the sunset one (only way to correctly test whether there is overlap)
+		start_sunrise_day_before = start_sunrise + timedelta(days=1)
+		end_sunrise_day_before = end_sunrise + timedelta(days=1)
+		
+		# print("Schedule before changes:", start_sunset, "-", end_sunset, "and", start_sunrise_day_before, "-", end_sunrise_day_before) 
+		
+		if start_sunrise_day_before < end_sunset: # i.e. if the sunrise schedule starts before the sunset one finishes
+			# print("Overlap in night")
+			end_sunset = start_sunrise_day_before - timedelta(minutes=1) # There is overlap so make the sunset schedule finish the minute before the sunrise one begins 
+			# print("Schedule after changes: ", start_sunset, "-", end_sunset, "and", start_sunrise_day_before, "-", end_sunrise_day_before) 
+
+	
+	# Repeat to check if the sunrise and sunset schedules overlap in the daytime	
+	if config["birds"]['sunrise']['record'] == "yes" and config["birds"]['sunset']['record'] == "yes":
+		
+		# No need to add day this time as if they overlap in the daytime, it will be on the same day 
+		
+		# print("Schedule before changes:", start_sunset, "-", end_sunset, "and", start_sunrise, "-", end_sunrise) 
+		
+		if start_sunset < end_sunrise: # i.e. if the sunset schedule starts before the sunrise one finishes
+			# print("Overlap in day")
+			end_sunrise = start_sunset - timedelta(minutes=1) # There is overlap so make the sunrise schedule finish the minute before the sunset one begins 
+			# print("Schedule after changes: ", start_sunset, "-", end_sunset, "and", start_sunrise, "-", end_sunrise) 
+
 
 
 	# Update contrab jobs                                                                                                                                                                          
