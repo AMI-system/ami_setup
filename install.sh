@@ -16,7 +16,7 @@ sudo sed -i 's/^dtoverlay=disable-bt/#&/' /boot/config.txt
 echo "    3/3 Adding command to rc.local for start-up after boot..."
 
 # Add command to rc.local
-script_dir=$(dirname "$0")
+script_dir=$(dirname "$(readlink -f "$0")")
 sudo sed -i -e '$i \sudo python3 '"$script_dir"'/ami-trap-raspi-bluetooth.py &\n' /etc/rc.local
 
 echo "Installation complete. Please reboot to enable Bluetooth."
