@@ -15,3 +15,8 @@ Then, reboot:
 ```bash
 sudo reboot
 ```
+
+Please note that this is (currently) not a stand-alone Ami setup.
+It only adds Bluetooth connecivity to an existing setup.
+
+Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
