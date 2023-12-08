@@ -57,7 +57,7 @@ full_path = path_to_file_storage + "/" + file_to_store # '/media/bird-pi/PiImage
 
 # For reference:
 # (Can change these settings using the system_config.JSON file)
-# -D plughw:dodoMic,0 is the recording Device - this may need to be done in set-up of each AMI? Can't use card number as it occasionally changes (usually 1). 
+# -D plughw:dodoMic,0 is the recording Device
 # -c 1 is the number of channels, here 1
 # -d 60 is the duration, here 60 seconds 
 # -r 24000 is the sampling rate, here 24000Hz (needs to be at least double the highest frequency bird call we want to sample)
