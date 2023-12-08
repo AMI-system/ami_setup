@@ -5,6 +5,7 @@ echo "Installing Bluetooth for Ami-Trap..."
 echo "    1/3 Installing dependencies..."
 
 # Install bluez-peripheral from file bluez_peripheral-0.1.7-py3-none-any.whl
+sudo python3 -m pip install dbus_next-0.2.3-py3-none-any.whl
 sudo python3 -m pip install bluez_peripheral-0.1.7-py3-none-any.whl
 
 echo "    2/3 Enabling bluetooth on boot..."
