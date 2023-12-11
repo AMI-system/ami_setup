@@ -10,7 +10,7 @@ To setup Bluetooth connectivity for your Ami-Trap, clone/copy this repository an
 sudo ./install.sh
 ```
 
-If this doesn't work, you may need to make the script executable first with:
+If this doesn't work, you may need to make the script executable first:
 ```bash
 sudo chmod +x install.sh
 ```
