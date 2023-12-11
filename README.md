@@ -10,6 +10,11 @@ To setup Bluetooth connectivity for your Ami-Trap, clone/copy this repository an
 sudo ./install.sh
 ```
 
+If this doesn't work, you may need to make the script executable first with:
+```bash
+sudo chmod +x install.sh
+```
+
 Then, reboot:
 
 ```bash
@@ -28,3 +33,5 @@ File structure:
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-Trap.
 * `bluez_peripheral-0.1.7-py3-none-any.whl`: Python package `bluez-peripheral`, which is required. Downloaded from [here](https://pypi.org/project/bluez-peripheral).
 * `install.sh`: Install bash script.
+
+Tested on the image `rasp-pi-amber-20231013`.
