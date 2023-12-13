@@ -160,16 +160,21 @@ class AmiTrap:
         memory_info = {}
         memory_info["ssd_connected"] = self._is_ssd_connected()
         if os.path.exists(self.picture_path):
-            pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
-            picture_count = len(pictures)
-            memory_info["picture_count"] = picture_count
-            if picture_count > 0:
-                most_recent_file = max(pictures, key=os.path.getmtime)
-                memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
+            try:
+                pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+                picture_count = len(pictures)
+                memory_info["picture_count"] = picture_count
+                if picture_count > 0:
+                    most_recent_file = max(pictures, key=os.path.getmtime)
+                    memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
+            except:
+                memory_info["picture_count"] = 0
+                memory_info["last_picture_timestamp"] = None
             stat = os.statvfs(self.picture_path)
             memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
         else:
             memory_info["picture_count"] = 0
+            memory_info["last_picture_timestamp"] = None
             memory_info["free_memory"] = 0
         return memory_info
 
