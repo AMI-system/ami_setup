@@ -357,6 +357,18 @@ class AmiTrap:
         """
         return "raspberry pi" in self.get_hardware_version().lower()
     
+    def get_most_recent_picture_path(self):
+        """
+        Gets the path to the most recent picture.
+
+        Returns:
+            str: The path to the most recent picture.
+        """
+        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+        if len(pictures) == 0:
+            return ""
+        return max(pictures, key=os.path.getmtime)
+    
     def get_chunk_of_most_recent_picture(self, chunk_idx=0, chunk_size=512):
         """
         Gets a chunk of the most recent picture.
