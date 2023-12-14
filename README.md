@@ -15,7 +15,7 @@ If this doesn't work, you may need to make the script executable first:
 sudo chmod +x install.sh
 ```
 
-Then, reboot:
+After installation, reboot:
 
 ```bash
 sudo reboot
