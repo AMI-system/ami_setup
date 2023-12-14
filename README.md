@@ -28,9 +28,9 @@ Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/b
 
 File structure:
 * `_version.py`: Just contains the version number of the software as a string that can be imported as variable `__version__` into other Python scripts.
-* `ami-trap-raspi-bluetooth.py`: Entrypoint for the Bluetooth service. Should be run at start-up with root privileges.
+* `ami-trap-rockpi-bluetooth.py`: Entrypoint for the Bluetooth service. Should be run at start-up with root privileges.
 * `amitrap_bluetooth.py`: Collection of Bluetooth routines for the Ami-trap.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-Trap.
 * `install.sh`: Install bash script.
 
-Tested on the image `RockImg150923` with `bluez_peripheral` 0.1.7 and `dbus_next` 0.2.3.
+Tested on the image `RockImg070823` with `bluez_peripheral` 0.1.7 and `dbus_next` 0.2.3.
