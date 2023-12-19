@@ -26,6 +26,8 @@ It only adds Bluetooth connecivity to an existing setup.
 
 Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
 
+For adding Bluetooth to a Rock-Pi-based system, see [here](https://github.com/AMI-trap/ami_setup/tree/bluetooth-rockpi).
+
 File structure:
 * `_version.py`: Just contains the version number of the software as a string that can be importet as variable `__version__` into other Python scripts.
 * `ami-trap-raspi-bluetooth.py`: Entrypoint for the Bluetooth service. Should be run at start-up with root privileges.
