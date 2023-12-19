@@ -32,6 +32,7 @@ File structure:
 * `amitrap_bluetooth.py`: Collection of Bluetooth routines for the Ami-trap.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-Trap.
 * `bluez_peripheral-0.1.7-py3-none-any.whl`: Python package `bluez-peripheral`, which is required. Downloaded from [here](https://pypi.org/project/bluez-peripheral).
+* `dbus_next-0.2.3-py3-none-any.whl`: Python package `python-dbus-next`, which is required. Downloaded from [here](https://pypi.org/project/dbus-next).
 * `install.sh`: Install bash script.
 
 Tested on the image `rasp-pi-amber-20231013`.
