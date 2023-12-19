@@ -4,7 +4,7 @@
 
 *Date: December 2023*
 
-To setup Bluetooth connectivity for your Ami-Trap, clone/copy this repository and run:
+To setup Bluetooth connectivity for your Ami-Trap, clone/copy this repository to your Ami-Trap and run:
 
 ```bash
 sudo ./install.sh
