@@ -21,10 +21,12 @@ After installation, reboot:
 sudo reboot
 ```
 
-Please note that this is (currently) not a stand-alone Ami setup.
-It only adds Bluetooth connecivity to an existing setup.
+Now, you should be able to connect to your Ami-Trap via [the app](https://jonasbchrt.github.io/ami-trap-app-bluetooth/).
 
 Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
+
+Please note that this is (currently) not a stand-alone Ami-Trap setup.
+It only adds Bluetooth connecivity to an existing setup.
 
 For adding Bluetooth to a Rock-Pi-based system, see [here](https://github.com/AMI-trap/ami_setup/tree/bluetooth-rockpi).
 
