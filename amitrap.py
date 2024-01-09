@@ -112,6 +112,14 @@ class AmiTrap:
                 f.write(content)
         except FileNotFoundError:
             pass
+        try:
+            # Try to execute the script
+            bash_cmd = f"sudo bash {self.camera_config_path}"
+            print(bash_cmd)
+            subprocess.run(bash_cmd, shell=True, check=True)
+            print()
+        except Exception:
+            pass
 
     def get_time(self):
         """
@@ -272,8 +280,11 @@ class AmiTrap:
         Returns:
             str: The output of the command.
         """
-        return subprocess.check_output(command, shell=True, universal_newlines=True, timeout=timeout)
-    
+        try:
+            return subprocess.check_output(command, shell=True, universal_newlines=True, timeout=timeout, stderr=subprocess.STDOUT)
+        except subprocess.CalledProcessError as e:
+            return str(e.output)
+                
     def reboot(self):
         """
         Reboots the Raspberry Pi.
