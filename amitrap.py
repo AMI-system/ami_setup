@@ -112,6 +112,14 @@ class AmiTrap:
                 f.write(content)
         except FileNotFoundError:
             pass
+        try:
+            # Try to execute the script
+            bash_cmd = f"sudo bash {self.camera_config_path}"
+            print(bash_cmd)
+            subprocess.run(bash_cmd, shell=True, check=True)
+            print()
+        except Exception:
+            pass
 
     def get_time(self):
         """
@@ -160,16 +168,21 @@ class AmiTrap:
         memory_info = {}
         memory_info["ssd_connected"] = self._is_ssd_connected()
         if os.path.exists(self.picture_path):
-            pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
-            picture_count = len(pictures)
-            memory_info["picture_count"] = picture_count
-            if picture_count > 0:
-                most_recent_file = max(pictures, key=os.path.getmtime)
-                memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
+            try:
+                pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+                picture_count = len(pictures)
+                memory_info["picture_count"] = picture_count
+                if picture_count > 0:
+                    most_recent_file = max(pictures, key=os.path.getmtime)
+                    memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
+            except:
+                memory_info["picture_count"] = 0
+                memory_info["last_picture_timestamp"] = None
             stat = os.statvfs(self.picture_path)
             memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
         else:
             memory_info["picture_count"] = 0
+            memory_info["last_picture_timestamp"] = None
             memory_info["free_memory"] = 0
         return memory_info
 
@@ -267,8 +280,11 @@ class AmiTrap:
         Returns:
             str: The output of the command.
         """
-        return subprocess.check_output(command, shell=True, universal_newlines=True, timeout=timeout)
-    
+        try:
+            return subprocess.check_output(command, shell=True, universal_newlines=True, timeout=timeout, stderr=subprocess.STDOUT)
+        except subprocess.CalledProcessError as e:
+            return str(e.output)
+                
     def reboot(self):
         """
         Reboots the Raspberry Pi.
