@@ -29,6 +29,7 @@ from bluez_peripheral.agent import NoIoAgent
 import json
 import os
 from amitrap import AmiTrap
+import json
 
 # BLE UUIDs that I defined myself
 # Overall AMI-TRAP service UUID
@@ -111,6 +112,7 @@ class AmiTrapService(Service):
             "id": self._ami.get_serial_number(),
             "version": self._ami.get_software_version(),
             # "temperature": None, # TODO: Add temperature info once available
+            "wifi": self._ami.get_wifi_name(),
         }
 
         # Convert dict to JSON string
@@ -167,6 +169,7 @@ class AmiTrapService(Service):
 
         # Characteristics need to return bytes.
         bytes_data = bytes(self._output, "utf-8")
+        self._output = "{}"
         print(f"Transfer {len(bytes_data)} bytes.")
         print()
         return bytes_data
@@ -205,7 +208,7 @@ class AmiTrapService(Service):
             if "type" in json_data:
                 if json_data["type"] == "camera" and "data" in json_data:
                     self._ami.set_camera_config(json_data["data"])
-                    self._output = "Camera configuration updated."
+                    self._output = json.dumps({"success": "Camera configuration updated."})
                     command_recognized = True
                 elif json_data["type"] == "command" and "data" in json_data:
                     output = self._ami.evaluate_command(json_data["data"])
@@ -226,11 +229,13 @@ class AmiTrapService(Service):
                     print(f"Setting local time-of-day to {json_data['data']}.")
                     print()
                     self._ami.set_time(time=json_data["data"])
+                    self._output = json.dumps({"success": "Time set."})
                     command_recognized = True
                 elif json_data["type"] == "timezone" and "data" in json_data:
                     print(f"Setting local timezone to {json_data['data']}.")
                     print()
                     self._ami.set_time(zone=json_data["data"])
+                    self._output = json.dumps({"success": "Timezone set."})
                     command_recognized = True
                 elif json_data["type"] == "bluetooth" and "data" in json_data:
                     if json_data["data"]:
@@ -246,7 +251,21 @@ class AmiTrapService(Service):
                     and "password" in json_data
                 ):
                     self._ami.set_wifi(json_data["network"], json_data["password"])
-                    self._output = "Wifi configuration updated."
+                    self._output = json.dumps({"success": "Wifi configuration updated."})
+                    command_recognized = True
+                elif json_data["type"] == "wifi-scan":
+                    self._output = json.dumps({"wifi-networks": []})
+                    wifi_networks = self._ami.scan_wifi()
+                    for i in range(len(wifi_networks)):
+                        output_json = {
+                            "wifi-networks": wifi_networks[:i + 1]
+                        }
+                        output = json.dumps(output_json)
+                        if len(output) > 512:
+                            print("Truncated WiFi output due to 512 bytes limit.")
+                            print()
+                            break
+                        self._output = output
                     command_recognized = True
                 # # firmwareStart
                 # elif json_data["type"] == "firmwareStart" and "data" in json_data:
@@ -290,15 +309,19 @@ class AmiTrapService(Service):
                     with open(self._file_path, "wb") as f:
                         f.write(self._file)
                     if self._ami.check_file_crc16(json_data["crc16"], self._file_path):
-                        self._output = "File transfer finished."
+                        self._output = json.dumps({"success": "File transfer finished."})
                     else:
                         # Delete file
                         os.remove(self._file_path)
-                        self._output = "File transfer failed. Try again."
+                        self._output = json.dumps({"error": "File transfer failed. Try again."})
                     command_recognized = True
                 elif json_data["type"] == "readFile" and "path" in json_data:
-                    with open(json_data["path"], "rb") as f:
-                        self._file = bytearray(f.read())
+                    try:
+                        with open(json_data["path"], "rb") as f:
+                            self._file = bytearray(f.read())
+                    except FileNotFoundError as e:
+                        self._file = None
+                        self._output = json.dumps({"error": str(e)[:500]})
                     self._file_chunk_idx = 0
                     # self._output = "File transfer."
                     command_recognized = True
@@ -306,11 +329,11 @@ class AmiTrapService(Service):
                 print("Command not recognized:")
                 print(json_data)
                 print()
-                self._output = "Command not recognized."
+                self._output = json.dumps({"error": "Command not recognized."})
 
         except Exception as e:
             # Output error message
-            self._output = str(e)
+            self._output = json.dumps({"error": str(e)[:500]})
 
     # This is a write only characteristic.
     @characteristic(AMI_TRAP_SET_FILE_CHARACTERISTIC_UUID, CharFlags.WRITE)
@@ -364,6 +387,10 @@ class AmiTrapService(Service):
     @characteristic(AMI_TRAP_GET_FILE_CHARACTERISTIC_UUID, CharFlags.READ)
     def get_file(self, value=None, options=None):
         """Get a 512-byte chunk of the file that was requested via the set_file characteristic."""
+        if self._file is None:
+            print("No file to transfer.")
+            print()
+            return bytes(0)
         chunk_size = 512
         file_length = len(self._file)
         start_idx = self._file_chunk_idx * chunk_size
