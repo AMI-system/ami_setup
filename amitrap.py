@@ -414,21 +414,80 @@ class AmiTrap:
             network (str): The WiFi network name.
             password (str): The WiFi network password.
         """
-        if not self.is_rockpi:
-            bash_cmd = f"sudo wpa_passphrase \"{network}\" \"{password}\" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf"
-        else:
-            bash_cmd = f"nmcli dev wifi rescan"
+        # if not self.is_rockpi:
+        #     bash_cmd = f"sudo wpa_passphrase \"{network}\" \"{password}\" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf"
+        # else:
+        bash_cmd = f"nmcli dev wifi rescan"
         print(bash_cmd)
         print()
-        subprocess.run(bash_cmd, shell=True, check=True)
-        if not self.is_rockpi:
-            # Re-fresh configs
-            bash_cmd = "sudo wpa_cli -i wlan0 reconfigure"
-        else:
-            bash_cmd = f"nmcli dev wifi connect \"{network}\" password \"{password}\""
+        # subprocess.run(bash_cmd, shell=True, check=True)
+        try:
+            subprocess.check_output(bash_cmd, shell=True, universal_newlines=True, timeout=11, stderr=subprocess.STDOUT)
+        except subprocess.CalledProcessError as e:
+            print(e.output)
+            print()
+        # if not self.is_rockpi:
+        #     # Re-fresh configs
+        #     bash_cmd = "sudo wpa_cli -i wlan0 reconfigure"
+        # else:
+        bash_cmd = f"nmcli dev wifi connect \"{network}\" password \"{password}\""
         print(bash_cmd)
         print()
-        subprocess.run(bash_cmd, shell=True, check=True)
+        try:
+            subprocess.check_output(bash_cmd, shell=True, universal_newlines=True, timeout=11, stderr=subprocess.STDOUT)
+            return True
+        except subprocess.CalledProcessError as e:
+            print(e.output)
+            print()
+            return False
+
+    def scan_wifi(self):
+        """
+        Scans for WiFi networks and returns unique network names.
+
+        Returns:
+            list: A list of unique WiFi network names.
+        """
+        if not self.is_rockpi:
+            bash_cmd = "sudo iwlist wlan0 scan | grep ESSID | sed -e 's/.*ESSID:\"//' -e 's/\"$//'"
+        else:
+            bash_cmd = "nmcli dev wifi list"
+        # print(bash_cmd)
+        # print()
+        output = subprocess.check_output(bash_cmd, shell=True, universal_newlines=True)
+        if not self.is_rockpi:
+            return list(set(filter(None, output.split("\n"))))
+        else:
+            # Loop over lines. Ignore first line. Ignore the first 27 chars from each line, get the next 13 chars and strip white space. Then, find unique ones.
+            return list(set(filter(None, [line[27:40].strip() for line in output.split("\n")[1:]])))
+
+    def get_wifi_name(self):
+        """
+        Gets the WiFi status.
+
+        Returns:
+            str: The name of the WiFi network if connected, empty string otherwise.
+        """
+        try:
+            if not self.is_rockpi:
+                bash_cmd = "iwgetid -r"
+            else:
+                bash_cmd = "nmcli dev status"
+            # print(bash_cmd)
+            # print()
+            output = subprocess.check_output(bash_cmd, shell=True, universal_newlines=True)
+            if not self.is_rockpi:
+                return output.strip()
+            else:
+                # Find the line that starts with "wlan0". Check if " connected" is in the line. If so, return the next word.
+                for line in output.split("\n"):
+                    if line.startswith("wlan0"):
+                        if " connected" in line:
+                            return line.split()[-1]
+        except subprocess.CalledProcessError as e:
+            print(e)
+            print()
+        return ""
     
     def _crc16(self, buffer):
         crc = 0x0
