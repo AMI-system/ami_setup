@@ -325,6 +325,13 @@ class AmiTrapService(Service):
                     self._file_chunk_idx = 0
                     # self._output = "File transfer."
                     command_recognized = True
+                elif json_data["type"] == "metadata" and "data" in json_data:
+                    try:
+                        self._ami.set_metadata(json_data["data"])
+                        self._output = json.dumps({"success": "Metadata updated."})
+                    except:
+                        self._output = json.dumps({"error": "Metadata update failed."})
+                    command_recognized = True
             if not command_recognized:
                 print("Command not recognized:")
                 print(json_data)

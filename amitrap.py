@@ -575,3 +575,36 @@ class AmiTrap:
         print(bash_cmd)
         print()
         subprocess.run(bash_cmd, shell=True, check=True)
+
+    def set_metadata(self, metadata, path="/home/pi/config.json"):
+        """
+        Updates the metadata of the Ami-Trap in the config.json file.
+        
+        If the file doesn't exist, it is created.
+        
+        Args:
+            metadata (dict): A dictionary containing the metadata.
+        """
+        # Read config.json, if it exists
+        try:
+            with open(path, "r") as f:
+                config = json.load(f)
+        except FileNotFoundError:
+            config = {}
+        # Go through all fields in metadata and update config
+        for top_level_key, top_level_value in metadata.items():
+            # Chdck if key exists already in conig.json
+            if top_level_key in config:
+                # If it's a dictionary, update only the keys that are present in the metadata
+                if isinstance(top_level_value, dict):
+                    for low_level_key, low_level_value in top_level_value.items():
+                        config[top_level_key][low_level_key] = low_level_value
+                else:
+                    # If it's not a dictionary, update the value
+                    config[top_level_key] = top_level_value
+            else:
+                # If it doesn't exist, create it
+                config[top_level_key] = top_level_value
+        # Write config to config.json. Format.
+        with open(path, "w") as f:
+            json.dump(config, f, indent=4)
