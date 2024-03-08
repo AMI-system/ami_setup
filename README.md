@@ -1,10 +1,24 @@
-# ami_setup (Bluetooth)
+# ami_setup (cellular)
+
+Publish information from an Ami-System with a cellular connection to the cloud.
 
 *Author: Jonas Beuchert (UKCEH)*
 
-*Date: December 2023*
+*Date: March 2024*
 
-To setup Bluetooth connectivity for your Ami-System, clone/copy this repository to your Ami-System and run:
+## Hardware setup
+
+* Get a [Blues Notecard](https://blues.com/products/notecard/) and a [Blues Notecarrier Pi](https://blues.com/products/notecarrier/notecarrier-pi/).
+* Remove the screw from the Notecarrier.
+* Insert the Notecard into the slot on the Notecarrier.
+* Secure it with the screw.
+* Connect the antenna to the `MAIN` socket on the Notecard.
+* Ensure that all swicthes on the back of the Notecarrier are in the `off` position.
+* Stack the Notecarrier on the Raspberry Pi pin header.
+
+## Software setup
+
+ Clone/copy this repository to your Ami-System and run:
 
 ```bash
 sudo ./install.sh
@@ -21,22 +35,21 @@ After installation, reboot:
 sudo reboot
 ```
 
-Now, you should be able to connect to your Ami-System via [the app](https://jonasbchrt.github.io/ami-trap-app-bluetooth/).
-
-Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
-
 Please note that this is (currently) not a stand-alone Ami-System setup.
-It only adds Bluetooth connecivity to an existing setup.
+It only adds cellular connecivity to an existing setup.
 
-For adding Bluetooth to a Rock-Pi-based system, see [here](https://github.com/AMI-trap/ami_setup/tree/bluetooth-rockpi).
+## File structure
 
-File structure:
-* `_version.py`: Just contains the version number of the software as a string that can be importet as variable `__version__` into other Python scripts.
-* `ami-trap-raspi-bluetooth.py`: Entrypoint for the Bluetooth service. Should be run at start-up with root privileges.
-* `amitrap_bluetooth.py`: Collection of Bluetooth routines for the Ami-System.
+* `_version.py`: Just contains the version number of the software as a string that can be imported as variable `__version__` into other Python scripts.
+* `ami-trap-raspi-cellular-config.py`: One-time configuration script.
+* `ami-trap-raspi-cellular.py`: Entrypoint for the cellular connectivity service. Should be run at start-up with root privileges.
+* `amitrap_cellular.py`: Collection of cellular connectivity routines for the Ami-System.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-System.
-* `bluez_peripheral-0.1.7-py3-none-any.whl`: Python package `bluez-peripheral`, which is required. Downloaded from [here](https://pypi.org/project/bluez-peripheral).
-* `dbus_next-0.2.3-py3-none-any.whl`: Python package `python-dbus-next`, which is required. Downloaded from [here](https://pypi.org/project/dbus-next).
+* `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required. Downloaded from [here](https://pypi.org/project/note-python).
 * `install.sh`: Install bash script.
 
-Tested on the image `rasp-pi-amber-20231013`.
+## Notes
+
+Tested on the image `???`.
+
+Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
