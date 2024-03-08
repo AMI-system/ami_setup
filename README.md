@@ -14,7 +14,7 @@ Publish information from an Ami-System with a cellular connection to the cloud.
 * Secure it with the screw.
 * Connect the antenna to the `MAIN` socket on the Notecard.
 * Ensure that all swicthes on the back of the Notecarrier are in the `off` position.
-* Stack the Notecarrier on the Raspberry Pi pin header.
+* Stack the Notecarrier on the Raspberry Pi or Rock Pi pin header.
 
 ## Software setup
 
@@ -34,6 +34,11 @@ After installation, reboot:
 ```bash
 sudo reboot
 ```
+
+If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 120 min.
+You can change this interval in `ami-trap-raspi-cellular.py` in `__main__` using the `interval_minutes` parameter.
+The synchronisation mode of the Notecard can be configured in the `cellular_configure` function in `amitrap_cellular.py`.
+You can find the available modes [here](https://dev.blues.io/notecard/notecard-walkthrough/essential-requests/#configuring-synchronization-modes).
 
 Please note that this is (currently) not a stand-alone Ami-System setup.
 It only adds cellular connecivity to an existing setup.
