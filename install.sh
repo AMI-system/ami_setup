@@ -4,7 +4,8 @@ echo "Installing cellular connectivity for Ami-Trap..."
 
 echo "    1/4 Installing dependencies..."
 
-# Install bluez-peripheral from file bluez_peripheral-0.1.7-py3-none-any.whl
+# Install Python dependencies
+sudo python3 -m pip install python_periphery-2.4.1-py2.py3-none-any.whl
 sudo python3 -m pip install note_python-1.5.0-py3-none-any.whl
 
 echo "    2/4 Configuring cellular connection..."

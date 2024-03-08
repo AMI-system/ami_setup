@@ -50,8 +50,36 @@ It only adds cellular connecivity to an existing setup.
 * `ami-trap-raspi-cellular.py`: Entrypoint for the cellular connectivity service. Should be run at start-up with root privileges.
 * `amitrap_cellular.py`: Collection of cellular connectivity routines for the Ami-System.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-System.
-* `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required. Downloaded from [here](https://pypi.org/project/note-python).
+* `python_periphery-2.4.1-py2.py3-none-any.whl`: Python package `python-periphery`, which is required. Downloaded from [here](https://pypi.org/project/python-periphery).
+* `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required.Downloaded from [here](https://pypi.org/project/note-python).
 * `install.sh`: Install bash script.
+
+## Function lisiting for `amitrap_cellular.py`
+
+### `cellular_configure(i2c_path="/dev/i2c-1")`
+
+    Configure cellular connectivity via Notecard and Notehub.
+    
+    Only needs to run once for each Notecard.
+    (Except if you want to change the configuration.)
+    Sets the synchronization mode and interval.
+    Assigns the Notecard to a Notehub project to define where the data goes on the server.
+
+### `cellular_send(output=None, i2c_path="/dev/i2c-1")`
+    
+    Send status data from Ami-Trap to Notehub.
+
+### `cellular_receive(i2c_path="/dev/i2c-1")`
+    
+    Receive data from Notehub and return output string.
+
+### `cellular_send_picture(i2c_path="/dev/i2c-1")`
+    
+    Send most recent picture from Ami-Trap to Notehub.
+    
+    Compress image such that it fits into 8 KB.
+    (According to https://discuss.blues.com/t/encode-and-send-a-small-image/475
+    8 KB are safe.)
 
 ## Notes
 
