@@ -18,15 +18,14 @@ Publish information from an Ami-System with a cellular connection to the cloud.
 
 ## Software setup
 
- Clone/copy this repository to your Ami-System and run:
+ Clone/copy this repository to your Ami-System.
 
+ Open the file `amitrap_cellular.py` and replace the string `todo:replace-with-your-product-uid` with the desired product UID.
+ Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure.
+
+Run:
 ```bash
 sudo ./install.sh
-```
-
-If this doesn't work, you may need to make the script executable first:
-```bash
-sudo chmod +x install.sh
 ```
 
 After installation, reboot:
@@ -35,6 +34,8 @@ After installation, reboot:
 sudo reboot
 ```
 
+[🪳Troubleshooting](#troubleshooting)
+
 If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 120 min.
 You can change this interval in `ami-trap-raspi-cellular.py` in `__main__` using the `interval_minutes` parameter.
 The synchronisation mode of the Notecard can be configured in the `cellular_configure` function in `amitrap_cellular.py`.
@@ -42,6 +43,18 @@ You can find the available modes [here](https://dev.blues.io/notecard/notecard-w
 
 Please note that this is (currently) not a stand-alone Ami-System setup.
 It only adds cellular connecivity to an existing setup.
+
+## Troubleshooting
+
+If installation does not work, then you may need to make the script executable first:
+```bash
+sudo chmod +x install.sh
+```
+
+If installation does not work and a `bad interpreter` error occurs, try to remove `CR` characters from the file first:
+```bash
+sudo sed -i -e 's/\r$//' install.sh
+```
 
 ## File structure
 
