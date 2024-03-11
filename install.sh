@@ -6,6 +6,7 @@ echo "    1/4 Installing dependencies..."
 
 # Install Python dependencies
 sudo python3 -m pip install python_periphery-2.4.1-py2.py3-none-any.whl
+sudo python3 -m pip install filelock-3.12.2-py3-none-any.whl
 sudo python3 -m pip install note_python-1.5.0-py3-none-any.whl
 
 echo "    2/4 Configuring cellular connection..."
