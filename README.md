@@ -51,6 +51,7 @@ It only adds cellular connecivity to an existing setup.
 * `amitrap_cellular.py`: Collection of cellular connectivity routines for the Ami-System.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-System.
 * `python_periphery-2.4.1-py2.py3-none-any.whl`: Python package `python-periphery`, which is required. Downloaded from [here](https://pypi.org/project/python-periphery).
+* `filelock-3.12.2-py3-none-any.whl`: Python package `filelock`, which is required.
 * `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required.Downloaded from [here](https://pypi.org/project/note-python).
 * `install.sh`: Install bash script.
 
