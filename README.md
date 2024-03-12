@@ -97,6 +97,6 @@ sudo sed -i -e 's/\r$//' install.sh
 
 ## Notes
 
-Tested on the image `???`.
+Tested on AMBER 2023, AgZero+ 2023, and WittyPi 2024 images.
 
 Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
