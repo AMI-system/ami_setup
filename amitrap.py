@@ -175,14 +175,29 @@ class AmiTrap:
                 if picture_count > 0:
                     most_recent_file = max(pictures, key=os.path.getmtime)
                     memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
+                    memory_info["last_picture_size"] = os.path.getsize(most_recent_file)
+                else:
+                    memory_info["last_picture_timestamp"] = None
+                    memory_info["last_picture_size"] = None
+                pictures_last_24h = [f for f in pictures if os.path.getmtime(f) > time.time() - 24 * 3600]
+                picture_count_last_24h = len(pictures_last_24h)
+                memory_info["picture_count_last_24h"] = picture_count_last_24h
+                # Count pictures from last 24 h below 200 KB
+                memory_info["picture_count_last_24h_below_200kb"] = len([f for f in pictures_last_24h if os.path.getsize(f) < 200 * 1024])
             except:
                 memory_info["picture_count"] = 0
                 memory_info["last_picture_timestamp"] = None
+                memory_info["last_picture_size"] = None
+                memory_info["picture_count_last_24h"] = 0
+                memory_info["picture_count_last_24h_below_200kb"] = 0
             stat = os.statvfs(self.picture_path)
             memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
         else:
             memory_info["picture_count"] = 0
             memory_info["last_picture_timestamp"] = None
+            memory_info["last_picture_size"] = None
+            memory_info["picture_count_last_24h"] = 0
+            memory_info["picture_count_last_24h_below_200kb"] = 0
             memory_info["free_memory"] = 0
         return memory_info
 
