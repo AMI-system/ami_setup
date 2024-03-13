@@ -41,6 +41,20 @@ You can change this interval in `ami-trap-raspi-cellular.py` in `__main__` using
 The synchronisation mode of the Notecard can be configured in the `cellular_configure` function in `amitrap_cellular.py`.
 You can find the available modes [here](https://dev.blues.io/notecard/notecard-walkthrough/essential-requests/#configuring-synchronization-modes).
 
+If you do not want to push data every 120 min, open `/etc/rc.local` and remove the respective line.
+
+If you only want to send data once, run
+```bash
+python3 ami-trap-raspi-cellular-send.py
+```
+
+If you want to send and receive data once, run
+```bash
+python3 ami-trap-raspi-cellular-send_and_receive.py
+```
+
+You can add these to the `afterStartup.sh` and `beforeShutdown.sh` scripts, for example.
+
 Please note that this is (currently) not a stand-alone Ami-System setup.
 It only adds cellular connecivity to an existing setup.
 
