@@ -49,11 +49,8 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
     outbound_interval_minutes = 3
     inbound_interval_minutes = 60
 
-    # Configure I2C (connection between Notecard and RasPi)
-    port = I2C(i2c_path)
-
     # Connect to Notecard via I2C
-    nCard = notecard.OpenI2C(port, 0, 0)
+    nCard = _connect_to_notecard(i2c_path)
 
     # Get and print cellular module (Notecard) information
     print(card.version(nCard))
@@ -70,33 +67,105 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
     # Print configuration
     print(hub.get(nCard))
     print()
-    # Sync with cloud (Notehub)
-    print(hub.sync(nCard))
-    print()
-    # Print status for 10 minutes or until sync is complete
-    for i in range(600):
-        status = hub.syncStatus(nCard)
-        print(status)
-        print()
-        if "completed" in status:
-            print("Cellular connectivity configured for Ami-Trap and synchronized with Notehub.")
-            print()
-            return
-        sleep(1)
 
+    # Sync with cloud (Notehub)
+    if _sync_and_print_status(nCard):
+        print("Cellular connectivity configured for Ami-Trap and synchronized with Notehub.")
+        print()
+        return
     print("Cellular connectivity configured for Ami-Trap, but not yet synchronized with Notehub.")
     print()
 
 
-async def cellular_send(output=None, i2c_path="/dev/i2c-1"):
+def _connect_to_notecard(i2c_path="/dev/i2c-1"):
+    """Connect to Notecard via I2C.
+    
+    Args:
+        i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
+            On a Raspberry Pi, the following GPIOs can be used for I2C:
+            - GPIO2 (pin 3) as SDA for /dev/i2c-1
+            - GPIO3 (pin 5) as SCL for /dev/i2c-1
+            - Others, e.g., via bit-banging
+            On a Rock Pi, the following GPIOs can be used for I2C:
+            - GPIO2_A7 (pin 3) as SDA for /dev/i2c-7
+            - GPIO2_B0 (pin 5) as SCL for /dev/i2c-7
+            - GPIO2_A0 (pin 27) as SDA for /dev/i2c-2
+            - GPIO2_A1 (pin 28) as SCL for /dev/i2c-2
+            - Others, e.g., via bit-banging
+    
+    Returns:
+        notecard: Notecard object.
+    """
+    # Configure I2C (connection between Notecard and RasPi)
+    port = I2C(i2c_path)
+    # Connect to Notecard via I2C
+    nCard = notecard.OpenI2C(port, 0, 0)
+    return nCard
+
+
+def _gather_status_data(ami, nCard):
+    """Gather status data from Ami-Trap and send to Notecard.
+    
+    Args:
+        ami (AmiTrap): AmiTrap object.
+        nCard (notecard): Notecard object.
+    """
+    camera_info = ami.get_camera_info()
+        
+    time_info = ami.get_time_info()
+
+    memory_info = ami.get_memory_info()
+
+    bluetooth_info = ami.get_bluetooth_info()
+        
+    data = {"os_time":time_info,
+            "camera":camera_info,
+            "memory":memory_info,
+            "bluetooth":bluetooth_info,
+            "temperature":card.temp(nCard)["value"]
+            }
+    
+    print(json.dumps(data, indent=4))
+    print()
+
+    # Add data to be sent out (configuration + temperature)
+    print(note.add(nCard,
+                   body=data))
+    print()
+
+
+def _sync_and_print_status(nCard, timeout=600):
+    """Sync with cloud (Notehub) and print status for a given time.
+    
+    Args:
+        nCard (notecard): Notecard object.
+        timeout (int, optional): Timeout in seconds. Defaults to 600.
+
+    Returns:
+        bool: True if sync is complete, False if not.
+    """
+    # Sync with cloud (Notehub)
+    print(hub.sync(nCard))
+    print()
+    # Print status for a given time or until sync is complete
+    for i in range(timeout):
+        status = hub.syncStatus(nCard)
+        print(status)
+        print()
+        if "completed" in status:
+            return True
+        sleep(1)
+    # If sync is not complete after timeout
+    return False
+
+
+async def cellular_send(i2c_path="/dev/i2c-1"):
     """Send status data from Ami-Trap to Notehub.
 
     Date: November 2023
     Author: Jonas Beuchert
     
     Args:
-        output (str, optional): Custom output string to send.
-            Defaults to None.
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
             - GPIO2 (pin 3) as SDA for /dev/i2c-1
@@ -110,54 +179,118 @@ async def cellular_send(output=None, i2c_path="/dev/i2c-1"):
             - Others, e.g., via bit-banging
     """
 
-    # Configure I2C 
-    port = I2C(i2c_path)
-
     # Connect to Notecard via I2C
-    nCard = notecard.OpenI2C(port, 0, 0)
-
-    # Open dummy configuration file (JSON)
-    # with open("test-config.json", "r") as f:
-    #     config = json.load(f)
+    nCard = _connect_to_notecard(i2c_path)
 
     ami = AmiTrap()
 
-    camera_info = ami.get_camera_info()
-        
-    time_info = ami.get_time_info()
+    _gather_status_data(ami, nCard)
 
-    memory_info = ami.get_memory_info()
-
-    bluetooth_info = ami.get_bluetooth_info()
-        
-    data = {"os_time":time_info,
-            "camera":camera_info,
-            "memory":memory_info,
-            "bluetooth":bluetooth_info,
-            "temperature":card.temp(nCard)["value"],
-            "output":output
-            }
-
-    print(json.dumps(data, indent=4))
-    print()
-
-    # Add data to be sent out (configuration + temperature)
-    print(note.add(nCard,
-                   body=data))
-    print()
-    # Sync data with cloud
-    hub.sync(nCard)
-    # Print status for 10 minutes or until sync is complete
-    for i in range(600):
-        status = hub.syncStatus(nCard)
-        print(status)
+    if _sync_and_print_status(nCard):
+        print("Sent data from Ami-Trap to Notehub.")
         print()
-        if "completed" in status:
-            break
-        sleep(1)
+        return
+    print("Failed to send data from Ami-Trap to Notehub.")
 
-    print("Sent data from Ami-Trap to Notehub.")
+
+def _process_incoming_changes(ami, nCard):
+    """Process incoming changes from Notehub.
+
+    Args:
+        ami (AmiTrap): AmiTrap object.
+        nCard (notecard): Notecard object.
+    Returns:
+        str: Output string with info or None if nothing received.
+    """
+    output = None
+    # Check for changes in Notecard files
+    changes = file.changes(nCard)
+    print(changes)
     print()
+    # Check if there is at least one change in inbound file
+    if "info" in changes and "data.qi" in changes["info"] and "total" in changes["info"]["data.qi"] and changes["info"]["data.qi"]["total"] > 0:
+        changes_count = changes['info']['data.qi']['total']
+        print(f"{changes_count} inbound change(s).")
+        print()
+        for change_idx in range(changes_count):
+            # Print change and delete
+            change = note.get(nCard, delete=True)
+            print(change)
+            print()
+            print(change["body"])
+            print()
+            command_recognized = False
+            if "type" in change["body"]:
+                if change["body"]["type"] == "camera" and "data" in change["body"]:
+                    ami.set_camera_config(change["body"]["data"])
+                    command_recognized = True
+                    output = "Camera configuration updated."
+                elif change["body"]["type"] == "command" and "data" in change["body"]:
+                    output = ami.evaluate_command(change["body"]["data"])
+                    print(output)
+                    print()
+                    # # Add data to be sent out (command output)
+                    # note.add(nCard,
+                    #         body={"type":"output","data":output})
+                    # # Sync data with cloud
+                    # hub.sync(nCard)
+                    # # # Print status until sync completed
+                    # # while True:
+                    # #     status = hub.syncStatus(nCard)
+                    # #     print(status)
+                    # #     print()
+                    # #     if "completed" in status:
+                    # #         break
+                    # #     sleep(1)
+                    command_recognized = True
+                elif change["body"]["type"] == "reboot":
+                    ami.reboot()
+                    command_recognized = True
+                elif change["body"]["type"] == "shutdown":
+                    ami.shutdown()
+                    command_recognized = True
+                elif change["body"]["type"] == "time":
+                    print("Wait for Notecard to acquire time-of-day")
+                    timeout = 60
+                    got_time = False
+                    for iterations in range(timeout):
+                        response = card.time(nCard)
+                        time = response["time"]
+                        zone = response["zone"].split(",")[1]
+                        if zone != "Unknown":
+                            got_time = True
+                            break
+                        sleep(1)
+                    if not got_time:
+                        print("Failed to set local time-of-day via card.time.")
+                    else:
+                        print(f"Setting local time-of-day to {time} {zone}.")
+                        ami.set_time(time, zone)
+                    command_recognized = True
+            elif change["body"]["type"] == "bluetooth" and "data" in change["body"]:
+                if change["body"]["data"]:
+                    ami.enable_bluetooth()
+                    output = "Bluetooth enabled. Takes effect after reboot."
+                else:
+                    ami.disable_bluetooth()
+                    output = "Bluetooth disabled. Takes effect after reboot."
+                command_recognized = True
+            if not command_recognized:
+                print("Command not recognized:")
+                print(change["body"])
+                print()
+                output = "Command not recognized."
+                # # Write new config file
+                # with open(config_file_name, "w") as f:
+                #     json.dump(change["body"], f, indent=4)
+                # print(f"Wrote new dummy configuration to {config_file_name}.")
+                # print()
+    else:
+        print("No inbound changes.")
+        print()
+
+    return output
+
 
 async def cellular_receive(i2c_path="/dev/i2c-1"):
     """Receive data from Notehub and return output string.
@@ -184,117 +317,14 @@ async def cellular_receive(i2c_path="/dev/i2c-1"):
 
     output = None
 
-    # config_file_name = "new-config.json"
-
-    # Configure I2C 
-    port = I2C(i2c_path)
-
     # Connect to Notecard via I2C
-    nCard = notecard.OpenI2C(port, 0, 0)
+    nCard = _connect_to_notecard(i2c_path)
 
-    # Sync data with cloud
-    sync_completed = False
-    hub.sync(nCard)
-    # Print status for 10 minutes or until sync is complete
-    for i in range(600):
-        status = hub.syncStatus(nCard)
-        print(status)
-        print()
-        if "completed" in status:
-            sync_completed = True
-            break
-        sleep(1)
-
-    if sync_completed:
+    if _sync_and_print_status(nCard):
 
         ami = AmiTrap()
 
-        # Check for changes in Notecard files
-        changes = file.changes(nCard)
-        print(changes)
-        # Check if there is at least one change in inbound file
-        if "info" in changes and "data.qi" in changes["info"] and "total" in changes["info"]["data.qi"] and changes["info"]["data.qi"]["total"] > 0:
-            changes_count = changes['info']['data.qi']['total']
-            print(f"{changes_count} inbound change(s).")
-            print()
-            for change_idx in range(changes_count):
-                # Print change and delete
-                change = note.get(nCard, delete=True)
-                print(change)
-                print()
-                print(change["body"])
-                print()
-                command_recognized = False
-                if "type" in change["body"]:
-                    if change["body"]["type"] == "camera" and "data" in change["body"]:
-                        ami.set_camera_config(change["body"]["data"])
-                        command_recognized = True
-                        output = "Camera configuration updated."
-                    elif change["body"]["type"] == "command" and "data" in change["body"]:
-                        output = ami.evaluate_command(change["body"]["data"])
-                        print(output)
-                        print()
-                        # # Add data to be sent out (command output)
-                        # note.add(nCard,
-                        #         body={"type":"output","data":output})
-                        # # Sync data with cloud
-                        # hub.sync(nCard)
-                        # # # Print status until sync completed
-                        # # while True:
-                        # #     status = hub.syncStatus(nCard)
-                        # #     print(status)
-                        # #     print()
-                        # #     if "completed" in status:
-                        # #         break
-                        # #     sleep(1)
-                        command_recognized = True
-                    elif change["body"]["type"] == "reboot":
-                        ami.reboot()
-                        command_recognized = True
-                    elif change["body"]["type"] == "shutdown":
-                        ami.shutdown()
-                        command_recognized = True
-                    elif change["body"]["type"] == "time":
-                        print("Wait for Notecard to acquire time-of-day")
-                        timeout = 60
-                        got_time = False
-                        for iterations in range(timeout):
-                            response = card.time(nCard)
-                            time = response["time"]
-                            zone = response["zone"].split(",")[1]
-                            if zone != "Unknown":
-                                got_time = True
-                                break
-                            sleep(1)
-                        if not got_time:
-                            print("Failed to set local time-of-day via card.time.")
-                        else:
-                            print(f"Setting local time-of-day to {time} {zone}.")
-                            ami.set_time(time, zone)
-                        command_recognized = True
-                elif change["body"] == "bluetooth" and "data" in change["body"]:
-                    if change["body"]["data"]:
-                        ami.enable_bluetooth()
-                        output = "Bluetooth enabled. Takes effect after reboot."
-                    else:
-                        ami.disable_bluetooth()
-                        output = "Bluetooth disabled. Takes effect after reboot."
-                    command_recognized = True
-                if not command_recognized:
-                    print("Command not recognized:")
-                    print(change["body"])
-                    print()
-                    output = "Command not recognized."
-                    # # Write new config file
-                    # with open(config_file_name, "w") as f:
-                    #     json.dump(change["body"], f, indent=4)
-                    # print(f"Wrote new dummy configuration to {config_file_name}.")
-                    # print()
-        else:
-            print("No inbound changes.")
-            print()
-
-    return output
+        return _process_incoming_changes(ami, nCard)
 
 async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     """Send most recent picture from Ami-Trap to Notehub.
@@ -308,10 +338,8 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     """
     DEBUG = True
 
-    # Configure I2C 
-    port = I2C(i2c_path)
     # Connect to Notecard via I2C
-    nCard = notecard.OpenI2C(port, 0, 0)
+    nCard = _connect_to_notecard(i2c_path)
 
     ami = AmiTrap()
     # Get most recent picture
@@ -338,17 +366,7 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     prev_sync_mode = hub.get(nCard)["mode"]
     hub.set(nCard,
             mode="continuous")
-    # Sync data with cloud
-    hub.sync(nCard)
-    # Print status for 10 minutes or until sync is complete
-    for i in range(600):
-        status = hub.syncStatus(nCard)
-        print(status)
-        print()
-        if "completed" in status:
-            break
-        sleep(1)
-    if not "completed" in status:
+    if not _sync_and_print_status(nCard):
         print("Failed to send picture from Ami-Trap to Notehub.")
         print()
         return
@@ -367,15 +385,10 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
                                  "binary": True,
                                  "live": True}))
     # Sync data with cloud
-    hub.sync(nCard)
-    # Print status for 10 minutes or until sync is complete
-    for i in range(600):
-        status = hub.syncStatus(nCard)
-        print(status)
+    if not _sync_and_print_status(nCard):
+        print("Failed to send picture from Ami-Trap to Notehub.")
         print()
-        if "completed" in status:
-            break
-        sleep(1)
+        return
 
     print("Sent picture from Ami-Trap to Notehub.")
     print()
@@ -388,160 +401,53 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     print(hub.get(nCard))
     print()
 
-# async def cellular_send_receive(i2c_path="/dev/i2c-1"):
-#     """Send status data from Ami-Trap to Notehub and receive data from Notehub.
+async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
+    """Send status data from Ami-Trap to Notehub. Receive data from Notehub and send output string back.
+
+    Date: November 2023
+    Author: Jonas Beuchert
     
-#     Date: March 2024
-#     Author: Jonas Beuchert
+    Args:
+        i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
+            On a Raspberry Pi, the following GPIOs can be used for I2C:
+            - GPIO2 (pin 3) as SDA for /dev/i2c-1
+            - GPIO3 (pin 5) as SCL for /dev/i2c-1
+            - Others, e.g., via bit-banging
+            On a Rock Pi, the following GPIOs can be used for I2C:
+            - GPIO2_A7 (pin 3) as SDA for /dev/i2c-7
+            - GPIO2_B0 (pin 5) as SCL for /dev/i2c-7
+            - GPIO2_A0 (pin 27) as SDA for /dev/i2c-2
+            - GPIO2_A1 (pin 28) as SCL for /dev/i2c-2
+            - Others, e.g., via bit-banging
+    """
+
+    # Connect to Notecard via I2C
+    nCard = _connect_to_notecard(i2c_path)
+
+    ami = AmiTrap()
+
+    _gather_status_data(ami, nCard)
+
+    if not _sync_and_print_status(nCard):
+        print("Failed to send data from Ami-Trap to Notehub.")
+        print()
+        return
     
-#     Args:
-#         output (str, optional): Custom output string to send.
-#             Defaults to None.
-#         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
-#             On a Raspberry Pi, the following GPIOs can be used for I2C:
-#             - GPIO2 (pin 3) as SDA for /dev/i2c-1
-#             - GPIO3 (pin 5) as SCL for /dev/i2c-1
-#             - Others, e.g., via bit-banging
-#             On a Rock Pi, the following GPIOs can be used for I2C:
-#             - GPIO2_A7 (pin 3) as SDA for /dev/i2c-7
-#             - GPIO2_B0 (pin 5) as SCL for /dev/i2c-7
-#             - GPIO2_A0 (pin 27) as SDA for /dev/i2c-2
-#             - GPIO2_A1 (pin 28) as SCL for /dev/i2c-2
-#             - Others, e.g., via bit-banging
-#     """
+    print("Sent data from Ami-Trap to Notehub.")
+    print()
 
-#     # Configure I2C 
-#     port = I2C(i2c_path)
+    output = _process_incoming_changes(ami, nCard)
 
-#     # Connect to Notecard via I2C
-#     nCard = notecard.OpenI2C(port, 0, 0)
+    if output is None:
+        return
 
-#     ami = AmiTrap()
+    print(note.add(nCard,
+                   body={"output":output}))
+    print()
 
-#     camera_info = ami.get_camera_info()
-        
-#     time_info = ami.get_time_info()
-
-#     memory_info = ami.get_memory_info()
-
-#     bluetooth_info = ami.get_bluetooth_info()
-        
-#     data = {"os_time":time_info,
-#             "camera":camera_info,
-#             "memory":memory_info,
-#             "bluetooth":bluetooth_info,
-#             "temperature":card.temp(nCard)["value"],
-#             "output":output
-#             }
-
-#     print(json.dumps(data, indent=4))
-#     print()
-
-#     # Add data to be sent out (configuration + temperature)
-#     print(note.add(nCard,
-#                    body=data))
-#     print()
-#     # Sync data with cloud
-#     hub.sync(nCard)
-#     # Print status for 10 minutes or until sync is complete
-#     for i in range(600):
-#         status = hub.syncStatus(nCard)
-#         print(status)
-#         print()
-#         if "completed" in status:
-#             sync_completed = True
-#             break
-#         sleep(1)
-
-#     print("Sent data from Ami-Trap to Notehub.")
-#     print()
-
-#     if sync_completed:
-
-#         # Check for changes in Notecard files
-#         changes = file.changes(nCard)
-#         print(changes)
-#         # Check if there is at least one change in inbound file
-#         if "info" in changes and "data.qi" in changes["info"] and "total" in changes["info"]["data.qi"] and changes["info"]["data.qi"]["total"] > 0:
-#             changes_count = changes['info']['data.qi']['total']
-#             print(f"{changes_count} inbound change(s).")
-#             print()
-#             for change_idx in range(changes_count):
-#                 # Print change and delete
-#                 change = note.get(nCard, delete=True)
-#                 print(change)
-#                 print()
-#                 print(change["body"])
-#                 print()
-#                 command_recognized = False
-#                 if "type" in change["body"]:
-#                     if change["body"]["type"] == "camera" and "data" in change["body"]:
-#                         ami.set_camera_config(change["body"]["data"])
-#                         command_recognized = True
-#                         output = "Camera configuration updated."
-#                     elif change["body"]["type"] == "command" and "data" in change["body"]:
-#                         output = ami.evaluate_command(change["body"]["data"])
-#                         print(output)
-#                         print()
-#                         # # Add data to be sent out (command output)
-#                         # note.add(nCard,
-#                         #         body={"type":"output","data":output})
-#                         # # Sync data with cloud
-#                         # hub.sync(nCard)
-#                         # # # Print status until sync completed
-#                         # # while True:
-#                         # #     status = hub.syncStatus(nCard)
-#                         # #     print(status)
-#                         # #     print()
-#                         # #     if "completed" in status:
-#                         # #         break
-#                         # #     sleep(1)
-#                         command_recognized = True
-#                     elif change["body"]["type"] == "reboot":
-#                         ami.reboot()
-#                         command_recognized = True
-#                     elif change["body"]["type"] == "shutdown":
-#                         ami.shutdown()
-#                         command_recognized = True
-#                     elif change["body"]["type"] == "time":
-#                         print("Wait for Notecard to acquire time-of-day")
-#                         timeout = 60
-#                         got_time = False
-#                         for iterations in range(timeout):
-#                             response = card.time(nCard)
-#                             time = response["time"]
-#                             zone = response["zone"].split(",")[1]
-#                             if zone != "Unknown":
-#                                 got_time = True
-#                                 break
-#                             sleep(1)
-#                         if not got_time:
-#                             print("Failed to set local time-of-day via card.time.")
-#                         else:
-#                             print(f"Setting local time-of-day to {time} {zone}.")
-#                             ami.set_time(time, zone)
-#                         command_recognized = True
-#                 elif change["body"] == "bluetooth" and "data" in change["body"]:
-#                     if change["body"]["data"]:
-#                         ami.enable_bluetooth()
-#                         output = "Bluetooth enabled. Takes effect after reboot."
-#                     else:
-#                         ami.disable_bluetooth()
-#                         output = "Bluetooth disabled. Takes effect after reboot."
-#                     command_recognized = True
-#                 if not command_recognized:
-#                     print("Command not recognized:")
-#                     print(change["body"])
-#                     print()
-#                     output = "Command not recognized."
-#                     # # Write new config file
-#                     # with open(config_file_name, "w") as f:
-#                     #     json.dump(change["body"], f, indent=4)
-#                     # print(f"Wrote new dummy configuration to {config_file_name}.")
-#                     # print()
-#         else:
-#             print("No inbound changes.")
-#             print()
-
-#     return output  # Do another cellular send afterwards
-
+    if not _sync_and_print_status(nCard):
+        print("Failed to send output from Ami-Trap to Notehub.")
+        print()
+        return
+    print("Sent output from Ami-Trap to Notehub.")
+    print()
