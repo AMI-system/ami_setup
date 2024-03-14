@@ -63,6 +63,7 @@ class AmiTrap:
         """
         camera_info = {}
         camera_info["connected"] = self._is_camera_connected()
+        camera_info["id"] = self.get_camera_id()
         camera_info["config"] = self._read_camera_config()
         return camera_info
 
@@ -120,6 +121,20 @@ class AmiTrap:
             print()
         except Exception:
             pass
+
+    def get_camera_id(self):
+        """
+        Gets the ID of the camera.
+
+        Returns:
+            str: The ID of the camera or an empty string if the camera is not connected.
+        """
+        # Look for file in the folder /dev/v4l/by-id/ of the pattern "usb-046d_Logitech_BRIO_*-video-index0" and get the * part
+        try:
+            camera_id = glob.glob("/dev/v4l/by-id/usb-046d_Logitech_BRIO_*-video-index0")[0].split("_")[-1].split("-")[0]
+        except Exception:
+            camera_id = ""
+        return camera_id
 
     def get_time(self):
         """
