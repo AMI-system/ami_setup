@@ -70,6 +70,8 @@ If installation does not work and a `bad interpreter` error occurs, try to remov
 sudo sed -i -e 's/\r$//' install.sh
 ```
 
+If no data is pushed automatically, check your `/etc/rc.local` file. It should conatain a line tha invokes the cellular service and all preceding lines should be terminated with an `&`.
+
 ## File structure
 
 * `_version.py`: Just contains the version number of the software as a string that can be imported as variable `__version__` into other Python scripts.
