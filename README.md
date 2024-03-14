@@ -70,7 +70,7 @@ If installation does not work and a `bad interpreter` error occurs, try to remov
 sudo sed -i -e 's/\r$//' install.sh
 ```
 
-If no data is pushed automatically, check your `/etc/rc.local` file. It should conatain a line tha invokes the cellular service and all preceding lines should be terminated with an `&`.
+If no data is pushed automatically, check your `/etc/rc.local` file. It should conatain a line that invokes the cellular service and all preceding lines should be terminated with an `&`.
 
 ## File structure
 
