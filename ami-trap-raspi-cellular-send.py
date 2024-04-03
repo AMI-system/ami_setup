@@ -4,4 +4,14 @@ import asyncio
 
 if __name__ == "__main__":
 
-    asyncio.run(cellular_send())
+    try:
+
+        asyncio.run(cellular_send())
+
+    except Exception as e:
+        print()
+        print(f"An error occurred: {e}")
+        print()
+        print("Terminating cellular_send...")
+        print()
+        pass
