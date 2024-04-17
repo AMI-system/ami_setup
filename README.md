@@ -112,7 +112,18 @@ Log in to the [blues notehub](https://notehub.io) and got to the relevant projec
 
 Below an overview of the notehub interface:
 
-* **Devices**: 
+* **Devices**: See a list of all cellular-equipped Ami-Systems, the projects they belong to (AMBER, AgZero+, ...), the last time they were online, and the tower they last connected to. Use the *Usage* tab to see consumed and remaining data volume. Each Ami-System comes with 500 MB in total. Use the *Events* button to see the most recent messages from a selected Ami-System. Use the *Note* button to send commands to the Ami-System. (See [command interface](#command-interface).)
+
+* **Fleets**: See all Ami-Systems belonging to a specific project (AMBER, AgZero+, ...). Otherwise, identically to the *Devices* tab.
+
+* **Events**: See a list of all messages from all Ami-Systems in the past seven days. Filter the *file* attribute to show only *data.qo* to see only status messages.
+
+### Command interface
+
+The following JSON *Notes* are recognised by the Ami-System:
+
+* `{"type": "camera", "data": your_camera_config_json}`
+
 
 ## Function listing for `amitrap_cellular.py`
 
