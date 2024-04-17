@@ -18,10 +18,12 @@ Publish information from an Ami-System with a cellular connection to the cloud.
 
 ## Software setup
 
- Clone/copy this repository to your Ami-System.
+Clone/copy this repository to your Ami-System. (In exisiting Ami-System images, it can be found in `home/pi/ami_setup-cellular-dev`).
 
- Open the file `amitrap_cellular.py` and replace the string `todo:replace-with-your-product-uid` with the desired product UID.
- Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure.
+Open the file `amitrap_cellular.py` and replace the string `todo:replace-with-your-product-uid` with the desired product UID.
+Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure.
+
+### Setup via install script
 
 Run:
 ```bash
@@ -43,22 +45,22 @@ You can find the available modes [here](https://dev.blues.io/notecard/notecard-w
 
 If you do not want to push data every 120 min, open `/etc/rc.local` and remove the respective line.
 
-If you only want to send data once, run
+If you only want to send data from the Ami-System once, run
 ```bash
 python3 ami-trap-raspi-cellular-send.py
 ```
 
-If you want to send and receive data once, run
+If you want to send data from the Ami-System once and receive data from the server once, run
 ```bash
 python3 ami-trap-raspi-cellular-send_and_receive.py
 ```
 
-You can add these to the `afterStartup.sh` and `beforeShutdown.sh` scripts, for example.
+You can add these to the `afterStartup.sh` and `beforeShutdown.sh` WittyPi scripts, for example.
 
 Please note that this is (currently) not a stand-alone Ami-System setup.
 It only adds cellular connecivity to an existing setup.
 
-## Troubleshooting
+### Troubleshooting
 
 If installation does not work, then you may need to make the script executable first:
 ```bash
@@ -72,6 +74,20 @@ sudo sed -i -e 's/\r$//' install.sh
 
 If no data is pushed automatically, check your `/etc/rc.local` file. It should conatain a line that invokes the cellular service and all preceding lines should be terminated with an `&`.
 
+### Manual setup
+
+Install Python dependencies:
+```bash
+sudo python3 -m pip install python_periphery-2.4.1-py2.py3-none-any.whl
+sudo python3 -m pip install filelock-3.12.2-py3-none-any.whl
+sudo python3 -m pip install note_python-1.5.0-py3-none-any.whl
+```
+
+Set the cloud project to which data is published:
+```bash
+sudo python3 ami-trap-raspi-cellular-config.py
+```
+
 ## File structure
 
 * `_version.py`: Just contains the version number of the software as a string that can be imported as variable `__version__` into other Python scripts.
@@ -84,7 +100,21 @@ If no data is pushed automatically, check your `/etc/rc.local` file. It should c
 * `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required.Downloaded from [here](https://pypi.org/project/note-python).
 * `install.sh`: Install bash script.
 
-## Function lisiting for `amitrap_cellular.py`
+## Remotely sending and receiving data
+
+### Web app (work in progress)
+
+You can use https://jonasbchrt.github.io/ami-trap-app-cellular-js/ to send and receive data. **Please refrain from using the dashboard button right now since I am running out of API credits.**
+
+### Blues notehub (preferred)
+
+Log in to the [blues notehub](https://notehub.io) and got to the relevant project. Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure or you do not have access.
+
+Below an overview of the notehub interface:
+
+* **Devices**: 
+
+## Function listing for `amitrap_cellular.py`
 
 ### `cellular_configure(i2c_path="/dev/i2c-1")`
 
