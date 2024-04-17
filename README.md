@@ -122,8 +122,19 @@ Below an overview of the notehub interface:
 
 The following JSON *Notes* are recognised by the Ami-System:
 
-* `{"type": "camera", "data": your_camera_config_json}`
+* `{"type": "camera", "data": your_camera_config_json}`: Set the camera configuration to the JSON provided using the same convention as the Ami-System Bluetooth app. If successful, the `output` string `"Camera configuration updated."` is returned.
 
+* `{"type": "command", "data": "your_shell_command"}`: Evaluate the provided shell command(s) and returns the output as `output` string.
+
+* `{"type": "reboot"}`: Reboot the Rapsberry Pi.
+
+* `{"type": "shutdown"}`: Shutdown the Rapsberry Pi.
+
+* `{"type": "time"}`: Get the current time and timezone from the cellular internet and sets the OS time.
+
+* `{"type": "bluetooth", "data": true}`: Enable Bluetooth.
+
+* `{"type": "bluetooth", "data": false}`: Disable Bluetooth.
 
 ## Function listing for `amitrap_cellular.py`
 
