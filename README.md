@@ -130,7 +130,7 @@ The following JSON *Notes* are recognised by the Ami-System:
 
 * `{"type": "shutdown"}`: Shutdown the Rapsberry Pi.
 
-* `{"type": "time"}`: Get the current time and timezone from the cellular internet and sets the OS time.
+* `{"type": "time"}`: Get the current time and timezone from the cellular internet and sets the OS time. (And the WittyPi RTC time, if possible.)
 
 * `{"type": "bluetooth", "data": true}`: Enable Bluetooth.
 
