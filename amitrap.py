@@ -30,7 +30,8 @@ class AmiTrap:
                  picture_path="/media/pi/PiImages",
                  picture_format="*.jp*g",
                  boot_config_path="/boot/config.txt",
-                 is_rockpi=False
+                 is_rockpi=False,
+                 wittypi_path="/home/pi/wittypi"
                  ):
         """
         Initializes the Amitrap class.
@@ -50,6 +51,7 @@ class AmiTrap:
         self.boot_config_path = boot_config_path
         self._shell = None
         self.is_rockpi = is_rockpi
+        self.wittypi_path = wittypi_path
 
     def get_software_version(self):
         return __version__
@@ -323,6 +325,17 @@ class AmiTrap:
             print(bash_cmd)
             print()
             subprocess.run(bash_cmd, shell=True, check=True)
+
+        if time is not None:
+            try:
+                # Source WittyPi utilities and set RTC time
+                bash_cmd = f"printf '1\n13\n' | {self.wittypi_path}/wittyPi.sh"
+                print(bash_cmd)
+                print()
+                subprocess.run(bash_cmd, shell=True, check=True)
+            except Exception as e:
+                print("Could not set RTC time. Is there an issue with the WittyPi?")
+                print()
 
     def get_serial_number(self):
         """
