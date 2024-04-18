@@ -124,7 +124,7 @@ The following JSON *Notes* are recognised by the Ami-System:
 
 * `{"type": "camera", "data": your_camera_config_json}`: Set the camera configuration to the JSON provided using the same convention as the Ami-System Bluetooth app. If successful, the `output` string `"Camera configuration updated."` is returned.
 
-* `{"type": "command", "data": "your_shell_command"}`: Evaluate the provided shell command(s) and returns the output as `output` string.
+* `{"type": "command", "data": "your_shell_command"}`: Evaluate the provided shell command(s) and returns the output as `output` string. (Hint: Shell commands allow you to do a lot of things. Wanna know what the WittyPi is doing? `printf '13' | /home/pi/wittypi/wittyPi.sh` does the job. But it's also easy to break things...)
 
 * `{"type": "reboot"}`: Reboot the Rapsberry Pi.
 
