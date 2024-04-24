@@ -334,6 +334,7 @@ class AmiTrap:
                 print()
                 subprocess.run(bash_cmd, check=True, timeout=5)
             except Exception as e:
+                print(e)
                 print("Could not set RTC time. Is there an issue with the WittyPi?")
                 print()
 
