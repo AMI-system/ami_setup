@@ -329,10 +329,10 @@ class AmiTrap:
         if time is not None:
             try:
                 # Source WittyPi utilities and set RTC time
-                bash_cmd = f"printf '1\n13\n' | {self.wittypi_path}/wittyPi.sh"
+                bash_cmd = f"exec printf '1\n13\n' | {self.wittypi_path}/wittyPi.sh"
                 print(bash_cmd)
                 print()
-                subprocess.run(bash_cmd, check=True, timeout=5)
+                subprocess.run(bash_cmd, check=True, shell=True timeout=5)
             except Exception as e:
                 print(e)
                 print("Could not set RTC time. Is there an issue with the WittyPi?")
