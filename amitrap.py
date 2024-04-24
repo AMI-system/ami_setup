@@ -159,7 +159,7 @@ class AmiTrap:
         # importlib.reload(time)
         # return time.tzname[0] + "WTF0"
         # Use subprocess to get the timezone
-        return subprocess.check_output("date +%Z", shell=True, universal_newlines=True).strip()
+        return subprocess.check_output("date +%z", shell=True, universal_newlines=True).strip()
 
     def get_time_info(self):
         """
