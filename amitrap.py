@@ -332,7 +332,7 @@ class AmiTrap:
                 bash_cmd = f"exec printf '1\n13\n' | {self.wittypi_path}/wittyPi.sh"
                 print(bash_cmd)
                 print()
-                subprocess.run(bash_cmd, check=True, shell=True timeout=1)
+                subprocess.run(bash_cmd, check=True, shell=True, timeout=1)
             except Exception as e:
                 print(e)
                 print("Could not set RTC time. Is there an issue with the WittyPi?")
