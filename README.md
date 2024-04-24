@@ -104,9 +104,10 @@ sudo python3 ami-trap-raspi-cellular-config.py
 
 ### Web app (work in progress)
 
-You can use https://jonasbchrt.github.io/ami-trap-app-cellular-js/ to send and receive data. **Please refrain from using the dashboard button right now since I am running out of API credits.**
+You can use https://jonasbchrt.github.io/ami-trap-app-cellular-js/ to send and receive data.
+Enter the passkey at the top (ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure) and click on *Show dashboard* to get some information about all AMIs that were online during the past seven days.
 
-### Blues notehub (preferred)
+### Blues notehub
 
 Log in to the [blues notehub](https://notehub.io) and got to the relevant project. Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure or you do not have access.
 
