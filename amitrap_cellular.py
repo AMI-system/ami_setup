@@ -301,6 +301,12 @@ def _process_incoming_changes(ami, nCard):
                 #     json.dump(change["body"], f, indent=4)
                 # print(f"Wrote new dummy configuration to {config_file_name}.")
                 # print()
+
+            # Send output to Notehub
+            print(note.add(nCard,
+                           body={"output":output}),
+                           file="output.qo")
+            print()
     else:
         print("No inbound changes.")
         print()
@@ -460,10 +466,6 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
         if output is None:
             return
-
-        print(note.add(nCard,
-                       body={"output":output}))
-        print()
 
         if not _sync_and_print_status(nCard):
             print("Failed to send output from Ami-Trap to Notehub.")
