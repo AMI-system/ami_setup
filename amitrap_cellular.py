@@ -305,7 +305,7 @@ def _process_incoming_changes(ami, nCard):
             # Send output to Notehub
             print(note.add(nCard,
                            body={"output":output}),
-                           file="output.qo")
+                           file="data.qo")
             print()
     else:
         print("No inbound changes.")
