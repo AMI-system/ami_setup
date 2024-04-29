@@ -285,10 +285,14 @@ def _process_incoming_changes(ami, nCard):
                     if change["body"]["data"]:
                         hub.set(nCard,
                                 mode="continuous")
+                        print("Sync mode set to continuous.")
+                        print()
                         output = "Sync mode set to continuous."
                     else:
                         hub.set(nCard,
                                 mode="minimum")
+                        print("Sync mode set to minimum.")
+                        print()
                         output = "Sync mode set to minimum."
                     command_recognized = True
             if not command_recognized:
