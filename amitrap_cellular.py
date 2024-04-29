@@ -304,6 +304,7 @@ def _process_incoming_changes(ami, nCard):
 
             # Send output to Notehub
             print(note.add(nCard,
+                           file="output.qo",
                            body={"output":output})
                            )
             print()
