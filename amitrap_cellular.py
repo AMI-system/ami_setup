@@ -77,7 +77,7 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
     print()
 
 
-def _connect_to_notecard(i2c_path="/dev/i2c-1"):
+def _connect_to_notecard(i2c_path="/dev/i2c-1", mode="minimum"):
     """Connect to Notecard via I2C.
     
     Args:
@@ -100,6 +100,12 @@ def _connect_to_notecard(i2c_path="/dev/i2c-1"):
     port = I2C(i2c_path)
     # Connect to Notecard via I2C
     nCard = notecard.OpenI2C(port, 0, 0)
+    # Check sync mode
+    sync_mode = hub.get(nCard)["mode"]
+    # Set sync mode if different
+    if sync_mode != mode:
+        hub.set(nCard,
+                mode=mode)
     return nCard
 
 
@@ -275,6 +281,16 @@ def _process_incoming_changes(ami, nCard):
                     ami.disable_bluetooth()
                     output = "Bluetooth disabled. Takes effect after reboot."
                 command_recognized = True
+            elif change["body"]["type"] == "contininous" and "data" in change["body"]:
+                if change["body"]["data"]:
+                    hub.set(nCard,
+                            mode="continuous")
+                    output = "Sync mode set to continuous."
+                else:
+                    hub.set(nCard,
+                            mode="minimum")
+                    output = "Sync mode set to minimum."
+                command_recognized = True
             if not command_recognized:
                 print("Command not recognized:")
                 print(change["body"])
@@ -426,28 +442,40 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
     ami = AmiTrap()
 
-    _gather_status_data(ami, nCard)
+    loop = False
 
-    if not _sync_and_print_status(nCard):
-        print("Failed to send data from Ami-Trap to Notehub.")
+    while True:
+
+        _gather_status_data(ami, nCard)
+
+        if not _sync_and_print_status(nCard):
+            print("Failed to send data from Ami-Trap to Notehub.")
+            print()
+            return
+        
+        print("Sent data from Ami-Trap to Notehub.")
         print()
-        return
-    
-    print("Sent data from Ami-Trap to Notehub.")
-    print()
 
-    output = _process_incoming_changes(ami, nCard)
+        output = _process_incoming_changes(ami, nCard)
 
-    if output is None:
-        return
+        if output is None:
+            return
 
-    print(note.add(nCard,
-                   body={"output":output}))
-    print()
-
-    if not _sync_and_print_status(nCard):
-        print("Failed to send output from Ami-Trap to Notehub.")
+        print(note.add(nCard,
+                       body={"output":output}))
         print()
-        return
-    print("Sent output from Ami-Trap to Notehub.")
-    print()
+
+        if not _sync_and_print_status(nCard):
+            print("Failed to send output from Ami-Trap to Notehub.")
+            print()
+            return
+        print("Sent output from Ami-Trap to Notehub.")
+        print()
+
+        if output == "Sync mode set to continuous.":
+            loop = True
+        elif output == "Sync mode set to minimum.":
+            loop = False
+
+        if not loop:
+            return
