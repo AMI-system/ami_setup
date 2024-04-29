@@ -273,24 +273,24 @@ def _process_incoming_changes(ami, nCard):
                         print(f"Setting local time-of-day to {time} {zone}.")
                         ami.set_time(time, zone)
                     command_recognized = True
-            elif change["body"]["type"] == "bluetooth" and "data" in change["body"]:
-                if change["body"]["data"]:
-                    ami.enable_bluetooth()
-                    output = "Bluetooth enabled. Takes effect after reboot."
-                else:
-                    ami.disable_bluetooth()
-                    output = "Bluetooth disabled. Takes effect after reboot."
-                command_recognized = True
-            elif change["body"]["type"] == "continuous" and "data" in change["body"]:
-                if change["body"]["data"]:
-                    hub.set(nCard,
-                            mode="continuous")
-                    output = "Sync mode set to continuous."
-                else:
-                    hub.set(nCard,
-                            mode="minimum")
-                    output = "Sync mode set to minimum."
-                command_recognized = True
+                elif change["body"]["type"] == "bluetooth" and "data" in change["body"]:
+                    if change["body"]["data"]:
+                        ami.enable_bluetooth()
+                        output = "Bluetooth enabled. Takes effect after reboot."
+                    else:
+                        ami.disable_bluetooth()
+                        output = "Bluetooth disabled. Takes effect after reboot."
+                    command_recognized = True
+                elif change["body"]["type"] == "continuous" and "data" in change["body"]:
+                    if change["body"]["data"]:
+                        hub.set(nCard,
+                                mode="continuous")
+                        output = "Sync mode set to continuous."
+                    else:
+                        hub.set(nCard,
+                                mode="minimum")
+                        output = "Sync mode set to minimum."
+                    command_recognized = True
             if not command_recognized:
                 print("Command not recognized:")
                 print(change["body"])
