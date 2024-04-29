@@ -281,7 +281,7 @@ def _process_incoming_changes(ami, nCard):
                     ami.disable_bluetooth()
                     output = "Bluetooth disabled. Takes effect after reboot."
                 command_recognized = True
-            elif change["body"]["type"] == "contininous" and "data" in change["body"]:
+            elif change["body"]["type"] == "continuous" and "data" in change["body"]:
                 if change["body"]["data"]:
                     hub.set(nCard,
                             mode="continuous")
