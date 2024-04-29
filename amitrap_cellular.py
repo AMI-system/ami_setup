@@ -469,7 +469,7 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
         output = _process_incoming_changes(ami, nCard)
 
-        if output is None:
+        if output is None and not loop:
             return
 
         if not _sync_and_print_status(nCard):
