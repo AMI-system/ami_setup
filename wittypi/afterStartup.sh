@@ -27,3 +27,5 @@ sudo python3 /home/pi/scripts/bats_schedule.py
 #Calculate bats recording schedule
 sudo python3 /home/pi/scripts/birds_schedule.py
 
+#Configure motion to capture metadata in config.json
+sudo python3 /home/pi/scripts/update_motion_config.py
