@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from crontab import CronTab
 
 
-def get_civil_twilight_times(latitude, longitude, date):
+def get_sunset_sunrise_times(latitude, longitude, date):
     # Construct the Helicron command
     # heliocron --latitude 52.752845 --longitude -3.253449 report --json
     command = ["/home/pi/scripts/heliocron", "--latitude", str(latitude), "--longitude", str(longitude), "report", "--json"]
@@ -44,8 +44,8 @@ today = datetime.now()
 tomorrow = today + timedelta(1)
 
 # Get civil dawn and dusk for today and tomorrow
-sunset, _ = get_civil_twilight_times(config['device_settings']['lat'], config['device_settings']['lon'], today)
-_, sunrise = get_civil_twilight_times(config['device_settings']['lat'], config['device_settings']['lon'], tomorrow)
+sunset, _ = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], today)
+_, sunrise = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], tomorrow)
 
 # Calculate when the moth's recording should start and finish
 motion_start = datetime.strptime(sunset, '%Y-%m-%dT%H:%M:%S%z')
