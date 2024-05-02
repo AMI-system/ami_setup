@@ -13,7 +13,7 @@ The WittyPi will determine when the system will be on and off. According to the 
 | Day of the week   | OFF      | ON     |
 | :---------------- | :------: | -----: |
 | Monday            |          | Sunset |
-| Tuesday           | 11:59 am | Sunset |
+| Tuesday           | Sunrise  | 12 pm  |
 | Wednesday         | 11:59 am | Sunset |
 | Thursday          | Sunrise  | 12 pm  |
 | Friday            | 11:59 am | Sunset |
@@ -80,5 +80,5 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   In the Pi they can be found in these paths: ```/home/pi/scripts/birds_recording.py``` and ```/home/pi/scripts/bats_recording.py```
   
   Both files have the same structure:
-  1. Read the config file to get audio/ultrasonic settings.Check if the target folder from the audio/ultrasonic settings exists in the SSD hard drive and create it if not.
+  1. Read the config file to get audio/ultrasonic settings. Check if the target folder from the audio/ultrasonic settings exists in the SSD hard drive and create it if not.
   2. Define the ```arecord``` command and run it.
