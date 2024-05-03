@@ -461,22 +461,29 @@ def _check_for_firmware_update(ami, nCard):
             print()
 
     if "mode" in rsp and rsp["mode"] == "ready":
-        print("Firmware update available.")
-        print()
-        length = rsp["body"]["length"]
-        print("Starting firmware update...")
-        print()
-        req = {"req": "hub.set"}
-        req["mode"] = "dfu"
-        rsp = nCard.Transaction(req)
-        print(rsp)
-        print()
         try:
+            print("Firmware update available.")
+            print()
+            length = rsp["body"]["length"]
+            print("Starting firmware update...")
+            print()
+            req = {"req": "hub.set"}
+            req["mode"] = "dfu"
+            rsp = nCard.Transaction(req)
+            print(rsp)
+            print()
             print("Waiting for DFU mode...")
+            print()
+            rsp = nCard.Transaction({"req":"dfu.get","length":0})
+            print(rsp)
+            print()
             timeout = 31
-            while "err" in nCard.Transaction({"req":"dfu.get","length":0}) and timeout > 0:
+            while "err" in rsp and timeout > 0:
                 sleep(1)
                 timeout -= 1
+                rsp = nCard.Transaction({"req":"dfu.get","length":0})
+                print(rsp)
+                print()
             if timeout == 0:
                 print("Failed to enter DFU mode.")
                 print()
