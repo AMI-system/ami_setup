@@ -477,7 +477,7 @@ def _check_for_firmware_update(ami, nCard):
             rsp = nCard.Transaction({"req":"dfu.get","length":0})
             print(rsp)
             print()
-            timeout = 31
+            timeout = 61
             while "err" in rsp and timeout > 0:
                 sleep(1)
                 timeout -= 1
