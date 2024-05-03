@@ -511,6 +511,7 @@ def _check_for_firmware_update(ami, nCard):
                         if "payload" not in rsp:
                             raise Exception(f"No content available at {offset} with length {size}.")
                         content += binascii.a2b_base64(rsp["payload"])
+                        offset += size
                         break
                     except Exception as e:
                         requestException = e
