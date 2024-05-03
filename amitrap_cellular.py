@@ -441,6 +441,26 @@ def _check_for_firmware_update(ami, nCard):
     rsp = nCard.Transaction(req)
     print(rsp)
     print()
+
+    if "mode" in rsp and rsp["mode"] == "downloading":
+        print("Firmware download in progress.")
+        print()
+        # Set sync mode to cont. until 5 min timeout or until mode is ready
+        print("Setting mode to continuous until download is complete.")
+        print()
+        req = {"req": "hub.set"}
+        req["mode"] = "continuous"
+        rsp = nCard.Transaction(req)
+        print(rsp)
+        print()
+        timeout = 300
+        while "mode" in rsp and rsp["mode"] == "downloading" and timeout > 0:
+            sleep(1)
+            timeout -= 1
+            rsp = nCard.Transaction({"req":"dfu.status"})
+            print(rsp)
+            print()
+
     if "mode" in rsp and rsp["mode"] == "ready":
         print("Firmware update available.")
         print()
@@ -516,17 +536,16 @@ def _check_for_firmware_update(ami, nCard):
             req["status"] = "Firmware update failed."
             rsp = card.Transaction(req)
 
-        finally:
-            # Set mode back to minimum
-            print("Setting mode back to minimum.")
-            print()
-            req = {"req": "hub.set"}
-            req["mode"] = "minimum"
-            rsp = nCard.Transaction(req)
-
     else:
 
         print("No firmware update available.")
+        print()
+
+    # If mode is continuous, set it back to minimum
+    if hub.get(nCard)["mode"] == "continuous":
+        hub.set(nCard,
+                mode="minimum")
+        print("Sync mode set to minimum.")
         print()
 
 async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
