@@ -56,7 +56,7 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   5. Defines the job which will run the recording script.
   6. There are two different sets of times:
     1. From today’s sunset until 11:59 pm running on Mon, Tue, Thu and Sat (1,2,4,6).
-        1. The first job will run every 5 minutes from sunset exact time until complete the hour.
+        1. The first job will run every 5 minutes from sunset exact time until complete the hour.  
           **Note:** the file checks if the minute is a multiple of 5. If so, to prevent the script to run at the same time as the bird's recording, 2 minuts are added.  
         2. Then it checks if the sunset time hour plus 1 hour is equal or smaller than 23 to define an extra job until midnight.
     2. From tomorrow’s midnight until sunrise time running on Wed, Fri and Sun (2,3,5,0).
@@ -109,7 +109,7 @@ PiImages
 └───ultrasonic
 │   │
 │   └───2024_04_24
-│       │   ultrasonic1.jpeg
-│       │   ultrasonic2.jpeg
+│       │   ultrasonic1.wav
+│       │   ultrasonic2.wav
 │       │   ...
 ```
