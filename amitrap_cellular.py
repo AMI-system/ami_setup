@@ -428,6 +428,102 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     print(hub.get(nCard))
     print()
 
+async def check_for_firmware_update(ami, nCard):
+    """Check for firmware update.
+    
+    Args:
+        ami (AmiTrap): AmiTrap object.
+        nCard (notecard): Notecard object.
+    """
+    import binascii
+
+    req = {"req": "dfu.status"}
+    rsp = nCard.Transaction(req)
+    print(rsp)
+    print()
+    if "mode" in rsp and rsp["mode"] == "ready":
+        print("Firmware update available.")
+        print()
+        length = rsp["length"]
+        print("Starting firmware update...")
+        print()
+        req = {"req": "hub.set"}
+        req["mode"] = "dfu"
+        rsp = nCard.Transaction(req)
+        print(rsp)
+        print()
+        try:
+            print("Waiting for DFU mode...")
+            timeout = 31
+            while "err" in nCard.Transaction({"req":"dfu.get","length":0}) and timeout > 0:
+                sleep(1)
+                timeout -= 1
+            if timeout == 0:
+                print("Failed to enter DFU mode.")
+                print()
+                raise Exception("Failed to enter DFU mode.")
+            print("Firmware update started.")
+            print()
+            offset = 0
+            size = 4096
+            num_retries = 5
+            while True:
+                if offset + size > length:
+                    size = length - offset
+
+                if size <= 0:
+                    break
+
+                content = b''
+                requestException = None
+                for _ in range(num_retries):
+                    requestException = None
+                    try:
+                        rsp = nCard.Transaction({"req":"dfu.get","offset":offset,"length":size})
+                        if "payload" not in rsp:
+                            raise Exception(f"No content available at {offset} with length {size}.")
+                        content = binascii.a2b_base64(rsp["payload"])
+                        break
+                    except Exception as e:
+                        requestException = e
+
+            if requestException is not None:
+                raise Exception(
+                    f"Failed to read content after {num_retries} retries") from requestException
+
+            offset += size
+
+            # Save content as zip file in "/tmp/". Unzip and run install.sh.
+            with open("/tmp/firmware.zip", "wb") as f:
+                f.write(content)
+            print(f"Downloaded {size} bytes.")
+            print()
+            # Unzip and run install.sh
+            ami.update_firmware()
+        
+            print("Firmware update completed.")
+            print()
+            req = {"req": "dfu.status"}
+            req["stop"] = True
+            req["status"] = "Firmware update completed."
+            rsp = card.Transaction(req)
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            print()
+            req = {"req": "dfu.status"}
+            req["stop"] = True
+            req["status"] = "Firmware update failed."
+            rsp = card.Transaction(req)
+
+        finally:
+            # Set mode back to minimum
+            print("Setting mode back to minimum.")
+            print()
+            req = {"req": "hub.set"}
+            req["mode"] = "minimum"
+            rsp = nCard.Transaction(req)
+
 async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
     """Send status data from Ami-Trap to Notehub. Receive data from Notehub and send output string back.
 
@@ -468,6 +564,8 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
         print()
 
         output = _process_incoming_changes(ami, nCard)
+
+        check_for_firmware_update(ami, nCard)
 
         if output is None and not loop:
             return
