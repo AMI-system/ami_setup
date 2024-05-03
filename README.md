@@ -119,6 +119,8 @@ Below an overview of the notehub interface:
 
 * **Events**: See a list of all messages from all Ami-Systems in the past seven days. Filter the *file* attribute to show only *data.qo* to see only status messages.
 
+* **Firmware**: Upload firmware for firmware updates over-the-air. Apply the update in the *Devices* tab. I ([@JonasBchrt](https://github.com/JonasBchrt)) decided that the firmware must be a `.zip` file with a script named `install.sh` in its top-level directory. All installation steps must be done by this script. Please throughly test any firmware before sending it out, including a complete install over-the-air on a dummy system. In addition, please keep the file size small.
+
 ### Command interface
 
 The following JSON *Notes* are recognised by the Ami-System:
