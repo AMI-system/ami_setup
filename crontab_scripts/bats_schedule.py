@@ -11,8 +11,8 @@ from crontab import CronTab
 
 def get_sunset_sunrise_times(latitude, longitude, date):
     # Construct the Helicron command
-    # heliocron --latitude 52.752845 --longitude -3.253449 report --json
-    command = ["/home/pi/scripts/heliocron", "--latitude", str(latitude), "--longitude", str(longitude), "report", "--json"]
+    # heliocron -date 2020-02-25 --latitude 52.752845 --longitude -3.253449 report --json
+    command = ["/home/pi/scripts/heliocron", "--date", date.strftime("%Y-%m-%d"), "--latitude", str(latitude), "--longitude", str(longitude), "report", "--json"]
 
     # Run the command
     result = subprocess.run(command, capture_output=True, text=True)
@@ -23,13 +23,14 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         # Split the output by newlines and return civil dawn and civil dusk times
         stdout = json.loads(result.stdout)
         #print(stdout)
-        sunset = stdout['sunset']
-        sunrise = stdout['sunrise']
-        return sunset, sunrise
+        sunset = datetime.strptime(stdout['sunset'], '%Y-%m-%dT%H:%M:%S%z')
+        sunrise = datetime.strptime(stdout['sunrise'], '%Y-%m-%dT%H:%M:%S%z')
+        return sunset.replace(tzinfo=None), sunrise.replace(tzinfo=None)
     else:
         # Handle error
         print("Error:", result.stderr)
         return None, None
+
 
 # Read the config file
 config_path = Path('/home/pi/config.json')
@@ -48,17 +49,12 @@ Path(f"{ultrasonic_settings['target_path']}").mkdir(parents=True, exist_ok=True)
 Path(f"{ultrasonic_settings['target_path']}/{today.strftime('%Y_%m_%d')}").mkdir(parents=True, exist_ok=True)
 Path(f"{ultrasonic_settings['target_path']}/{tomorrow.strftime('%Y_%m_%d')}").mkdir(parents=True, exist_ok=True)
 
-
-# Get civil dawn and dusk for today and tomorrow
+# Get civil sunset and sunrise for today and tomorrow
 sunset, _ = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], today)
 _, sunrise = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], tomorrow)
 
 print("Todays's sunset:", sunset)
 print("Tomorrow's sunrise", sunrise)
-
-# Calculate when the bat's recording should start and finish
-bats_start = datetime.strptime(sunset, '%Y-%m-%dT%H:%M:%S%z')
-bats_end = datetime.strptime(sunrise, '%Y-%m-%dT%H:%M:%S%z')
 
 # Access the user crontab
 ami_cron = CronTab(user='pi')
@@ -74,8 +70,8 @@ ami_cron.remove_all(comment='bats sunrise 2')
 job = "sudo python3 /home/pi/scripts/bats_recording.py"
 
 # Recording schedule from today's sunse to midnight
-evening_hour = bats_start.time().hour # Sunset hour
-evening_minute = bats_start.time().minute # Sunset minute
+evening_hour = sunset.time().hour # Sunset hour
+evening_minute = sunset.time().minute # Sunset minute
 offset_minute = evening_minute % 5 # Sunset minute offset
 
 # Check if offset minute is multiple of 5, if so to avoid overlap with bird's recording we will add 2 minute
@@ -94,8 +90,8 @@ if evening_hour+1 <= 23:
 
 
 # Recording schedule from midnight to tomorrow's sunrise
-morning_hour = bats_end.time().hour # Sunrise hour
-morning_minute = bats_end.time().minute # Sunrise minute
+morning_hour = sunrise.time().hour # Sunrise hour
+morning_minute = sunrise.time().minute # Sunrise minute
 
 # If sunrise hour is equal to midnight and offset minute is smaller than sunrise minute
 if morning_hour == 0 and offset_minute < morning_minute:
