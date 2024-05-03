@@ -651,3 +651,22 @@ class AmiTrap:
         # Write config to config.json. Format.
         with open(path, "w") as f:
             json.dump(config, f, indent=4)
+
+    def get_wittypi_schedule(self):
+        """
+        Gets the schedule of the WittyPi.
+
+        Returns:
+            dict: A list containing the schedule of the WittyPi.
+        """
+        try:
+            with open(f"{self.wittypi_path}/schedule.wpi", "r") as f:
+                lines = []
+                # Read file line-by-line. Ignore lines that are empty or contain white space or start with # (potentailly after whiote space). Remove white space from start and end of line. Discard everything from # onwards.
+                for line in f.readlines():
+                    line = line.split("#")[0].strip()
+                    if line:
+                        lines.append(line)
+                return lines
+        except FileNotFoundError:
+            return []
