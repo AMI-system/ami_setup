@@ -1,4 +1,4 @@
-from amitrap_cellular import cellular_send
+from amitrap_cellular import cellular_send_and_receive
 import asyncio
 from amitrap import AmiTrap
 
@@ -7,7 +7,7 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
     print()
 
     while True:
-        print("Run Ami-Trap cellular program (send).")
+        print("Run Ami-Trap cellular program (send and receive).")
         print(f"Sending data every {interval_minutes} minutes.")
         print()
 
@@ -16,7 +16,7 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
             while True:
             
                 # Call cellular_send() asynchronously
-                asyncio.create_task(cellular_send(i2c_path=port))
+                asyncio.create_task(cellular_send_and_receive(i2c_path=port))
 
                 # Sleep for the specified interval
                 await asyncio.sleep(interval_minutes * 60)
@@ -48,4 +48,4 @@ if __name__ == "__main__":
         print()
         exit()
 
-    asyncio.run(main(interval_minutes=120, port=port))
+    asyncio.run(main(interval_minutes=60*6, port=port))
