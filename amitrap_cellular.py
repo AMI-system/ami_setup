@@ -493,6 +493,7 @@ def _check_for_firmware_update(ami, nCard):
             offset = 0
             size = 4096
             num_retries = 5
+            content = b''
             while True:
                 if offset + size > length:
                     size = length - offset
@@ -500,15 +501,16 @@ def _check_for_firmware_update(ami, nCard):
                 if size <= 0:
                     break
 
-                content = b''
                 requestException = None
                 for _ in range(num_retries):
                     requestException = None
                     try:
                         rsp = nCard.Transaction({"req":"dfu.get","offset":offset,"length":size})
+                        print(rsp)
+                        print()
                         if "payload" not in rsp:
                             raise Exception(f"No content available at {offset} with length {size}.")
-                        content = binascii.a2b_base64(rsp["payload"])
+                        content += binascii.a2b_base64(rsp["payload"])
                         break
                     except Exception as e:
                         requestException = e
