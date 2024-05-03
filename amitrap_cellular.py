@@ -450,8 +450,7 @@ def _check_for_firmware_update(ami, nCard):
         print()
         req = {"req": "hub.set"}
         req["mode"] = "continuous"
-        rsp = nCard.Transaction(req)
-        print(rsp)
+        print(nCard.Transaction(req))
         print()
         timeout = 300
         while "mode" in rsp and rsp["mode"] == "downloading" and timeout > 0:
