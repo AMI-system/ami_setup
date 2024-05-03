@@ -428,7 +428,7 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     print(hub.get(nCard))
     print()
 
-async def check_for_firmware_update(ami, nCard):
+def _check_for_firmware_update(ami, nCard):
     """Check for firmware update.
     
     Args:
@@ -565,7 +565,7 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
         output = _process_incoming_changes(ami, nCard)
 
-        check_for_firmware_update(ami, nCard)
+        _check_for_firmware_update(ami, nCard)
 
         if output is None and not loop:
             return
