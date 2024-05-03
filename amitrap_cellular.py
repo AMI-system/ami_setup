@@ -524,6 +524,11 @@ def _check_for_firmware_update(ami, nCard):
             req["mode"] = "minimum"
             rsp = nCard.Transaction(req)
 
+    else:
+
+        print("No firmware update available.")
+        print()
+
 async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
     """Send status data from Ami-Trap to Notehub. Receive data from Notehub and send output string back.
 
