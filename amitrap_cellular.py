@@ -463,7 +463,7 @@ def _check_for_firmware_update(ami, nCard):
     if "mode" in rsp and rsp["mode"] == "ready":
         print("Firmware update available.")
         print()
-        length = rsp["length"]
+        length = rsp["body"]["length"]
         print("Starting firmware update...")
         print()
         req = {"req": "hub.set"}
