@@ -525,7 +525,7 @@ def _check_for_firmware_update(ami, nCard):
             # Save content as zip file in "/tmp/". Unzip and run install.sh.
             with open("/tmp/firmware.zip", "wb") as f:
                 f.write(content)
-            print(f"Downloaded {size} bytes.")
+            print(f"Downloaded {offset} bytes.")
             print()
             # Unzip and run install.sh
             ami.update_firmware()
@@ -535,7 +535,7 @@ def _check_for_firmware_update(ami, nCard):
             req = {"req": "dfu.status"}
             req["stop"] = True
             req["status"] = "Firmware update completed."
-            rsp = card.Transaction(req)
+            rsp = nCard.Transaction(req)
 
         except Exception as e:
             print(f"An error occurred: {e}")
