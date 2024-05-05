@@ -4,6 +4,20 @@ from amitrap import AmiTrap
 
 
 async def main(interval_minutes=15, port="/dev/i2c-1"):
+    """Continiously run Ami-Trap cellular service.
+
+    Send and receive data every interval_minutes minutes.
+
+    Re-start the service if an error occurs.
+    
+    Args:
+        interval_minutes (int): Interval in minutes to send data. Default is 15 minutes.
+        port (str): I2C port to use. Default is "/dev/i2c-1".
+        
+    Returns:
+        None
+            
+    """
     print()
 
     while True:
@@ -15,7 +29,7 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
 
             while True:
             
-                # Call cellular_send() asynchronously
+                # Call cellular_send_and_receive() asynchronously
                 asyncio.create_task(cellular_send_and_receive(i2c_path=port))
 
                 # Sleep for the specified interval

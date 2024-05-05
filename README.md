@@ -6,6 +6,20 @@ Publish information from an Ami-System with a cellular connection to the cloud.
 
 *Date: March 2024*
 
+## Table of Contents
+
+- [Hardware setup](#hardware-setup)
+- [Software setup](#software-setup)
+    - [Setup via install script](#setup-via-install-script)
+    - [Manual setup](#manual-setup)
+- [File structure](#file-structure)
+- [Remotely sending and receiving data](#remotely-sending-and-receiving-data)
+    - [Web app (work in progress)](#web-app-work-in-progress)
+    - [Blues notehub](#blues-notehub)
+    - [Command interface](#command-interface)
+- [Function listing for `amitrap_cellular.py`](#function-listing-for-amitrap_cellularpy)
+- [Notes](#notes)
+
 ## Hardware setup
 
 * Get a [Blues Notecard](https://blues.com/products/notecard/) and a [Blues Notecarrier Pi](https://blues.com/products/notecarrier/notecarrier-pi/).
@@ -38,12 +52,12 @@ sudo reboot
 
 [🪳Troubleshooting](#troubleshooting)
 
-If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 120 min.
+If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 6 h.
 You can change this interval in `ami-trap-raspi-cellular.py` in `__main__` using the `interval_minutes` parameter.
 The synchronisation mode of the Notecard can be configured in the `cellular_configure` function in `amitrap_cellular.py`.
 You can find the available modes [here](https://dev.blues.io/notecard/notecard-walkthrough/essential-requests/#configuring-synchronization-modes).
 
-If you do not want to push data every 120 min, open `/etc/rc.local` and remove the respective line.
+If you do not want to push data every 6 h, open `/etc/rc.local` and remove the respective line.
 
 If you only want to send data from the Ami-System once, run
 ```bash
@@ -92,7 +106,9 @@ sudo python3 ami-trap-raspi-cellular-config.py
 
 * `_version.py`: Just contains the version number of the software as a string that can be imported as variable `__version__` into other Python scripts.
 * `ami-trap-raspi-cellular-config.py`: One-time configuration script.
-* `ami-trap-raspi-cellular.py`: Entrypoint for the cellular connectivity service. Should be run at start-up with root privileges.
+* `ami-trap-raspi-cellular.py`: Entrypoint for the cellular connectivity service. Should be run at start-up with root privileges if sending and receiving data is required regularly.
+* `ami-trap-raspi-cellular-send.py`: Alternative entrypoint for cellular connectivity. Run to send data once.
+* `ami-trap-raspi-cellular-sned_and_receive.py`: Alternative entrypoint for cellular connectivity. Run to send and receive data once.
 * `amitrap_cellular.py`: Collection of cellular connectivity routines for the Ami-System.
 * `amitrap.py`: A class for interacting with the Raspberry-Pi or Rock-Pi based Ami-System.
 * `python_periphery-2.4.1-py2.py3-none-any.whl`: Python package `python-periphery`, which is required. Downloaded from [here](https://pypi.org/project/python-periphery).

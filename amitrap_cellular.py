@@ -432,7 +432,7 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     print()
 
 def _check_for_firmware_update(ami, nCard):
-    """Check for firmware update.
+    """Check for firmware update and update if available.
     
     Args:
         ami (AmiTrap): AmiTrap object.
@@ -440,11 +440,13 @@ def _check_for_firmware_update(ami, nCard):
     """
     import binascii
 
+    # Check dveice firmware update (DFU) status
     req = {"req": "dfu.status"}
     rsp = nCard.Transaction(req)
     print(rsp)
     print()
 
+    # Check if firmware update is currently downloading
     if "mode" in rsp and rsp["mode"] == "downloading":
         print("Firmware download in progress.")
         print()
@@ -455,7 +457,7 @@ def _check_for_firmware_update(ami, nCard):
         req["mode"] = "continuous"
         print(nCard.Transaction(req))
         print()
-        timeout = 300
+        timeout = 300  # 5 min timeout = 300 sec
         while "mode" in rsp and rsp["mode"] == "downloading" and timeout > 0:
             sleep(1)
             timeout -= 1
@@ -463,13 +465,16 @@ def _check_for_firmware_update(ami, nCard):
             print(rsp)
             print()
 
+    # Check if firmware update is ready
     if "mode" in rsp and rsp["mode"] == "ready":
         try:
             print("Firmware update available.")
             print()
+            # Get firmware binary size
             length = rsp["body"]["length"]
             print("Starting firmware update...")
             print()
+            # Put notecard in device firmware update (DFU) mode
             req = {"req": "hub.set"}
             req["mode"] = "dfu"
             rsp = nCard.Transaction(req)
@@ -480,7 +485,7 @@ def _check_for_firmware_update(ami, nCard):
             rsp = nCard.Transaction({"req":"dfu.get","length":0})
             print(rsp)
             print()
-            timeout = 61
+            timeout = 61  # 1 min timeout
             while "err" in rsp and timeout > 0:
                 sleep(1)
                 timeout -= 1
@@ -494,25 +499,33 @@ def _check_for_firmware_update(ami, nCard):
             print("Firmware update started.")
             print()
             offset = 0
-            size = 4096
-            num_retries = 5
-            content = b''
+            size = 4096  # 4 KB = firmware chunk size to transfer from Notecard to Ami-Trap at a time
+            num_retries = 5  # Number of retries for each chunk
+            content = b''  # Initialize firmware binary content
+            # Loop until all chunks are downloaded or we are out of re-tries
             while True:
+                # Check if this is the last chunk
                 if offset + size > length:
+                    # Adjust chunk size
                     size = length - offset
 
+                # Check if we are done = no more data to transfer
                 if size <= 0:
                     break
 
+                # Try to transfer the chunk
                 requestException = None
                 for _ in range(num_retries):
                     requestException = None
                     try:
+                        # Request chunk from Notecard
                         rsp = nCard.Transaction({"req":"dfu.get","offset":offset,"length":size})
                         print(rsp)
                         print()
+                        # Check if payload is available (it worked)
                         if "payload" not in rsp:
                             raise Exception(f"No content available at {offset} with length {size}.")
+                        # Append payload to firmware binary content
                         content += binascii.a2b_base64(rsp["payload"])
                         offset += size
                         break
@@ -535,6 +548,7 @@ def _check_for_firmware_update(ami, nCard):
         
             print("Firmware update completed.")
             print()
+            # Put notecard back in normal mode
             req = {"req": "dfu.status"}
             req["stop"] = True
             req["status"] = "Firmware update completed."
@@ -543,6 +557,7 @@ def _check_for_firmware_update(ami, nCard):
         except Exception as e:
             print(f"An error occurred: {e}")
             print()
+            # Put notecard back in normal mode
             req = {"req": "dfu.status"}
             req["stop"] = True
             req["status"] = "Firmware update failed."
@@ -585,12 +600,14 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
     ami = AmiTrap()
 
+    # Continious mode?
     loop = False
 
     while True:
 
         _gather_status_data(ami, nCard)
 
+        # Send data to cloud and receiving any incoming changes from cloud
         if not _sync_and_print_status(nCard):
             print("Failed to send data from Ami-Trap to Notehub.")
             print()
@@ -603,9 +620,11 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
         _check_for_firmware_update(ami, nCard)
 
+        # Check if incoming changes
         if output is None and not loop:
             return
 
+        # If incoming changes, send output back to cloud
         if not _sync_and_print_status(nCard):
             print("Failed to send output from Ami-Trap to Notehub.")
             print()
