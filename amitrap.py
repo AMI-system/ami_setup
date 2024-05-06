@@ -28,7 +28,7 @@ class AmiTrap:
     def __init__(self,
                  camera_path="/dev/video0",
                  camera_config_path="/home/pi/scripts/setCamera.sh",
-                 picture_path="/media/pi/PiImages",
+                 picture_path="/media/pi/PiImages/images",
                  picture_format="*.jp*g",
                  boot_config_path="/boot/config.txt",
                  is_rockpi=False,
@@ -172,7 +172,7 @@ class AmiTrap:
         memory_info["ssd_connected"] = self._is_ssd_connected()
         if os.path.exists(self.picture_path):
             try:
-                pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+                pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
                 picture_count = len(pictures)
                 memory_info["picture_count"] = picture_count
                 if picture_count > 0:
@@ -395,7 +395,7 @@ class AmiTrap:
         Returns:
             str: The path to the most recent picture.
         """
-        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
         if len(pictures) == 0:
             return ""
         return max(pictures, key=os.path.getmtime)
@@ -411,7 +411,7 @@ class AmiTrap:
         Returns:
             bytes: The chunk of the picture.
         """
-        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format))
+        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
         if len(pictures) == 0:
             return b""
         most_recent_file = max(pictures, key=os.path.getmtime)
