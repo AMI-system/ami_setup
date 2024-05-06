@@ -332,8 +332,7 @@ class AmiTrapService(Service):
                         picture_path = self._ami.get_most_recent_picture_path()
                         print(picture_path)
                         # Open picture
-                        with open(picture_path, "rb") as f:
-                            picture = Image.open(f)
+                        picture = Image.open(picture_path)
                         print(picture.size)
                         small_picture = picture.resize((256, 135))
                         print(small_picture.size)
