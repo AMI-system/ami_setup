@@ -174,7 +174,6 @@ class AmiTrap:
             try:
                 pictures = glob.glob(os.path.join(self.picture_path, "**", self.picture_format), recursive=True)
                 picture_count = len(pictures)
-
                 memory_info["picture_count"] = picture_count
                 if picture_count > 0:
                     most_recent_file = max(pictures, key=os.path.getmtime)
