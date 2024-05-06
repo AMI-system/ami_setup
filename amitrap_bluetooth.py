@@ -341,6 +341,7 @@ class AmiTrapService(Service):
                         print(len(self._file))
                     except Exception as e:
                         self._file = None
+                        print(e)
                         self._output = json.dumps({"error": str(e)[:500]})
                     self._file_chunk_idx = 0
                     command_recognized = True
