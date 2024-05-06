@@ -31,6 +31,7 @@ import os
 from amitrap import AmiTrap
 import json
 from PIL import Image
+import io
 
 # BLE UUIDs that I defined myself
 # Overall AMI-TRAP service UUID
@@ -336,7 +337,9 @@ class AmiTrapService(Service):
                         print(picture.size)
                         small_picture = picture.resize((256, 135))
                         print(small_picture.size)
-                        self._file = bytearray(small_picture.tobytes())
+                        self._file = io.BytesIO()
+                        small_picture.save(self._file, format="JPEG")
+                        self._file = self._file.getvalue()
                         print(len(self._file))
                     except Exception as e:
                         self._file = None
