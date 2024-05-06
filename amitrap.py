@@ -22,6 +22,7 @@ class AmiTrap:
         picture_format (str): The format of the pictures.
         boot_config_path (str): The path to the Raspberry Pi boot configuration file.
         is_rockpi (bool): Whether the device is a Rock Pi or a Raspberry Pi.
+        wittypi_path (str): The path to the WittyPi utilities.
     """
 
     def __init__(self,
