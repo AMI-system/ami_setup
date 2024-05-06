@@ -1,5 +1,7 @@
 # AMI configuration files for AgZero+ (Season 2024)
 
+# This is a test to see if I can upload from my Raspberry Pi
+
 Summary of the recording hours that we have agreed on:
 
 1. **Moth images + lights**: Mon, Wed, and Fri from Sunset to Sunrise-1h.
