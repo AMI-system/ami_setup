@@ -30,6 +30,7 @@ import json
 import os
 from amitrap import AmiTrap
 import json
+from PIL import Image
 
 # BLE UUIDs that I defined myself
 # Overall AMI-TRAP service UUID
@@ -324,6 +325,20 @@ class AmiTrapService(Service):
                         self._output = json.dumps({"error": str(e)[:500]})
                     self._file_chunk_idx = 0
                     # self._output = "File transfer."
+                    command_recognized = True
+                elif json_data["type"] == "getSmallPicture":
+                    try:
+                        # Get path to most recent picture
+                        picture_path = self._ami.get_most_recent_picture_path()
+                        # Open picture
+                        with open(picture_path, "rb") as f:
+                            picture = Image.open(f)
+                        small_picture = picture.resize((256, 135))
+                        self._file = bytearray(small_picture.tobytes())
+                    except Exception as e:
+                        self._file = None
+                        self._output = json.dumps({"error": str(e)[:500]})
+                    self._file_chunk_idx = 0
                     command_recognized = True
                 elif json_data["type"] == "metadata" and "data" in json_data:
                     try:
