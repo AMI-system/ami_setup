@@ -331,16 +331,12 @@ class AmiTrapService(Service):
                     try:
                         # Get path to most recent picture
                         picture_path = self._ami.get_most_recent_picture_path()
-                        print(picture_path)
                         # Open picture
                         picture = Image.open(picture_path)
-                        print(picture.size)
-                        small_picture = picture.resize((256, 135))
-                        print(small_picture.size)
+                        small_picture = picture.resize((256, 135), Image.Resampling.LANCZOS)
                         self._file = io.BytesIO()
                         small_picture.save(self._file, format="JPEG")
                         self._file = self._file.getvalue()
-                        print(len(self._file))
                     except Exception as e:
                         self._file = None
                         print(e)
