@@ -173,7 +173,7 @@ class AmiTrap:
         if os.path.exists(self.picture_path):
             print("Path exists.")
             try:
-                pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
+                pictures = glob.glob(os.path.join(self.picture_path, "**", self.picture_format), recursive=True)
                 print(pictures)
                 picture_count = len(pictures)
                 print(picture_count)
@@ -398,7 +398,7 @@ class AmiTrap:
         Returns:
             str: The path to the most recent picture.
         """
-        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
+        pictures = glob.glob(os.path.join(self.picture_path, "**", self.picture_format), recursive=True)
         if len(pictures) == 0:
             return ""
         return max(pictures, key=os.path.getmtime)
@@ -414,7 +414,7 @@ class AmiTrap:
         Returns:
             bytes: The chunk of the picture.
         """
-        pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
+        pictures = glob.glob(os.path.join(self.picture_path, "**", self.picture_format), recursive=True)
         if len(pictures) == 0:
             return b""
         most_recent_file = max(pictures, key=os.path.getmtime)
