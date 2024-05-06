@@ -171,18 +171,14 @@ class AmiTrap:
         memory_info = {}
         memory_info["ssd_connected"] = self._is_ssd_connected()
         if os.path.exists(self.picture_path):
-            print("Path exists.")
             try:
-                start_time = time.time()
                 pictures = glob.glob(os.path.join(self.picture_path, "**", self.picture_format), recursive=True)
                 picture_count = len(pictures)
-                print(f"Time taken for counting pictures: {time.time() - start_time}")
-                start_time = time.time()
+
                 memory_info["picture_count"] = picture_count
                 if picture_count > 0:
                     most_recent_file = max(pictures, key=os.path.getmtime)
                     memory_info["last_picture_timestamp"] = os.path.getmtime(most_recent_file)
-                print(f"Time taken for getting most recent picture: {time.time() - start_time}")
             except:
                 memory_info["picture_count"] = 0
                 memory_info["last_picture_timestamp"] = None
