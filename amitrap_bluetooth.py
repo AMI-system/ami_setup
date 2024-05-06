@@ -330,11 +330,15 @@ class AmiTrapService(Service):
                     try:
                         # Get path to most recent picture
                         picture_path = self._ami.get_most_recent_picture_path()
+                        print(picture_path)
                         # Open picture
                         with open(picture_path, "rb") as f:
                             picture = Image.open(f)
+                        print(picture.size)
                         small_picture = picture.resize((256, 135))
+                        print(small_picture.size)
                         self._file = bytearray(small_picture.tobytes())
+                        print(len(self._file))
                     except Exception as e:
                         self._file = None
                         self._output = json.dumps({"error": str(e)[:500]})
