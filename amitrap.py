@@ -171,9 +171,12 @@ class AmiTrap:
         memory_info = {}
         memory_info["ssd_connected"] = self._is_ssd_connected()
         if os.path.exists(self.picture_path):
+            print("Path exists.")
             try:
                 pictures = glob.glob(os.path.join(self.picture_path, self.picture_format), recursive=True)
+                print(pictures)
                 picture_count = len(pictures)
+                print(picture_count)
                 memory_info["picture_count"] = picture_count
                 if picture_count > 0:
                     most_recent_file = max(pictures, key=os.path.getmtime)
