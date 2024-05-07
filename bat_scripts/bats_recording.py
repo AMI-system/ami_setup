@@ -22,5 +22,3 @@ command = ["sudo", "arecord", "-D", ultrasonic_settings['device'], "-f", ultraso
 # Run the command
 result = subprocess.run(command, capture_output=True, text=True)
 print(result)
-
-

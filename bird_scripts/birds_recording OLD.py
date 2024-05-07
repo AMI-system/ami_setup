@@ -99,42 +99,61 @@ print("Stop recording with arecord > Recording stopped")
 
 # ===========================================================================================================================
 
-### Metadata collection ###
-# Get the current date and time
-current_date = datetime.datetime.now()
+from timezonefinder import TimezoneFinder
+import pytz
+from datetime import datetime
 
-# Get the current UTC time
-current_utc_time = datetime.datetime.utcnow()
+def get_current_time_iso(lat, lng):
+    # Get the timezone name from coordinates
+    tf = TimezoneFinder()
+    timezone_str = tf.timezone_at(lat=lat, lng=lng)
+    if timezone_str is None:
+        return "Timezone could not be determined"
 
-# Calculate the hour difference
-hour_difference = str((current_date - current_utc_time).total_seconds() / 3600)[:-2]
-if len(hour_difference) == 1:
-    hour_difference = "0" + hour_difference
+    # Convert to timezone-aware datetime object
+    timezone = pytz.timezone(timezone_str)
+    current_time = datetime.now(timezone)
 
-# format the time
-formatted_date = current_date.strftime("%Y-%m-%dT%H:%M:%S")
-
-# Define a function that determines if deployment is in daylight saving time at the location and datetime
-def is_dst(latitude, longitude, dt):
-    # Get the timezone name for the given latitude and longitude
-    timezone_finder = TimezoneFinder()
-    timezone_name = timezone_finder.timezone_at(lat=latitude, lng=longitude)
-
-    # Get the timezone object for the determined timezone name
-    timezone = pytz.timezone(timezone_name)
-
-    # Localize the datetime to the specified timezone
-    localized_dt = timezone.localize(dt)
-
-    # Check if the datetime is in daylight saving time
-    return localized_dt.dst() != timedelta(0)
+    # Format the datetime in ISO 8601 format
+    return current_time.strftime('%Y-%m-%dT%H:%M:%S%z')
 
 # Obtain the daved latitude and longitude of the deployment
 latitude = json_config["location"]["lat"]
 longitude = json_config["location"]["lon"]
 
-# 1 if in daylight saving time, 0 if not
-dst = is_dst(latitude, longitude, current_date)
+# Get current time in ISO 8601 format
+current_time_iso = get_current_time_iso(latitude, longitude)
+print(current_time_iso)
+
+# ### Metadata collection ###
+# # Get the current date and time
+# current_date = datetime.datetime.now()
+
+# # Get the current UTC time
+# current_utc_time = datetime.now(datetime.UTC)
+
+# # Calculate the hour difference
+# hour_difference = str((current_date - current_utc_time).total_seconds() / 3600)[:-2]
+# if len(hour_difference) == 1:
+#     hour_difference = "0" + hour_difference
+
+# # format the time
+# formatted_date = current_date.strftime("%Y-%m-%dT%H:%M:%S")
+
+# # Define a function that determines if deployment is in daylight saving time at the location and datetime
+# def is_dst(latitude, longitude, dt):
+#     # Get the timezone name for the given latitude and longitude
+#     timezone_finder = TimezoneFinder()
+#     timezone_name = timezone_finder.timezone_at(lat=latitude, lng=longitude)
+
+#     # Get the timezone object for the determined timezone name
+#     timezone = pytz.timezone(timezone_name)
+
+#     # Localize the datetime to the specified timezone
+#     localized_dt = timezone.localize(dt)
+
+#     # Check if the datetime is in daylight saving time
+#     return localized_dt.dst() != timedelta(0)
 
 # Define function to obtain file size
 def get_file_size_kb(file_path):

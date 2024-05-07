@@ -65,11 +65,11 @@ end_day_str = ",".join(map(str, end_days))
 
 # Define start cron job
 motion_on_job = ami_cron.new(command="sudo motion -m & sudo /home/pi/scripts/setCamera.sh & sudo python /home/pi/scripts/control_ON_lights.py", comment="motion on")
-motion_on_job.setall(f'{motion_start.time().minute} {motion_start.time().hour} * * {start_day_str}') # Mon, Wed, Fri
+motion_on_job.setall(f'{sunset.time().minute} {sunset.time().hour} * * {start_day_str}') # Mon, Wed, Fri
 
 # Define end cron job
 motion_off_job = ami_cron.new(command="sudo pkill motion & sudo python /home/pi/scripts/control_OFF_lights.py", comment="motion off")
-motion_off_job.setall(f'{motion_end.time().minute} {motion_end.time().hour-1} * * {end_day_str}') # Tue, Thu, Sat
+motion_off_job.setall(f'{sunrise.time().minute} {sunrise.time().hour-1} * * {end_day_str}') # Tue, Thu, Sat
 
 # Write new cron job into the user crontab
 ami_cron.write()
