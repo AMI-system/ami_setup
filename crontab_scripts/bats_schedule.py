@@ -30,7 +30,6 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         print("Error:", result.stderr)
         return None, None
 
-
 # Read the config file
 config_path = Path('/home/pi/config.json')
 with config_path.open() as fp:

@@ -19,8 +19,8 @@ with config_path.open() as fp:
 audio_settings = config['audio_settings']
 
 today = datetime.now()
-if not os.path.exists(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}"):
-    os.makedirs(path)
+# if not os.path.exists(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}"):
+#     os.makedirs(path)
 
 full_path = f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}/{today.strftime('%Y%m%d_%H%M%S')}.wav"
 
@@ -54,11 +54,6 @@ longitude = config["device_settings"]["lon"]
 
 # Get current time in ISO 8601 format
 current_time = get_current_time(latitude, longitude)
-print(current_time)
-
-# Import metadata variables including system configuration
-with open("/home/pi/config.json", 'r') as file:
-        config = json.load(file)
 
 # obtain IDs
 location_id = config["base_ids"]["location_id"]

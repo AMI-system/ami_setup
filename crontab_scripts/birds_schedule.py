@@ -24,7 +24,7 @@ Path(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}").mkdir(pare
 Path(f"{audio_settings['target_path']}/{tomorrow.strftime('%Y_%m_%d')}").mkdir(parents=True, exist_ok=True)
 
 # Access the user crontab
-ami_cron = CronTab(user='pi')
+ami_cron = CronTab(user = 'pi')
 
 # Remove any existing jobs
 ami_cron.remove_all(comment='birds 1')

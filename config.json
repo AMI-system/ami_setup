@@ -58,7 +58,7 @@
       "minimum_elevation_in_meters": null
    },
    "time_properties": {
-      "time_zone": null,
+      "time_zone": null
    },
    "ami_components":{
       "single_board_computer_type": null,
