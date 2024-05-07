@@ -231,9 +231,11 @@ def _process_incoming_changes(ami, nCard):
             command_recognized = False
             if "type" in change["body"]:
                 if change["body"]["type"] == "camera" and "data" in change["body"]:
-                    ami.set_camera_config(change["body"]["data"])
+                    if ami.set_camera_config(change["body"]["data"]):
+                        output = "Camera configuration updated."
+                    else:
+                        output = "Failed to update camera configuration."
                     command_recognized = True
-                    output = "Camera configuration updated."
                 elif change["body"]["type"] == "command" and "data" in change["body"]:
                     output = ami.evaluate_command(change["body"]["data"])
                     print(output)
