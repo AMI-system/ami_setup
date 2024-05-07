@@ -125,13 +125,16 @@ def _gather_status_data(ami, nCard):
     bluetooth_info = ami.get_bluetooth_info()
 
     wittypi_schedule = ami.get_wittypi_schedule()
+
+    microphone_info = ami.get_microphone_info()
         
     data = {"os_time":time_info,
             "camera":camera_info,
             "memory":memory_info,
             "bluetooth":bluetooth_info,
             "temperature":card.temp(nCard)["value"],
-            "wittypi":wittypi_schedule
+            "wittypi":wittypi_schedule,
+            "microphone":microphone_info
             }
     
     print(json.dumps(data, indent=4))

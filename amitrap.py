@@ -22,6 +22,11 @@ class AmiTrap:
         picture_format (str): The format of the pictures.
         boot_config_path (str): The path to the Raspberry Pi boot configuration file.
         is_rockpi (bool): Whether the device is a Rock Pi or a Raspberry Pi.
+        wittypi_path (str): The path to the WittyPi utilities.
+        audio_path (str): The path to the directory where audio files are stored.
+        audio_format (str): The format of the audio files.
+        ultrasonic_path (str): The path to the directory where ultrasonic files are stored.
+        ultrasonic_format (str): The format of the ultrasonic files.
     """
 
     def __init__(self,
@@ -31,7 +36,11 @@ class AmiTrap:
                  picture_format="*.jp*g",
                  boot_config_path="/boot/config.txt",
                  is_rockpi=False,
-                 wittypi_path="/home/pi/wittypi"
+                 wittypi_path="/home/pi/wittypi",
+                 audio_path="/media/pi/PiImages/audio",
+                 audio_format="*.wav",
+                 ultrasonic_path="/media/pi/PiImages/ultrasonic",
+                 ultrasonic_format="*.wav"
                  ):
         """
         Initializes the Amitrap class.
@@ -43,6 +52,11 @@ class AmiTrap:
             picture_format (str, optional): The naming convention of the pictures. Defaults to "*.jp*g".
             boot_config_path (str, optional): The path to the Raspberry Pi boot configuration file. Defaults to "/boot/config.txt".
             is_rockpi (bool, optional): Whether the device is a Rock Pi. Defaults to False, i.e., a Raspberry Pi.
+            wittypi_path (str, optional): The path to the WittyPi utilities. Defaults to "/home/pi/wittypi".
+            audio_path (str, optional): The path to the directory where audio files are stored. Defaults to "/media/pi/PiImages/audio".
+            audio_format (str, optional): The naming convention of the audio files. Defaults to "*.wav".
+            ultrasonic_path (str, optional): The path to the directory where ultrasonic files are stored. Defaults to "/media/pi/PiImages/ultrasonic".
+            ultrasonic_format (str, optional): The naming convention of the ultrasonic files. Defaults to "*.wav".
         """
         self.camera_path = camera_path
         self.camera_config_path = camera_config_path
@@ -52,6 +66,10 @@ class AmiTrap:
         self._shell = None
         self.is_rockpi = is_rockpi
         self.wittypi_path = wittypi_path
+        self.audio_path = audio_path
+        self.audio_format = audio_format
+        self.ultrasonic_path = ultrasonic_path
+        self.ultrasonic_format = ultrasonic_format
 
     def get_software_version(self):
         return __version__
@@ -683,3 +701,78 @@ class AmiTrap:
                 return lines
         except FileNotFoundError:
             return []
+        
+    def get_microphone_info(self):
+        """
+        Gets information about the microphone and audio and ultrasonic files.
+
+        Returns:
+            dict: A dictionary containing status information.
+        """
+        microphone_info = {}
+        microphone_info["connected"] = self._is_microphone_connected()
+        if os.path.exists(self.audio_path):
+            try:
+                audio_files = glob.glob(os.path.join(self.audio_path, "**", self.audio_format), recursive=True)
+                microphone_info["audio_count"] = len(audio_files)
+                if len(audio_files) > 0:
+                    most_recent_audio_file = max(audio_files, key=os.path.getmtime)
+                    microphone_info["last_audio_timestamp"] = os.path.getmtime(most_recent_audio_file)
+                    microphone_info["last_audio_size"] = os.path.getsize(most_recent_audio_file)
+                else:
+                    microphone_info["last_audio_timestamp"] = None
+                    microphone_info["last_audio_size"] = None
+                audio_files_last_24h = len([f for f in audio_files if os.path.getmtime(f) > time.time() - 24 * 3600])
+                microphone_info["audio_count_last_24h"] = len(audio_files_last_24h)
+                # Count audio files from last 24 h below 200 KB
+                microphone_info["audio_count_last_24h_below_200kb"] = len([f for f in audio_files_last_24h if os.path.getsize(f) < 200 * 1024])
+            except:
+                microphone_info["audio_count"] = 0
+                microphone_info["last_audio_timestamp"] = None
+                microphone_info["last_audio_size"] = None
+                microphone_info["audio_count_last_24h"] = 0
+                microphone_info["audio_count_last_24h_below_200kb"] = 0
+        else:
+            microphone_info["audio_count"] = 0
+            microphone_info["last_audio_timestamp"] = None
+            microphone_info["last_audio_size"] = None
+            microphone_info["audio_count_last_24h"] = 0
+            microphone_info["audio_count_last_24h_below_200kb"] = 0
+        if os.path.exists(self.ultrasonic_path):
+            try:
+                ultrasonic_files = glob.glob(os.path.join(self.ultrasonic_path, "**", self.ultrasonic_format), recursive=True)
+                microphone_info["ultrasonic_count"] = len(ultrasonic_files)
+                if len(ultrasonic_files) > 0:
+                    most_recent_ultrasonic_file = max(ultrasonic_files, key=os.path.getmtime)
+                    microphone_info["last_ultrasonic_timestamp"] = os.path.getmtime(most_recent_ultrasonic_file)
+                    microphone_info["last_ultrasonic_size"] = os.path.getsize(most_recent_ultrasonic_file)
+                else:
+                    microphone_info["last_ultrasonic_timestamp"] = None
+                    microphone_info["last_ultrasonic_size"] = None
+                ultrasonic_files_last_24h = len([f for f in ultrasonic_files if os.path.getmtime(f) > time.time() - 24 * 3600])
+                microphone_info["ultrasonic_count_last_24h"] = len(ultrasonic_files_last_24h)
+                # Count ultrasonic files from last 24 h below 200 KB
+                microphone_info["ultrasonic_count_last_24h_below_200kb"] = len([f for f in ultrasonic_files_last_24h if os.path.getsize(f) < 200 * 1024])
+            except:
+                microphone_info["ultrasonic_count"] = 0
+                microphone_info["last_ultrasonic_timestamp"] = None
+                microphone_info["last_ultrasonic_size"] = None
+                microphone_info["ultrasonic_count_last_24h"] = 0
+                microphone_info["ultrasonic_count_last_24h_below_200kb"] = 0
+        else:
+            microphone_info["ultrasonic_count"] = 0
+            microphone_info["last_ultrasonic_timestamp"] = None
+            microphone_info["last_ultrasonic_size"] = None
+            microphone_info["ultrasonic_count_last_24h"] = 0
+            microphone_info["ultrasonic_count_last_24h_below_200kb"] = 0
+    
+        return microphone_info
+    
+    def _is_microphone_connected(self):
+        """
+        Checks if the microphone is connected.
+
+        Returns:
+            bool: True if the microphone is connected, False otherwise.
+        """
+        return False  # TODO
