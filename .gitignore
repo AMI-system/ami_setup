@@ -2,3 +2,5 @@
 __pycache__/
 *.py[cod]
 bird_scripts/birds_recording OLD.py
+temp_create_folder.py
+temp_read_title.py

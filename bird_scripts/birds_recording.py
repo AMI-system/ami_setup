@@ -5,11 +5,10 @@ import subprocess
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
-
-# For metadata collection
 from timezonefinder import TimezoneFinder
+import os
 import pytz
-from datetime import datetime
+import taglib
 
 # Read the config file
 config_path = Path('/home/pi/config.json')
@@ -19,9 +18,12 @@ with config_path.open() as fp:
 # Get the audio_settings settings from the config file
 audio_settings = config['audio_settings']
 
+today = datetime.now()
+if not os.path.exists(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}"):
+    os.makedirs(path)
+
 full_path = f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}/{today.strftime('%Y%m%d_%H%M%S')}.wav"
 
-today = datetime.now()
 command = ["sudo", "arecord", "-D", audio_settings['device'], "-f", audio_settings['data_format'], "-r", audio_settings['sample_rate'], "-d", audio_settings['rec_interval'],
           full_path]
 
@@ -47,8 +49,8 @@ def get_current_time(lat, lng):
     return current_time.strftime('%Y-%m-%dT%H:%M:%S%z')
 
 # Obtain the daved latitude and longitude of the deployment
-latitude = config["location"]["lat"]
-longitude = config["location"]["lon"]
+latitude = config["device_settings"]["lat"]
+longitude = config["device_settings"]["lon"]
 
 # Get current time in ISO 8601 format
 current_time = get_current_time(latitude, longitude)
@@ -73,9 +75,6 @@ audio_type = "audible_microphone"
 # Generate parent event ID
 parent_event_id = f"{system_id}__{audio_type}__{start_time}__{end_time}"
 
-# Obtain datetime with underscore seperator
-id_datetime = current_time.strftime("%Y_%m_%d__%H_%M_%S")
-
 # Obtain the number of files already within the directory
 files = os.listdir(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}")
 
@@ -86,7 +85,7 @@ wav_files = [file for file in files if file.endswith('.wav')]
 order_number = len(wav_files) + 1
 
 # Generate event ID
-eventID = f"{system_id}__{audio_type}__{id_datetime}__{order_number}"
+eventID = f"{system_id}__{audio_type}__{current_time}__{order_number}"
 
 #Save metadata as dictionary using same heirarchical structure as the config dictionary
 metadata = {
@@ -123,9 +122,21 @@ config = dict((field, config[field]) for field in config if field not in fields_
 keys_to_remove = [key for key in metadata if key == "COMMENT"]
 for key in keys_to_remove:
     del metadata[key]
+    
+def remove_comments(data):
+    if isinstance(data, dict):
+        # Check if 'COMMENT' key exists and has the specific value
+        if "COMMENT" in data:
+            del data["COMMENT"]
+        # Recursively process each value in dictionary
+        for key, value in list(data.items()):
+            remove_comments(value)
+
+# Removing specific comments
+remove_comments(config)
 
 # Save within the audio file
 with taglib.File(full_path, save_on_exit=True) as recording:
 
-    recording.tags["TITLE"] = json.dumps(metadata)
+    recording.tags["TITLE"] = json.dumps(config)
     print("Metadata added to recording")
