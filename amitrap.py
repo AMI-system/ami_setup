@@ -766,6 +766,8 @@ class AmiTrap:
             microphone_info["ultrasonic_count_last_24h"] = 0
             microphone_info["ultrasonic_count_last_24h_below_1kb"] = 0
     
+        microphone_info["frequencies"] = self._get_microphone_frequencies()
+
         return microphone_info
     
     def _is_microphone_connected(self):
@@ -775,4 +777,42 @@ class AmiTrap:
         Returns:
             bool: True if the microphone is connected, False otherwise.
         """
-        return False  # TODO
+        # Run arecord -L and check if it returns a plughw and hw device called AudioMoth USB microphone
+        found_hw = False
+        found_plughw = False
+        try:
+            output = subprocess.check_output(['arecord', '-L'], universal_newlines=True)
+            # Find line that starts with "hw:" and extract next line. Check if "AudioMoth USB microphone" is in the next line.
+            for line in output.split("\n"):
+                if line.startswith("hw:"):
+                    found_hw = "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+                if line.startswith("plughw:"):
+                    found_plughw = "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+        except subprocess.CalledProcessError:
+            return False
+        return found_hw and found_plughw
+    
+    def _get_microphone_frequencies(self):
+        """
+        Gets the frequencies of the microphone.
+
+        Returns:
+            list: A list of frequencies.
+        """
+        hw_frequency = 0
+        plughw_frequency = 0
+        try:
+            output = subprocess.check_output(['arecord', '-L'], universal_newlines=True)
+            # Find line that starts with "hw:" and extract next line. Check if "AudioMoth USB microphone" is in the next line. If so, extract the frequencies.
+            for line in output.split("\n"):
+                if line.startswith("hw:"):
+                    if "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
+                        # Find the first number in the line
+                        hw_frequency = int(re.search(r'\d+', output.split("\n")[output.split("\n").index(line) + 1]).group())
+                if line.startswith("plughw:"):
+                    if "AudioMoth USB microphone" in output.split("\n")[output.split("\n").index(line) + 1]:
+                        # Find the first number in the line
+                        plughw_frequency = int(re.search(r'\d+', output.split("\n")[output.split("\n").index(line) + 1]).group())
+        except subprocess.CalledProcessError:
+            return [0, 0]
+        return [hw_frequency, plughw_frequency]
