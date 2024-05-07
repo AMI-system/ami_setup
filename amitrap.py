@@ -123,6 +123,15 @@ class AmiTrap:
             print()
         except Exception:
             pass
+        # Try to save setting in config.json
+        try:
+            with open("/home/pi/config.json", "r") as f:
+                config_json = json.load(f)
+            config_json["camera"] = config
+            with open("/home/pi/config.json", "w") as f:
+                json.dump(config_json, f, indent=4)
+        except FileNotFoundError:
+            pass
 
     def get_time(self):
         """
