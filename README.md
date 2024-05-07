@@ -55,13 +55,14 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   4. Access the user crontab and delete any jobs related to bats recording.
   5. Defines the job which will run the recording script.
   6. There are two different sets of times:
-    1. From today’s dusk until 11:59 pm running on Mon, Tue, Thu and Sat (1,2,4,6).
-        1. The first job will run every 5 minutes from dusk time exact minute to complete the dusk time hour.
-        2. Then it checks if the dusk time hour plus 1 hour is equal or smaller than 23 to define an extra job until midnight.
-    2. From tomorrow’s midnight until dawn time running on Wed, Fri and Sun (2,3,5,0).
-        1. First, it checks if the dawn hour is 0 (midnight) and if the dawn minute is bigger than the starting minute to create the job.
-        2. Otherwise, it checks if the dawn hour is 1, and then it creates a job for the midnight hour first. And then it checks if the dawn minute is bigger than the starting minute to create an extra job.
-        3. Finally, if none of the above, checks if the dawn hour is bigger than 1, then it creates a job from midnight to the dawn hour minus one. And then it checks if the dawn minute is bigger than the starting minute to create an extra job for the dawn hour.
+    1. From today’s sunset until 11:59 pm running on Mon, Tue, Thu and Sat (1,2,4,6).
+        1. The first job will run every 5 minutes from sunset exact time until complete the hour.  
+          **Note:** the file checks if the minute is a multiple of 5. If so, to prevent the script to run at the same time as the bird's recording, 2 minuts are added.  
+        2. Then it checks if the sunset time hour plus 1 hour is equal or smaller than 23 to define an extra job until midnight.
+    2. From tomorrow’s midnight until sunrise time running on Wed, Fri and Sun (2,3,5,0).
+        1. First, it checks if the sunrise hour is 0 (midnight) and if the sunrise minute is bigger than the starting minute to create the job.
+        2. Otherwise, it checks if the sunrise hour is 1, and then it creates a job for the midnight hour first. And then it checks if the sunrise minute is bigger than the starting minute to create an extra job.
+        3. Finally, if none of the above, checks if the sunrise hour is bigger than 1, then it creates a job from midnight to the sunrise hour minus one. And then it checks if the sunrise minute is bigger than the starting minute to create an extra job for the sunrise hour.
   7. Finally, it saves the job in the crontab.
 
 - **crontab_scripts/birds_scheduling.py**  
@@ -82,3 +83,33 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   Both files have the same structure:
   1. Read the config file to get audio/ultrasonic settings. Check if the target folder from the audio/ultrasonic settings exists in the SSD hard drive and create it if not.
   2. Define the ```arecord``` command and run it.
+
+## SSD folder structure
+
+New folder structure in the SSD hard drive to save the audio and image files.
+
+Example:
+```
+PiImages
+│
+└───images
+│   │
+│   └───2024_04_24
+│       │   image1.jpeg
+│       │   image2.jpeg
+│       │   ...
+│   
+└───audio
+│   │
+│   └───2024_04_24
+│       │   audio1.wav
+│       │   audio2.wav
+│       │   ...
+│   
+└───ultrasonic
+│   │
+│   └───2024_04_24
+│       │   ultrasonic1.wav
+│       │   ultrasonic2.wav
+│       │   ...
+```

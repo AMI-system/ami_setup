@@ -11,8 +11,8 @@ from crontab import CronTab
 
 def get_sunset_sunrise_times(latitude, longitude, date):
     # Construct the Helicron command
-    # heliocron --latitude 52.752845 --longitude -3.253449 report --json
-    command = ["/home/pi/scripts/heliocron", "--latitude", str(latitude), "--longitude", str(longitude), "report", "--json"]
+    # heliocron -date 2020-02-25 --latitude 52.752845 --longitude -3.253449 report --json
+    command = ["/home/pi/scripts/heliocron", "--date", date.strftime("%Y-%m-%d"), "--latitude", str(latitude), "--longitude", str(longitude), "report", "--json"]
 
     # Run the command
     result = subprocess.run(command, capture_output=True, text=True)
@@ -23,13 +23,14 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         # Split the output by newlines and return civil dawn and civil dusk times
         stdout = json.loads(result.stdout)
         #print(stdout)
-        sunset = stdout['sunset']
-        sunrise = stdout['sunrise']
-        return sunset, sunrise
+        sunset = datetime.strptime(stdout['sunset'], '%Y-%m-%dT%H:%M:%S%z')
+        sunrise = datetime.strptime(stdout['sunrise'], '%Y-%m-%dT%H:%M:%S%z')
+        return sunset.replace(tzinfo=None), sunrise.replace(tzinfo=None)
     else:
         # Handle error
         print("Error:", result.stderr)
         return None, None
+
 
 # Read the config file
 config_path = Path('/home/pi/config.json')
@@ -43,13 +44,9 @@ camera_settings = config["camera_operation"]
 today = datetime.now()
 tomorrow = today + timedelta(1)
 
-# Get civil dawn and dusk for today and tomorrow
+# Get sunset and sunrise for today and tomorrow
 sunset, _ = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], today)
 _, sunrise = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], tomorrow)
-
-# Calculate when the moth's recording should start and finish
-motion_start = datetime.strptime(sunset, '%Y-%m-%dT%H:%M:%S%z')
-motion_end = datetime.strptime(sunrise, '%Y-%m-%dT%H:%M:%S%z')
 
 # Access the user crontab
 ami_cron = CronTab(user='pi')
