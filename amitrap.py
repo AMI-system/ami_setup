@@ -127,7 +127,7 @@ class AmiTrap:
         try:
             with open("/home/pi/config.json", "r") as f:
                 config_json = json.load(f)
-            config_json["camera"] = config
+            config_json["camera_settings"] = config
             with open("/home/pi/config.json", "w") as f:
                 json.dump(config_json, f, indent=4)
         except FileNotFoundError:
