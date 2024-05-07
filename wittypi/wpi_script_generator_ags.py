@@ -80,7 +80,6 @@ device_settings = json_config['device_settings']
 
 # Find today's and tomorrow's dates
 sunday_dt = get_previous_sunday()
-print("last Sunday date:", sunday_dt)
 monday_dt = sunday_dt + timedelta(1)
 tuesday_dt = sunday_dt + timedelta(2)
 wednesday_dt = sunday_dt + timedelta(3)
