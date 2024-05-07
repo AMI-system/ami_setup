@@ -104,6 +104,9 @@ class AmiTrap:
 
         Args:
             config (dict): A dictionary containing the camera configuration.
+        
+        Returns:
+            bool: True if the configuration was set successfully, False otherwise.
         """
         try:
             with open(self.camera_config_path, "r") as f:
@@ -114,7 +117,7 @@ class AmiTrap:
             with open(self.camera_config_path, "w") as f:
                 f.write(content)
         except FileNotFoundError:
-            pass
+            return False
         try:
             # Try to execute the script
             bash_cmd = f"sudo bash {self.camera_config_path}"
@@ -132,6 +135,7 @@ class AmiTrap:
                 json.dump(config_json, f, indent=4)
         except FileNotFoundError:
             pass
+        return True
 
     def get_time(self):
         """

@@ -209,8 +209,10 @@ class AmiTrapService(Service):
         try:
             if "type" in json_data:
                 if json_data["type"] == "camera" and "data" in json_data:
-                    self._ami.set_camera_config(json_data["data"])
-                    self._output = json.dumps({"success": "Camera configuration updated."})
+                    if self._ami.set_camera_config(json_data["data"]):
+                        self._output = json.dumps({"success": "Camera configuration updated."})
+                    else:
+                        self._output = json.dumps({"error": "Camera configuration update failed."})
                     command_recognized = True
                 elif json_data["type"] == "command" and "data" in json_data:
                     output = self._ami.evaluate_command(json_data["data"])
