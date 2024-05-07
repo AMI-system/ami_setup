@@ -27,6 +27,11 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   
   File that the WittyPi runs every time it switches ON the system. At the moment, it starts the telemetry and runs the scripts to determine the recording times.
 
+- **wpi_script_generator_ags.py**  
+  In the pi t can be found in this path: ```/home/pi/wittypi/run_script.sh```
+
+  This scripts generates every week the scheduling for the Raspberry Pi to switch on and off based on the recording times we defined. 
+
 ## Config file
 
 - **config.json**  
@@ -83,6 +88,19 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   Both files have the same structure:
   1. Read the config file to get audio/ultrasonic settings. Check if the target folder from the audio/ultrasonic settings exists in the SSD hard drive and create it if not.
   2. Define the ```arecord``` command and run it.
+
+## Motion files
+- **motion.conf**  
+  In the Pi it can be found in this path: ```/etc/motion/motion.conf.json```
+
+  This file has been modified in order to save the images in the correct path for the new developments. 
+
+- **control_ON_lights.py** and **control_OFF_light.py**  
+  In the Pi they can be found in these paths: 
+  ```/home/pi/scripts/control_ON_lights.py``` and 
+  ```/home/pi/scripts/control_OFF_light.py```
+
+  These files control all the lights, the LepiLED and the LEDs strip around the camera.  
 
 ## SSD folder structure
 
