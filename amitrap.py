@@ -725,19 +725,19 @@ class AmiTrap:
                 audio_files_last_24h = len([f for f in audio_files if os.path.getmtime(f) > time.time() - 24 * 3600])
                 microphone_info["audio_count_last_24h"] = len(audio_files_last_24h)
                 # Count audio files from last 24 h below 200 KB
-                microphone_info["audio_count_last_24h_below_200kb"] = len([f for f in audio_files_last_24h if os.path.getsize(f) < 200 * 1024])
+                microphone_info["audio_count_last_24h_below_1kb"] = len([f for f in audio_files_last_24h if os.path.getsize(f) < 1 * 1024])
             except:
                 microphone_info["audio_count"] = 0
                 microphone_info["last_audio_timestamp"] = None
                 microphone_info["last_audio_size"] = None
                 microphone_info["audio_count_last_24h"] = 0
-                microphone_info["audio_count_last_24h_below_200kb"] = 0
+                microphone_info["audio_count_last_24h_below_1kb"] = 0
         else:
             microphone_info["audio_count"] = 0
             microphone_info["last_audio_timestamp"] = None
             microphone_info["last_audio_size"] = None
             microphone_info["audio_count_last_24h"] = 0
-            microphone_info["audio_count_last_24h_below_200kb"] = 0
+            microphone_info["audio_count_last_24h_below_1kb"] = 0
         if os.path.exists(self.ultrasonic_path):
             try:
                 ultrasonic_files = glob.glob(os.path.join(self.ultrasonic_path, "**", self.ultrasonic_format), recursive=True)
@@ -751,20 +751,20 @@ class AmiTrap:
                     microphone_info["last_ultrasonic_size"] = None
                 ultrasonic_files_last_24h = len([f for f in ultrasonic_files if os.path.getmtime(f) > time.time() - 24 * 3600])
                 microphone_info["ultrasonic_count_last_24h"] = len(ultrasonic_files_last_24h)
-                # Count ultrasonic files from last 24 h below 200 KB
-                microphone_info["ultrasonic_count_last_24h_below_200kb"] = len([f for f in ultrasonic_files_last_24h if os.path.getsize(f) < 200 * 1024])
+                # Count ultrasonic files from last 24 h below 1 KB
+                microphone_info["ultrasonic_count_last_24h_below_1kb"] = len([f for f in ultrasonic_files_last_24h if os.path.getsize(f) < 1 * 1024])
             except:
                 microphone_info["ultrasonic_count"] = 0
                 microphone_info["last_ultrasonic_timestamp"] = None
                 microphone_info["last_ultrasonic_size"] = None
                 microphone_info["ultrasonic_count_last_24h"] = 0
-                microphone_info["ultrasonic_count_last_24h_below_200kb"] = 0
+                microphone_info["ultrasonic_count_last_24h_below_1kb"] = 0
         else:
             microphone_info["ultrasonic_count"] = 0
             microphone_info["last_ultrasonic_timestamp"] = None
             microphone_info["last_ultrasonic_size"] = None
             microphone_info["ultrasonic_count_last_24h"] = 0
-            microphone_info["ultrasonic_count_last_24h_below_200kb"] = 0
+            microphone_info["ultrasonic_count_last_24h_below_1kb"] = 0
     
         return microphone_info
     
