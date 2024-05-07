@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 from datetime import datetime, timedelta
 
-
 # Read the config file
 config_path = Path('/home/pi/config.json')
 with config_path.open() as fp:
