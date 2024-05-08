@@ -636,3 +636,36 @@ class AmiTrap:
         # Write config to config.json. Format.
         with open(path, "w") as f:
             json.dump(config, f, indent=4)
+
+    def generate_wittypi_schedule(self):
+        """
+        Generates WittyPi scheduling script.
+        """
+        # Run /home/pi/scripts/wpi_script_generator_ags.py using python3
+        bash_cmd = f"python3 /home/pi/scripts/wpi_script_generator_ags.py"
+        print(bash_cmd)
+        print()
+        try:
+            subprocess.run(bash_cmd, shell=True, check=True)
+        except Exception as e:
+            print(e)
+            print()
+
+    def get_wittypi_schedule(self):
+        """
+        Gets the schedule of the WittyPi.
+
+        Returns:
+            dict: A list containing the schedule of the WittyPi.
+        """
+        try:
+            with open(f"{self.wittypi_path}/schedule.wpi", "r") as f:
+                lines = []
+                # Read file line-by-line. Ignore lines that are empty or contain white space or start with # (potentially after whiote space). Remove white space from start and end of line. Discard everything from # onwards.
+                for line in f.readlines():
+                    line = line.split("#")[0].strip()
+                    if line:
+                        lines.append(line)
+                return lines
+        except Exception:
+            return []

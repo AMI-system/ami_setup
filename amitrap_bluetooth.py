@@ -352,6 +352,12 @@ class AmiTrapService(Service):
                     except:
                         self._output = json.dumps({"error": "Metadata update failed."})
                     command_recognized = True
+                elif json_data["type"] == "schedule":
+                    if self._ami.generate_wittypi_schedule():
+                        self._output = json.dumps({"success": f"""Generated schedule. The schedule is:\n{self._ami.read_wittypi_script()}"""})
+                    else:
+                        self._output = json.dumps({"error": "Failed to generate schedule."})
+                    command_recognized = True
             if not command_recognized:
                 print("Command not recognized:")
                 print(json_data)
