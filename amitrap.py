@@ -39,7 +39,7 @@ class AmiTrap:
                  wittypi_path="/home/pi/wittypi",
                  audio_path="/media/pi/PiImages/audio",
                  audio_format="*.wav",
-                 ultrasound_path="/media/pi/PiImages/ultrasound",
+                 ultrasound_path="/media/pi/PiImages/ultrasonic",
                  ultrasound_format="*.wav"
                  ):
         """
@@ -722,7 +722,7 @@ class AmiTrap:
                 else:
                     microphone_info["last_audio_timestamp"] = None
                     microphone_info["last_audio_size"] = None
-                audio_files_last_24h = len([f for f in audio_files if os.path.getmtime(f) > time.time() - 24 * 3600])
+                audio_files_last_24h = [f for f in audio_files if os.path.getmtime(f) > time.time() - 24 * 3600]
                 microphone_info["audio_count_last_24h"] = len(audio_files_last_24h)
                 # Count audio files from last 24 h below 200 KB
                 microphone_info["audio_count_last_24h_below_1kb"] = len([f for f in audio_files_last_24h if os.path.getsize(f) < 1 * 1024])
@@ -749,7 +749,7 @@ class AmiTrap:
                 else:
                     microphone_info["last_ultrasound_timestamp"] = None
                     microphone_info["last_ultrasound_size"] = None
-                ultrasound_files_last_24h = len([f for f in ultrasound_files if os.path.getmtime(f) > time.time() - 24 * 3600])
+                ultrasound_files_last_24h = [f for f in ultrasound_files if os.path.getmtime(f) > time.time() - 24 * 3600]
                 microphone_info["ultrasound_count_last_24h"] = len(ultrasound_files_last_24h)
                 # Count ultrasound files from last 24 h below 1 KB
                 microphone_info["ultrasound_count_last_24h_below_1kb"] = len([f for f in ultrasound_files_last_24h if os.path.getsize(f) < 1 * 1024])
