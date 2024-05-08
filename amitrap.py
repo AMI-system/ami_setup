@@ -785,9 +785,9 @@ class AmiTrap:
             # Find line that starts with "hw:" and extract next line. Check if "AudioMoth USB microphone" is in the next line.
             for line in output.split("\n"):
                 if line.startswith("hw:"):
-                    found_hw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+                    found_hw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1] or found_hw
                 if line.startswith("plughw:"):
-                    found_plughw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1]
+                    found_plughw = "AudioMoth USB Microphone" in output.split("\n")[output.split("\n").index(line) + 1] or found_plughw
         except subprocess.CalledProcessError:
             return False
         return found_hw and found_plughw
