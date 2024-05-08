@@ -9,7 +9,8 @@
 #
 
 #Send telemtry beacon
-sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_receive.py >> /home/pi/wittypi/telemetry.log &
+sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular.py >> /home/pi/wittypi/telemetry.log &
+sudo python3 /home/pi/ami_setup-bluetooth-dev/ami-trap-raspi-bluetooth.py >> /home/pi/wittypi/bluetooth.log &
 
 #Start motion software
 #sudo /usr/bin/motion -m
