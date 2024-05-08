@@ -41,7 +41,7 @@ Ask [@JonasBchrt](https://github.com/JonasBchrt) if unsure.
 
 Run:
 ```bash
-sudo ./install.sh
+sudo ./full-install.sh
 ```
 
 After installation, reboot:
@@ -78,12 +78,12 @@ It only adds cellular connecivity to an existing setup.
 
 If installation does not work, then you may need to make the script executable first:
 ```bash
-sudo chmod +x install.sh
+sudo chmod +x full-install.sh
 ```
 
 If installation does not work and a `bad interpreter` error occurs, try to remove `CR` characters from the file first:
 ```bash
-sudo sed -i -e 's/\r$//' install.sh
+sudo sed -i -e 's/\r$//' full-install.sh
 ```
 
 If no data is pushed automatically, check your `/etc/rc.local` file. It should conatain a line that invokes the cellular service and all preceding lines should be terminated with an `&`.
@@ -114,7 +114,8 @@ sudo python3 ami-trap-raspi-cellular-config.py
 * `python_periphery-2.4.1-py2.py3-none-any.whl`: Python package `python-periphery`, which is required. Downloaded from [here](https://pypi.org/project/python-periphery).
 * `filelock-3.12.2-py3-none-any.whl`: Python package `filelock`, which is required.
 * `note_python-1.5.0-py3-none-any.whl`: Python package `note-python`, which is required.Downloaded from [here](https://pypi.org/project/note-python).
-* `install.sh`: Install bash script.
+* `full-install.sh`: Install bash script.
+* `install.sh`: Update bash script.
 
 ## Remotely sending and receiving data
 
