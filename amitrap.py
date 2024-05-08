@@ -646,7 +646,7 @@ class AmiTrap:
         print(bash_cmd)
         print()
         try:
-            subprocess.run(bash_cmd, shell=True, check=True)
+            subprocess.run(bash_cmd, shell=True, check=True, user="pi")
         except Exception as e:
             print(e)
             print()
