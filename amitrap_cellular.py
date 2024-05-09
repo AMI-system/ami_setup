@@ -560,19 +560,6 @@ def _check_for_firmware_update(ami, nCard):
             rsp = nCard.Transaction(req)
             print(rsp)
             print()
-            rsp = hub.get(nCard)
-            print(rsp)
-            print()
-            timeout = 61  # 1 min timeout
-            while rsp["mode"] == "dfu":
-                sleep(1)
-                timeout -= 1
-                rsp = hub.get(nCard)
-                print(rsp)
-                print()
-            if timeout == 0:
-                print("Failed to leave DFU mode.")
-                print()
 
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -584,20 +571,6 @@ def _check_for_firmware_update(ami, nCard):
             rsp = card.Transaction(req)
             print(rsp)
             print()
-            rsp = hub.get(nCard)
-            print(rsp)
-            print()
-            timeout = 61  # 1 min timeout
-            while rsp["mode"] == "dfu":
-                sleep(1)
-                timeout -= 1
-                rsp = hub.get(nCard)
-                print(rsp)
-                print()
-            if timeout == 0:
-                print("Failed to leave DFU mode.")
-                print()
-
     else:
 
         print("No firmware update available.")
@@ -609,7 +582,7 @@ def _check_for_firmware_update(ami, nCard):
     print()
 
     # If mode is continuous, set it back to minimum
-    if rsp["mode"] == "continuous":
+    if rsp["mode"] == "continuous" or rsp["mode"] == "dfu":
         print(hub.set(nCard,
                       mode="minimum"))
         print()
