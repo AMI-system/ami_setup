@@ -558,6 +558,8 @@ def _check_for_firmware_update(ami, nCard):
             req["stop"] = True
             req["status"] = "Firmware update completed."
             rsp = nCard.Transaction(req)
+            print(rsp)
+            print()
 
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -567,6 +569,8 @@ def _check_for_firmware_update(ami, nCard):
             req["stop"] = True
             req["status"] = "Firmware update failed."
             rsp = card.Transaction(req)
+            print(rsp)
+            print()
 
     else:
 
@@ -575,10 +579,11 @@ def _check_for_firmware_update(ami, nCard):
 
     # If mode is continuous, set it back to minimum
     if hub.get(nCard)["mode"] == "continuous":
-        hub.set(nCard,
-                mode="minimum")
-        print("Sync mode set to minimum.")
+        print(hub.set(nCard,
+                      mode="minimum"))
         print()
+        # print("Sync mode set to minimum.")
+        # print()
 
 async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
     """Send status data from Ami-Trap to Notehub. Receive data from Notehub and send output string back.
