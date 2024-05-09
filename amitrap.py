@@ -654,9 +654,11 @@ class AmiTrap:
         print()
         try:
             subprocess.run(bash_cmd, shell=True, check=True)
+            return True
         except Exception as e:
             print(e)
             print()
+            return False
 
     def get_wittypi_schedule(self):
         """
