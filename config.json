@@ -1,104 +1,113 @@
 {
-   "device_settings": {
-      "lat": 52.752845,
-      "lon": -3.253449,
-      "timeZone": "GMT",
-      "modes": "AV",
-      "start_date": "2023-12-05",
-      "end_date": "2024-15-04",
-      "telemetry_enabled": "Yes",
-      "telemetry_interval_mins": ""
-   },
-   "camera_operation": {
-      "start_time": "18:00:00",
-      "end_time": "04:00:00",
-      "days_of_week": ["Mon", "Wed", "Fri"],
-      "sunrise_operation": ["OFF", "60", "before"],
-      "sunset_operation": ["ON", "30", "after"]
-   },
-   "ultrasonic_operation": {
-      "start_times": ["18:00:00", "16:30:00"],
-      "end_times": ["18:00:00","19:30:00"],
-      "days_of_week": ["Tue","Thu","Sat"]
-   },
-   "ultrasonic_settings": {
-      "sample_rate":"192000",
-      "file_type":"wav",
-      "data_format": "S16_LE",
-      "channels": "1",
-      "rec_length": "10",
-      "rec_interval": "60",
-      "rec_type": "mono",
-      "device": "plughw:CARD=Microphone,DEV=0",
-      "target_path": "/media/pi/PiImages/ultrasonic"
-   },
-   "audio_operation": {
-      "start_times": ["04:00:00", "17:00:00"],
-      "end_times": ["07:00:00","20:00:00"],
-      "days_of_week": ["Mon","Wed","Fri"]
-   },
-   "audio_settings": {
-      "sample_rate":"48000",
-      "file_type":"wav",
-      "data_format": "S16_LE",
-      "channels": "1",
-      "rec_length": "10",
-      "rec_interval": "60",
-      "rec_type": "mono",
-      "device": "plughw:CARD=Microphone,DEV=0",
-      "target_path": "/media/pi/PiImages/audio"
-   },
-   "camera_settings": {
-      "brightness": 100,
-      "focus_auto": 2,
-      "focus_absolute": 200,
-      "exposure_auto": 3,
-      "exposure_absolute": 320,
-      "zoom_absolute": 400,
-      "white_balance_temperature_auto": 3,
-      "white_balance_temperature": 7000,
-      "sharpness": 25,
-      "contrast": 20
-   },
-   "motion_settings": {
-      "pause": "off",
-      "snapshot_interval": 60
-   },
-   "field_observations": {
-      "location_remarks": null,
-      "habitat": null
-   },
-   "spatial_properties": {
-      "country_code": "GBR",
-      "geodetic_datum": null,
-      "coordinate_uncertaintyInMeters": null,
-      "minimum_elevation_in_meters": null
-   },
-   "ami_components":{
-      "single_board_computer_type": null,
-      "light_attractant_make": null,
-      "light_around_camera_type": null,
-      "use_of_witty_pi": null,
-      "watchdog_version": null,
-      "camera_type": null,
-      "microphone_type": null
-   },
-   "additional_metadata_fields": {
-      "software": null
-   },
-   "base_ids":{
-      "location_id": "loc999999",
-      "system_id": "sys999999",
-      "hardware_id": "har999999"
-   },
-   "motion_event_data":{
-      "event_ids": {
-         "parent_event_id": "sys999999__camera__%Y_%m_%d__18_00_00__04_00_00",
-         "event_id": "sys999999__camera__%Y_%m_%d__%H_%M_%S"
-      },
-      "date_fields": {
-         "event_date": "%Y-%m-%dT%H:%M:%S-0000",
-         "daylight_saving_time": null
-      }
-   }
+    "device_settings": {
+        "lat": 52.752845,
+        "lon": -3.253449,
+        "timeZone": "GMT",
+        "modes": "AV",
+        "start_date": "2023-12-05",
+        "end_date": "2024-15-04",
+        "telemetry_enabled": "Yes",
+        "telemetry_interval_mins": ""
+    },
+    "ultrasonic_settings": {
+        "sample_rate": "192000",
+        "file_type": "wav",
+        "data_format": "S16_LE",
+        "channels": "1",
+        "rec_length": "10",
+        "rec_interval": "60",
+        "rec_type": "mono",
+        "device": "plughw:CARD=Microphone,DEV=0",
+        "target_path": "/media/pi/PiImages/ultrasonic"
+    },
+    "audio_settings": {
+        "sample_rate": "48000",
+        "file_type": "wav",
+        "data_format": "S16_LE",
+        "channels": "1",
+        "rec_length": "10",
+        "rec_interval": "60",
+        "rec_type": "mono",
+        "device": "plughw:CARD=Microphone,DEV=0",
+        "target_path": "/media/pi/PiImages/audio"
+    },
+    "camera_settings": {
+        "brightness": 100,
+        "focus_auto": 2,
+        "focus_absolute": 200,
+        "exposure_auto": 3,
+        "exposure_absolute": 320,
+        "zoom_absolute": 400,
+        "white_balance_temperature_auto": 3,
+        "white_balance_temperature": 7000,
+        "sharpness": 25,
+        "contrast": 20
+    },
+    "motion_settings": {
+        "pause": "off",
+        "snapshot_interval": 60
+    },
+    "field_observations": {
+        "location_remarks": null,
+        "habitat": null
+    },
+    "spatial_properties": {
+        "country_code": "GBR",
+        "geodetic_datum": null,
+        "coordinate_uncertaintyInMeters": null,
+        "minimum_elevation_in_meters": null
+    },
+    "ami_components": {
+        "single_board_computer_type": null,
+        "light_attractant_make": null,
+        "light_around_camera_type": null,
+        "use_of_witty_pi": null,
+        "watchdog_version": null,
+        "camera_type": null,
+        "microphone_type": null
+    },
+    "additional_metadata_fields": {
+        "software": null
+    },
+    "base_ids": {
+        "location_id": "loc999999",
+        "system_id": "sys999999",
+        "hardware_id": "har999999"
+    },
+    "sunrise_sunset_times": {
+        "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
+        "sunrise_time": "05:24:42",
+        "sunset_time": "20:54:11"
+    },
+    "camera_operation": {
+        "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
+        "start_days": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "start_time": "20:54:11",
+        "end_time": "05:24:42"
+    },
+    "audio_operation": {
+        "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
+        "start_days": [
+            "Tuesday",
+            "Thursday",
+            "Saturday"
+        ],
+        "start_time": "12:00:00",
+        "end_time": "11:55:00"
+    },
+    "ultrasonic_operation": {
+        "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
+        "start_days": [
+            "Monday",
+            "Tuesday",
+            "Thursday",
+            "Saturday"
+        ],
+        "start_time": "20:54:11",
+        "end_time": "05:24:42"
+    }
 }

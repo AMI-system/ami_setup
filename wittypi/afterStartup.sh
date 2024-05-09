@@ -18,6 +18,9 @@ sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_re
 #Turn ON lights
 #sudo python /home/pi/scripts/control_ON_lights.py
 
+# Extract and save sunrise and sunset times
+sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
+
 #Calculate moths recording schedule
 sudo python3 /home/pi/scripts/moths_schedule.py
 
@@ -26,4 +29,3 @@ sudo python3 /home/pi/scripts/bats_schedule.py
 
 #Calculate bats recording schedule
 sudo python3 /home/pi/scripts/birds_schedule.py
-
