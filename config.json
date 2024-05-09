@@ -99,17 +99,5 @@
       "start_days": null,
       "start_time": null,
       "end_time": null
-   },
-   "motion_event_data":{
-      "event_ids": {
-         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
-         "parent_event_id": "sys999999__camera__%Y_%m_%d__18_00_00__04_00_00",
-         "event_id": "sys999999__camera__%Y_%m_%d__%H_%M_%S"
-      },
-      "date_fields": {
-         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
-         "event_date": "%Y-%m-%dT%H:%M:%S-0000",
-         "daylight_saving_time": null
-      }
    }
 }

@@ -2,11 +2,6 @@
 import json
 import re
 
-# Load the config paramters from the JSON file
-def read_json_config(json_path):
-    with open(json_path, 'r') as json_file:
-        return json.load(json_file)
-
 # Update camera and motion configuration and store metadata
 def update_motion_config(script_path, config_data):
     with open(script_path, 'r') as script_file:
@@ -54,13 +49,47 @@ def update_motion_config(script_path, config_data):
         script_file.writelines(script_lines)
 
 # Replace with the actual path to your motion configuration file as needed
-motion_script_path = 'motion_scripts/motion.conf' # /etc/motion/motion.conf
+motion_script_path = "/etc/motion/motion.conf"
 
-# Path to config.json file
-json_config_path = "config.json" # /home/pi/config.json
+# Read the config file
+config_path = Path('/home/pi/config.json')
+with config_path.open() as fp:
+    config = json.load(fp)
 
-# Read the JSON configuration file
-json_config = read_json_config(json_config_path)
+
+
+
+
+
+
+
+
+
+
+#Save metadata as dictionary using same heirarchical structure as the config dictionary
+metadata = {
+     
+     "motion_event_data":{
+     
+      "event_ids": {
+         "parent_event_id": parent_event_id,
+         "event_id": eventID
+      },
+
+    "date_fields": {
+        "event_date": current_time,
+        "recording_period_start_time": None,
+        "recording_period_end_time": None
+        },
+
+    "file_characteristics":{
+         "file_path": full_path,
+         "file_type": audio_type
+        }
+   }
+
+   }
+
 
 # Update motion settings in the shell script file
-update_motion_config(motion_script_path, json_config)
+update_motion_config(motion_script_path, config)

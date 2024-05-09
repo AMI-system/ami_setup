@@ -94,8 +94,8 @@ metadata = {
 
     "date_fields": {
         "event_date": current_time,
-        "recording_period_start_time": start_time,
-        "recording_period_end_time": end_time
+        "recording_period_start_time": None,
+        "recording_period_end_time": None
         },
 
     "file_characteristics":{

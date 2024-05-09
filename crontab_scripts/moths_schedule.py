@@ -8,7 +8,6 @@ import os
 from datetime import datetime, timedelta
 from crontab import CronTab
 
-
 def get_sunset_sunrise_times(latitude, longitude, date):
     # Construct the Helicron command
     # heliocron -date 2020-02-25 --latitude 52.752845 --longitude -3.253449 report --json
@@ -64,11 +63,11 @@ start_day_str = ",".join(map(str, start_days))
 end_day_str = ",".join(map(str, end_days))
 
 # Define start cron job
-motion_on_job = ami_cron.new(command="sudo motion -m & sudo /home/pi/scripts/setCamera.sh & sudo python /home/pi/scripts/control_ON_lights.py", comment="motion on")
+motion_on_job = ami_cron.new(command="sudo python /home/pi/scripts/update_motion_config.py && sudo /home/pi/scripts/setCamera.sh && sudo python /home/pi/scripts/control_ON_lights.py && sudo motion -m", comment="motion on")
 motion_on_job.setall(f'{sunset.time().minute} {sunset.time().hour} * * {start_day_str}') # Mon, Wed, Fri
 
 # Define end cron job
-motion_off_job = ami_cron.new(command="sudo pkill motion & sudo python /home/pi/scripts/control_OFF_lights.py", comment="motion off")
+motion_off_job = ami_cron.new(command="sudo pkill motion && sudo python /home/pi/scripts/control_OFF_lights.py", comment="motion off")
 motion_off_job.setall(f'{sunrise.time().minute} {sunrise.time().hour-1} * * {end_day_str}') # Tue, Thu, Sat
 
 # Write new cron job into the user crontab
@@ -79,8 +78,8 @@ weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 selected_weekdays = [weekdays[i] for i in start_days]
 
 # Update the start and end time in the config.json
-config["camera_operation"]["start_time"] = datetime.strptime(motion_start, '%H:%M:%S')
-config["camera_operation"]["end_time"] = datetime.strptime(motion_end, '%H:%M:%S')
+config["camera_operation"]["start_time"] = datetime.strptime(sunset, '%H:%M:%S')
+config["camera_operation"]["end_time"] = datetime.strptime(sunrise, '%H:%M:%S')
 config["camera_operation"]["start_days"] = selected_weekdays
 
 # Save the updated config.json
