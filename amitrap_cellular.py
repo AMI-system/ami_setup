@@ -586,6 +586,8 @@ def _check_for_firmware_update(ami, nCard):
         print(hub.set(nCard,
                       mode="minimum"))
         print()
+        print(hub.get(nCard))
+        print()
         # print("Sync mode set to minimum.")
         # print()
 
