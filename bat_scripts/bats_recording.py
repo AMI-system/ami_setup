@@ -39,6 +39,13 @@ longitude = config["device_settings"]["lon"]
 # Get current time in ISO 8601 format
 current_time = get_current_time(latitude, longitude)
 
+# Find today date
+date = current_time.strftime('%Y_%m_%d')
+
+# Create folders if they don't exist
+Path(f"{ultrasonic_settings['target_path']}").mkdir(parents=True, exist_ok=True)
+Path(f"{ultrasonic_settings['target_path']}/{date}").mkdir(parents=True, exist_ok=True)
+
 # Generate the full path
 full_path = f"{ultrasonic_settings['target_path']}/{current_time.strftime('%Y_%m_%d')}/{current_time.strftime('%Y%m%d_%H%M%S')}.wav"
 

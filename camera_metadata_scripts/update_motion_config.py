@@ -36,6 +36,9 @@ longitude = config["device_settings"]["lon"]
 # Get current time in ISO 8601 format
 current_time = get_current_time(latitude, longitude)
 
+# Find today date
+date = current_time.strftime('%Y_%m_%d')
+
 # Obtain IDs
 location_id = config["base_ids"]["location_id"]
 system_id = config["base_ids"]["system_id"]
@@ -166,8 +169,6 @@ def update_motion_config(script_path, config_data):
 
 # Replace with the actual path to your motion configuration file as needed
 motion_script_path = "/etc/motion/motion.conf"
-
-print(json.dumps(config))
 
 # Update motion settings in the shell script file
 update_motion_config(motion_script_path, config)
