@@ -354,7 +354,7 @@ class AmiTrapService(Service):
                     command_recognized = True
                 elif json_data["type"] == "schedule":
                     if self._ami.generate_wittypi_schedule():
-                        self._output = json.dumps({"success": f"""Generated schedule. The schedule is:\n{self._ami.read_wittypi_script()}"""})
+                        self._output = json.dumps({"success": f"""Generated schedule. The schedule is:\n{self._ami.get_wittypi_schedule()}"""})
                     else:
                         self._output = json.dumps({"error": "Failed to generate schedule."})
                     command_recognized = True
