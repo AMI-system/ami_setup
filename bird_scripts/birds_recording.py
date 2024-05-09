@@ -18,22 +18,11 @@ with config_path.open() as fp:
 # Get the audio_settings settings from the config file
 audio_settings = config['audio_settings']
 
-today = datetime.now()
-# if not os.path.exists(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}"):
-#     os.makedirs(path)
+# Obtain the daved latitude and longitude of the deployment
+latitude = config["device_settings"]["lat"]
+longitude = config["device_settings"]["lon"]
 
-full_path = f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}/{today.strftime('%Y%m%d_%H%M%S')}.wav"
-
-command = ["sudo", "arecord", "-D", audio_settings['device'], "-f", audio_settings['data_format'], "-r", audio_settings['sample_rate'], "-d", audio_settings['rec_interval'],
-          full_path]
-
-# Run the command
-result = subprocess.run(command, capture_output=True, text=True)
-print(result)
-
-### Metadata collection ###
 # Get the current date and time
-
 def get_current_time(lat, lng):
     # Get the timezone name from coordinates
     tf = TimezoneFinder()
@@ -46,14 +35,23 @@ def get_current_time(lat, lng):
     current_time = datetime.now(timezone)
 
     # Format the datetime in ISO 8601 format
-    return current_time.strftime('%Y-%m-%dT%H:%M:%S%z')
-
-# Obtain the daved latitude and longitude of the deployment
-latitude = config["device_settings"]["lat"]
-longitude = config["device_settings"]["lon"]
+    return current_time
 
 # Get current time in ISO 8601 format
 current_time = get_current_time(latitude, longitude)
+
+# Generate the full path
+full_path = f"{audio_settings['target_path']}/{current_time.strftime('%Y_%m_%d')}/{current_time.strftime('%Y%m%d_%H%M%S')}.wav"
+
+# Prepare comand
+command = ["sudo", "arecord", "-D", audio_settings['device'], "-f", audio_settings['data_format'], "-r", audio_settings['sample_rate'], "-d", audio_settings['rec_interval'],
+          full_path]
+
+# Record
+result = subprocess.run(command, capture_output=True, text=True)
+print(result)
+
+### Metadata collection ###
 
 # obtain IDs
 location_id = config["base_ids"]["location_id"]
@@ -61,26 +59,55 @@ system_id = config["base_ids"]["system_id"]
 hardware_id = config["base_ids"]["hardware_id"]
 
 # obtain survey period start and end time
-start_time = config["audio_operation"]["start_time"]
-end_time = config["audio_operation"]["end_time"]
+start_time_str = config["audio_operation"]["start_time"]
+end_time_str = config["audio_operation"]["end_time"]
 
 # Note recording type
 audio_type = "audible_microphone"
 
 # Generate parent event ID
-parent_event_id = f"{system_id}__{audio_type}__{start_time}__{end_time}"
+parent_event_id = f"{system_id}__{audio_type}__{start_time_str}__{end_time_str}"
 
 # Obtain the number of files already within the directory
-files = os.listdir(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}")
-
-# Filter the files to include only those with a .wav extension
-wav_files = [file for file in files if file.endswith('.wav')]
-
-# Get the number of .wav files
-order_number = len(wav_files) + 1
+files = os.listdir(f"{audio_settings['target_path']}/{current_time.strftime('%Y_%m_%d')}")
 
 # Generate event ID
-eventID = f"{system_id}__{audio_type}__{current_time}__{order_number}"
+current_time_str = current_time.strftime('%Y-%m-%dT%H:%M:%S%z')
+eventID = f"{system_id}__{audio_type}__{current_time_str}"
+
+# Function to obtain survey period start and end time
+def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
+
+    # Convert start and end time strings to time objects
+    start_time = datetime.strptime(start_time_str, "%H:%M:%S").time()
+    end_time = datetime.strptime(end_time_str, "%H:%M:%S").time()
+
+    # Extract date from specified datetime
+    current_date = current_time.date()
+
+    # Initialise start and end datetime
+    start_datetime = datetime.combine(current_date, start_time, current_time.tzinfo)
+    end_datetime = datetime.combine(current_date, end_time, current_time.tzinfo)
+
+    if start_datetime <= current_time and current_time >= end_datetime:
+        end_datetime = end_datetime + timedelta(days=1)
+
+    elif start_datetime >= current_time and current_time <= end_datetime:
+        start_datetime = start_datetime - timedelta(days=1)
+
+    else:
+        raise ValueError("This script cannot be run outside of the survey start and end hours.")
+    
+    return start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z'), end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
+
+# Example usage
+current_time_str = '2023-05-09T09:45:00-0000'
+
+# Convert string to datetime object
+current_time = datetime.strptime(current_time_str, '%Y-%m-%dT%H:%M:%S%z')
+
+# Calculate the survey period start and end time
+start_datetime_str, end_datetime_str = get_survey_start_end_datetimes(current_time, start_time_str, end_time_str)
 
 #Save metadata as dictionary using same heirarchical structure as the config dictionary
 metadata = {
@@ -93,9 +120,9 @@ metadata = {
       },
 
     "date_fields": {
-        "event_date": current_time,
-        "recording_period_start_time": None,
-        "recording_period_end_time": None
+        "event_date": current_time_str,
+        "recording_period_start_time": start_datetime_str,
+        "recording_period_end_time": end_datetime_str
         },
 
     "file_characteristics":{

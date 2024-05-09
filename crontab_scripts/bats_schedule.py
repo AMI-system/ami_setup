@@ -87,7 +87,7 @@ if offset_minute == 0:
 
 # First job has to run between sunset minute to the end of sunset hour
 bats_evening_job_1 = ami_cron.new(command=job, comment="bats sunset 1")
-bats_evening_job_1.setall(f'{evening_minute}-59/5 {evening_hour} * *{start_day_str}')
+bats_evening_job_1.setall(f'{evening_minute}-59/5 {evening_hour} * * {start_day_str}')
 
 # If sunset hour plus 1 is smaller or equal to 23
 if evening_hour+1 <= 23:
@@ -131,13 +131,9 @@ weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 selected_weekdays = [weekdays[i] for i in start_days]
 
 # Update the start and end time in the config.json
-config["ultrasonic_operation"]["start_time"] = datetime.strptime(sunset, '%H:%M:%S')
-config["ultrasonic_operation"]["end_time"] = datetime.strptime(sunrise, '%H:%M:%S')
+config["ultrasonic_operation"]["start_time"] = sunset.strftime('%H:%M:%S')
+config["ultrasonic_operation"]["end_time"] = sunrise.strftime('%H:%M:%S')
 config["ultrasonic_operation"]["start_days"] = selected_weekdays
-
-# update the sunrise and sunset times in the config.json
-config["sunrise_sunset_times"]["sunrise_time"] = datetime.strptime(sunrise, '%Y-%m-%dT%H:%M:%S')
-config["sunrise_sunset_times"]["sunset_time"] = datetime.strptime(sunset, '%Y-%m-%dT%H:%M:%S')
 
 # Save the updated config.json
 with open('/home/pi/config.json', 'w') as file:
