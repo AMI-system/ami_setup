@@ -17,7 +17,7 @@
         "rec_length": "10",
         "rec_interval": "60",
         "rec_type": "mono",
-        "device": "plughw:1,0",
+        "device": "plughw:CARD=Microphone,DEV=0",
         "target_path": "/media/pi/PiImages/ultrasonic"
     },
     "audio_settings": {
@@ -28,7 +28,7 @@
         "rec_length": "10",
         "rec_interval": "60",
         "rec_type": "mono",
-        "device": "plughw:1,0",
+        "device": "plughw:CARD=Microphone,DEV=0",
         "target_path": "/media/pi/PiImages/audio"
     },
     "camera_settings": {
