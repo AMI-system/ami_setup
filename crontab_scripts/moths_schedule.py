@@ -30,7 +30,6 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         print("Error:", result.stderr)
         return None, None
 
-
 # Read the config file
 config_path = Path('/home/pi/config.json')
 with config_path.open() as fp:
@@ -78,8 +77,8 @@ weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 selected_weekdays = [weekdays[i] for i in start_days]
 
 # Update the start and end time in the config.json
-config["camera_operation"]["start_time"] = datetime.strptime(sunset, '%H:%M:%S')
-config["camera_operation"]["end_time"] = datetime.strptime(sunrise, '%H:%M:%S')
+config["camera_operation"]["start_time"] = sunset.strftime('%H:%M:%S')
+config["camera_operation"]["end_time"] = sunrise.strftime('%H:%M:%S')
 config["camera_operation"]["start_days"] = selected_weekdays
 
 # Save the updated config.json
