@@ -23,6 +23,7 @@ class AmiTrap:
         boot_config_path (str): The path to the Raspberry Pi boot configuration file.
         is_rockpi (bool): Whether the device is a Rock Pi or a Raspberry Pi.
         wittypi_path (str): The path to the WittyPi utilities.
+        storage_path (str): The path to the storage directory.
     """
 
     def __init__(self,
@@ -32,7 +33,8 @@ class AmiTrap:
                  picture_format="*.jp*g",
                  boot_config_path="/boot/config.txt",
                  is_rockpi=False,
-                 wittypi_path="/home/pi/wittypi"
+                 wittypi_path="/home/pi/wittypi",
+                 storage_path="/media/pi/PiImages"
                  ):
         """
         Initializes the Amitrap class.
@@ -44,6 +46,8 @@ class AmiTrap:
             picture_format (str, optional): The naming convention of the pictures. Defaults to "*.jp*g".
             boot_config_path (str, optional): The path to the Raspberry Pi boot configuration file. Defaults to "/boot/config.txt".
             is_rockpi (bool, optional): Whether the device is a Rock Pi. Defaults to False, i.e., a Raspberry Pi.
+            wittypi_path (str, optional): The path to the WittyPi utilities. Defaults to "/home/pi/wittypi".
+            storage_path (str, optional): The path to the storage directory. Defaults to "/media/pi/PiImages".
         """
         self.camera_path = camera_path
         self.camera_config_path = camera_config_path
@@ -53,6 +57,7 @@ class AmiTrap:
         self._shell = None
         self.is_rockpi = is_rockpi
         self.wittypi_path = wittypi_path
+        self.storage_path = storage_path
 
     def get_software_version(self):
         return __version__
@@ -194,11 +199,13 @@ class AmiTrap:
             except:
                 memory_info["picture_count"] = 0
                 memory_info["last_picture_timestamp"] = None
-            stat = os.statvfs(self.picture_path)
-            memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
         else:
             memory_info["picture_count"] = 0
             memory_info["last_picture_timestamp"] = None
+        if os.path.exists(self.storage_path):
+            stat = os.statvfs(self.storage_path)
+            memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
+        else:
             memory_info["free_memory"] = 0
         return memory_info
 
