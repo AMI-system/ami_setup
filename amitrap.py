@@ -27,6 +27,7 @@ class AmiTrap:
         audio_format (str): The format of the audio files.
         ultrasound_path (str): The path to the directory where ultrasound files are stored.
         ultrasound_format (str): The format of the ultrasound files.
+        storage_path (str): The path to the directory where data is stored (e.g., pictures, audio files, ultrasound files).
     """
 
     def __init__(self,
@@ -40,7 +41,8 @@ class AmiTrap:
                  audio_path="/media/pi/PiImages/audio",
                  audio_format="*.wav",
                  ultrasound_path="/media/pi/PiImages/ultrasonic",
-                 ultrasound_format="*.wav"
+                 ultrasound_format="*.wav",
+                 storage_path="/media/pi/PiImages"
                  ):
         """
         Initializes the Amitrap class.
@@ -57,6 +59,7 @@ class AmiTrap:
             audio_format (str, optional): The naming convention of the audio files. Defaults to "*.wav".
             ultrasound_path (str, optional): The path to the directory where ultrasound files are stored. Defaults to "/media/pi/PiImages/ultrasound".
             ultrasound_format (str, optional): The naming convention of the ultrasound files. Defaults to "*.wav".
+            storage_path (str, optional): The path to the directory where data is stored (e.g., pictures, audio files, ultrasound files). Defaults to "/media/pi/PiImages".
         """
         self.camera_path = camera_path
         self.camera_config_path = camera_config_path
@@ -70,6 +73,7 @@ class AmiTrap:
         self.audio_format = audio_format
         self.ultrasound_path = ultrasound_path
         self.ultrasound_format = ultrasound_format
+        self.storage_path = storage_path
 
     def get_software_version(self):
         return __version__
@@ -238,14 +242,16 @@ class AmiTrap:
                 memory_info["last_picture_size"] = None
                 memory_info["picture_count_last_24h"] = 0
                 memory_info["picture_count_last_24h_below_200kb"] = 0
-            stat = os.statvfs(self.picture_path)
-            memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
         else:
             memory_info["picture_count"] = 0
             memory_info["last_picture_timestamp"] = None
             memory_info["last_picture_size"] = None
             memory_info["picture_count_last_24h"] = 0
             memory_info["picture_count_last_24h_below_200kb"] = 0
+        if os.path.exists(self.storage_path):
+            stat = os.statvfs(self.storage_path)
+            memory_info["free_memory"] = stat.f_frsize * stat.f_bavail
+        else:
             memory_info["free_memory"] = 0
         return memory_info
 
