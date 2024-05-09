@@ -577,8 +577,13 @@ def _check_for_firmware_update(ami, nCard):
         print("No firmware update available.")
         print()
 
+    rsp = hub.get(nCard)
+
+    print(rsp)
+    print()
+
     # If mode is continuous, set it back to minimum
-    if hub.get(nCard)["mode"] == "continuous":
+    if rsp["mode"] == "continuous":
         print(hub.set(nCard,
                       mode="minimum"))
         print()
