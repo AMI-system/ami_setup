@@ -105,7 +105,7 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
     return start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z'), end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
 
 # Example usage
-current_time_str = '2023-05-09T23:45:00-0000'
+#current_time_str = '2023-05-09T23:45:00-0000'
 
 # Convert string to datetime object
 current_time = datetime.strptime(current_time_str, '%Y-%m-%dT%H:%M:%S%z')
