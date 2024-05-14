@@ -37,6 +37,13 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
 - **config.json**  
   In the Pi it can be found in this path: ```/home/pi/config.json```
 
+## Utils files
+
+- **shared_functions.py**  
+  In the Pi it can be found in this path: ```/home/pi/scritps/utils/shared_functions.py```
+
+  This scripts contains all the functions that the recording and schedueling files need to run.
+
 ## Schedueling and recording files
 
 - **crontab_scripts/moths_scheduling.py**  
