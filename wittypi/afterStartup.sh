@@ -11,13 +11,6 @@
 #Send telemtry beacon
 sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_receive.py >> /home/pi/wittypi/telemetry.log &
 
-#Start motion software
-#sudo /usr/bin/motion -m
-#Set camera settings
-#sudo /home/pi/scripts/setCamera.sh
-#Turn ON lights
-#sudo python /home/pi/scripts/control_ON_lights.py
-
 # Extract and save sunrise and sunset times
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 

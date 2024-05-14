@@ -104,11 +104,11 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
 
     else:
         raise ValueError("This script cannot be run outside of the survey start and end hours.")
-    
+
     return start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z'), end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
 
 # Example usage
-current_time_str = '2023-05-09T09:45:00-0000'
+# current_time_str = '2023-05-09T09:45:00-0000'
 
 # Convert string to datetime object
 current_time = datetime.strptime(current_time_str, '%Y-%m-%dT%H:%M:%S%z')
@@ -118,27 +118,25 @@ start_datetime_str, end_datetime_str = get_survey_start_end_datetimes(current_ti
 
 #Save metadata as dictionary using same heirarchical structure as the config dictionary
 metadata = {
-     
-     "audible_microphone_event_data":{
-     
-      "event_ids": {
-         "parent_event_id": parent_event_id,
-         "event_id": eventID
-      },
+    "audible_microphone_event_data":{
+       "event_ids": {
+          "parent_event_id": parent_event_id,
+          "event_id": eventID
+       },
 
-    "date_fields": {
-        "event_date": current_time_str,
-        "recording_period_start_time": start_datetime_str,
-        "recording_period_end_time": end_datetime_str
-        },
+       "date_fields": {
+          "event_date": current_time_str,
+          "recording_period_start_time": start_datetime_str,
+          "recording_period_end_time": end_datetime_str
+       },
 
-    "file_characteristics":{
-         "file_path": full_path,
-         "file_type": audio_type
-        }
-   }
+       "file_characteristics":{
+          "file_path": full_path,
+          "file_type": audio_type
+       }
+    }
 
-   }
+}
 
 # Update the config json
 config.update(metadata)
@@ -151,7 +149,7 @@ config = dict((field, config[field]) for field in config if field not in fields_
 keys_to_remove = [key for key in metadata if key == "COMMENT"]
 for key in keys_to_remove:
     del metadata[key]
-    
+
 def remove_comments(data):
     if isinstance(data, dict):
         # Check if 'COMMENT' key exists and has the specific value
@@ -165,7 +163,8 @@ def remove_comments(data):
 remove_comments(config)
 
 # Save within the audio file
-with taglib.File(full_path, save_on_exit=True) as recording:
+recording_file = taglib.File(full_path)
+recording_file.tags["TITLE"] = json.dumps(config)
+recording_file.save()
 
-    recording.tags["TITLE"] = json.dumps(config)
-    print("Metadata added to recording")
+print(json.dumps(config))

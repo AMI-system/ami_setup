@@ -32,10 +32,10 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         # Handle error
         print("Error:", result.stderr)
         return None, None
-    
+
 # Find today's and tomorrow's dates
 today = datetime.now()
-    
+
 # Get civil sunset and sunrise for today and tomorrow
 sunset, sunrise = get_sunset_sunrise_times(config['device_settings']['lat'], config['device_settings']['lon'], today)
 

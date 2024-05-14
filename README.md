@@ -27,8 +27,8 @@ When the Pi starts the WittyPi will run 3 different Python scripts that will cre
   
   File that the WittyPi runs every time it switches ON the system. At the moment, it starts the telemetry and runs the scripts to determine the recording times.
 
-- **wpi_script_generator_ags.py**  
-  In the pi t can be found in this path: ```/home/pi/wittypi/run_script.sh```
+- **wpi_script_generator.py**  
+  In the pi t can be found in this path: ```/home/pi/scripts/wpi_script_generator.py```
 
   This scripts generates every week the scheduling for the Raspberry Pi to switch on and off based on the recording times we defined. 
 

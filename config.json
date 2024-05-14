@@ -4,8 +4,6 @@
         "lon": -3.253449,
         "timeZone": "GMT",
         "modes": "AV",
-        "start_date": "2023-12-05",
-        "end_date": "2024-15-04",
         "telemetry_enabled": "Yes",
         "telemetry_interval_mins": ""
     },
@@ -76,8 +74,8 @@
     },
     "sunrise_sunset_times": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
-        "sunrise_time": "05:24:42",
-        "sunset_time": "20:54:11"
+        "sunrise_time": "05:16:23",
+        "sunset_time": "21:02:21"
     },
     "camera_operation": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
@@ -86,8 +84,8 @@
             "Wednesday",
             "Friday"
         ],
-        "start_time": "20:54:11",
-        "end_time": "05:24:42"
+        "start_time": "21:02:21",
+        "end_time": "05:16:23"
     },
     "audio_operation": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
@@ -107,7 +105,7 @@
             "Thursday",
             "Saturday"
         ],
-        "start_time": "20:54:11",
-        "end_time": "05:24:42"
+        "start_time": "21:02:21",
+        "end_time": "05:16:23"
     }
 }

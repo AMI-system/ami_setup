@@ -43,10 +43,10 @@ def read_json_config(json_path):
 def get_previous_sunday():
     # Get today's date
     today = datetime.now()
-    
+
     # Get the day of the week (0 = Monday, 6 = Sunday)
     day_of_week = today.weekday()
-    
+
     if day_of_week == 6:  # If today is Sunday
         return today
     else:
@@ -71,7 +71,7 @@ def time_difference(start_date, end_date):
 
 
 # Replace 'config.json' with the actual path to your JSON configuration file
-json_config_path = 'config.json'
+json_config_path = '/home/pi/config.json'
 
 # Read the JSON configuration file
 json_config = read_json_config(json_config_path)
@@ -139,8 +139,8 @@ on_duration_days_3, on_duration_hours_3, on_duration_minutes_3 = time_difference
 
 # 3- OFF from Thursday sunrise+10min to Thursday 11:50
 off_from_3 = on_to_3
-off_to_6 = datetime(thursday_dt.year, thursday_dt.month, thursday_dt.day, 11, 50)
-off_duration_days_6, off_duration_hours_3, off_duration_minutes_3 = time_difference(off_from_3, off_to_3)
+off_to_3 = datetime(thursday_dt.year, thursday_dt.month, thursday_dt.day, 11, 50)
+off_duration_days_3, off_duration_hours_3, off_duration_minutes_3 = time_difference(off_from_3, off_to_3)
 
 # 4- ON from Thursday 11:50 to Friday 12:10
 on_from_4 = off_to_3
@@ -213,3 +213,4 @@ shutil.copy(schedule_file_path, '/home/pi/wittypi/schedule.wpi')
 
 # Run the runschedule.sh script from the target path
 subprocess.run(["bash", f"{execute_path}runScript.sh"])
+
