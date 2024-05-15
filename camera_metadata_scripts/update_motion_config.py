@@ -34,7 +34,7 @@ if __name__ == "__main__":
     file_type = "camera"
 
     # Extract the timezone into the desired format
-    timezone_str = current_time.strftime('%Y-%m-%d %H:%M:%S %z')[-5:].replace(':', '')
+    timezone_str = current_time.strftime('%z')
 
     # Generate event ID with conversion specifiers
     current_time_str = f'%Y-%m-%dT%H:%M:%S{timezone_str}'
@@ -46,8 +46,8 @@ if __name__ == "__main__":
 
     # Obtain the date only and start and end time of the survey
     current_date = current_time.date()
-    start_time = datetime.strptime(start_time_str, "%H:%M:%S").time()
-    end_time = datetime.strptime(end_time_str, "%H:%M:%S").time()
+    start_time = datetime.strptime(start_time_str, "%H:%M:%S%z").time()
+    end_time = datetime.strptime(end_time_str, "%H:%M:%S%z").time()
 
     # Create survey start and end datetimes
     start_datetime = datetime.combine(current_date, start_time, current_time.tzinfo)

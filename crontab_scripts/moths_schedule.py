@@ -24,8 +24,8 @@ if __name__ == "__main__":
     sunrise_str = config["sunrise_sunset_times"]["sunrise_time"]
 
     # Convert to datetime object
-    sunset = datetime.strptime(sunset_str, '%H:%M:%S')
-    sunrise = datetime.strptime(sunrise_str, '%H:%M:%S')
+    sunset = datetime.strptime(sunset_str, '%H:%M:%S%z')
+    sunrise = datetime.strptime(sunrise_str, '%H:%M:%S%z')
 
     # Access the user crontab
     ami_cron = CronTab(user='pi')
@@ -58,8 +58,8 @@ if __name__ == "__main__":
     selected_weekdays = [weekdays[i] for i in start_days]
 
     # Update the start and end time in the config.json
-    config["camera_operation"]["start_time"] = sunset.strftime('%H:%M:%S')
-    config["camera_operation"]["end_time"] = sunrise.strftime('%H:%M:%S')
+    config["camera_operation"]["start_time"] = sunset.strftime('%H:%M:%S%z')
+    config["camera_operation"]["end_time"] = sunrise.strftime('%H:%M:%S%z')
     config["camera_operation"]["start_days"] = selected_weekdays
 
     # Save the updated config.json

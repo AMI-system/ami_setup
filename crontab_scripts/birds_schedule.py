@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from crontab import CronTab
 
-from utils.shared_functions import read_json_config
+from utils.shared_functions import read_json_config, get_current_time
 
 if __name__ == "__main__":
     # Read the config file
@@ -59,9 +59,19 @@ if __name__ == "__main__":
     weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     selected_weekdays = [weekdays[i] for i in start_days]
 
+    # Read the JSON configuration file
+    config = read_json_config(config_path)
+
+    # Obtain the daved latitude and longitude of the deployment
+    latitude = config["device_settings"]["lat"]
+    longitude = config["device_settings"]["lon"]
+
+    # Get current time in ISO 8601 format
+    current_time_zone = get_current_time(latitude, longitude).strftime('%z')
+    
     # Update the start and end time in the config.json
-    config["audio_operation"]["start_time"] = "12:00:00"
-    config["audio_operation"]["end_time"] = "11:55:00"
+    config["audio_operation"]["start_time"] = f'12:00:00{current_time_zone}'
+    config["audio_operation"]["end_time"] = f'11:55:00{current_time_zone}'
     config["audio_operation"]["start_days"] = selected_weekdays
 
     # Save the updated config.json

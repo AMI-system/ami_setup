@@ -31,12 +31,12 @@ if __name__ == "__main__":
     next_sunday_dt = sunday_dt + timedelta(7)
 
     # Get sunset and sunrise for each day
-    monday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], monday_dt)
-    _, tuesday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], tuesday_dt)
-    wednesday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], wednesday_dt)
-    _, thursday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], thursday_dt)
-    friday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], friday_dt)
-    _, saturday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], saturday_dt)
+    monday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], monday_dt).replace(tzinfo=None)
+    _, tuesday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], tuesday_dt).replace(tzinfo=None)
+    wednesday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], wednesday_dt).replace(tzinfo=None)
+    _, thursday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], thursday_dt).replace(tzinfo=None)
+    friday_sunset, _ = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], friday_dt).replace(tzinfo=None)
+    _, saturday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], saturday_dt).replace(tzinfo=None)
 
     # Every schedule starts on a Monday and ends on a Sunday, total Witty Pi schedule to cover this full week schedule
     # Overlapping schedule starts 10 minutes earlier to the nearest schedule and ends 10 minutes later to the last schedule

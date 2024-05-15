@@ -74,8 +74,8 @@
     },
     "sunrise_sunset_times": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
-        "sunrise_time": "05:16:23",
-        "sunset_time": "21:02:21"
+        "sunrise_time": "05:14:49+0100",
+        "sunset_time": "21:03:57+0100"
     },
     "camera_operation": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
@@ -84,8 +84,8 @@
             "Wednesday",
             "Friday"
         ],
-        "start_time": "21:02:21",
-        "end_time": "05:16:23"
+        "start_time": "21:03:57+0100",
+        "end_time": "05:14:49+0100"
     },
     "audio_operation": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
@@ -94,8 +94,8 @@
             "Thursday",
             "Saturday"
         ],
-        "start_time": "12:00:00",
-        "end_time": "11:55:00"
+        "start_time": "12:00:00+0100",
+        "end_time": "11:55:00+0100"
     },
     "ultrasonic_operation": {
         "COMMENT": "GENERATED IN SCHEDULE SCRIPTS. PLEASE DO NOT EDIT DIRECTLY",
@@ -105,7 +105,7 @@
             "Thursday",
             "Saturday"
         ],
-        "start_time": "21:02:21",
-        "end_time": "05:16:23"
+        "start_time": "21:03:57+0100",
+        "end_time": "05:14:49+0100"
     }
 }

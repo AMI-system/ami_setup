@@ -54,14 +54,14 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
     Obtain the start and end datetime for a survey period.
 
     This function converts start and end time strings to datetime objects 
-    based on the current date and timezone of the `current_time`. It ensures 
+    based on the current date and survey period start and end time with time zone. It ensures 
     that the end datetime is always after the start datetime, adjusting for 
     cases where the survey period spans midnight.
 
     Parameters:
     current_time (datetime): The current datetime object, timezone-aware.
-    start_time_str (str): The survey start time as a string in "HH:MM:SS" format.
-    end_time_str (str): The survey end time as a string in "HH:MM:SS" format.
+    start_time_str (str): The survey start time as a string in "HH:MM:SS+/-HHMM" format.
+    end_time_str (str): The survey end time as a string in "HH:MM:SS+/-HHMM" format.
 
     Returns:
     tuple: A tuple containing the start and end datetimes in ISO 8601 format.
@@ -70,24 +70,28 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
     ValueError: If the current time is outside the survey start and end hours.
 
     Examples:
+    >>> from datetime import datetime
+    >>> import pytz
     >>> current_time = datetime(2024, 5, 14, 15, 30, tzinfo=pytz.UTC)
-    >>> get_survey_start_end_datetimes(current_time, "14:00:00", "16:00:00")
-    ('2024-05-14T14:00:00+0000', '2024-05-14T16:00:00+0000')
+    >>> get_survey_start_end_datetimes(current_time, "14:00:00+0000", "16:00:00+0000")
+    (datetime.datetime(2024, 5, 14, 14, 0, tzinfo=datetime.timezone.utc), 
+     datetime.datetime(2024, 5, 14, 16, 0, tzinfo=datetime.timezone.utc))
     >>> current_time = datetime(2024, 5, 14, 1, 30, tzinfo=pytz.UTC)
-    >>> get_survey_start_end_datetimes(current_time, "23:00:00", "02:00:00")
-    ('2024-05-13T23:00:00+0000', '2024-05-14T02:00:00+0000')
+    >>> get_survey_start_end_datetimes(current_time, "23:00:00+0000", "02:00:00+0000")
+    (datetime.datetime(2024, 5, 13, 23, 0, tzinfo=datetime.timezone.utc), 
+     datetime.datetime(2024, 5, 14, 2, 0, tzinfo=datetime.timezone.utc))
     """
 
-    # Convert start and end time strings to time objects
-    start_time = datetime.strptime(start_time_str, "%H:%M:%S").time()
-    end_time = datetime.strptime(end_time_str, "%H:%M:%S").time()
+    # Extract and convert the current date as a string
+    current_date_str = current_time.date().strftime('%Y-%m-%d')
 
-    # Extract date from specified datetime
-    current_date = current_time.date()
+    # Combine the current date with the start_time/end_time with the timezone
+    start_datetime_str = f'{current_date_str}T{start_time_str}'
+    end_datetime_str = f'{current_date_str}T{end_time_str}'
 
     # Initialize start and end datetime
-    start_datetime = datetime.combine(current_date, start_time, current_time.tzinfo)
-    end_datetime = datetime.combine(current_date, end_time, current_time.tzinfo)
+    start_datetime = datetime.strptime(start_datetime_str, '%Y-%m-%dT%H:%M:%S%z')
+    end_datetime = datetime.strptime(end_datetime_str, '%Y-%m-%dT%H:%M:%S%z')
 
     # Adjust end datetime if it falls on the next day
     if start_datetime <= current_time <= end_datetime:
@@ -104,7 +108,6 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
         raise ValueError("This script cannot be run outside of the survey start and end hours.")
 
     return start_datetime, end_datetime
-
 
 def remove_comments(data):
     """
@@ -195,7 +198,7 @@ def get_sunset_sunrise_times(latitude, longitude, date):
 
     This function uses the Helicron command-line tool to retrieve the sunset and sunrise
     times for the specified latitude, longitude, and date. It returns the times as
-    naive datetime objects.
+    datetime objects with timezone.
 
     Parameters:
     latitude (float): The latitude of the location.
@@ -235,7 +238,8 @@ def get_sunset_sunrise_times(latitude, longitude, date):
         #print(stdout)
         sunset = datetime.strptime(stdout['sunset'], '%Y-%m-%dT%H:%M:%S%z')
         sunrise = datetime.strptime(stdout['sunrise'], '%Y-%m-%dT%H:%M:%S%z')
-        return sunset.replace(tzinfo=None), sunrise.replace(tzinfo=None)
+
+        return sunset, sunrise
     else:
         # Handle error
         raise RuntimeError(f"Error executing Helicron command: {result.stderr}")
