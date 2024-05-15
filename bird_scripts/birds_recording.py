@@ -8,8 +8,7 @@ import os
 import taglib
 import json
 
-from utils.shared_functions import read_json_config, get_current_time, get_survey_start_end_datetimes, remove_comments
-
+from utils.shared_functions import read_json_config, get_current_time, get_survey_start_end_datetimes, remove_comments, custom_format_datetime
 
 if __name__ == "__main__":
     # Read the config file
@@ -49,9 +48,7 @@ if __name__ == "__main__":
     ### Metadata collection ###
 
     # obtain IDs
-    location_id = config["base_ids"]["location_id"]
     system_id = config["base_ids"]["system_id"]
-    hardware_id = config["base_ids"]["hardware_id"]
 
     # obtain survey period start and end time
     start_time_str = config["audio_operation"]["start_time"]
@@ -60,24 +57,22 @@ if __name__ == "__main__":
     # Note recording type
     audio_type = "audible_microphone"
 
-    # Generate parent event ID
-    parent_event_id = f"{system_id}__{audio_type}__{start_time_str}__{end_time_str}"
-
-    # Obtain the number of files already within the directory
-    files = os.listdir(f"{audio_settings['target_path']}/{current_time.strftime('%Y_%m_%d')}")
-
     # Generate event ID
     current_time_str = current_time.strftime('%Y-%m-%dT%H:%M:%S%z')
-    eventID = f"{system_id}__{audio_type}__{current_time_str}"
-
-    # Example usage
-    # current_time_str = '2023-05-09T09:45:00-0000'
-
-    # Convert string to datetime object
-    current_time = datetime.strptime(current_time_str, '%Y-%m-%dT%H:%M:%S%z')
+    current_time_str_formatted = custom_format_datetime(current_time)
+    eventID = f"{system_id}__{audio_type}__{current_time_str_formatted}"
 
     # Calculate the survey period start and end time
-    start_datetime_str, end_datetime_str = get_survey_start_end_datetimes(current_time, start_time_str, end_time_str)
+    start_datetime, end_datetime = get_survey_start_end_datetimes(current_time, start_time_str, end_time_str)
+
+    # convert start and end datetimes to strings
+    start_datetime_str = start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
+    end_datetime_str = end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
+
+    # Generate parent event ID
+    start_datetime_str_formatted = custom_format_datetime(start_datetime)
+    end_datetime_str_formatted = custom_format_datetime(end_datetime)
+    parent_event_id = f"{system_id}__{audio_type}__{start_datetime_str_formatted}__{end_datetime_str_formatted}"
 
     #Save metadata as dictionary using same heirarchical structure as the config dictionary
     metadata = {

@@ -103,7 +103,7 @@ def get_survey_start_end_datetimes(current_time, start_time_str, end_time_str):
         # Current time is outside the valid survey period
         raise ValueError("This script cannot be run outside of the survey start and end hours.")
 
-    return start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z'), end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
+    return start_datetime, end_datetime
 
 
 def remove_comments(data):
@@ -332,3 +332,35 @@ def time_difference(start_date, end_date):
     minutes = int(total_seconds % 3600) // 60
 
     return days, hours, minutes
+
+def custom_format_datetime(dt):
+    """
+    Convert a datetime object to the custom format 'YYYY_MM_DD__HH_MM_SS_{plus|minus}_HHMM'.
+    
+    Args:
+        dt (datetime): The datetime object to be formatted.
+    
+    Returns:
+        str: The datetime string in the custom format. 
+             For example: '2023_05_09__23_45_00_minus_0001'.
+    
+    Example:
+        >>> from datetime import datetime, timezone, timedelta
+        >>> dt = datetime(2023, 5, 9, 23, 45, 0, tzinfo=timezone(timedelta(hours=-1)))
+        >>> custom_format_datetime(dt)
+        '2023_05_09__23_45_00_minus_0100'
+    """
+    # Extract the formatted date and time parts
+    formatted_date_time = dt.strftime('%Y_%m_%d__%H_%M_%S')
+    
+    # Handle the timezone part
+    timezone_offset = dt.strftime('%z')  # Get the timezone part in ±HHMM format
+    if timezone_offset.startswith('+'):
+        formatted_timezone = timezone_offset.replace('+', '_plus_')
+    else:
+        formatted_timezone = timezone_offset.replace('-', '_minus_')
+    
+    # Combine the formatted parts
+    custom_formatted_string = f"{formatted_date_time}{formatted_timezone}"
+    
+    return custom_formatted_string

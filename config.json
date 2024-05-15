@@ -15,7 +15,7 @@
         "rec_length": "10",
         "rec_interval": "60",
         "rec_type": "mono",
-        "device": "plughw:CARD=Microphone,DEV=0",
+        "device": "plughw:1,0",
         "target_path": "/media/pi/PiImages/ultrasonic"
     },
     "audio_settings": {
@@ -56,19 +56,19 @@
         "minimum_elevation_in_meters": null
     },
     "ami_components": {
-        "single_board_computer_type": null,
-        "light_attractant_make": null,
+        "single_board_computer_type": "Raspberry Pi 4 Model B",
+        "light_attractant_type": "LepiLED",
         "light_around_camera_type": null,
-        "use_of_witty_pi": null,
-        "watchdog_version": null,
-        "camera_type": null,
-        "microphone_type": null
+        "use_of_witty_pi": "yes",
+        "watchdog_version": "Witty Pi 4 L3V7",
+        "camera_type": "Logitech BRIO",
+        "microphone_type": "AudioMoth"
     },
     "additional_metadata_fields": {
         "software": null
     },
     "base_ids": {
-        "location_id": "loc999999",
+        "location_id": null,
         "system_id": "sys999999",
         "hardware_id": "har999999"
     },

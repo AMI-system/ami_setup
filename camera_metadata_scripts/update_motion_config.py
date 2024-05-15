@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-import json
 from pathlib import Path
 from datetime import datetime, timedelta
-import os
-import taglib
 
-from utils.shared_functions import read_json_config, get_current_time, remove_comments, update_motion_config
-
+from utils.shared_functions import read_json_config, get_current_time, remove_comments, update_motion_config, custom_format_datetime
 
 if __name__ == "__main__":
     # Read the config file
@@ -27,10 +23,8 @@ if __name__ == "__main__":
     # Find today date
     date = current_time.strftime('%Y_%m_%d')
 
-    # Obtain IDs
-    location_id = config["base_ids"]["location_id"]
+    # Obtain system ID
     system_id = config["base_ids"]["system_id"]
-    hardware_id = config["base_ids"]["hardware_id"]
 
     # Obtain survey period start and end time
     start_time_str = config["camera_operation"]["start_time"]
@@ -39,27 +33,34 @@ if __name__ == "__main__":
     # Note recording type
     file_type = "camera"
 
-    # Generate parent event ID
-    parent_event_id = f"{system_id}__{file_type}__{start_time_str}__{end_time_str}"
-
     # Extract the timezone into the desired format
     timezone_str = current_time.strftime('%Y-%m-%d %H:%M:%S %z')[-5:].replace(':', '')
 
     # Generate event ID with conversion specifiers
     current_time_str = f'%Y-%m-%dT%H:%M:%S{timezone_str}'
-    eventID_insert = f"{system_id}__{file_type}__{current_time_str}"
+
+    # Compile an event ID with conversion specifiers
+    timezone_str_formatted = timezone_str.replace('+', '_plus_').replace('-', '_minus_')
+    current_time_str_formatted = f'%Y_%m_%d__%H_%M_%S_{timezone_str_formatted}'
+    eventID_insert = f"{system_id}__{file_type}__{current_time_str_formatted}"
 
     # Obtain the date only and start and end time of the survey
     current_date = current_time.date()
     start_time = datetime.strptime(start_time_str, "%H:%M:%S").time()
     end_time = datetime.strptime(end_time_str, "%H:%M:%S").time()
 
-    # Create strings to insert with conversion specifiers
+    # Create survey start and end datetimes
     start_datetime = datetime.combine(current_date, start_time, current_time.tzinfo)
     end_datetime = datetime.combine(current_date, end_time, current_time.tzinfo) + timedelta(days=1)
 
+    # Convert survey start and end datetimes into a string
     start_datetime_str = start_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
     end_datetime_str = end_datetime.strftime('%Y-%m-%dT%H:%M:%S%z')
+
+    #Compile a parent event id
+    start_datetime_str_formatted = custom_format_datetime(start_datetime)
+    end_datetime_str_formatted = custom_format_datetime(end_datetime)
+    parent_event_id = f"{system_id}__{file_type}__{start_datetime_str_formatted}__{end_datetime_str_formatted}"
 
     #Save metadata as dictionary using same heirarchical structure as the config dictionary
     metadata = {
