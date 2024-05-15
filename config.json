@@ -58,7 +58,7 @@
     "ami_components": {
         "single_board_computer_type": "Raspberry Pi 4 Model B",
         "light_attractant_type": "LepiLED",
-        "light_around_camera_type": null,
+        "light_around_camera_type": "LED light ring",
         "use_of_witty_pi": "yes",
         "watchdog_version": "Witty Pi 4 L3V7",
         "camera_type": "Logitech BRIO",
