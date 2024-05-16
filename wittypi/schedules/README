@@ -35,7 +35,7 @@ end by a scheduled startup. If you want to skip any shutdown/startup, just appen
 Raspberry Pi after finishing its job. You can run command "gpio -g mode 4 out" to
 pull down GPIO-4 so Witty Pi's software will shutdown your Raspberry Pi gracefully.
 
-Sometimes you may want to skip certain scheduling of shutdown/startup, and let 
+Sometimes you may want to skip certain schedulingof shutdown/startup, and let 
 your own program to do the job. This can be achieved by using the WAIT syntax.
 Here is an example:
 

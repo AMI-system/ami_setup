@@ -62,4 +62,4 @@ PiImages
 
   This is an example on how the rc.local file looks. It is responsible for running the bluetooth connection.  
 
-For more especific information about motion, recording acoustics and schedueling refer to each folder.  
+For more especific information about motion, recording acoustics and scheduling refer to each folder.  

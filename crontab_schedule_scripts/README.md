@@ -1,4 +1,4 @@
-# Crontab and schedueling scripts
+# Crontab and scheduling scripts
 
 - **crontab_example.txt**  
 This is a copy of the content of the file into a txt. In the Pi the crontab can be checked using this command ```crontab -l``` or modified using this command ```crontab -e```  
@@ -58,4 +58,4 @@ This is a copy of the content of the file into a txt. In the Pi the crontab can 
   5. Creates two sets of times:  
       1. Record an audio file every 5 minutes from 12 to 23 hours on Mon, Wed and Fri (1,3,5).  
       2. Record an audio file every 5 minutes from 0 to 11:59 hours on Tue, Thu and Sat (2,4,6).  
-  6. In the future, it will need to look similar to the bats scheduling file.  
+  6. In the future, it will need to look similar to the bats schedulingfile.  
