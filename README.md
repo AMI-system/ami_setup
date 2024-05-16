@@ -54,10 +54,12 @@ PiImages
 
 - **config.json**  
   In the Pi it can be found in this path: ```/home/pi/config.json```  
-<br/>
-- **rc.local.txt**  
-  This is a copy of the content of the file into a txt. In the Pi the original file can be found in this path: ```/etc/rc.local```
 
-  This is an example on how the rc.local file looks. It is responsible for running the bluetooth connection. 
+<br/>
+
+- **rc.local.txt**  
+  This is a copy of the content of the file into a txt. In the Pi the original file can be found in this path: ```/etc/rc.local```  
+
+  This is an example on how the rc.local file looks. It is responsible for running the bluetooth connection.  
 
 For more especific information about motion, recording acoustics and schedueling refer to each folder.  
