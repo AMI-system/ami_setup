@@ -11,7 +11,7 @@ According to the recording times above it will operate like the table below:
 | Day of the week   | OFF       | ON       |
 | :---------------: | :------:  | :------: |
 | Monday            |           |  Sunset  |
-| Tuesday           | Sunrise-1h|  12 pm   |
+| Tuesday           | Sunrise   |  12 pm   |
 | Wednesday         | 11:59 am  |  Sunset  |
 | Thursday          | Sunrise-1h|  12 pm   |
 | Friday            | 11:59 am  |  Sunset  |
