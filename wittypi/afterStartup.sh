@@ -12,7 +12,7 @@
 sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_receive.py >> /home/pi/wittypi/telemetry.log & 
 
 # Extract and save sunrise and sunset times
-sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py & 
+sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 
 # Calculate moths recording schedule
 sudo python3 /home/pi/scripts/moths_schedule.py
