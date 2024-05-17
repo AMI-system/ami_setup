@@ -324,18 +324,17 @@ def time_difference(start_date, end_date):
     >>> end_date = datetime(2024, 5, 14, 10, 30, 0)
     >>> time_difference(start_date, end_date)
     (2, 2, 30)
-    """
-    time_delta = end_date - start_date
+    """    
+    time_diff = end_date - start_date
+    
+    total_seconds = time_diff.total_seconds()
+    
+    days = total_seconds // (24 * 3600)
+    hours = (total_seconds % (24 * 3600)) // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
 
-    # Get the total seconds in the time difference
-    total_seconds = time_delta.total_seconds()
-
-    # Convert time delta to days, hours, and minutes
-    days = int(total_seconds) // (24 * 3600)
-    hours = (int(total_seconds) % (24 * 3600)) // 3600
-    minutes = int(total_seconds % 3600) // 60
-
-    return days, hours, minutes
+    return days, hours, minutes, seconds
 
 def custom_format_datetime(dt):
     """
