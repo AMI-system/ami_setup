@@ -22,11 +22,6 @@ if __name__ == "__main__":
     today = datetime.now()
     tomorrow = today + timedelta(1)
 
-    # Create folders if they don't exist
-    Path(f"{audio_settings['target_path']}").mkdir(parents=True, exist_ok=True)
-    Path(f"{audio_settings['target_path']}/{today.strftime('%Y_%m_%d')}").mkdir(parents=True, exist_ok=True)
-    Path(f"{audio_settings['target_path']}/{tomorrow.strftime('%Y_%m_%d')}").mkdir(parents=True, exist_ok=True)
-
     # Access the user crontab
     ami_cron = CronTab(user = 'pi')
 
