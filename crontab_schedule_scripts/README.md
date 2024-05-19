@@ -20,7 +20,7 @@ This is a copy of the content of the file into a txt. In the Pi the crontab can 
   1. Read the config file to get the sunset and sunrise times.  
   2. Access the user crontab and delete any jobs related to motion.  
   3. Define the start job which will start the motion software, update the camera settings, and switch on the lights.  
-  4. Set the cron job times, it will run at today’s sunset (exact minute and hour) on Mon, Wed, Frid (1,3,5).  
+  4. Set the cron job times, it will run at today’s sunset (exact minute and hour) on Mon, Wed, Fri (1,3,5).  
   5. Define the end job which will stop the motion and switch off the lights.
   6. Set the cron job times, it will run at tomorrow’s sunrise (exact minute, but hour – 1) on Tue, Thu, Sat (2,4,6).  
   7. Finally, it saves the job in the crontab.  
@@ -56,6 +56,6 @@ This is a copy of the content of the file into a txt. In the Pi the crontab can 
   3. Access the user crontab and delete any jobs related to bird recording.  
   4. Defines the job which will the recording script.  
   5. Creates two sets of times:  
-      1. Record an audio file every 5 minutes from 12 to 23 hours on Mon, Wed and Fri (1,3,5).  
-      2. Record an audio file every 5 minutes from 0 to 11:59 hours on Tue, Thu and Sat (2,4,6).  
-  6. In the future, it will need to look similar to the bats schedulingfile.  
+      1. Record an audio file every 5 minutes from 12 to 23 hours on Tue, Thu and Sat (2,4,6).  
+      2. Record an audio file every 5 minutes from 0 to 11:59 hours on Wed, Fri and Sun (3,5,0).  
+  6. In the future, it will need to look similar to the bats scheduling file.  
