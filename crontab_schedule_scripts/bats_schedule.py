@@ -57,6 +57,9 @@ if __name__ == "__main__":
     if offset_minute == 0:
         evening_minute = evening_minute + 2
         offset_minute = offset_minute + 2
+    elif offset_minute in [1, 6]:
+        evening_minute = evening_minute + 1
+        offset_minute = offset_minute + 1
 
     # First job has to run between sunset minute to the end of sunset hour
     bats_evening_job_1 = ami_cron.new(command=job, comment="bats sunset 1")
