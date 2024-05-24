@@ -35,7 +35,10 @@ This is a copy of the content of the file into a txt. In the Pi the crontab can 
   3. Send the coordinates to the function “get_sunset_sunrise_times” to get today’s sunset time and tomorrow’s sunrise time.  
   4. Access the user crontab and delete any jobs related to bats recording.  
   5. Defines the job which will run the recording script.  
-  6. There are two different sets of times:  
+  6. Avoid overlap with the bids recording:  
+      1. Check if the remainder of dividing the sunset minute by 5 is 0, add 2 minutes.  
+      2. Check if the remainder of dividing the sunset minute by 5 is 1, add 1 minute.
+  7. There are two different sets of times:  
       1. From today’s sunset until 11:59 pm running on Mon, Tue, Thu and Sat (1,2,4,6).
           1. The first job will run every 5 minutes from sunset exact time until complete the hour.  
           **Note:** the file checks if the minute is a multiple of 5. If so, to prevent the script to run at the same time as the bird's recording, 2 minuts are added.  

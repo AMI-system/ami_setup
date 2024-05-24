@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 temp_read_title.py
 utils/__init__.py
+*.log

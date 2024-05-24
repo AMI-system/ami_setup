@@ -53,11 +53,12 @@ if __name__ == "__main__":
     evening_minute = sunset.time().minute # Sunset minute
     offset_minute = evening_minute % 5 # Sunset minute offset
 
-    # Check if offset minute is multiple of 5, if so to avoid overlap with bird's recording we will add 2 minute
+    # Check if offset minute is multiple of 5, if so to avoid overlap with bird's recording we will add 2 minutes
     if offset_minute == 0:
         evening_minute = evening_minute + 2
         offset_minute = offset_minute + 2
-    elif offset_minute in [1, 6]:
+    # Check if offset minute is 1 or 6, if so to avoid overlap with bird's recording we will add 1 minute
+    elif offset_minute == 1:
         evening_minute = evening_minute + 1
         offset_minute = offset_minute + 1
 
