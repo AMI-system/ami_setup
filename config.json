@@ -31,12 +31,12 @@
     },
     "camera_settings": {
         "brightness": 100,
-        "focus_auto": 2,
-        "focus_absolute": 200,
-        "exposure_auto": 3,
-        "exposure_absolute": 320,
-        "zoom_absolute": 400,
-        "white_balance_temperature_auto": 3,
+        "focus_auto": 0,
+        "focus_absolute": 50,
+        "exposure_auto": 1,
+        "exposure_absolute": 80,
+        "zoom_absolute": 100,
+        "white_balance_temperature_auto": 0,
         "white_balance_temperature": 7000,
         "sharpness": 25,
         "contrast": 20
