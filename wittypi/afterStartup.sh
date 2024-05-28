@@ -14,6 +14,9 @@ sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_re
 # Extract and save sunrise and sunset times
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 
+# Calculates the weekly schedule
+sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+
 # Calculate moths recording schedule
 sudo python3 /home/pi/scripts/moths_schedule.py
 

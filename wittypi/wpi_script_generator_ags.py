@@ -6,7 +6,7 @@ import subprocess
 from datetime import datetime, timedelta
 from crontab import CronTab
 import shutil
-
+import os
 from utils.shared_functions import get_sunset_sunrise_times, read_json_config, get_previous_sunday, time_difference
 
 
@@ -149,11 +149,11 @@ if __name__ == "__main__":
     # print(witty_pi_schedule)
 
     # Specify the target path for the schedule file
-    target_path = '/home/pi/wittypi/schedules/'
-    execute_path = '/home/pi/wittypi/'
+    target_path = '/home/pi/wittypi/schedules'
+    execute_path = '/home/pi/wittypi'
 
     # Save the schedule to the target path
-    schedule_file_path = f'{target_path}witty_pi_schedule_{sunday_dt.year}_{sunday_dt.month}_{sunday_dt.day}.wpi'
+    schedule_file_path = os.path.join(target_path, f'witty_pi_schedule_{sunday_dt.year}_{sunday_dt.month}_{sunday_dt.day}.wpi')
 
     with open(schedule_file_path, 'w') as file:
         file.write(witty_pi_schedule)
@@ -161,8 +161,8 @@ if __name__ == "__main__":
     print(f"Witty Pi schedule generated and saved to {schedule_file_path}.")
 
     # Move the schedule file to the target path
-    shutil.copy(schedule_file_path, '/home/pi/wittypi/schedule.wpi')
+    shutil.copy(schedule_file_path, os.path.join(execute_path, 'schedule.wpi'))
 
     # Run the runschedule.sh script from the target path
-    subprocess.run(["bash", f"{execute_path}runScript.sh"])
+    subprocess.run(["bash", os.path.join(execute_path, "runScript.sh")])
 

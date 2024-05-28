@@ -23,7 +23,7 @@
 # m h  dom mon dow   command
 
 # Create that creates a new witty pi weekly schedule based on Sundays
-5 12 * * 0 sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+5 0 * * * sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
 
 5 21 * * 1,3,5 sudo python3 /home/pi/scripts/update_motion_config.py && sudo python3 /home/pi/scripts/control_ON_lights.py && sudo motion -m # motion on
 13 4 * * 2,4,6 sudo pkill motion && sudo python3 /home/pi/scripts/control_OFF_lights.py # motion off
