@@ -22,3 +22,6 @@ sudo python3 /home/pi/scripts/bats_schedule.py
 
 # Calculate bats recording schedule
 sudo python3 /home/pi/scripts/birds_schedule.py
+
+# Update the camera settings
+sudo /home/pi/scripts/setCamera.sh
