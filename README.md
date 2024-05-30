@@ -63,3 +63,9 @@ PiImages
   This is an example on how the rc.local file looks. It is responsible for running the bluetooth connection.  
 
 For more especific information about motion, recording acoustics and scheduling refer to each folder.  
+
+## Wireless connectivity
+
+Cellular and/or Bluetooth connectivity can optionally be used together with the code in this repository.
+Both are not essential, but can help configuring, monitoring, and debugging AMI systems without physical access.
+For cellular connectivity, see [here](https://github.com/AMI-system/ami_setup/tree/cellular-dev) and for Bluetooth connectivity see [here](https://github.com/AMI-system/ami_setup/tree/bluetooth-dev).
