@@ -8,8 +8,7 @@
 # Remarks: you may append '&' at the end of command to avoid blocking the main daemon.sh.
 #
 
-# Send telemtry beacon
-sudo python3 /home/pi/ami_setup-cellular-dev/ami-trap-raspi-cellular-send_and_receive.py >> /home/pi/wittypi/telemetry.log & 
+# Scripts for wireless connectivity (Bluetooth & cellular) invoked in /etc/rc.local
 
 # Extract and save sunrise and sunset times
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
