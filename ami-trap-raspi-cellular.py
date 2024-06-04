@@ -62,4 +62,4 @@ if __name__ == "__main__":
         print()
         exit()
 
-    asyncio.run(main(interval_minutes=60*6, port=port))
+    asyncio.run(main(interval_minutes=20, port=port))
