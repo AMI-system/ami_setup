@@ -8,7 +8,7 @@
 # Remarks: you may append '&' at the end of command to avoid blocking the main daemon.sh.
 #
 
-# Scripts for wireless connectivity (Bluetooth & cellular) invoked in /etc/rc.local
+# Wireless connectivity (Bluetooth and cellular) invoked in /etc/rc.local
 
 # Extract and save sunrise and sunset times
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
