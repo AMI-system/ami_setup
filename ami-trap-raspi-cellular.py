@@ -24,6 +24,13 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
         print("Run Ami-Trap cellular program (send and receive).")
         print(f"Sending data every {interval_minutes} minutes.")
         print()
+        print("Sleeping for 20 seconds...")
+        print()
+        
+        await asyncio.sleep(20)
+        
+        print("Starting loop...")
+        print()
 
         try:
 
