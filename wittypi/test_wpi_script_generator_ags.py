@@ -2,6 +2,7 @@
 test_wpi_script_generator_ags.py
 
 This script is used to test the functionality of the WittyPi script generator.
+Run it as root, e.g., with sudo python3 test_wpi_script_generator_ags.py.
 
 Author: Jonas Beuchert (UKCEH)
 Date: 8 June 2024
