@@ -17,15 +17,15 @@ import io
 
 async def cellular_configure(i2c_path="/dev/i2c-1"):
     """Configure cellular connectivity via Notecard and Notehub.
-    
+
     Only needs to run once for each Notecard.
     (Except if you want to change the configuration.)
     Sets the synchronization mode and interval.
     Assigns the Notecard to a Notehub project to define where the data goes on the server.
-    
+
     Date: November 2023
     Author: Jonas Beuchert
-    
+
     Args:
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
@@ -79,7 +79,7 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
 
 def _connect_to_notecard(i2c_path="/dev/i2c-1", mode="minimum"):
     """Connect to Notecard via I2C.
-    
+
     Args:
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
@@ -92,7 +92,7 @@ def _connect_to_notecard(i2c_path="/dev/i2c-1", mode="minimum"):
             - GPIO2_A0 (pin 27) as SDA for /dev/i2c-2
             - GPIO2_A1 (pin 28) as SCL for /dev/i2c-2
             - Others, e.g., via bit-banging
-    
+
     Returns:
         notecard: Notecard object.
     """
@@ -111,13 +111,13 @@ def _connect_to_notecard(i2c_path="/dev/i2c-1", mode="minimum"):
 
 def _gather_status_data(ami, nCard):
     """Gather status data from Ami-Trap and send to Notecard.
-    
+
     Args:
         ami (AmiTrap): AmiTrap object.
         nCard (notecard): Notecard object.
     """
     camera_info = ami.get_camera_info()
-        
+
     time_info = ami.get_time_info()
 
     memory_info = ami.get_memory_info()
@@ -127,16 +127,30 @@ def _gather_status_data(ami, nCard):
     wittypi_schedule = ami.get_wittypi_schedule()
 
     microphone_info = ami.get_microphone_info()
-        
+
+    # read in the results json from ../model_data_bookworm/results
+    with open('../model_data_bookworm/results/uk_predictions.json') as f:
+        results = json.load(f)
+
+    # for each element in results get moth_class
+    object_class = []
+    for k in results.keys():
+        object_class.append(results[k]['moth_class'])
+    frequency = {"n_moths": object_class.count('moth'),
+                 "n_non_moths": object_class.count('nonmoth')
+                 }
+
     data = {"os_time":time_info,
             "camera":camera_info,
             "memory":memory_info,
             "bluetooth":bluetooth_info,
             "temperature":card.temp(nCard)["value"],
             "wittypi":wittypi_schedule,
-            "microphone":microphone_info
+            "microphone":microphone_info,
+            "predictions": results,
+            "summary": frequency
             }
-    
+
     print(json.dumps(data, indent=4))
     print()
 
@@ -148,7 +162,7 @@ def _gather_status_data(ami, nCard):
 
 def _sync_and_print_status(nCard, timeout=600):
     """Sync with cloud (Notehub) and print status for a given time.
-    
+
     Args:
         nCard (notecard): Notecard object.
         timeout (int, optional): Timeout in seconds. Defaults to 600.
@@ -176,7 +190,7 @@ async def cellular_send(i2c_path="/dev/i2c-1"):
 
     Date: November 2023
     Author: Jonas Beuchert
-    
+
     Args:
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
@@ -329,10 +343,10 @@ def _process_incoming_changes(ami, nCard):
 
 async def cellular_receive(i2c_path="/dev/i2c-1"):
     """Receive data from Notehub and return output string.
-    
+
     Date: November 2023
     Author: Jonas Beuchert
-    
+
     Args:
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
@@ -363,11 +377,11 @@ async def cellular_receive(i2c_path="/dev/i2c-1"):
 
 async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     """Send most recent picture from Ami-Trap to Notehub.
-    
+
     Compress image such that it fits into 8 KB.
     (According to https://discuss.blues.com/t/encode-and-send-a-small-image/475
     8 KB are safe.)
-    
+
     Date: December 2023
     Author: Jonas Beuchert
     """
@@ -438,7 +452,7 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
 
 def _check_for_firmware_update(ami, nCard):
     """Check for firmware update and update if available.
-    
+
     Args:
         ami (AmiTrap): AmiTrap object.
         nCard (notecard): Notecard object.
@@ -550,7 +564,7 @@ def _check_for_firmware_update(ami, nCard):
             print()
             # Unzip and run install.sh
             ami.update_firmware()
-        
+
             print("Firmware update completed.")
             print()
             # Put notecard back in normal mode
@@ -596,7 +610,7 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
 
     Date: November 2023
     Author: Jonas Beuchert
-    
+
     Args:
         i2c_path (str, optional): Path to I2C device. Defaults to "/dev/i2c-1".
             On a Raspberry Pi, the following GPIOs can be used for I2C:
@@ -628,7 +642,7 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
             print("Failed to send data from Ami-Trap to Notehub.")
             print()
             return
-        
+
         print("Sent data from Ami-Trap to Notehub.")
         print()
 
