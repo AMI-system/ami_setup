@@ -11,12 +11,11 @@ sudo python3 -m pip install note_python-1.5.0-py3-none-any.whl
 
 echo "    2/4 Configuring cellular connection..."
 
+script_dir=$(dirname "$(readlink -f "$0")")
 sudo python3 "$script_dir"/ami-trap-raspi-cellular-config.py
 
 echo "    3/4 Adding command to rc.local for start-up after boot..."
 
-# Add command to rc.local
-script_dir=$(dirname "$(readlink -f "$0")")
 sudo sed -i -e '$i \sudo python3 '"$script_dir"'/ami-trap-raspi-cellular.py &\n' /etc/rc.local
 
 echo "    4/4 Tweak other commands in rc.local..."
