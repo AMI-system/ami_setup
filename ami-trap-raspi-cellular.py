@@ -9,14 +9,14 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
     Send and receive data every interval_minutes minutes.
 
     Re-start the service if an error occurs.
-    
+
     Args:
         interval_minutes (int): Interval in minutes to send data. Default is 15 minutes.
         port (str): I2C port to use. Default is "/dev/i2c-1".
-        
+
     Returns:
         None
-            
+
     """
     print()
 
@@ -26,16 +26,16 @@ async def main(interval_minutes=15, port="/dev/i2c-1"):
         print()
         print("Sleeping for 20 seconds...")
         print()
-        
+
         await asyncio.sleep(20)
-        
+
         print("Starting loop...")
         print()
 
         try:
 
             while True:
-            
+
                 # Call cellular_send_and_receive() asynchronously
                 asyncio.create_task(cellular_send_and_receive(i2c_path=port))
 
