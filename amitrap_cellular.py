@@ -11,7 +11,7 @@ from periphery import I2C
 from time import sleep
 import json
 from amitrap import AmiTrap
-import io
+import os
 
 
 async def cellular_configure(i2c_path="/dev/i2c-1"):
@@ -128,7 +128,10 @@ def _gather_status_data(ami, nCard):
     microphone_info = ami.get_microphone_info()
 
     # read in the results json from ../model_data_bookworm/results
-    with open('../model_data_bookworm/results/uk_predictions.json') as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    results_path = os.path.join(script_dir, '../model_data_bookworm/results/uk_predictions.json')
+
+    with open(results_path) as f:
         results = json.load(f)
 
     # for each element in results get moth_class
