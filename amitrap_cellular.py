@@ -129,7 +129,7 @@ def _gather_status_data(ami, nCard):
 
     # read in the results json from ../model_data_bookworm/results
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    results_path = os.path.join(script_dir, '../model_data_bookworm/results/uk_predictions.json')
+    results_path = os.path.join(script_dir, os.pardir, 'model_data_bookworm', 'results', 'uk_predictions.json')
 
     with open(results_path) as f:
         results = json.load(f)
