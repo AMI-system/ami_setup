@@ -11,7 +11,6 @@ from periphery import I2C
 from time import sleep
 import json
 from amitrap import AmiTrap
-from PIL import Image
 import io
 
 
@@ -374,81 +373,6 @@ async def cellular_receive(i2c_path="/dev/i2c-1"):
         ami = AmiTrap()
 
         return _process_incoming_changes(ami, nCard)
-
-async def cellular_send_picture(i2c_path="/dev/i2c-1"):
-    """Send most recent picture from Ami-Trap to Notehub.
-
-    Compress image such that it fits into 8 KB.
-    (According to https://discuss.blues.com/t/encode-and-send-a-small-image/475
-    8 KB are safe.)
-
-    Date: December 2023
-    Author: Jonas Beuchert
-    """
-    DEBUG = True
-
-    # Connect to Notecard via I2C
-    nCard = _connect_to_notecard(i2c_path)
-
-    ami = AmiTrap()
-    # Get most recent picture
-    picture_path = ami.get_most_recent_picture_path()
-    # Read picture, convert to grey scale, and compress such that it fits into 8 KB
-    image = Image.open(picture_path).convert("L")
-    image.thumbnail((128, 128))  # 128x128 can be 16 KB without compressions
-    # JPEG compress image and turn into bytes array. Print size in bytes
-    image_bytes = io.BytesIO()
-    image.save(image_bytes, format="JPEG", quality=85)
-    image_bytes = image_bytes.getvalue()
-    print(f"Picture size: {len(image_bytes)} bytes")
-    print()
-
-    if DEBUG:
-        # Save image to /tmp/
-        image.save("/tmp/image.jpg", format="JPEG", quality=85)
-
-    # Reset binary data store on Notecard
-    binary_helpers.binary_store_reset(card=nCard)
-    # Send picture to Notecard
-    binary_helpers.binary_store_transmit(card=nCard, data=image_bytes, offset=0)
-    # Change mode to continous
-    prev_sync_mode = hub.get(nCard)["mode"]
-    hub.set(nCard,
-            mode="continuous")
-    if not _sync_and_print_status(nCard):
-        print("Failed to send picture from Ami-Trap to Notehub.")
-        print()
-        return
-    # Send picture from Notecard to Notehub
-    try:
-        print(note.add(nCard,
-                    file="binary.qo",
-                    binary=True,
-                    live=True))
-    except Exception as e:
-        print("note.add doesn't work with binary files. Use Transaction instead.")
-        print(e)
-        print()
-        print(nCard.Transaction({"req": "note.add",
-                                 "file": "binary.qo",
-                                 "binary": True,
-                                 "live": True}))
-    # Sync data with cloud
-    if not _sync_and_print_status(nCard):
-        print("Failed to send picture from Ami-Trap to Notehub.")
-        print()
-        return
-
-    print("Sent picture from Ami-Trap to Notehub.")
-    print()
-
-    # Change mode back to previous mode
-    hub.set(nCard,
-            mode=prev_sync_mode)
-
-    # Print current mode
-    print(hub.get(nCard))
-    print()
 
 def _check_for_firmware_update(ami, nCard):
     """Check for firmware update and update if available.

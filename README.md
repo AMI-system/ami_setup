@@ -175,20 +175,7 @@ The following JSON *Notes* are recognised by the Ami-System:
 
     Receive data from Notehub and return output string.
 
-### `cellular_send_picture(i2c_path="/dev/i2c-1")`
-
-    Send most recent picture from Ami-Trap to Notehub.
-
-    Compress image such that it fits into 8 KB.
-    (According to https://discuss.blues.com/t/encode-and-send-a-small-image/475
-    8 KB are safe.)
-
 ## Notes
-
-Tested on AMBER 2023, AgZero+ 2023, and WittyPi 2024 images.
-
-Find more details [here](https://github.com/JonasBchrt/ami-trap-raspi-cellular/blob/main/README.md).
-
 
 ### KG
 
