@@ -33,7 +33,7 @@ class AmiTrap:
     def __init__(self,
                  camera_path="/dev/video0",
                  camera_config_path="/home/pi/scripts/setCamera.sh",
-                 picture_path="/media/pi/PiImages/images",
+                 picture_path="/media/pi/PiImages",
                  picture_format="*.jp*g",
                  boot_config_path="/boot/config.txt",
                  is_rockpi=False,
