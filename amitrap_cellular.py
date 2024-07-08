@@ -159,7 +159,7 @@ def _gather_status_data(ami, nCard):
             "temperature":card.temp(nCard)["value"],
             "wittypi":wittypi_schedule,
             "microphone":microphone_info,
-            "predictions": results,
+            #"predictions": results,
             "summary": frequency
             }
 
