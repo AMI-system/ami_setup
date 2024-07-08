@@ -20,15 +20,15 @@ echo "    2/4 Installing dependencies..."
 
 # "$script_dir"/cellular-env/bin/python "$script_dir"/ami-trap-raspi-cellular-config.py
 
-echo "    3/4 Adding command to rc.local for start-up after boot..."
+# echo "    3/4 Adding command to rc.local for start-up after boot..."
 
-# Add command to rc.local
-sudo sed -i -e '$i \sudo '"$script_dir/cellular-env/bin/python"' '"$script_dir"'/ami-trap-raspi-cellular.py &\n' /etc/rc.local
+# # Add command to rc.local
+# sudo sed -i -e '$i \sudo '"$script_dir/cellular-env/bin/python"' '"$script_dir"'/ami-trap-raspi-cellular.py &\n' /etc/rc.local
 
-echo "    4/4 Tweak other commands in rc.local..."
+# echo "    4/4 Tweak other commands in rc.local..."
 
-# Add "&" behind commands "motion -m" and "home/pi/scripts/setCamera.sh"
-sudo sed -i 's/^motion -m/motion -m \&/' /etc/rc.local
-sudo sed -i 's/^\/home\/pi\/scripts\/setCamera.sh/\/home\/pi\/scripts\/setCamera.sh \&/' /etc/rc.local
+# # Add "&" behind commands "motion -m" and "home/pi/scripts/setCamera.sh"
+# sudo sed -i 's/^motion -m/motion -m \&/' /etc/rc.local
+# sudo sed -i 's/^\/home\/pi\/scripts\/setCamera.sh/\/home\/pi\/scripts\/setCamera.sh \&/' /etc/rc.local
 
-echo "Installation complete. Please reboot to enable cellular connectivity."
+echo "Installation complete."

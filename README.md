@@ -44,6 +44,21 @@ Run:
 sudo ./full-install.sh
 ```
 
+Run:
+```bash
+sudo crontab -e
+```
+Add the following line:
+```bash
+@reboot script_dir/cellular-env/bin/python script_dir/ami-trap-raspi-cellular.py
+```
+Replace `script_dir` with the path to the installation directory.
+Check that the root crontab also contains the lines:
+```bash
+@reboot /home/pi/scripts/setCamera.sh
+@reboot motion -m
+```
+
 After installation, reboot:
 
 ```bash
@@ -52,12 +67,11 @@ sudo reboot
 
 [🪳Troubleshooting](#troubleshooting)
 
-If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 6 h.
+If there is a cellular connection available, then the information from the Ami-Trap should now be pushed to the cloud every 20 min.
 You can change this interval in `ami-trap-raspi-cellular.py` in `__main__` using the `interval_minutes` parameter.
 The synchronisation mode of the Notecard can be configured in the `cellular_configure` function in `amitrap_cellular.py`.
 You can find the available modes [here](https://dev.blues.io/notecard/notecard-walkthrough/essential-requests/#configuring-synchronization-modes).
 
-If you do not want to push data every 6 h, open `/etc/rc.local` and remove the respective line.
 
 If you only want to send data from the Ami-System once, run
 ```bash
