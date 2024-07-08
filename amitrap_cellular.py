@@ -127,20 +127,30 @@ def _gather_status_data(ami, nCard):
 
     microphone_info = ami.get_microphone_info()
 
-    # read in the results json from ../model_data_bookworm/results
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    results_path = os.path.join(script_dir, os.pardir, 'model_data_bookworm', 'results', 'uk_predictions.json')
+    try:
 
-    with open(results_path) as f:
-        results = json.load(f)
+        # read in the results json from ../model_data_bookworm/results
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        results_path = os.path.join(script_dir, os.pardir, 'model_data_bookworm', 'results', 'uk_predictions.json')
 
-    # for each element in results get moth_class
-    object_class = []
-    for k in results.keys():
-        object_class.append(results[k]['moth_class'])
-    frequency = {"n_moths": object_class.count('moth'),
-                 "n_non_moths": object_class.count('nonmoth')
-                 }
+        with open(results_path) as f:
+            results = json.load(f)
+
+        # for each element in results get moth_class
+        object_class = []
+        for k in results.keys():
+            object_class.append(results[k]['moth_class'])
+        frequency = {"n_moths": object_class.count('moth'),
+                    "n_non_moths": object_class.count('nonmoth')
+                    }
+
+    except Exception as e:
+        results = {}
+        frequency = {
+            "n_moths": object_class.count("moth"),
+            "n_non_moths": object_class.count("nonmoth"),
+        }
+        print(f"An exception occurred: {e}")
 
     data = {"os_time":time_info,
             "camera":camera_info,
