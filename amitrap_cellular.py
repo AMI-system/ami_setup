@@ -147,8 +147,8 @@ def _gather_status_data(ami, nCard):
     except Exception as e:
         results = {}
         frequency = {
-            "n_moths": object_class.count("moth"),
-            "n_non_moths": object_class.count("nonmoth"),
+            "n_moths": 0,
+            "n_non_moths": 0,
         }
         print(f"An exception occurred: {e}")
 
