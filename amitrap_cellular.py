@@ -129,9 +129,8 @@ def _gather_status_data(ami, nCard):
 
     try:
 
-        # read in the results json from ../model_data_bookworm/results
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        results_path = os.path.join(script_dir, os.pardir, 'model_data_bookworm', 'results', 'uk_predictions.json')
+        # read in the results json
+        results_path = "/media/pi/PiImages/predictions.json"
 
         with open(results_path) as f:
             results = json.load(f)
@@ -170,6 +169,11 @@ def _gather_status_data(ami, nCard):
     print(note.add(nCard,
                    body=data))
     print()
+    for result in results:
+        print(note.add(nCard,
+                       file="prediction.qo",
+                       body=result))
+        print()
 
 
 def _sync_and_print_status(nCard, timeout=600):
