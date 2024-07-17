@@ -171,10 +171,12 @@ def _gather_status_data(ami, nCard):
     print(note.add(nCard,
                    body=data))
     print()
-    for result in results:
+    for k in results.keys():
+        print(json.dumps(results[k], indent=4))
+        print()
         print(note.add(nCard,
                        file="prediction.qo",
-                       body=result))
+                       body=results[k]))
         print()
 
 
