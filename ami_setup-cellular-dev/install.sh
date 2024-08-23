@@ -1,0 +1,1 @@
+cp -r "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"/* "/home/pi/ami_setup-cellular-dev"
