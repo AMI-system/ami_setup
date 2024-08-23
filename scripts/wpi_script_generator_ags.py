@@ -49,87 +49,108 @@ if __name__ == "__main__":
     _, saturday_sunrise = get_sunset_sunrise_times(device_settings['lat'], device_settings['lon'], saturday_dt)
     saturday_sunrise = saturday_sunrise.replace(tzinfo=None)
 
-    # Every schedule starts on a Monday and ends on a Sunday, total Witty Pi schedule to cover this full week schedule
+    # Every recording schedule starts on a Monday and ends on a Sunday, total Witty Pi schedule to cover this full week schedule
     # Overlapping schedule starts 10 minutes earlier to the nearest schedule and ends 10 minutes later to the last schedule
     start_time = datetime(sunday_dt.year, sunday_dt.month, sunday_dt.day, 12, 00)
     end_time = datetime(next_sunday_dt.year, next_sunday_dt.month, next_sunday_dt.day, 12, 20)
-
-    # 0- ON from Sunday noon to Sunday noon+10min [Setup time]
-    on_from_0 = start_time
-    # on_to_0 = datetime(sunday_dt.year, sunday_dt.month, sunday_dt.day, 12, 10)
-    on_to_0 = start_time + timedelta(minutes=10)
+    
+    # Add additional ON-OFF before the recording schedule starts
+    # 0- ON from 1 Jan 2000 
+    on_from_0 = datetime(2000, 1, 1, 00, 00, 00)
+    on_to_0 = start_time - timedelta(minutes=5)
     on_duration_days_0, on_duration_hours_0, on_duration_minutes_0, on_duration_seconds_0 = time_difference(on_from_0, on_to_0)
-
-    # 0- OFF from Sunday 12:10 to Monday sunset-10min [Schedule begins]
+    
+    # 0- OFF from Sunday noon-5min to Sunday noon (start_time)
     off_from_0 = on_to_0
-    off_to_0 = monday_sunset - timedelta(minutes=10)
+    off_to_0 = start_time
     off_duration_days_0, off_duration_hours_0, off_duration_minutes_0, off_duration_seconds_0 = time_difference(off_from_0, off_to_0)
-
-    # 1- ON from Monday sunset-10min to Tuesday sunrise+10min
+    
+    # 1- ON from Sunday noon to Sunday noon+10min [Setup time]
     on_from_1 = off_to_0
-    on_to_1 = tuesday_sunrise + timedelta(minutes=10)
+    on_to_1 = start_time + timedelta(minutes=10)
     on_duration_days_1, on_duration_hours_1, on_duration_minutes_1, on_duration_seconds_1 = time_difference(on_from_1, on_to_1)
 
-    # 1- OFF from Tuesday sunrise+10min to Tuesday 11:50
+    # 1- OFF from Sunday 12:10 to Monday sunset-10min [Schedule begins]
     off_from_1 = on_to_1
-    off_to_1 = datetime(tuesday_dt.year, tuesday_dt.month, tuesday_dt.day, 11, 50)
+    off_to_1 = monday_sunset - timedelta(minutes=10)
     off_duration_days_1, off_duration_hours_1, off_duration_minutes_1, off_duration_seconds_1 = time_difference(off_from_1, off_to_1)
 
-    # 2- ON from Tuesday 11:50 to Wednesday 12:10
+    # 2- ON from Monday sunset-10min to Tuesday sunrise+10min
     on_from_2 = off_to_1
-    on_to_2 = datetime(wednesday_dt.year, wednesday_dt.month, wednesday_dt.day, 12, 10)
+    on_to_2 = tuesday_sunrise + timedelta(minutes=10)
     on_duration_days_2, on_duration_hours_2, on_duration_minutes_2, on_duration_seconds_2 = time_difference(on_from_2, on_to_2)
 
-    # 2- OFF from Wednesday 12:10 to Wednesday sunset-10min
+    # 2- OFF from Tuesday sunrise+10min to Tuesday 11:50
     off_from_2 = on_to_2
-    off_to_2 = wednesday_sunset - timedelta(minutes=10)
+    off_to_2 = datetime(tuesday_dt.year, tuesday_dt.month, tuesday_dt.day, 11, 50)
     off_duration_days_2, off_duration_hours_2, off_duration_minutes_2, off_duration_seconds_2 = time_difference(off_from_2, off_to_2)
 
-    # 3- ON from Wednesday sunset-10min to Thursday sunrise+10min
+    # 3- ON from Tuesday 11:50 to Wednesday 12:10
     on_from_3 = off_to_2
-    on_to_3 = thursday_sunrise + timedelta(minutes=10)
+    on_to_3 = datetime(wednesday_dt.year, wednesday_dt.month, wednesday_dt.day, 12, 10)
     on_duration_days_3, on_duration_hours_3, on_duration_minutes_3, on_duration_seconds_3 = time_difference(on_from_3, on_to_3)
 
-    # 3- OFF from Thursday sunrise+10min to Thursday 11:50
+    # 3- OFF from Wednesday 12:10 to Wednesday sunset-10min
     off_from_3 = on_to_3
-    off_to_3 = datetime(thursday_dt.year, thursday_dt.month, thursday_dt.day, 11, 50)
+    off_to_3 = wednesday_sunset - timedelta(minutes=10)
     off_duration_days_3, off_duration_hours_3, off_duration_minutes_3, off_duration_seconds_3 = time_difference(off_from_3, off_to_3)
 
-    # 4- ON from Thursday 11:50 to Friday 12:10
+    # 4- ON from Wednesday sunset-10min to Thursday sunrise+10min
     on_from_4 = off_to_3
-    on_to_4 = datetime(friday_dt.year, friday_dt.month, friday_dt.day, 12, 10)
+    on_to_4 = thursday_sunrise + timedelta(minutes=10)
     on_duration_days_4, on_duration_hours_4, on_duration_minutes_4, on_duration_seconds_4 = time_difference(on_from_4, on_to_4)
 
-    # 4- OFF from Friday 12:10 to Friday sunset-10min
+    # 4- OFF from Thursday sunrise+10min to Thursday 11:50
     off_from_4 = on_to_4
-    off_to_4 = friday_sunset - timedelta(minutes=10)
+    off_to_4 = datetime(thursday_dt.year, thursday_dt.month, thursday_dt.day, 11, 50)
     off_duration_days_4, off_duration_hours_4, off_duration_minutes_4, off_duration_seconds_4 = time_difference(off_from_4, off_to_4)
-   
-    # 5- ON from Friday sunset-10min to Saturday sunrise+10min
-    on_from_5 = off_to_4
-    on_to_5 = saturday_sunrise + timedelta(minutes=10)
-    on_duration_days_5, on_duration_hours_5, on_duration_minutes_5, on_duration_seconds_5 = time_difference(on_from_5, on_to_5)
-    
-    # 5- OFF from Saturday sunrise+10min to Saturday 11:50
-    off_from_5 = on_to_5
-    off_to_5 = datetime(saturday_dt.year, saturday_dt.month, saturday_dt.day, 11, 50)
-    off_duration_days_5, off_duration_hours_5, off_duration_minutes_5, off_duration_seconds_5 = time_difference(off_from_5, off_to_5)
-    
-    # 6- ON from Saturday 11:50 to Sunday 12:10
-    on_from_6 = off_to_5
-    on_to_6 = datetime(next_sunday_dt.year, next_sunday_dt.month, next_sunday_dt.day, 12, 10)
-    on_duration_days_6, on_duration_hours_6, on_duration_minutes_6, on_duration_seconds_6 = time_difference(on_from_6, on_to_6)
 
-    # 6- OFF from Sunday 12:10 to Sunday 12:20
+    # 5- ON from Thursday 11:50 to Friday 12:10
+    on_from_5 = off_to_4
+    on_to_5 = datetime(friday_dt.year, friday_dt.month, friday_dt.day, 12, 10)
+    on_duration_days_5, on_duration_hours_5, on_duration_minutes_5, on_duration_seconds_5 = time_difference(on_from_5, on_to_5)
+
+    # 5- OFF from Friday 12:10 to Friday sunset-10min
+    off_from_5 = on_to_5
+    off_to_5 = friday_sunset - timedelta(minutes=10)
+    off_duration_days_5, off_duration_hours_5, off_duration_minutes_5, off_duration_seconds_5 = time_difference(off_from_5, off_to_5)
+   
+    # 6- ON from Friday sunset-10min to Saturday sunrise+10min
+    on_from_6 = off_to_5
+    on_to_6 = saturday_sunrise + timedelta(minutes=10)
+    on_duration_days_6, on_duration_hours_6, on_duration_minutes_6, on_duration_seconds_6 = time_difference(on_from_6, on_to_6)
+    
+    # 6- OFF from Saturday sunrise+10min to Saturday 11:50
     off_from_6 = on_to_6
-    off_to_6 = datetime(next_sunday_dt.year, next_sunday_dt.month, next_sunday_dt.day, 12, 20)
+    off_to_6 = datetime(saturday_dt.year, saturday_dt.month, saturday_dt.day, 11, 50)
     off_duration_days_6, off_duration_hours_6, off_duration_minutes_6, off_duration_seconds_6 = time_difference(off_from_6, off_to_6)
+    
+    # 7- ON from Saturday 11:50 to Sunday 12:10
+    on_from_7 = off_to_6
+    on_to_7 = datetime(next_sunday_dt.year, next_sunday_dt.month, next_sunday_dt.day, 12, 10)
+    on_duration_days_7, on_duration_hours_7, on_duration_minutes_7, on_duration_seconds_7 = time_difference(on_from_7, on_to_7)
+
+    # 7- OFF from Sunday 12:10 to Sunday 12:20
+    off_from_7 = on_to_7
+    off_to_7 = datetime(next_sunday_dt.year, next_sunday_dt.month, next_sunday_dt.day, 12, 20)
+    off_duration_days_7, off_duration_hours_7, off_duration_minutes_7, off_duration_seconds_7 = time_difference(off_from_7, off_to_7)
+    
+    # Add additional ON-OFF after the recording schedule ends
+    # 8- ON from Sunday 12:20 to 31 Dec 2029
+    on_from_8 = off_to_7
+    on_to_8 = datetime(2029, 12, 31, 23, 59, 59)
+    on_duration_days_8, on_duration_hours_8, on_duration_minutes_8, on_duration_seconds_8 = time_difference(on_from_8, off_to_8)
+    
+    # 8- OFF from 31 Dec 2029 to 1 Jan 2030
+    off_from_8 = on_to_8
+    off_to_8 = datetime(2030, 1, 1, 01, 00, 00) 
+    off_duration_days_8, off_duration_hours_8, off_duration_minutes_8, off_duration_seconds_8 = time_difference(off_from_8, off_to_8)
 
     # Generate Witty Pi schedule
     # Turn on Raspberry Pi at predetermined time of the week, keep ON state for a determined time
     witty_pi_schedule = f"""
-    BEGIN {start_time}
-    END {end_time}
+    BEGIN {on_from_0}
+    END {off_to_8}
     ON D{on_duration_days_0} H{on_duration_hours_0} M{on_duration_minutes_0} S{on_duration_seconds_0}
     OFF D{off_duration_days_0} H{off_duration_hours_0} M{off_duration_minutes_0} S{off_duration_seconds_0}
     ON D{on_duration_days_1} H{on_duration_hours_1} M{on_duration_minutes_1} S{on_duration_seconds_1}
@@ -144,6 +165,10 @@ if __name__ == "__main__":
     OFF D{off_duration_days_5} H{off_duration_hours_5} M{off_duration_minutes_5} S{off_duration_seconds_5}
     ON D{on_duration_days_6} H{on_duration_hours_6} M{on_duration_minutes_6} S{on_duration_seconds_6}
     OFF D{off_duration_days_6} H{off_duration_hours_6} M{off_duration_minutes_6} S{off_duration_seconds_6}
+    ON D{on_duration_days_7} H{on_duration_hours_7} M{on_duration_minutes_7} S{on_duration_seconds_7}
+    OFF D{off_duration_days_7} H{off_duration_hours_7} M{off_duration_minutes_7} S{off_duration_seconds_7}
+    ON D{on_duration_days_8} H{on_duration_hours_8} M{on_duration_minutes_8} S{on_duration_seconds_8}
+    OFF D{off_duration_days_8} H{off_duration_hours_8} M{off_duration_minutes_8} S{off_duration_seconds_8}
     """
 
     # print(witty_pi_schedule)
