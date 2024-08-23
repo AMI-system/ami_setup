@@ -1998,3 +1998,63 @@ Cannot open device /dev/video0, exiting.
 Cannot open device /dev/video0, exiting.
 [2024-08-23 13:57:16] Send out the SYS_UP signal via GPIO-17 pin.
 [2024-08-23 13:57:16] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-08-23 16:55:43] Done :-)
+[2024-08-23 16:55:43] Firmware ID: 0x37
+[2024-08-23 16:55:43] Firmware Revison: 0x05
+[2024-08-23 16:55:43] Current Vout=5.25V, Iout=0.79A
+[2024-08-23 16:55:43] System starts up because the button is clicked.
+[2024-08-23 16:55:50] Schedule next shutdown at: 2024-08-24 06:15:22
+Todays's sunset: 2024-08-23 20:11:21+01:00
+Tomorrow's sunrise 2024-08-24 06:05:22+01:00
+[2024-08-23 16:55:50] Schedule next startup at: 2024-08-24 11:50:00
+  File "/home/pi/scripts/wpi_script_generator_ags.py", line 146
+    off_to_8 = datetime(2030, 1, 1, 01, 00, 00) 
+                                     ^
+SyntaxError: invalid token
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-08-23 16:55:53] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-08-23 16:55:53] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-08-23 17:05:27] Done :-)
+[2024-08-23 17:05:27] Firmware ID: 0x37
+[2024-08-23 17:05:27] Firmware Revison: 0x05
+[2024-08-23 17:05:27] Current Vout=5.25V, Iout=0.62A
+[2024-08-23 17:05:27] System starts up because the button is clicked.
+[2024-08-23 17:05:34] Schedule next shutdown at: 2024-08-24 06:15:22
+Todays's sunset: 2024-08-23 20:11:21+01:00
+Tomorrow's sunrise 2024-08-24 06:05:22+01:00
+[2024-08-23 17:05:34] Schedule next startup at: 2024-08-24 11:50:00
+  File "/home/pi/scripts/wpi_script_generator_ags.py", line 146
+    off_to_8 = datetime(2030, 1, 1, 01, 00, 00) 
+                                     ^
+SyntaxError: invalid token
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-08-23 17:05:37] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-08-23 17:05:37] Pending for incoming shutdown command...
+[2024-08-23 17:12:41] I can not find the begin time in the script...
+[2024-08-23 17:13:20] I can not find the begin time in the script...

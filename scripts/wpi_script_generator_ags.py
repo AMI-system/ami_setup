@@ -56,7 +56,7 @@ if __name__ == "__main__":
     
     # Add additional ON-OFF before the recording schedule starts
     # 0- ON from 1 Jan 2000 
-    on_from_0 = datetime(2000, 1, 1, 00, 00, 00)
+    on_from_0 = datetime(2000, 1, 1, 0, 0, 0)
     on_to_0 = start_time - timedelta(minutes=5)
     on_duration_days_0, on_duration_hours_0, on_duration_minutes_0, on_duration_seconds_0 = time_difference(on_from_0, on_to_0)
     
@@ -139,11 +139,11 @@ if __name__ == "__main__":
     # 8- ON from Sunday 12:20 to 31 Dec 2029
     on_from_8 = off_to_7
     on_to_8 = datetime(2029, 12, 31, 23, 59, 59)
-    on_duration_days_8, on_duration_hours_8, on_duration_minutes_8, on_duration_seconds_8 = time_difference(on_from_8, off_to_8)
+    on_duration_days_8, on_duration_hours_8, on_duration_minutes_8, on_duration_seconds_8 = time_difference(on_from_8, on_to_8)
     
     # 8- OFF from 31 Dec 2029 to 1 Jan 2030
     off_from_8 = on_to_8
-    off_to_8 = datetime(2030, 1, 1, 01, 00, 00) 
+    off_to_8 = datetime(2030, 1, 1, 1, 0, 0) 
     off_duration_days_8, off_duration_hours_8, off_duration_minutes_8, off_duration_seconds_8 = time_difference(off_from_8, off_to_8)
 
     # Generate Witty Pi schedule
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     OFF D{off_duration_days_8} H{off_duration_hours_8} M{off_duration_minutes_8} S{off_duration_seconds_8}
     """
 
-    # print(witty_pi_schedule)
+    print(witty_pi_schedule)
 
     # Specify the target path for the schedule file
     target_path = '/home/pi/wittypi/schedules'
