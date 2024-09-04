@@ -2,12 +2,13 @@
 
 # Get system time
 system_time=$(sudo date +%s)
-echo $system_time
+echo "$system_time"
 
 # Cutoff datetime
 cutoff_datetime="2020-01-01 00:00"
+echo "$cutoff_datetime"
 cutoff_datetime=$(date -d "$cutoff_datetime" +%s)
-echo $cutoff_datetime
+echo "$cutoff_datetime"
 
 # Compare system to cutoff
 if [[ "$system_time" -lt "$cutoff_datetime" ]]; then
@@ -16,10 +17,10 @@ if [[ "$system_time" -lt "$cutoff_datetime" ]]; then
 	
 	# Retrieve time from cellular
 	current_datetime=$(python3 /home/pi/scripts/retrieve_cellular_time.py)
-	#echo "${current_datetime%+*}"
+	echo "$current_datetime"
 	
 	# Set datetime from cellular
-	sudo date -s "${current_datetime%+*}"
+	sudo date -s "${current_datetime}"
 	
 	# What about setting rtc time after this??
     expect <<EOF

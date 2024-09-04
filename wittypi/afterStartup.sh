@@ -10,6 +10,9 @@
 
 # Wireless connectivity (Bluetooth and cellular) invoked in /etc/rc.local
 
+# Check the system time and reset if necessary
+sudo /home/pi/scripts/check_datetime.sh
+
 # Extract and save sunrise and sunset times
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-# from datetime import datetime, timedelta
-import datetime
+from datetime import datetime, timedelta
 from timezonefinder import TimezoneFinder
 import json
 import pytz
@@ -374,36 +373,38 @@ def custom_format_datetime(dt):
     return custom_formatted_string
 
 def get_cellular_time():
-	
-	# Configure I2C (connection between Notecard and RPi)
-	i2c_path = "/dev/i2c-1"
-	port = I2C(i2c_path)
-	# Connect to Notecard via I2C
-	nCard = notecard.OpenI2C(port, 0, 0)
-
-	#print("Wait for Notecard to acquire time of day")
-	timeout = 60
-	got_time = False
-	for iteration in range(timeout):
-		response = card.time(nCard)
-		time = response["time"]
-		zone = response["zone"].split(",")[1]
-		if zone != "Unknown":
-			got_time = True
-			#print(time)
-			#print(zone)
-			utc_datetime = datetime.datetime.utcfromtimestamp(time)
-			# Assign timezone
-			utc_datetime = utc_datetime.replace(tzinfo=pytz.utc)
-			# Define local timezone
-			local_timezone = pytz.timezone(zone)
-			# Convert time to local timezone
-			local_datetime = utc_datetime.astimezone(local_timezone)
-			#print(local_datetime)
-			break
-		sleep(1)
-	if not got_time:
-		print("Failed to set local time of day via card time.")
-		raise Exception("Failed to set local time of day via card time after 60 attempts")
-	
-	return local_datetime
+    
+    # Configure I2C (connection between Notecard and RPi)
+    i2c_path = "/dev/i2c-1"
+    port = I2C(i2c_path)
+    # Connect to Notecard via I2C
+    nCard = notecard.OpenI2C(port, 0, 0)
+    
+    #print("Wait for Notecard to acquire time of day")
+    timeout = 60
+    got_time = False
+    
+    for iteration in range(timeout):
+        response = card.time(nCard)
+        time = response["time"]
+        #print(time)
+        zone = response["zone"].split(",")[1]
+        if zone != "Unknown":
+            got_time = True
+            #print(time)
+            #print(zone)
+            utc_datetime = datetime.utcfromtimestamp(time)
+            # Assign timezone
+            utc_datetime = utc_datetime.replace(tzinfo=pytz.utc)
+            # Define local timezone
+            local_timezone = pytz.timezone(zone)
+            # Convert time to local timezone
+            local_datetime = utc_datetime.astimezone(local_timezone)
+            #print(local_datetime)
+            break
+        sleep(1)
+    if not got_time:
+        #print("Failed to set local time of day via card time.")
+        raise Exception("Failed to set local time of day via card time after 60 attempts")
+    return local_datetime
+    
