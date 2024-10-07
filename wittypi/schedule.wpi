@@ -1,22 +1,6 @@
+# Turn on Raspberry Pi every night (from 10pm to 5am)
 
-    BEGIN 2010-05-01 00:00:00
-    END 2038-01-01 01:00:00
-    ON D5258.0 H11.0 M55.0 S0.0
-    OFF D0.0 H0.0 M5.0 S0.0
-    ON D0.0 H0.0 M10.0 S0.0
-    OFF D1.0 H6.0 M40.0 S48.0
-    ON D0.0 H12.0 M14.0 S32.0
-    OFF D0.0 H4.0 M44.0 S40.0
-    ON D1.0 H0.0 M20.0 S0.0
-    OFF D0.0 H6.0 M36.0 S9.0
-    ON D0.0 H12.0 M22.0 S27.0
-    OFF D0.0 H4.0 M41.0 S24.0
-    ON D1.0 H0.0 M20.0 S0.0
-    OFF D0.0 H6.0 M31.0 S31.0
-    ON D0.0 H12.0 M30.0 S22.0
-    OFF D0.0 H4.0 M38.0 S7.0
-    ON D1.0 H0.0 M20.0 S0.0
-    OFF D0.0 H0.0 M10.0 S0.0
-    ON D4841.0 H11.0 M39.0 S59.0
-    OFF D0.0 H1.0 M0.0 S1.0
-    
+BEGIN	2022-06-01 22:00:00
+END	2035-07-31 23:59:59
+ON	H7	# keep ON state for 7 hours from 10pm to 5am
+OFF	H17	# keep OFF state for 17 hours from 5 am to 10pm

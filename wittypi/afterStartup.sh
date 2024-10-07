@@ -17,7 +17,7 @@ sudo /home/pi/scripts/check_datetime.sh
 sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 
 # Calculates the weekly schedule
-sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+#sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
 
 # Calculate moths recording schedule
 sudo python3 /home/pi/scripts/moths_schedule.py
