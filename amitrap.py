@@ -78,7 +78,7 @@ class AmiTrap:
     def get_software_version(self):
         return __version__
 
-    def get_camera_info(self):
+    def get_camera_info(self, read_config=True):
         """
         Gets information about the Raspberry Pi camera.
 
@@ -88,7 +88,8 @@ class AmiTrap:
         camera_info = {}
         camera_info["connected"] = self._is_camera_connected()
         camera_info["id"] = self.get_camera_id()
-        camera_info["config"] = self._read_camera_config()
+        if read_config:
+            camera_info["config"] = self._read_camera_config()
         return camera_info
 
     def _is_camera_connected(self):

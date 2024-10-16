@@ -116,25 +116,25 @@ def _gather_status_data(ami, nCard):
         ami (AmiTrap): AmiTrap object.
         nCard (notecard): Notecard object.
     """
-    camera_info = ami.get_camera_info()
+    camera_info = ami.get_camera_info(read_config=False)
 
     time_info = ami.get_time_info()
 
     memory_info = ami.get_memory_info()
 
-    bluetooth_info = ami.get_bluetooth_info()
+    # bluetooth_info = ami.get_bluetooth_info()
 
-    wittypi_schedule = ami.get_wittypi_schedule()
+    # wittypi_schedule = ami.get_wittypi_schedule()
 
-    microphone_info = ami.get_microphone_info()
+    # microphone_info = ami.get_microphone_info()
 
     data = {"os_time":time_info,
             "camera":camera_info,
             "memory":memory_info,
-            "bluetooth":bluetooth_info,
+            # "bluetooth":bluetooth_info,
             "temperature":card.temp(nCard)["value"],
-            "wittypi":wittypi_schedule,
-            "microphone":microphone_info
+            # "wittypi":wittypi_schedule,
+            # "microphone":microphone_info
             }
 
     print(json.dumps(data, indent=4))
@@ -194,7 +194,7 @@ async def cellular_send(i2c_path="/dev/i2c-1"):
     # Connect to Notecard via I2C
     nCard = _connect_to_notecard(i2c_path)
 
-    ami = AmiTrap()
+    ami = AmiTrap(picture_path="/media/pi/PiImages")
 
     _gather_status_data(ami, nCard)
 
@@ -357,7 +357,7 @@ async def cellular_receive(i2c_path="/dev/i2c-1"):
 
     if _sync_and_print_status(nCard):
 
-        ami = AmiTrap()
+        ami = AmiTrap(picture_path="/media/pi/PiImages")
 
         return _process_incoming_changes(ami, nCard)
 
@@ -376,7 +376,7 @@ async def cellular_send_picture(i2c_path="/dev/i2c-1"):
     # Connect to Notecard via I2C
     nCard = _connect_to_notecard(i2c_path)
 
-    ami = AmiTrap()
+    ami = AmiTrap(picture_path="/media/pi/PiImages")
     # Get most recent picture
     picture_path = ami.get_most_recent_picture_path()
     # Read picture, convert to grey scale, and compress such that it fits into 8 KB
@@ -614,7 +614,7 @@ async def cellular_send_and_receive(i2c_path="/dev/i2c-1"):
     # Connect to Notecard via I2C
     nCard = _connect_to_notecard(i2c_path)
 
-    ami = AmiTrap()
+    ami = AmiTrap(picture_path="/media/pi/PiImages")
 
     # Continious mode?
     loop = False
