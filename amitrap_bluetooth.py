@@ -61,11 +61,12 @@ class AmiTrapService(Service):
         super().__init__(AMI_TRAP_SERVICE_UUID, True)
 
         if not is_rockpi:
-            self._ami = AmiTrap()
+            self._ami = AmiTrap(picture_path="/media/pi/PiImages")
         else:
             self._ami = AmiTrap(camera_config_path="/home/rock/setCamera.sh",
                                 camera_path="/dev/video5",
-                                is_rockpi=True)
+                                is_rockpi=True,
+                                picture_path="/media/pi/PiImages")
 
         self._output = ""
 
