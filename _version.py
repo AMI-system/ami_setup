@@ -1,1 +1,1 @@
-__version__ = "ami-ble-0.0.2"
+__version__ = "ami-ble-0.0.3"

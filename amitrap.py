@@ -211,15 +211,23 @@ class AmiTrap:
 
     def _is_ssd_connected(self):
         """
-        Checks if a drive is connected.
+        Checks if an SSD is connected and mounted at /media/pi/PiImages.
 
         Returns:
-            bool: True if at least one drive is connected, False otherwise.
+            bool: True if /dev/sda is connected and mounted at /media/pi/PiImages, False otherwise.
         """
-        output = subprocess.check_output(['lsblk', '-o', 'NAME,TYPE']) 
-        # Decode the output from bytes to string 
-        output = output.decode('utf-8') 
-        return "sda" in output
+        try:
+            # Check if /dev/sda is mounted at /media/pi/PiImages
+            output = subprocess.check_output(['lsblk', '-o', 'NAME,MOUNTPOINT'], text=True)
+            
+            for line in output.splitlines():
+                if "sda" in line and "/media/pi/PiImages" in line:
+                    return True
+            
+            return False
+        
+        except subprocess.CalledProcessError:
+            return False
 
     def get_bluetooth_info(self):
         """
