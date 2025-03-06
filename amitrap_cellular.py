@@ -41,7 +41,7 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
     """
 
     # Notehub (cloud) project unique identifier
-    productUID = "todo:replace-with-your-product-uid"
+    #productUID = "todo:replace-with-your-product-uid"
 
     # Synchronization mode
     # Must be one of 'periodic', 'continous', 'minimum', 'off', or 'dfu'
@@ -60,7 +60,7 @@ async def cellular_configure(i2c_path="/dev/i2c-1"):
     print()
     # Configure cellular module (Notecard)
     hub.set(nCard,
-            product=productUID,
+            #product=productUID,
             mode=sync_mode,
             outbound=outbound_interval_minutes,
             inbound=inbound_interval_minutes)

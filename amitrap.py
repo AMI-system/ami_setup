@@ -258,15 +258,23 @@ class AmiTrap:
 
     def _is_ssd_connected(self):
         """
-        Checks if a drive is connected.
+        Checks if an SSD is connected and mounted at /media/pi/PiImages.
 
         Returns:
-            bool: True if at least one drive is connected, False otherwise.
+            bool: True if /dev/sda is connected and mounted at /media/pi/PiImages, False otherwise.
         """
-        output = subprocess.check_output(['lsblk', '-o', 'NAME,TYPE']) 
-        # Decode the output from bytes to string 
-        output = output.decode('utf-8') 
-        return "sda" in output
+        try:
+            # Check if /dev/sda is mounted at /media/pi/PiImages
+            output = subprocess.check_output(['lsblk', '-o', 'NAME,MOUNTPOINT'], text=True)
+            
+            for line in output.splitlines():
+                if "sda" in line and "/media/pi/PiImages" in line:
+                    return True
+            
+            return False
+        
+        except subprocess.CalledProcessError:
+            return False
 
     def get_bluetooth_info(self):
         """
@@ -404,6 +412,17 @@ class AmiTrap:
             except Exception as e:
                 print("Could not set RTC time. Is there an issue with the WittyPi?")
                 print()
+
+        try:
+            # Set system time from RTC
+            bash_cmd = f"sudo hwclock -w"
+            print(bash_cmd)
+            print()
+            subprocess.run(bash_cmd, check=True, shell=True, timeout=2)
+        except Exception as e:
+            print(e)
+            print("Could not set RTC time. Is there an issue with the DS3231? Ignore if you are not using a DS3231.")
+            print()
 
     def get_serial_number(self):
         """

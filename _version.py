@@ -1,1 +1,1 @@
-__version__ = "amber-kenya-0.0.1"
+__version__ = "ami-cellular-0.0.3"
