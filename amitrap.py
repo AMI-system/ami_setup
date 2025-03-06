@@ -364,8 +364,19 @@ class AmiTrap:
                 subprocess.run(bash_cmd, check=True, shell=True, timeout=2)
             except Exception as e:
                 print(e)
-                print("Could not set RTC time. Is there an issue with the WittyPi?")
+                print("Could not set RTC time. Is there an issue with the WittyPi? Ignore if you are not using a WittyPi.")
                 print()
+
+        try:
+            # Set system time from RTC
+            bash_cmd = f"sudo hwclock -w"
+            print(bash_cmd)
+            print()
+            subprocess.run(bash_cmd, check=True, shell=True, timeout=2)
+        except Exception as e:
+            print(e)
+            print("Could not set RTC time. Is there an issue with the DS3231? Ignore if you are not using a DS3231.")
+            print()
 
     def get_serial_number(self):
         """
