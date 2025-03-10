@@ -13,15 +13,16 @@ echo "$cutoff_datetime"
 # Compare system to cutoff
 if [[ "$system_time" -lt "$cutoff_datetime" ]]; then
 	echo "System datetime ($system_time) is before cutoff datetime ($cutoff_datetime)."
-	echo "Setting system time via cellular"
 
 	# Create temporary schedule to keep system on for the next 7 days
-	# sudo python3 /home/pi/scripts/set_temp_schedule.py
+	echo "Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time"
+	sudo python3 /home/pi/scripts/set_temp_schedule.py
 	
 	# Retrieve time from cellular
+	echo "Setting system time via cellular"
 	current_datetime=$(sudo python3 /home/pi/scripts/retrieve_cellular_time.py)
 	if [ $? -eq 0 ]; then
-		echo "Python script succeeded"
+		echo "Python script to retieve time from cellular succeeded"
 		echo "$current_datetime"
 		echo "I have just printed the current datetime"
 		
@@ -44,19 +45,24 @@ EOF
 	fi
 
 	# Calculate sunrise and sunset times
-	# sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
+	echo "Calculating sunrise and sunset times"
+	sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 
 	# Calculate the weekly schedule
-	# sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+	echo "Calculate the weekly schedule"
+	sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
 
 	# Calculate moths recording schedule and set in crontab
-	# sudo python3 /home/pi/scripts/moths_schedule.py
+	echo "Calculate moth recording schedule and set in crontab"
+	sudo python3 /home/pi/scripts/moths_schedule.py
 
 	# Calculate birds recording schedule and set in crontab
-	# sudo python3 /home/pi/scripts/birds_schedule.py
+	echo "Calculate birds recording schedule and set in crontab"
+	sudo python3 /home/pi/scripts/birds_schedule.py
 
 	# Calculate bats recording schedule and set in crontab
-	# sudo python3 /home/pi/scripts/bats_schedule.py
+	echo "Calculate bats recording schedule and set in crontab"
+	sudo python3 /home/pi/scripts/bats_schedule.py
 	
 else
 	echo "System datetime ($system_time) is after cutoff datetime ($cutoff_datetime)." 
