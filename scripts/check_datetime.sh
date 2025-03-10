@@ -14,6 +14,9 @@ echo "$cutoff_datetime"
 if [[ "$system_time" -lt "$cutoff_datetime" ]]; then
 	echo "System datetime ($system_time) is before cutoff datetime ($cutoff_datetime)."
 	echo "Setting system time via cellular"
+
+	# Create temporary schedule to keep system on for the next 7 days
+	# sudo python3 /home/pi/scripts/set_temp_schedule.py
 	
 	# Retrieve time from cellular
 	current_datetime=$(sudo python3 /home/pi/scripts/retrieve_cellular_time.py)
@@ -39,19 +42,26 @@ EOF
 		echo "Python script failed"
 		exit 1
 	fi
+
+	# Calculate sunrise and sunset times
+	# sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
+
+	# Calculate the weekly schedule
+	# sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+
+	# Calculate moths recording schedule and set in crontab
+	# sudo python3 /home/pi/scripts/moths_schedule.py
+
+	# Calculate birds recording schedule and set in crontab
+	# sudo python3 /home/pi/scripts/birds_schedule.py
+
+	# Calculate bats recording schedule and set in crontab
+	# sudo python3 /home/pi/scripts/bats_schedule.py
 	
 else
 	echo "System datetime ($system_time) is after cutoff datetime ($cutoff_datetime)." 
 	echo "No change required."
 fi
-
-
-
-	
-
-
-
-	
 
 
 

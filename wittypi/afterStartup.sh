@@ -13,20 +13,20 @@
 # Check the system time and reset if necessary
 sudo /home/pi/scripts/check_datetime.sh
 
-# Extract and save sunrise and sunset times
-sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
+# Extract and save sunrise and sunset times - only do if time is reset
+# sudo python3 /home/pi/scripts/determine_sunrise_sunset_times.py
 
-# Calculates the weekly schedule
-#sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
+# Calculates the weekly schedule - only do if time is reset
+# sudo python3 /home/pi/scripts/wpi_script_generator_ags.py
 
-# Calculate moths recording schedule
-sudo python3 /home/pi/scripts/moths_schedule.py
+# Calculate moths recording schedule - only do if time is reset
+# sudo python3 /home/pi/scripts/moths_schedule.py
 
-# Calculate bats recording schedule
-sudo python3 /home/pi/scripts/bats_schedule.py
+# Calculate bats recording schedule - only do if time is reset
+# sudo python3 /home/pi/scripts/bats_schedule.py
 
-# Calculate bats recording schedule
-sudo python3 /home/pi/scripts/birds_schedule.py
+# Calculate bats recording schedule - only do if time is reset
+# sudo python3 /home/pi/scripts/birds_schedule.py
 
 # Update the camera settings
 sudo /home/pi/scripts/setCamera.sh

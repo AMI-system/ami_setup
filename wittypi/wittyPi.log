@@ -9199,3 +9199,2023 @@ Cannot open device /dev/video0, exiting.
 Cannot open device /dev/video0, exiting.
 [2024-09-24 09:51:09] Send out the SYS_UP signal via GPIO-17 pin.
 [2024-09-24 09:51:10] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] RTC has bad time, write system time into RTC
+[xxxx-xx-xx xx:xx:xx] Writing system time to RTC...
+<2019-02-14 10:12:06> Done :-)
+<2019-02-14 10:12:06> Firmware ID: 0x00
+<2019-02-14 10:12:07> Firmware Revison: 0x05
+<2019-02-14 10:12:07> Current Vout=5.23V, Iout=0.62A
+<2019-02-14 10:12:07> System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] Schedule next shutdown at: 2024-09-22 11:55:00
+[2019-02-14 10:12:13] Schedule next startup at: 2024-09-22 12:00:00
+Python script succeeded
+2024-10-07 14:51:29
+I have just printed the current datetime
+Mon  7 Oct 14:51:29 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 34°C / 93.2°F
+>>> Your system time is: 2024-10-07 14:51:29 BST
+>>> Your RTC time is:    2019-02-14 10:33:00 GMT
+>>> Vout=5.17V, Iout=1.01A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [22 11:55:00]
+  5. Schedule next startup  [22 12:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.1V]
+  8. Set recovery voltage threshold  [20.6V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-07 14:51:30] Writing system time to RTC...
+  Done :-)
+<2024-10-07 14:51:30> Done :-)
+
+================================================================================
+>>> Current temperature: 33.875°C / 92.975°F
+>>> Your system time is: 2024-10-07 14:51:30 BST
+>>> Your RTC time is:    2024-10-07 14:51:30 BST
+>>> Vout=5.18V, Iout=0.90A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [22 11:55:00]
+  5. Schedule next startup  [22 12:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.1V]
+  8. Set recovery voltage threshold  [20.6V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-07 18:28:38+01:00
+Tomorrow's sunrise 2024-10-08 07:18:29+01:00
+--------------- 2024-10-07 14:51:33 ---------------
+Schedule next shutdown at: 2024-10-08 07:28:29
+[2024-10-07 14:51:33] Schedule next shutdown at: 2024-10-08 07:28:29
+Schedule next startup at:  2024-10-08 11:50:00
+[2024-10-07 14:51:33] Schedule next startup at: 2024-10-08 11:50:00
+---------------------------------------------------
+
+    BEGIN 2010-05-01 00:00:00
+    END 2038-01-01 01:00:00
+    ON D5272.0 H11.0 M55.0 S0.0
+    OFF D0.0 H0.0 M5.0 S0.0
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H6.0 M8.0 S38.0
+    ON D0.0 H13.0 M9.0 S51.0
+    OFF D0.0 H4.0 M21.0 S31.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H6.0 M4.0 S10.0
+    ON D0.0 H13.0 M17.0 S41.0
+    OFF D0.0 H4.0 M18.0 S9.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M59.0 S43.0
+    ON D0.0 H13.0 M25.0 S32.0
+    OFF D0.0 H4.0 M14.0 S45.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    ON D4827.0 H11.0 M39.0 S59.0
+    OFF D0.0 H1.0 M0.0 S1.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2024_10_6.wpi.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+<2024-10-07 14:51:37> Send out the SYS_UP signal via GPIO-17 pin.
+<2024-10-07 14:51:37> Pending for incoming shutdown command...
+[2024-10-07 15:20:09] Low voltage threshold set to 4.1V!
+[2024-10-07 15:21:25] Power cut delay set to 8 seconds!
+[2024-10-07 15:23:01] Recovery voltage threshold set to 4.7V!
+[2024-10-07 15:46:19] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2024-10-07 15:46:19] Running the script...
+[2024-10-07 15:46:20] Schedule next shutdown at: 2024-10-08 05:00:00
+[2024-10-07 15:46:20] Schedule next startup at: 2024-10-08 22:00:00
+[2024-10-07 15:46:21] Done :-)
+<2024-10-07 15:51:16> Shutting down system because input voltge is too low: Vin=4.06V, Vlow=4.1V
+Shutting down in 15 seconds...Mon  7 Oct 15:51:16 BST 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-07 17:01:54] Done :-)
+[2024-10-07 17:01:54] Firmware ID: 0x00
+[2024-10-07 17:01:54] Firmware Revison: 0x05
+[2024-10-07 17:01:54] Current Vout=5.16V, Iout=1.05A
+[2024-10-07 17:01:54] System starts up because USB 5V is connected.
+1728316919
+2020-01-01 00:00
+1577836800
+System datetime (1728316919) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-07 17:02:00] Schedule next shutdown at: 2024-10-08 05:00:00
+[2024-10-07 17:02:00] Schedule next startup at: 2024-10-08 22:00:00
+Todays's sunset: 2024-10-07 18:28:38+01:00
+Tomorrow's sunrise 2024-10-08 07:18:29+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-07 17:02:04] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-07 17:02:04] Pending for incoming shutdown command...
+                       [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-17 17:07:56] Done :-)
+[2024-10-17 17:07:56] Firmware ID: 0x00
+[2024-10-17 17:07:56] Firmware Revison: 0x05
+[2024-10-17 17:07:56] Current Vout=5.23V, Iout=0.88A
+[2024-10-17 17:07:56] System starts up because the button is clicked.
+1729181281
+2020-01-01 00:00
+1577836800
+System datetime (1729181281) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-17 17:08:02] [Warning] System and RTC time seems not synchronized, difference is 863999s. System time is "2024-10-17 17:08:02 BST", while RTC time is "2024-10-07 17:08:03 BST". Please synchronize the time first.
+[2024-10-17 17:08:02] Schedule next shutdown at: 2024-10-08 05:00:00
+[2024-10-17 17:08:03] [Warning] System and RTC time seems not synchronized, difference is 864000s. System time is "2024-10-17 17:08:03 BST", while RTC time is "2024-10-07 17:08:03 BST". Please synchronize the time first.
+[2024-10-17 17:08:03] Schedule next startup at: 2024-10-08 22:00:00
+Todays's sunset: 2024-10-17 18:06:42+01:00
+Tomorrow's sunrise 2024-10-18 07:35:33+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-17 17:08:07] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-17 17:08:07] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] RTC has bad time, write system time into RTC
+[xxxx-xx-xx xx:xx:xx] Writing system time to RTC...
+<2019-02-14 10:12:07> Done :-)
+<2019-02-14 10:12:07> Firmware ID: 0x00
+<2019-02-14 10:12:07> Firmware Revison: 0x05
+<2019-02-14 10:12:07> Current Vout=5.23V, Iout=0.68A
+<2019-02-14 10:12:07> System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-07 17:16:28
+I have just printed the current datetime
+Mon  7 Oct 17:16:28 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 34°C / 93.2°F
+>>> Your system time is: 2024-10-07 17:16:28 BST
+>>> Your RTC time is:    2019-02-14 10:16:28 GMT
+>>> Vout=5.25V, Iout=0.96A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4.1V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-07 17:16:29] Writing system time to RTC...
+  Done :-)
+<2024-10-07 17:16:29> Done :-)
+
+================================================================================
+>>> Current temperature: 34°C / 93.2°F
+>>> Your system time is: 2024-10-07 17:16:29 BST
+>>> Your RTC time is:    2024-10-07 17:16:30 BST
+>>> Vout=5.25V, Iout=0.75A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4.1V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-07 18:28:38+01:00
+Tomorrow's sunrise 2024-10-08 07:18:29+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+<2024-10-07 17:16:34> Send out the SYS_UP signal via GPIO-17 pin.
+<2024-10-07 17:16:34> Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-07 17:28:16] Done :-)
+[2024-10-07 17:28:16] Firmware ID: 0x00
+[2024-10-07 17:28:16] Firmware Revison: 0x05
+[2024-10-07 17:28:16] Current Vout=5.24V, Iout=0.86A
+[2024-10-07 17:28:16] System starts up because USB 5V is connected.
+1728318501
+2020-01-01 00:00
+1577836800
+System datetime (1728318501) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-07 17:28:22] Schedule next shutdown at: 2024-10-08 05:00:00
+[2024-10-07 17:28:23] Schedule next startup at: 2024-10-08 22:00:00
+Todays's sunset: 2024-10-07 18:28:38+01:00
+Tomorrow's sunrise 2024-10-08 07:18:29+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-07 17:28:26] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-07 17:28:27] Pending for incoming shutdown command...
+[2024-10-07 17:29:52] Shutting down system because input voltge is too low: Vin=4.06V, Vlow=4.1V
+Shutting down in 15 seconds...Mon  7 Oct 17:29:52 BST 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-08 00:08:05] Done :-)
+[2024-10-08 00:08:05] System was previously shut down because of low-voltage.
+[2024-10-08 00:08:05] Firmware ID: 0x00
+[2024-10-08 00:08:05] Firmware Revison: 0x05
+[2024-10-08 00:08:05] Current Vin=4V, Vout=5.24V, Iout=1.18A
+[2024-10-08 00:08:05] Unknown/incorrect startup reason: 0x04
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-08 17:14:33] Done :-)
+[2024-10-08 17:14:33] Firmware ID: 0x00
+[2024-10-08 17:14:33] Firmware Revison: 0x05
+[2024-10-08 17:14:33] Current Vout=5.29V, Iout=0.81A
+[2024-10-08 17:14:33] System starts up because USB 5V is connected.
+1728404078
+2020-01-01 00:00
+1577836800
+System datetime (1728404078) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-08 17:14:39] Schedule script is interrupted, revising the schedule...
+[2024-10-08 17:14:39] Schedule next shutdown at: 2024-10-08 21:59:00
+[2024-10-08 17:14:40] Schedule next startup at: 2024-10-08 22:00:00
+Todays's sunset: 2024-10-08 18:26:24+01:00
+Tomorrow's sunrise 2024-10-09 07:20:10+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-08 17:14:43] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-08 17:14:43] Pending for incoming shutdown command...
+[2024-10-08 17:23:18] Shutting down system because input voltge is too low: Vin=4.06V, Vlow=4.1V
+Shutting down in 15 seconds...Tue  8 Oct 17:23:18 BST 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-08 22:00:19] Done :-)
+[2024-10-08 22:00:19] System was previously shut down because of low-voltage.
+[2024-10-08 22:00:19] Firmware ID: 0x00
+[2024-10-08 22:00:19] Firmware Revison: 0x05
+[2024-10-08 22:00:19] Current Vin=4.06V, Vout=5.23V, Iout=0.77A
+[2024-10-08 22:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-09 22:00:20] Done :-)
+[2024-10-09 22:00:20] System was previously shut down because of low-voltage.
+[2024-10-09 22:00:20] Firmware ID: 0x00
+[2024-10-09 22:00:20] Firmware Revison: 0x05
+[2024-10-09 22:00:20] Current Vin=4V, Vout=5.29V, Iout=0.55A
+[2024-10-09 22:00:20] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-10 22:00:19] Done :-)
+[2024-10-10 22:00:19] System was previously shut down because of low-voltage.
+[2024-10-10 22:00:19] Firmware ID: 0x00
+[2024-10-10 22:00:19] Firmware Revison: 0x05
+[2024-10-10 22:00:19] Current Vin=3.93V, Vout=5.29V, Iout=0.96A
+[2024-10-10 22:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-11 22:00:19] Done :-)
+[2024-10-11 22:00:19] System was previously shut down because of low-voltage.
+[2024-10-11 22:00:19] Firmware ID: 0x00
+[2024-10-11 22:00:19] Firmware Revison: 0x05
+[2024-10-11 22:00:19] Current Vin=3.93V, Vout=5.17V, Iout=0.81A
+[2024-10-11 22:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-12 22:00:20] Done :-)
+[2024-10-12 22:00:20] System was previously shut down because of low-voltage.
+[2024-10-12 22:00:20] Firmware ID: 0x00
+[2024-10-12 22:00:20] Firmware Revison: 0x05
+[2024-10-12 22:00:20] Current Vin=4V, Vout=5.3V, Iout=1.01A
+[2024-10-12 22:00:20] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-13 22:00:19] Done :-)
+[2024-10-13 22:00:19] System was previously shut down because of low-voltage.
+[2024-10-13 22:00:19] Firmware ID: 0x00
+[2024-10-13 22:00:19] Firmware Revison: 0x05
+[2024-10-13 22:00:19] Current Vin=3.87V, Vout=5.24V, Iout=0.77A
+[2024-10-13 22:00:19] System starts up because scheduled startup is due.
+1728853224
+2020-01-01 00:00
+1577836800
+System datetime (1728853224) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-13 22:00:25] Schedule next shutdown at: 2024-10-14 05:00:00
+[2024-10-13 22:00:26] Schedule next startup at: 2024-10-14 22:00:00
+Todays's sunset: 2024-10-13 18:15:20+01:00
+Tomorrow's sunrise 2024-10-14 07:28:40+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-13 22:00:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-13 22:00:30] Pending for incoming shutdown command...
+[2024-10-13 22:00:30] Shutting down system because input voltge is too low: Vin=3.93V, Vlow=4.1V
+Shutting down in 15 seconds...Sun 13 Oct 22:00:30 BST 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 11:13:45] Done :-)
+[2024-10-14 11:13:45] Firmware ID: 0x00
+[2024-10-14 11:13:45] Firmware Revison: 0x05
+[2024-10-14 11:13:45] Current Vout=5.29V, Iout=0.86A
+[2024-10-14 11:13:45] System starts up because USB 5V is connected.
+1728900830
+2020-01-01 00:00
+1577836800
+System datetime (1728900830) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 11:13:51] Schedule script is interrupted, revising the schedule...
+[2024-10-14 11:13:51] Schedule next shutdown at: 2024-10-14 21:59:00
+[2024-10-14 11:13:52] Schedule next startup at: 2024-10-14 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 11:13:55] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 11:13:56] Pending for incoming shutdown command...
+[2024-10-14 11:15:01] Low voltage threshold set to 4.0V!
+                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 11:29:39] Done :-)
+[2024-10-14 11:29:39] Firmware ID: 0x00
+[2024-10-14 11:29:39] Firmware Revison: 0x05
+[2024-10-14 11:29:39] Current Vout=5.25V, Iout=0.88A
+[2024-10-14 11:29:39] System starts up because USB 5V is connected.
+1728901784
+2020-01-01 00:00
+1577836800
+System datetime (1728901784) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 11:29:45] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 11:29:45] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 11:29:49] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 11:29:49] Pending for incoming shutdown command...
+                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 11:58:40] Done :-)
+[2024-10-14 11:58:40] Firmware ID: 0x00
+[2024-10-14 11:58:40] Firmware Revison: 0x05
+[2024-10-14 11:58:40] Current Vout=5.25V, Iout=0.92A
+[2024-10-14 11:58:40] System starts up because the button is clicked.
+1728903525
+2020-01-01 00:00
+1577836800
+System datetime (1728903525) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 11:58:46] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 11:58:47] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 11:58:50] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 11:58:50] Pending for incoming shutdown command...
+[2024-10-14 11:59:19] Low voltage threshold set to 3.8V!
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 12:14:45] Done :-)
+[2024-10-14 12:14:45] System was previously shut down because of low-voltage.
+[2024-10-14 12:14:45] Firmware ID: 0x00
+[2024-10-14 12:14:45] Firmware Revison: 0x05
+[2024-10-14 12:14:45] Current Vin=3.93V, Vout=5.17V, Iout=0.68A
+[2024-10-14 12:14:45] System starts up because the button is clicked.
+1728904490
+2020-01-01 00:00
+1577836800
+System datetime (1728904490) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 12:14:51] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 12:14:52] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 12:14:55] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 12:14:56] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:08] Done :-)
+[2019-02-14 10:12:08] Firmware ID: 0x00
+[2019-02-14 10:12:08] Firmware Revison: 0x05
+[2019-02-14 10:12:08] Current Vout=5.24V, Iout=0.9A
+[2019-02-14 10:12:08] System starts up because USB 5V is connected.
+1550139133
+2020-01-01 00:00
+1577836800
+System datetime (1550139133) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:14] [Warning] System and RTC time seems not synchronized, difference is 1550139134s. System time is "2019-02-14 10:12:14 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:14] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:14] [Warning] System and RTC time seems not synchronized, difference is 1550139134s. System time is "2019-02-14 10:12:14 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:14] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-14 13:25:46
+I have just printed the current datetime
+Mon 14 Oct 13:25:46 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 27°C / 80.6°F
+>>> Your system time is: 2024-10-14 13:25:46 BST
+date: invalid date ‘85-0-0 0:1:46’
+>>> Your RTC time is:    N/A
+>>> Vout=5.18V, Iout=0.90A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.8V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-14 13:25:46] Writing system time to RTC...
+  Done :-)
+<2024-10-14 13:25:47> Done :-)
+
+================================================================================
+>>> Current temperature: 27.125°C / 80.825°F
+>>> Your system time is: 2024-10-14 13:25:47 BST
+>>> Your RTC time is:    2024-10-14 13:25:46 BST
+>>> Vout=5.25V, Iout=0.64A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.8V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 13:25:51] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 13:25:52] Pending for incoming shutdown command...
+[2024-10-14 13:47:01] Low voltage threshold set to 3.9V!
+                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 14:17:38] Done :-)
+[2024-10-14 14:17:38] Firmware ID: 0x00
+[2024-10-14 14:17:38] Firmware Revison: 0x05
+[2024-10-14 14:17:38] Current Vout=5.29V, Iout=0.7A
+[2024-10-14 14:17:38] System starts up because USB 5V is connected.
+1728911863
+2020-01-01 00:00
+1577836800
+System datetime (1728911863) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 14:17:44] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 14:17:45] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 14:17:48] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 14:17:48] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 15:12:30] Done :-)
+[2024-10-14 15:12:30] Firmware ID: 0x00
+[2024-10-14 15:12:30] Firmware Revison: 0x05
+[2024-10-14 15:12:30] Current Vout=5.23V, Iout=1.03A
+[2024-10-14 15:12:30] System starts up because USB 5V is connected.
+1728915155
+2020-01-01 00:00
+1577836800
+System datetime (1728915155) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 15:12:36] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 15:12:37] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 15:12:40] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 15:12:41] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-14 16:28:06] Done :-)
+[2024-10-14 16:28:06] Firmware ID: 0x00
+[2024-10-14 16:28:06] Firmware Revison: 0x05
+[2024-10-14 16:28:06] Current Vout=5.17V, Iout=1.05A
+[2024-10-14 16:28:06] System starts up because USB 5V is connected.
+1728919691
+2020-01-01 00:00
+1577836800
+System datetime (1728919691) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-14 16:28:12] Schedule next shutdown at: 2024-10-15 05:00:00
+[2024-10-14 16:28:13] Schedule next startup at: 2024-10-15 22:00:00
+Todays's sunset: 2024-10-14 18:13:09+01:00
+Tomorrow's sunrise 2024-10-15 07:30:22+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-14 16:28:16] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-14 16:28:17] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-10-15 22:00:19] Done :-)
+[2024-10-15 22:00:19] System was previously shut down because of low-voltage.
+[2024-10-15 22:00:19] Firmware ID: 0x00
+[2024-10-15 22:00:19] Firmware Revison: 0x05
+[2024-10-15 22:00:19] Current Vin=3.87V, Vout=5.24V, Iout=0.77A
+[2024-10-15 22:00:19] System starts up because scheduled startup is due.
+1729026024
+2020-01-01 00:00
+1577836800
+System datetime (1729026024) is after cutoff datetime (1577836800).
+No change required.
+[2024-10-15 22:00:25] Schedule next shutdown at: 2024-10-16 05:00:00
+[2024-10-15 22:00:26] Schedule next startup at: 2024-10-16 22:00:00
+Todays's sunset: 2024-10-15 18:10:59+01:00
+Tomorrow's sunrise 2024-10-16 07:32:06+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-15 22:00:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-15 22:00:29] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vout=5.23V, Iout=0.96A
+[2019-02-14 10:12:07] System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-18 12:10:22
+I have just printed the current datetime
+Fri 18 Oct 12:10:22 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 23.625°C / 74.525°F
+>>> Your system time is: 2024-10-18 12:10:22 BST
+date: invalid date ‘24-25-2 14:9:25’
+>>> Your RTC time is:    N/A
+>>> Vout=5.24V, Iout=1.13A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-18 12:10:23] Writing system time to RTC...
+  Done :-)
+<2024-10-18 12:10:23> Done :-)
+
+================================================================================
+>>> Current temperature: 23.875°C / 74.975°F
+>>> Your system time is: 2024-10-18 12:10:23 BST
+>>> Your RTC time is:    2024-10-18 12:10:23 BST
+>>> Vout=5.24V, Iout=0.94A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-18 18:04:35+01:00
+Tomorrow's sunrise 2024-10-19 07:37:17+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-18 12:10:28] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-18 12:10:28] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vout=5.3V, Iout=0.73A
+[2019-02-14 10:12:07] System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-18 13:41:52
+I have just printed the current datetime
+Fri 18 Oct 13:41:52 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 23.5°C / 74.3°F
+>>> Your system time is: 2024-10-18 13:41:52 BST
+date: invalid date ‘85-0-0 1:30:53’
+>>> Your RTC time is:    N/A
+>>> Vout=5.17V, Iout=0.81A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-18 13:41:52] Writing system time to RTC...
+[2024-10-18 13:41:54] I2C write 0x01 0x08 62 5 failed (result=0xff), retrying 1 ...
+  Done :-)
+<2024-10-18 13:41:54> Done :-)
+
+================================================================================
+>>> Current temperature: 23.5°C / 74.3°F
+>>> Your system time is: 2024-10-18 13:41:54 BST
+>>> Your RTC time is:    2024-10-18 13:41:53 BST
+>>> Vout=5.25V, Iout=0.70A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-18 18:04:35+01:00
+Tomorrow's sunrise 2024-10-19 07:37:17+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-18 13:41:58] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-18 13:41:59] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vin=4V, Vout=5.25V, Iout=0.81A
+[2019-02-14 10:12:07] System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-21 10:01:17
+I have just printed the current datetime
+Mon 21 Oct 10:01:17 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 21.75°C / 71.15°F
+>>> Your system time is: 2024-10-21 10:01:17 BST
+date: invalid date ‘24-25-2 20:19:13’
+>>> Your RTC time is:    N/A
+>>> Vin=4.06V, Vout=5.26V, Iout=0.70A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-21 10:01:18] Writing system time to RTC...
+[2024-10-21 10:01:19] I2C write 0x01 0x08 64 36 failed (result=0xfe), retrying 1 ...
+  Done :-)
+<2024-10-21 10:01:19> Done :-)
+
+================================================================================
+>>> Current temperature: 21.75°C / 71.15°F
+>>> Your system time is: 2024-10-21 10:01:19 BST
+>>> Your RTC time is:    2024-10-21 10:01:20 BST
+>>> Vin=4.06V, Vout=5.19V, Iout=0.62A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-21 17:58:19+01:00
+Tomorrow's sunrise 2024-10-22 07:42:31+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-21 10:01:23] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-21 10:01:24] Pending for incoming shutdown command...
+[2024-10-21 10:01:38] Shutting down system because input voltge is too low: Vin=3.44V, Vlow=3.9V
+Shutting down in 15 seconds...Mon 21 Oct 10:01:38 BST 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vin=3.93V, Vout=5.19V, Iout=1.18A
+[2019-02-14 10:12:07] System starts up because scheduled startup is due.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2024-10-24 08:02:03
+I have just printed the current datetime
+Thu 24 Oct 08:02:03 BST 2024
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 20.625°C / 69.125°F
+>>> Your system time is: 2024-10-24 08:02:03 BST
+date: invalid date ‘24-25-2 22:0:36’
+>>> Your RTC time is:    N/A
+>>> Vin=4.06V, Vout=5.18V, Iout=0.73A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2024-10-24 08:02:04] Writing system time to RTC...
+  Done :-)
+<2024-10-24 08:02:04> Done :-)
+
+================================================================================
+>>> Current temperature: 20.625°C / 69.125°F
+>>> Your system time is: 2024-10-24 08:02:04 BST
+>>> Your RTC time is:    2024-10-24 08:02:05 BST
+>>> Vin=4.06V, Vout=5.19V, Iout=0.62A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2024-10-24 17:52:13+01:00
+Tomorrow's sunrise 2024-10-25 07:47:48+01:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-10-24 08:02:09] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-10-24 08:02:09] Pending for incoming shutdown command...
+                                                                                                                                                            [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-02 22:00:19] Done :-)
+[2024-11-02 22:00:19] System was previously shut down because of low-voltage.
+[2024-11-02 22:00:19] Firmware ID: 0x00
+[2024-11-02 22:00:19] Firmware Revison: 0x05
+[2024-11-02 22:00:19] Current Vin=3.87V, Vout=5.23V, Iout=1.05A
+[2024-11-02 22:00:19] System starts up because scheduled startup is due.
+1730584824
+2020-01-01 00:00
+1577836800
+System datetime (1730584824) is after cutoff datetime (1577836800).
+No change required.
+[2024-11-02 22:00:25] Schedule next shutdown at: 2024-11-03 04:00:00
+[2024-11-02 22:00:26] Schedule next startup at: 2024-11-03 21:00:00
+Todays's sunset: 2024-11-02 16:35:00+00:00
+Tomorrow's sunrise 2024[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-03 21:00:19] Done :-)
+[2024-11-03 21:00:19] System was previously shut down because of low-voltage.
+[2024-11-03 21:00:19] Firmware ID: 0x00
+[2024-11-03 21:00:19] Firmware Revison: 0x05
+[2024-11-03 21:00:19] Current Vin=3.81V, Vout=5.29V, Iout=0.9A
+[2024-11-03 21:00:19] System starts up because scheduled startup is due.
+1730667624
+2020-01-01 00:00
+1577836800
+System datetime (1730667624) is after cutoff datetime (1577836800).
+No change required.
+[2024-11-03 21:00:25] Schedule next shutdown at: 2024-11-04 04:00:00
+[2024-11-03 21:00:26] Schedule next startup at: 2024-11-04 21:00:00
+Todays's sunset: 2024-11-03 16:33:13+00:00
+Tomorrow's sunrise 2024-11-04 07:05:38+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-11-03 21:00:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-11-03 21:00:30] Pending for incoming shutdown command...
+[2024-11-03 21:00:40] Shutting down system because input voltge is too low: Vin=3.87V, Vlow=3.9V
+Shutting down in 15 seconds...Sun  3 Nov 21:00:40 GMT 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-04 21:00:19] Done :-)
+[2024-11-04 21:00:19] System was previously shut down because of low-voltage.
+[2024-11-04 21:00:19] Firmware ID: 0x00
+[2024-11-04 21:00:19] Firmware Revison: 0x05
+[2024-11-04 21:00:19] Current Vin=3.75V, Vout=5.24V, Iout=0.83A
+[2024-11-04 21:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-05 21:00:20] Done :-)
+[2024-11-05 21:00:20] System was previously shut down because of low-voltage.
+[2024-11-05 21:00:20] Firmware ID: 0x00
+[2024-11-05 21:00:20] Firmware Revison: 0x05
+[2024-11-05 21:00:20] Current Vin=3.75V, Vout=5.18V, Iout=0.49A
+[2024-11-05 21:00:20] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                      [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-06 21:00:19] Done :-)
+[2024-11-06 21:00:19] System was previously shut down because of low-voltage.
+[2024-11-06 21:00:19] Firmware ID: 0x00
+[2024-11-06 21:00:19] Firmware Revison: 0x05
+[2024-11-06 21:00:19] Current Vin=3.75V, Vout=5.23V, Iout=0.92A
+[2024-11-06 21:00:19] System starts up because scheduled startup is due.
+1730926824
+2020-01-01 00:00
+1577836800
+System datetime (1730926824) is after cutoff datetime (1577836800).
+No change required.
+[2024-11-06 21:00:25] Schedule next shutdown at: 2024-11-07 04:00:00
+[2024-11-06 21:00:26] Schedule next startup at: 2024-11-07 21:00:00
+Todays's sunset: 2024-11-06 16:28:04+00:00
+Tomorrow's sunrise 2024-11-07 07:10:58+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2024-11-06 21:00:30] Send out the SYS_UP signal via GPIO-17 pin.
+[2024-11-06 21:00:31] Pending for incoming shutdown command...
+[2024-11-06 21:00:33] Shutting down system because input voltge is too low: Vin=3.87V, Vlow=3.9V
+Shutting down in 15 seconds...Wed  6 Nov 21:00:33 GMT 2024
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-07 21:00:19] Done :-)
+[2024-11-07 21:00:19] System was previously shut down because of low-voltage.
+[2024-11-07 21:00:19] Firmware ID: 0x00
+[2024-11-07 21:00:19] Firmware Revison: 0x05
+[2024-11-07 21:00:19] Current Vin=3.69V, Vout=5.17V, Iout=0.9A
+[2024-11-07 21:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2024-11-08 21:00:19] Done :-)
+[2024-11-08 21:00:19] System was previously shut down because of low-voltage.
+[2024-11-08 21:00:19] Firmware ID: 0x00
+[2024-11-08 21:00:19] Firmware Revison: 0x05
+[2024-11-08 21:00:19] Current Vin=3.81V, Vout=5.24V, Iout=0.86A
+[2024-11-08 21:00:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+[2019-02-14 10:12:08] Done :-)
+[2019-02-14 10:12:09] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:09] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:09] Firmware ID: 0x00
+[2019-02-14 10:12:09] Firmware Revison: 0x05
+[2019-02-14 10:12:11] I2C read 0x01 0x08 1 failed (result=), retrying 1 ...
+[2019-02-14 10:12:11] Current Vin=3.38V, Vout=3.33V, Iout=1.11A
+[2019-02-14 10:12:14] I2C read 0x01 0x08 55 failed (result=), retrying 1 ...
+[2019-02-14 10:12:15] I2C read 0x01 0x08 55 failed (result=), retrying 2 ...
+[2019-02-14 10:12:17] I2C read 0x01 0x08 55 failed (result=), retrying 3 ...
+[2019-02-14 10:12:18] I2C write 0x01 0x08 55 128 failed (result=0xff), retrying 1 ...
+[2019-02-14 10:12:20] I2C write 0x01 0x08 55 128 failed (result=0xff), retrying 2 ...
+[2019-02-14 10:12:21] I2C write 0x01 0x08 55 128 failed (result=0xff), retrying 3 ...
+[2019-02-14 10:12:22] I2C write 0x01 0x08 55 128 failed (result=0xff), and no more retry.
+[2019-02-14 10:12:22] System starts up because scheduled startup is due.
+1550139148
+2020-01-01 00:00
+1577836800
+System datetime (1550139148) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:29] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:31] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:33] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:34] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:36] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+[2019-02-14 10:12:38] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:38] [Warning] System and RTC time seems not synchronized, difference is 1550139158s. System time is "2019-02-14 10:12:38 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:38] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:41] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:42] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:44] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+[2019-02-14 10:12:46] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:48] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:48] [Warning] System and RTC time seems not synchronized, difference is 1550139168s. System time is "2019-02-14 10:12:48 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:48] Schedule next startup at: 2022-06-02 22:00:00
+[2019-02-14 10:12:50] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:52] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+[2019-02-14 10:12:54] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:09] Done :-)
+[2019-02-14 10:12:10] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:10] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:10] Firmware ID: 0x00
+[2019-02-14 10:12:10] Firmware Revison: 0x05
+[2019-02-14 10:12:12] I2C read 0x01 0x08 4 failed (result=), retrying 1 ...
+[2019-02-14 10:12:12] Current Vin=3.32V, Vout=3.33V, Iout=1.11A
+[2019-02-14 10:12:14] I2C read 0x01 0x08 44 failed (result=), retrying 1 ...
+[2019-02-14 10:12:15] I2C read 0x01 0x08 39 failed (result=), retrying 1 ...
+[2019-02-14 10:12:16] System starts up because scheduled startup is due.
+1550139141
+2020-01-01 00:00
+1577836800
+System datetime (1550139141) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:22] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:24] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:26] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:28] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:29] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+[2019-02-14 10:12:31] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:31] [Warning] System and RTC time seems not synchronized, difference is 1550139151s. System time is "2019-02-14 10:12:31 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:31] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:34] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:36] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:37] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+[2019-02-14 10:12:39] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:39] [Warning] System and RTC time seems not synchronized, difference is 1550139159s. System time is "2019-02-14 10:12:39 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:39] Schedule next startup at: 2022-06-02 22:00:00
+[2019-02-14 10:12:42] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:43] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+[2019-02-14 10:12:45] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+[2019-02-14 10:12:08] Done :-)
+[2019-02-14 10:12:10] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:10] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:10] Firmware ID: 0x00
+[2019-02-14 10:12:10] Firmware Revison: 0x05
+[2019-02-14 10:12:11] I2C read 0x01 0x08 7 failed (result=), retrying 1 ...
+[2019-02-14 10:12:11] Current Vin=3.32V, Vout=3.33V, Iout=1.11A
+[2019-02-14 10:12:13] I2C read 0x01 0x08 40 failed (result=), retrying 1 ...
+[2019-02-14 10:12:13] System starts up because scheduled startup is due.
+1550139138
+2020-01-01 00:00
+1577836800
+System datetime (1550139138) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:20] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:22] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:24] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:25] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:27] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:29] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:29] [Warning] System and RTC time seems not synchronized, difference is 1550139149s. System time is "2019-02-14 10:12:29 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:29] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:31] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:33] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:35] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+[2019-02-14 10:12:37] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:37] [Warning] System and RTC time seems not synchronized, difference is 1550139157s. System time is "2019-02-14 10:12:37 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:37] Schedule next startup at: 2022-06-02 22:00:00
+[2019-02-14 10:12:39] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:41] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+[2019-02-14 10:12:43] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:10] Done :-)
+[2019-02-14 10:12:11] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:11] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:11] Firmware ID: 0x00
+[2019-02-14 10:12:11] Firmware Revison: 0x05
+[2019-02-14 10:12:13] I2C read 0x01 0x08 5 failed (result=), retrying 1 ...
+[2019-02-14 10:12:13] Current Vin=3.32V, Vout=3.27V, Iout=1.11A
+[2019-02-14 10:12:15] I2C read 0x01 0x08 55 failed (result=), retrying 1 ...
+[2019-02-14 10:12:17] I2C read 0x01 0x08 55 failed (result=), retrying 2 ...
+[2019-02-14 10:12:19] I2C read 0x01 0x08 55 failed (result=), retrying 3 ...
+[2019-02-14 10:12:19] System starts up because scheduled startup is due.
+1550139144
+2020-01-01 00:00
+1577836800
+System datetime (1550139144) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:26] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:28] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:29] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:31] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:33] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+[2019-02-14 10:12:35] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+[2019-02-14 10:12:35] [Warning] System and RTC time seems not synchronized, difference is 1550139155s. System time is "2019-02-14 10:12:35 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:35] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:37] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:39] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:41] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Python script succeeded
+2025-03-07 12:29:36
+I have just printed the current datetime
+Fri  7 Mar 12:29:36 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 28.25°C / 82.85°F
+>>> Your system time is: 2025-03-07 12:29:36 GMT
+[2025-03-07 12:29:36] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:38] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:39] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2025-03-07 12:29:40] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2025-03-07 12:29:41] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2025-03-07 12:29:41] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+[2025-03-07 12:29:41] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2025-03-07 12:29:43] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+date: invalid date ‘165-25-7 13:0:29’
+>>> Your RTC time is:    N/A
+[2025-03-07 12:29:43] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:45] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+1
+[2025-03-07 12:29:46] I2C read 0x01 0x08 6 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:47] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+[2025-03-07 12:29:47] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+[2025-03-07 12:29:48] [Warning] System and RTC time seems not synchronized, difference is 1741350587s. System time is "2025-03-07 12:29:47 GMT", while RTC time is "". Please synchronize the time first.
+[2025-03-07 12:29:48] Schedule next startup at: 2022-06-02 22:00:00
+[2025-03-07 12:29:48] I2C read 0x01 0x08 6 failed (result=), retrying 2 ...
+Error: Read failed
+[2025-03-07 12:29:50] I2C read 0x01 0x08 6 failed (result=), retrying 3 ...
+Error: Read failed
+[2025-03-07 12:29:51] I2C read 0x01 0x08 6 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 517: I2C read 0x01 0x08 6 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 6 failed (result=), and no more retry.")
+>>> Vin=3.38V, Vout=3.33V, Iout=0.00A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup[2025-03-07 12:29:51] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:53] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:54] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+[2025-03-07 12:29:55] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2025-03-07 12:29:55] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+[2025-03-07 12:29:56] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+13
+[2025-03-07 12:29:56] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2025-03-07 12:29:57] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+[2025-03-07 12:29:57] I2C write 0x01 0x08 30 2 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:29:59] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 12:30:01] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2025-03-07 12:30:02] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature actionError: Read failed
+[2025-03-07 12:30:04] I2C read 0x01 0x08 45 failed (result=), retrying 1 ...
+
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13)   Writing system time to RTC...
+[2025-03-07 12:30:04] Writing system time to RTC...
+Error: Write failed
+Error: Read failed
+Todays's sunset: 2025-03-07 17:55:33+00:00
+Tomorrow's sunrise 2025-03-08 06:34:07+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-07 12:30:10] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-07 12:30:10] Pending for incoming shutdown command...
+[2025-03-07 13:46:34] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+[2019-02-14 10:12:09] Done :-)
+[2019-02-14 10:12:11] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:11] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:11] Firmware ID: 0x00
+[2019-02-14 10:12:11] Firmware Revison: 0x05
+[2019-02-14 10:12:12] I2C read 0x01 0x08 5 failed (result=), retrying 1 ...
+[2019-02-14 10:12:12] Current Vin=3.32V, Vout=3.33V, Iout=1.11A
+[2019-02-14 10:12:14] I2C read 0x01 0x08 44 failed (result=), retrying 1 ...
+[2019-02-14 10:12:17] I2C read 0x01 0x08 39 failed (result=), retrying 1 ...
+[2019-02-14 10:12:18] I2C read 0x01 0x08 39 failed (result=), retrying 2 ...
+[2019-02-14 10:12:20] I2C read 0x01 0x08 39 failed (result=), retrying 3 ...
+[2019-02-14 10:12:20] System starts up because scheduled startup is due.
+1550139146
+2020-01-01 00:00
+1577836800
+System datetime (1550139146) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:27] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:29] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:31] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:32] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:34] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:35] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+[2019-02-14 10:12:36] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:37] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+[2019-02-14 10:12:38] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:38] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+[2019-02-14 10:12:40] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:40] [Warning] System and RTC time seems not synchronized, difference is 1550139160s. System time is "2019-02-14 10:12:40 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:40] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:43] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:45] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:46] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+[2019-02-14 10:12:48] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:48] [Warning] System and RTC time seems not synchronized, difference is 1550139168s. System time is "2019-02-14 10:12:48 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:48] Schedule next startup at: 2022-06-02 22:00:00
+[2019-02-14 10:12:51] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Python script succeeded
+2025-03-07 15:22:59
+I have just printed the current datetime
+Fri  7 Mar 15:22:59 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+Error: Read failed
+[2025-03-07 15:22:59] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+1
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+13
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Error: Read failed
+Todays's sunset: 2025-03-07 17:55:33+00:00
+Tomorrow's sunrise 2025-03-08 06:34:07+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-07 15:23:33] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-07 15:23:33] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vout=5.23V, Iout=1.2A
+[2019-02-14 10:12:07] System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2025-03-07 15:32:18
+I have just printed the current datetime
+Fri  7 Mar 15:32:18 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 38°C / 100.4°F
+>>> Your system time is: 2025-03-07 15:32:18 GMT
+date: invalid date ‘165-25-45 15:58:10’
+>>> Your RTC time is:    N/A
+>>> Vout=5.25V, Iout=0.68A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-07 15:32:18] Writing system time to RTC...
+  Done :-)
+<2025-03-07 15:32:19> Done :-)
+
+================================================================================
+>>> Current temperature: 37.875°C / 100.175°F
+>>> Your system time is: 2025-03-07 15:32:19 GMT
+>>> Your RTC time is:    2025-03-07 15:32:18 GMT
+>>> Vout=5.25V, Iout=0.51A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2025-03-07 17:55:33+00:00
+Tomorrow's sunrise 2025-03-08 06:34:07+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-07 15:32:23] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-07 15:32:24] Pending for incoming shutdown command...
+                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+[2019-02-14 10:12:08] Done :-)
+[2019-02-14 10:12:10] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:10] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:10] Firmware ID: 0x00
+[2019-02-14 10:12:10] Firmware Revison: 0x05
+[2019-02-14 10:12:12] I2C read 0x01 0x08 5 failed (result=), retrying 1 ...
+[2019-02-14 10:12:12] Current Vin=3.5V, Vout=3.45V, Iout=1.16A
+[2019-02-14 10:12:13] I2C read 0x01 0x08 46 failed (result=), retrying 1 ...
+[2019-02-14 10:12:14] System starts up because the button is clicked.
+1550139139
+2020-01-01 00:00
+1577836800
+System datetime (1550139139) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:20] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:22] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+[2019-02-14 10:12:24] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2019-02-14 10:12:26] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+[2019-02-14 10:12:27] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+[2019-02-14 10:12:29] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:31] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:31] [Warning] System and RTC time seems not synchronized, difference is 1550139151s. System time is "2019-02-14 10:12:31 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:31] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:34] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+[2019-02-14 10:12:35] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+[2019-02-14 10:12:37] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+[2019-02-14 10:12:39] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+[2019-02-14 10:12:40] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+[2019-02-14 10:12:42] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+[2019-02-14 10:12:43] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+[2019-02-14 10:12:44] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+[2019-02-14 10:12:44] [Warning] System and RTC time seems not synchronized, difference is 1550139164s. System time is "2019-02-14 10:12:44 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:44] Schedule next startup at: 2022-06-02 22:00:00
+[2019-02-14 10:12:48] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+[2019-02-14 10:12:49] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+[2019-02-14 10:12:51] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Python script succeeded
+2025-03-07 15:53:26
+I have just printed the current datetime
+Fri  7 Mar 15:53:26 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 38.625°C / 101.525°F
+>>> Your system time is: 2025-03-07 15:53:26 GMT
+Error: Read failed
+[2025-03-07 15:53:27] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 15:53:29] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+date: invalid date ‘25-3-45 15:70:26’
+>>> Your RTC time is:    N/A
+Error: Read failed
+[2025-03-07 15:53:31] I2C read 0x01 0x08 4 failed (result=), retrying 1 ...
+>>> Vin=3.50V, Vout=3.45V, Iout=1.16A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdownError: Read failed
+[2025-03-07 15:53:32] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+ [02 05:00:00]
+  5. Schedule next startupError: Read failed
+[2025-03-07 15:53:34] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature actionError: Read failed
+1
+[2025-03-07 15:53:36] I2C read 0x01 0x08 45 failed (result=), retrying 1 ...
+
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13)   Writing system time to RTC...
+13
+[2025-03-07 15:53:36] Writing system time to RTC...
+Error: Write failed
+Error: Read failed
+[2025-03-07 15:53:39] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2025-03-07 15:53:40] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2025-03-07 15:53:42] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+[2025-03-07 15:53:43] I2C write 0x01 0x08 58 54 failed (result=0xff), retrying 1 ...
+Error: Write failed
+[2025-03-07 15:53:45] I2C write 0x01 0x08 58 54 failed (result=0xf1), retrying 2 ...
+Error: Write failed
+Todays's sunset: 2025-03-07 17:55:33+00:00
+Tomorrow's sunrise 2025-03-08 06:34:07+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-07 15:53:50] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-07 15:53:51] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2019-02-14 10:12:07] Done :-)
+[2019-02-14 10:12:07] System was previously shut down because of low-voltage.
+[2019-02-14 10:12:07] Firmware ID: 0x00
+[2019-02-14 10:12:07] Firmware Revison: 0x05
+[2019-02-14 10:12:07] Current Vout=5.19V, Iout=0.98A
+[2019-02-14 10:12:07] System starts up because USB 5V is connected.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting system time via cellular
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] [Warning] System and RTC time seems not synchronized, difference is 1550139133s. System time is "2019-02-14 10:12:13 GMT", while RTC time is "". Please synchronize the time first.
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+Python script succeeded
+2025-03-07 16:03:01
+I have just printed the current datetime
+Fri  7 Mar 16:03:01 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 35°C / 95°F
+>>> Your system time is: 2025-03-07 16:03:01 GMT
+date: invalid date ‘25-3-45 15:79:8’
+>>> Your RTC time is:    N/A
+>>> Vout=5.25V, Iout=0.79A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-07 16:03:01] Writing system time to RTC...
+  Done :-)
+<2025-03-07 16:03:02> Done :-)
+
+================================================================================
+>>> Current temperature: 35.125°C / 95.225°F
+>>> Your system time is: 2025-03-07 16:03:02 GMT
+>>> Your RTC time is:    2025-03-07 16:03:01 GMT
+>>> Vout=5.31V, Iout=0.66A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [02 05:00:00]
+  5. Schedule next startup  [02 22:00:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Todays's sunset: 2025-03-07 17:55:33+00:00
+Tomorrow's sunrise 2025-03-08 06:34:07+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-07 16:03:06] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-07 16:03:07] Pending for incoming shutdown command...
+[2025-03-07 16:11:11] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-07 16:11:11] Running the script...
+[2025-03-07 16:11:12] Schedule next shutdown at: 2025-03-08 04:00:00
+[2025-03-07 16:11:12] Schedule next startup at: 2025-03-08 21:00:00
+[2025-03-07 16:11:12] Done :-)
+[2025-03-07 16:44:05] Schedule next shutdown at: 2025-03-08 06:44:07
+[2025-03-07 16:44:05] Schedule next startup at: 2025-03-08 11:50:00
+[2025-03-07 16:46:18] Copying "witty_pi_schedule_2025_3_2.wpi" to "schedule.wpi"...
+[2025-03-07 16:46:18] Running the script...
+[2025-03-07 16:46:19] Schedule next shutdown at: 2025-03-08 06:44:07
+[2025-03-07 16:46:20] Schedule next startup at: 2025-03-08 11:50:00
+[2025-03-07 16:46:20] Done :-)
+[2025-03-07 16:46:51] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-07 16:46:51] Running the script...
+[2025-03-07 16:46:51] Schedule next shutdown at: 2025-03-08 04:00:00
+[2025-03-07 16:46:52] Schedule next startup at: 2025-03-08 21:00:00
+[2025-03-07 16:46:52] Done :-)
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-08 21:00:19] Done :-)
+[2025-03-08 21:00:19] Firmware ID: 0x00
+[2025-03-08 21:00:19] Firmware Revison: 0x05
+[2025-03-08 21:00:19] Current Vout=5.31V, Iout=0.96A
+[2025-03-08 21:00:19] System starts up because scheduled startup is due.
+1741467624
+2020-01-01 00:00
+1577836800
+System datetime (1741467624) is after cutoff datetime (1577836800).
+No change required.
+[2025-03-08 21:00:25] Schedule next shutdown at: 2025-03-09 04:00:00
+[2025-03-08 21:00:26] Schedule next startup at: 2025-03-09 21:00:00
+Todays's sunset: 2025-03-08 17:57:18+00:00
+Tomorrow's sunrise 2025-03-09 06:31:52+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-08 21:00:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-08 21:00:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-09 21:00:20] Done :-)
+[2025-03-09 21:00:20] Firmware ID: 0x00
+[2025-03-09 21:00:20] Firmware Revison: 0x05
+[2025-03-09 21:00:20] Current Vout=5.25V, Iout=1.07A
+[2025-03-09 21:00:20] System starts up because scheduled startup is due.
+1741554025
+2020-01-01 00:00
+1577836800
+System datetime (1741554025) is after cutoff datetime (1577836800).
+No change required.
+[2025-03-09 21:00:26] Schedule next shutdown at: 2025-03-10 04:00:00
+[2025-03-09 21:00:26] Schedule next startup at: 2025-03-10 21:00:00
+Todays's sunset: 2025-03-09 17:59:03+00:00
+Tomorrow's sunrise 2025-03-10 06:29:37+00:00
+Unknown cron range value "59"
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-09 21:00:30] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-09 21:00:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 09:43:50] Done :-)
+[2025-03-10 09:43:50] Firmware ID: 0x00
+[2025-03-10 09:43:50] Firmware Revison: 0x05
+[2025-03-10 09:43:50] Current Vout=5.27V, Iout=0.98A
+[2025-03-10 09:43:50] System starts up because the button is clicked.
+1741599835
+2020-01-01 00:00
+1577836800
+System datetime (1741599835) is after cutoff datetime (1577836800).
+No change required.
+[2025-03-10 09:43:56] Schedule script is interrupted, revising the schedule...
+[2025-03-10 09:43:56] Schedule next shutdown at: 2025-03-10 20:59:00
+[2025-03-10 09:43:57] Schedule next startup at: 2025-03-10 21:00:00
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 09:44:00] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 09:44:00] Pending for incoming shutdown command...
