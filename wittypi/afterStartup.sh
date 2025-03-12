@@ -10,7 +10,7 @@
 
 # Wireless connectivity (Bluetooth and cellular) invoked in /etc/rc.local
 
-# Check the system time, and if incorrect, reset time, and reset the schedule
+# Check the system time, and if incorrect, reset time and reset weekly schedule. Either way update sunrise/set times and update moth, bird, bat recording schedules
 sudo /home/pi/scripts/check_datetime.sh
 
 # Update the camera settings

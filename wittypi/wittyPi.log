@@ -11219,3 +11219,1912 @@ Cannot open device /dev/video0, exiting.
 Cannot open device /dev/video0, exiting.
 [2025-03-10 09:44:00] Send out the SYS_UP signal via GPIO-17 pin.
 [2025-03-10 09:44:00] Pending for incoming shutdown command...
+[2025-03-10 11:04:52] Schedule next shutdown at: 2025-03-17 11:04:00
+[2025-03-10 11:04:52] Schedule next startup at: 2025-03-17 13:04:00
+[2025-03-10 11:06:32] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-10 11:06:32] Running the script...
+[2025-03-10 11:06:33] Schedule next shutdown at: 2025-03-11 04:00:00
+[2025-03-10 11:06:33] Schedule next startup at: 2025-03-11 21:00:00
+[2025-03-10 11:06:33] Done :-)
+[2018-01-01 12:00:48] Writing system time to RTC...
+<2018-01-01 12:00:49> Done :-)
+[2018-01-01 12:04:53] Schedule next shutdown at: 2018-01-08 12:04:00
+[2018-01-01 12:04:54] Schedule next startup at: 2018-01-08 14:04:00
+[2025-03-10 12:01:32] Writing system time to RTC...
+<2025-03-10 12:01:32> Done :-)
+[2025-03-10 12:01:35] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 12:01:36] Schedule next startup at: 2025-03-11 11:50:00
+[2018-01-01 12:00:04] The schedule script has ended already.
+[2025-03-10 12:08:35] Writing system time to RTC...
+<2025-03-10 12:08:35> Done :-)
+[2025-03-10 12:08:38] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 12:08:39] Schedule next startup at: 2025-03-11 11:50:00
+[2018-01-01 12:00:10] Writing system time to RTC...
+<2018-01-01 12:00:10> Done :-)
+[2018-01-01 12:00:17] Schedule next shutdown at: 2018-01-08 12:00:00
+[2018-01-01 12:00:17] Schedule next startup at: 2018-01-08 14:00:00
+[2025-03-10 12:09:30] Writing system time to RTC...
+<2025-03-10 12:09:30> Done :-)
+[2025-03-10 12:09:33] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 12:09:34] Schedule next startup at: 2025-03-11 11:50:00
+[2018-01-01 12:01:17] Writing system time to RTC...
+<2018-01-01 12:01:17> Done :-)
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2018-01-01 12:03:25] Done :-)
+[2018-01-01 12:03:25] Firmware ID: 0x00
+[2018-01-01 12:03:25] Firmware Revison: 0x05
+[2018-01-01 12:03:25] Current Vout=5.23V, Iout=1.01A
+[2018-01-01 12:03:25] System starts up because the button is clicked.
+1514808210
+2020-01-01 00:00
+1577836800
+System datetime (1514808210) is before cutoff datetime (1577836800).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+[2018-01-01 12:03:31] Schedule next shutdown at: 2025-03-09 12:10:00
+[2018-01-01 12:03:31] Schedule next startup at: 2025-03-10 17:50:47
+--------------- 2018-01-01 12:03:32 ---------------
+Schedule next shutdown at: 2018-01-08 12:03:00
+[2018-01-01 12:03:32] Schedule next shutdown at: 2018-01-08 12:03:00
+Schedule next startup at:  2018-01-08 14:03:00
+[2018-01-01 12:03:32] Schedule next startup at: 2018-01-08 14:03:00
+---------------------------------------------------
+
+    BEGIN 2018-01-01 12:03:00
+    END 2018-01-08 14:03:00
+    ON D7.0 H0.0 M0.0 S0.0
+    OFF D0.0 H2.0 M0.0 S0.0
+    
+Temp Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_temp_schedule_2018_1_1.wpi.
+Setting system time via cellular
+Python script to retieve time from cellular succeeded
+2025-03-10 12:58:14
+I have just printed the current datetime
+Mon 10 Mar 12:58:14 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 36.25°C / 97.25°F
+>>> Your system time is: 2025-03-10 12:58:14 GMT
+>>> Your RTC time is:    2018-01-01 12:24:39 GMT
+>>> Vout=5.24V, Iout=0.55A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [08 12:03:00]
+  5. Schedule next startup  [08 14:03:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-10 12:58:14] Writing system time to RTC...
+  Done :-)
+<2025-03-10 12:58:15> Done :-)
+
+================================================================================
+>>> Current temperature: 36.25°C / 97.25°F
+>>> Your system time is: 2025-03-10 12:58:15 GMT
+>>> Your RTC time is:    2025-03-10 12:58:14 GMT
+>>> Vout=5.19V, Iout=0.68A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [08 12:03:00]
+  5. Schedule next startup  [08 14:03:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [3.9V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Calculating sunrise and sunset times
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Calculate the weekly schedule
+--------------- 2025-03-10 12:58:16 ---------------
+Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 12:58:17] Schedule next shutdown at: 2025-03-11 06:37:21
+Schedule next startup at:  2025-03-11 11:50:00
+[2025-03-10 12:58:18] Schedule next startup at: 2025-03-11 11:50:00
+---------------------------------------------------
+
+    BEGIN 2025-03-09 12:00:00
+    END 2025-03-16 12:20:00
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H5.0 M40.0 S47.0
+    ON D0.0 H12.0 M46.0 S34.0
+    OFF D0.0 H5.0 M12.0 S39.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M44.0 S16.0
+    ON D0.0 H12.0 M38.0 S32.0
+    OFF D0.0 H5.0 M17.0 S12.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M47.0 S43.0
+    ON D0.0 H12.0 M30.0 S30.0
+    OFF D0.0 H5.0 M21.0 S47.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2025_3_9.wpi.
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 12:58:21] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 12:58:21] Pending for incoming shutdown command...
+[2025-03-10 13:47:02] Low voltage threshold set to 4.0V!
+[2025-03-10 13:52:03] Shutting down system because input voltge is too low: Vin=3.93V, Vlow=4V
+Shutting down in 15 seconds...Mon 10 Mar 13:52:03 GMT 2025
+Good Bye Mon 10 Mar 13:52:19 GMT 2025
+[2025-03-10 13:52:19] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 14:03:24] Done :-)
+[2025-03-10 14:03:24] System was previously shut down because of low-voltage.
+[2025-03-10 14:03:24] Firmware ID: 0x00
+[2025-03-10 14:03:24] Firmware Revison: 0x05
+[2025-03-10 14:03:24] Current Vout=5.23V, Iout=0.7A
+[2025-03-10 14:03:24] System starts up because the button is clicked.
+1741615409
+2020-01-01 00:00
+1577836800
+System datetime (1741615409) is after cutoff datetime (1577836800).
+No change required.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 14:03:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 14:03:30] Pending for incoming shutdown command...
+[2025-03-10 14:03:31] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 14:03:31] Schedule next startup at: 2025-03-11 11:50:00
+[2025-03-10 14:09:03] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 14:09:03] Schedule next startup at: 2025-03-11 11:50:00
+[2025-03-10 14:12:54] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 14:12:54] Schedule next startup at: 2025-03-11 11:50:00
+[2025-03-10 14:19:03] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 14:19:03] Schedule next startup at: 2025-03-11 11:50:00
+[2025-03-10 14:29:03] Schedule next shutdown at: 2025-03-11 06:37:21
+[2025-03-10 14:29:03] Schedule next startup at: 2025-03-11 11:50:00
+[2025-03-10 15:29:38] Copying "on_5m_every_10m.wpi" to "schedule.wpi"...
+[2025-03-10 15:29:38] Running the script...
+[2025-03-10 15:29:39] Schedule next shutdown at: 2025-03-10 15:35:00
+[2025-03-10 15:29:39] Schedule next startup at: 2025-03-10 15:40:00
+[2025-03-10 15:29:39] Done :-)
+[2025-03-10 15:34:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 10 Mar 15:34:59 GMT 2025
+Good Bye Mon 10 Mar 15:35:15 GMT 2025
+[2025-03-10 15:35:15] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 15:44:30] Done :-)
+[2025-03-10 15:44:30] Firmware ID: 0x00
+[2025-03-10 15:44:30] Firmware Revison: 0x05
+[2025-03-10 15:44:30] Current Vout=5.3V, Iout=0.94A
+[2025-03-10 15:44:30] System starts up because of the scheduled startup got delayed.
+[2025-03-10 15:44:30] Maybe the scheduled startup was due when Pi was running, or Pi had been shut down but TXD stayed HIGH to prevent the power cut.
+1741621475
+2020-01-01 00:00
+1577836800
+System datetime (1741621475) is after cutoff datetime (1577836800).
+No time change required.
+Calculating sunrise and sunset times
+[2025-03-10 15:44:36] Schedule next shutdown at: 2025-03-10 15:45:00
+[2025-03-10 15:44:36] Schedule next startup at: 2025-03-10 15:50:00
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 15:44:40] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 15:44:41] Pending for incoming shutdown command...
+[2025-03-10 15:44:58] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 10 Mar 15:44:59 GMT 2025
+Good Bye Mon 10 Mar 15:45:14 GMT 2025
+[2025-03-10 15:45:14] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 16:23:15] Done :-)
+[2025-03-10 16:23:15] Firmware ID: 0x00
+[2025-03-10 16:23:15] Firmware Revison: 0x05
+[2025-03-10 16:23:15] Current Vout=5.23V, Iout=0.88A
+[2025-03-10 16:23:15] System starts up because of the scheduled startup got delayed.
+[2025-03-10 16:23:15] Maybe the scheduled startup was due when Pi was running, or Pi had been shut down but TXD stayed HIGH to prevent the power cut.
+1741623800
+2020-01-01 00:00
+1577836800
+System datetime (1741623800) is after cutoff datetime (1577836800).
+No time change required.
+Calculating sunrise and sunset times
+[2025-03-10 16:23:21] Schedule next shutdown at: 2025-03-10 16:25:00
+[2025-03-10 16:23:22] Schedule next startup at: 2025-03-10 16:30:00
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 16:23:25] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 16:23:26] Pending for incoming shutdown command...
+[2025-03-10 16:23:55] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-10 16:23:55] Running the script...
+[2025-03-10 16:23:56] Schedule next shutdown at: 2025-03-11 04:00:00
+[2025-03-10 16:23:56] Schedule next startup at: 2025-03-11 21:00:00
+[2025-03-10 16:23:56] Done :-)
+[2025-03-10 16:26:17] Copying "on_5m_every_20m.wpi" to "schedule.wpi"...
+[2025-03-10 16:26:17] Running the script...
+[2025-03-10 16:26:18] Schedule next shutdown at: 2025-03-10 16:35:00
+[2025-03-10 16:26:18] Schedule next startup at: 2025-03-10 16:40:00
+[2025-03-10 16:26:18] Done :-)
+[2025-03-10 16:26:57] Copying "on_5m_every_20m.wpi" to "schedule.wpi"...
+[2025-03-10 16:26:57] Running the script...
+[2025-03-10 16:26:58] Schedule next shutdown at: 2025-03-10 16:30:00
+[2025-03-10 16:26:58] Schedule next startup at: 2025-03-10 16:35:00
+[2025-03-10 16:26:58] Done :-)
+[2025-03-10 16:29:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 10 Mar 16:29:59 GMT 2025
+Good Bye Mon 10 Mar 16:30:15 GMT 2025
+[2025-03-10 16:30:15] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 16:37:39] Done :-)
+[2025-03-10 16:37:39] Firmware ID: 0x00
+[2025-03-10 16:37:39] Firmware Revison: 0x05
+[2025-03-10 16:37:39] Current Vout=5.3V, Iout=0.96A
+[2025-03-10 16:37:39] System starts up because of the scheduled startup got delayed.
+[2025-03-10 16:37:39] Maybe the scheduled startup was due when Pi was running, or Pi had been shut down but TXD stayed HIGH to prevent the power cut.
+1741624664
+2020-01-01 00:00
+1577836800
+System datetime (1741624664) is after cutoff datetime (1577836800).
+No time change required.
+Calculating sunrise and sunset times
+[2025-03-10 16:37:45] Schedule next shutdown at: 2025-03-10 16:40:00
+[2025-03-10 16:37:46] Schedule next startup at: 2025-03-10 16:45:00
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 16:37:49] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 16:37:49] Pending for incoming shutdown command...
+[2025-03-10 16:38:48] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-10 16:38:48] Running the script...
+[2025-03-10 16:38:49] Schedule next shutdown at: 2025-03-11 04:00:00
+[2025-03-10 16:38:50] Schedule next startup at: 2025-03-11 21:00:00
+[2025-03-10 16:38:50] Done :-)
+[2025-03-10 16:46:05] Copying "on_5m_every_10m.wpi" to "schedule.wpi"...
+[2025-03-10 16:46:05] Running the script...
+[2025-03-10 16:46:05] Schedule next shutdown at: 2025-03-10 16:50:00
+[2025-03-10 16:46:06] Schedule next startup at: 2025-03-10 16:52:00
+[2025-03-10 16:46:06] Done :-)
+[2025-03-10 16:50:00] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 10 Mar 16:50:00 GMT 2025
+Good Bye Mon 10 Mar 16:50:15 GMT 2025
+[2025-03-10 16:50:15] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 16:57:56] Done :-)
+[2025-03-10 16:57:56] Firmware ID: 0x00
+[2025-03-10 16:57:56] Firmware Revison: 0x05
+[2025-03-10 16:57:56] Current Vout=5.17V, Iout=1.03A
+[2025-03-10 16:57:56] System starts up because of the scheduled startup got delayed.
+[2025-03-10 16:57:56] Maybe the scheduled startup was due when Pi was running, or Pi had been shut down but TXD stayed HIGH to prevent the power cut.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 16:58:01] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 16:58:02] Pending for incoming shutdown command...
+[2025-03-10 16:58:02] Schedule next shutdown at: 2025-03-10 17:02:00
+[2025-03-10 16:58:02] Schedule next startup at: 2025-03-10 17:04:00
+[2025-03-10 16:58:36] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-10 16:58:36] Running the script...
+[2025-03-10 16:58:37] Schedule next shutdown at: 2025-03-11 04:00:00
+[2025-03-10 16:58:37] Schedule next startup at: 2025-03-11 21:00:00
+[2025-03-10 16:58:37] Done :-)
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-10 17:02:37] Done :-)
+[2025-03-10 17:02:37] Firmware ID: 0x00
+[2025-03-10 17:02:37] Firmware Revison: 0x05
+[2025-03-10 17:02:37] Current Vout=5.24V, Iout=0.96A
+[2025-03-10 17:02:37] System starts up because of the scheduled startup got delayed.
+[2025-03-10 17:02:37] Maybe the scheduled startup was due when Pi was running, or Pi had been shut down but TXD stayed HIGH to prevent the power cut.
+1741626162
+2020-01-01 00:00
+1577836800
+System datetime (1741626162) is after cutoff datetime (1577836800).
+No time change required.
+Calculating sunrise and sunset times
+[2025-03-10 17:02:43] Schedule next shutdown at: 2025-03-11 04:00:00
+[2025-03-10 17:02:44] Schedule next startup at: 2025-03-11 21:00:00
+Todays's sunset: 2025-03-10 18:00:47+00:00
+Tomorrow's sunrise 2025-03-11 06:27:21+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-10 17:02:47] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-10 17:02:48] Pending for incoming shutdown command...
+[2025-03-10 17:09:17] Copying "on_10m_every_2h.wpi" to "schedule.wpi"...
+[2025-03-10 17:09:17] Running the script...
+[2025-03-10 17:09:18] Schedule next shutdown at: 2025-03-10 17:10:00
+[2025-03-10 17:09:18] Schedule next startup at: 2025-03-10 19:00:00
+[2025-03-10 17:09:19] Done :-)
+[2025-03-10 17:09:58] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 10 Mar 17:09:58 GMT 2025
+Good Bye Mon 10 Mar 17:10:14 GMT 2025
+[2025-03-10 17:10:14] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not connected, skip I2C communications...
+<2019-02-14 10:12:17> Witty Pi is not connected, skip schedule script...
+1550139137
+2020-01-01 00:00
+1577836800
+System datetime (1550139137) is before cutoff datetime (1577836800).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+Error: Read failed
+[2019-02-14 10:12:19] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:20] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:12:22] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:23] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:25] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:26] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:27] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:27] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:28] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:29] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:31] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:31] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:32] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:33] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:34] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:34] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:35] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:36] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+date: invalid date ‘0-0-0 0:0:’
+--------------- 2019-02-14 10:12:37 ---------------
+Error: Read failed
+[2019-02-14 10:12:38] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:39] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:41] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:42] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:44] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:45] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:47] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:48] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:49] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:49] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:50] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:51] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:52] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:52] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:54] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:55] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not connected, skip I2C communications...
+<2019-02-14 10:12:17> Witty Pi is not connected, skip schedule script...
+1550139137
+2020-01-01 00:00
+1577836800
+System datetime (1550139137) is before cutoff datetime (1577836800).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+Error: Read failed
+[2019-02-14 10:12:19] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:20] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:12:22] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:23] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:25] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:26] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:27] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:27] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:28] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:29] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:30] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:30] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:31] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:32] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:33] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:34] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:35] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:36] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+date: invalid date ‘0-0-0 0:0:’
+--------------- 2019-02-14 10:12:37 ---------------
+Error: Read failed
+[2019-02-14 10:12:38] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:39] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:41] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:42] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:44] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:45] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:47] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:48] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:49] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:49] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:50] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:51] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:52] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:52] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:53] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:54] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:55] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:56] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:57] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:58] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:59] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:59] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:00] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:01] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:02] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:02] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:03] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:04] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:05] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:05] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:13:06] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:07] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:08] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:08] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:09] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:10] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:11] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:11] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:12] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:13] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:14] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:14] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:15] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:16] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:17] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:17] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:18] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not detected, retry in one second...
+[xxxx-xx-xx xx:xx:xx] Witty Pi is not connected, skip I2C communications...
+<2019-02-14 10:12:17> Witty Pi is not connected, skip schedule script...
+1550139137
+2020-01-01 00:00
+1577836800
+System datetime (1550139137) is before cutoff datetime (1577836800).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+Error: Read failed
+[2019-02-14 10:12:19] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:20] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:21] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:12:22] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:23] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:24] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:25] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:26] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:28] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:28] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:29] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:30] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:31] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:31] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:32] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:33] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:34] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:34] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:35] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:36] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:37] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+date: invalid date ‘0-0-0 0:0:’
+--------------- 2019-02-14 10:12:37 ---------------
+Error: Read failed
+[2019-02-14 10:12:38] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:39] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:40] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:41] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:42] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:43] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:44] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:45] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:46] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:47] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:48] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:50] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:50] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:51] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:52] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:53] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:53] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:54] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:55] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:56] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:56] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:12:57] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:12:58] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:12:59] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:12:59] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:00] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:01] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:02] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:02] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:03] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:04] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:05] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:05] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:13:06] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:07] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:08] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:08] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:09] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:10] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:11] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:11] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:12] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:13] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:14] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:14] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:16] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:17] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:18] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:18] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:13:19] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:20] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:21] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:21] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+date: invalid date ‘0-0-0 0:0:’
+date: invalid date ‘@’
+[Warning] System and RTC time seems not synchronized, difference is 1550139201s.
+System time is "2019-02-14 10:13:21 GMT", while RTC time is "".
+Please synchronize the time first.
+[2019-02-14 10:13:21] [Warning] System and RTC time seems not synchronized, difference is 1550139201s. System time is "2019-02-14 10:13:21 GMT", while RTC time is "". Please synchronize the time first.
+Schedule next shutdown at: 2019-02-21 10:12:00
+[2019-02-14 10:13:21] Schedule next shutdown at: 2019-02-21 10:12:00
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:22] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:23] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:24] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:24] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+[2019-02-14 10:13:25] I2C write 0x01 0x08 32 0 failed (result=I2C read 0x01 0x08 32 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:26] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:27] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:28] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:28] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+[2019-02-14 10:13:29] I2C write 0x01 0x08 32 0 failed (result=I2C read 0x01 0x08 32 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:30] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:31] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:32] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:32] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+[2019-02-14 10:13:33] I2C write 0x01 0x08 32 0 failed (result=I2C read 0x01 0x08 32 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:34] I2C read 0x01 0x08 32 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:35] I2C read 0x01 0x08 32 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:36] I2C read 0x01 0x08 32 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:36] I2C read 0x01 0x08 32 failed (result=), and no more retry.
+I2C write 0x01 0x08 32 0 failed (result=I2C read 0x01 0x08 32 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:13:36] I2C write 0x01 0x08 32 0 failed (result=I2C read 0x01 0x08 32 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:37] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:38] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:39] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:39] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+[2019-02-14 10:13:40] I2C write 0x01 0x08 33 18 failed (result=I2C read 0x01 0x08 33 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:42] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:43] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:44] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:44] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+[2019-02-14 10:13:45] I2C write 0x01 0x08 33 18 failed (result=I2C read 0x01 0x08 33 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:46] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:47] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:48] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:48] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+[2019-02-14 10:13:49] I2C write 0x01 0x08 33 18 failed (result=I2C read 0x01 0x08 33 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:50] I2C read 0x01 0x08 33 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:51] I2C read 0x01 0x08 33 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:52] I2C read 0x01 0x08 33 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:52] I2C read 0x01 0x08 33 failed (result=), and no more retry.
+I2C write 0x01 0x08 33 18 failed (result=I2C read 0x01 0x08 33 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:13:52] I2C write 0x01 0x08 33 18 failed (result=I2C read 0x01 0x08 33 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:53] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:54] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:55] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:55] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+[2019-02-14 10:13:56] I2C write 0x01 0x08 34 16 failed (result=I2C read 0x01 0x08 34 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:13:57] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:13:58] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:13:59] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:13:59] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+[2019-02-14 10:14:00] I2C write 0x01 0x08 34 16 failed (result=I2C read 0x01 0x08 34 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:01] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:02] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:03] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:03] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+[2019-02-14 10:14:04] I2C write 0x01 0x08 34 16 failed (result=I2C read 0x01 0x08 34 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:05] I2C read 0x01 0x08 34 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:06] I2C read 0x01 0x08 34 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:07] I2C read 0x01 0x08 34 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:07] I2C read 0x01 0x08 34 failed (result=), and no more retry.
+I2C write 0x01 0x08 34 16 failed (result=I2C read 0x01 0x08 34 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:14:07] I2C write 0x01 0x08 34 16 failed (result=I2C read 0x01 0x08 34 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:09] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:10] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:11] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:11] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+[2019-02-14 10:14:12] I2C write 0x01 0x08 35 33 failed (result=I2C read 0x01 0x08 35 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:13] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:14] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:15] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:15] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+[2019-02-14 10:14:16] I2C write 0x01 0x08 35 33 failed (result=I2C read 0x01 0x08 35 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:17] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:18] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:19] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:19] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+[2019-02-14 10:14:20] I2C write 0x01 0x08 35 33 failed (result=I2C read 0x01 0x08 35 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:21] I2C read 0x01 0x08 35 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:22] I2C read 0x01 0x08 35 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:23] I2C read 0x01 0x08 35 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:23] I2C read 0x01 0x08 35 failed (result=), and no more retry.
+I2C write 0x01 0x08 35 33 failed (result=I2C read 0x01 0x08 35 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:14:23] I2C write 0x01 0x08 35 33 failed (result=I2C read 0x01 0x08 35 failed (result=), and no more retry.), and no more retry.
+Error: Read failed
+[2019-02-14 10:14:24] I2C read 0x01 0x08 58 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:25] I2C read 0x01 0x08 58 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:26] I2C read 0x01 0x08 58 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:26] I2C read 0x01 0x08 58 failed (result=), and no more retry.
+/home/pi/wittypi/utilities.sh: line 194: 0x7F&I2C read 0x01 0x08 58 failed (result=), and no more retry.: syntax error in expression (error token is "read 0x01 0x08 58 failed (result=), and no more retry.")
+Error: Read failed
+[2019-02-14 10:14:27] I2C read 0x01 0x08 59 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:28] I2C read 0x01 0x08 59 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:29] I2C read 0x01 0x08 59 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:29] I2C read 0x01 0x08 59 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:14:30] I2C read 0x01 0x08 60 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:31] I2C read 0x01 0x08 60 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:32] I2C read 0x01 0x08 60 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:32] I2C read 0x01 0x08 60 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:14:33] I2C read 0x01 0x08 61 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:34] I2C read 0x01 0x08 61 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:35] I2C read 0x01 0x08 61 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:35] I2C read 0x01 0x08 61 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:14:37] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:38] I2C read 0x01 0x08 63 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:39] I2C read 0x01 0x08 63 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:39] I2C read 0x01 0x08 63 failed (result=), and no more retry.
+Error: Read failed
+[2019-02-14 10:14:40] I2C read 0x01 0x08 64 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:41] I2C read 0x01 0x08 64 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:42] I2C read 0x01 0x08 64 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:42] I2C read 0x01 0x08 64 failed (result=), and no more retry.
+date: invalid date ‘0-0-0 0:0:’
+date: invalid date ‘@’
+[Warning] System and RTC time seems not synchronized, difference is 1550139282s.
+System time is "2019-02-14 10:14:42 GMT", while RTC time is "".
+Please synchronize the time first.
+[2019-02-14 10:14:42] [Warning] System and RTC time seems not synchronized, difference is 1550139282s. System time is "2019-02-14 10:14:42 GMT", while RTC time is "". Please synchronize the time first.
+Schedule next startup at:  2019-02-21 12:12:00
+[2019-02-14 10:14:42] Schedule next startup at: 2019-02-21 12:12:00
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:43] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:44] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:45] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:45] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+[2019-02-14 10:14:46] I2C write 0x01 0x08 27 0 failed (result=I2C read 0x01 0x08 27 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:47] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:48] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:49] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:49] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+[2019-02-14 10:14:50] I2C write 0x01 0x08 27 0 failed (result=I2C read 0x01 0x08 27 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:51] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:52] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:53] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:53] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+[2019-02-14 10:14:54] I2C write 0x01 0x08 27 0 failed (result=I2C read 0x01 0x08 27 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:55] I2C read 0x01 0x08 27 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:56] I2C read 0x01 0x08 27 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:14:57] I2C read 0x01 0x08 27 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:14:57] I2C read 0x01 0x08 27 failed (result=), and no more retry.
+I2C write 0x01 0x08 27 0 failed (result=I2C read 0x01 0x08 27 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:14:57] I2C write 0x01 0x08 27 0 failed (result=I2C read 0x01 0x08 27 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:14:58] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:14:59] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:00] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:01] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+[2019-02-14 10:15:02] I2C write 0x01 0x08 28 18 failed (result=I2C read 0x01 0x08 28 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:03] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:04] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:05] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:05] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+[2019-02-14 10:15:06] I2C write 0x01 0x08 28 18 failed (result=I2C read 0x01 0x08 28 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:07] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:08] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:09] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:09] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+[2019-02-14 10:15:10] I2C write 0x01 0x08 28 18 failed (result=I2C read 0x01 0x08 28 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:11] I2C read 0x01 0x08 28 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:12] I2C read 0x01 0x08 28 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:13] I2C read 0x01 0x08 28 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:13] I2C read 0x01 0x08 28 failed (result=), and no more retry.
+I2C write 0x01 0x08 28 18 failed (result=I2C read 0x01 0x08 28 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:15:13] I2C write 0x01 0x08 28 18 failed (result=I2C read 0x01 0x08 28 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:14] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:15] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:16] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:16] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+[2019-02-14 10:15:17] I2C write 0x01 0x08 29 18 failed (result=I2C read 0x01 0x08 29 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:18] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:19] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:20] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:20] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+[2019-02-14 10:15:21] I2C write 0x01 0x08 29 18 failed (result=I2C read 0x01 0x08 29 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:22] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:23] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:24] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:24] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+[2019-02-14 10:15:25] I2C write 0x01 0x08 29 18 failed (result=I2C read 0x01 0x08 29 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:26] I2C read 0x01 0x08 29 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:27] I2C read 0x01 0x08 29 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:28] I2C read 0x01 0x08 29 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:29] I2C read 0x01 0x08 29 failed (result=), and no more retry.
+I2C write 0x01 0x08 29 18 failed (result=I2C read 0x01 0x08 29 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:15:29] I2C write 0x01 0x08 29 18 failed (result=I2C read 0x01 0x08 29 failed (result=), and no more retry.), and no more retry.
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:30] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:31] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:32] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:32] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+[2019-02-14 10:15:33] I2C write 0x01 0x08 30 33 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), retrying 1 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:34] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:35] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:36] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:36] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+[2019-02-14 10:15:37] I2C write 0x01 0x08 30 33 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), retrying 2 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:38] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:39] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:40] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:40] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+[2019-02-14 10:15:41] I2C write 0x01 0x08 30 33 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), retrying 3 ...
+Error: Write failed
+Error: Read failed
+[2019-02-14 10:15:42] I2C read 0x01 0x08 30 failed (result=), retrying 1 ...
+Error: Read failed
+[2019-02-14 10:15:43] I2C read 0x01 0x08 30 failed (result=), retrying 2 ...
+Error: Read failed
+[2019-02-14 10:15:44] I2C read 0x01 0x08 30 failed (result=), retrying 3 ...
+Error: Read failed
+[2019-02-14 10:15:44] I2C read 0x01 0x08 30 failed (result=), and no more retry.
+I2C write 0x01 0x08 30 33 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), and no more retry.
+[2019-02-14 10:15:44] I2C write 0x01 0x08 30 33 failed (result=I2C read 0x01 0x08 30 failed (result=), and no more retry.), and no more retry.
+---------------------------------------------------
+
+    BEGIN 2019-02-14 10:12:00
+    END 2019-02-21 12:12:00
+    ON D7.0 H0.0 M0.0 S0.0
+    OFF D0.0 H2.0 M0.0 S0.0
+    
+Temp Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_temp_schedule_2019_2_14.wpi.
+Setting system time via cellular
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[xxxx-xx-xx xx:xx:xx] I2C read 0x01 0x08 63 failed (result=), retrying 1 ...
+[2019-02-14 10:12:08] Done :-)
+[2019-02-14 10:12:10] I2C read 0x01 0x08 8 failed (result=), retrying 1 ...
+[2019-02-14 10:12:10] Firmware ID: 0x00
+[2019-02-14 10:12:10] Firmware Revison: 0x05
+[2019-02-14 10:12:12] I2C read 0x01 0x08 5 failed (result=), retrying 1 ...
+[2019-02-14 10:12:12] Current Vin=4.24V, Vout=4.23V, Iout=1.44A
+[2019-02-14 10:12:13] I2C read 0x01 0x08 46 failed (result=), retrying 1 ...
+[2019-02-14 10:12:16] I2C read 0x01 0x08 40 failed (result=), retrying 1 ...
+[2019-02-14 10:12:18] I2C read 0x01 0x08 40 failed (result=), retrying 2 ...
+[2019-02-14 10:12:19] I2C read 0x01 0x08 40 failed (result=), retrying 3 ...
+[2019-02-14 10:12:20] System starts up because USB 5V is connected.
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] RTC has bad time, write system time into RTC
+[xxxx-xx-xx xx:xx:xx] Writing system time to RTC...
+<2019-02-14 10:12:06> Done :-)
+<2019-02-14 10:12:07> Firmware ID: 0x00
+<2019-02-14 10:12:07> Firmware Revison: 0x05
+<2019-02-14 10:12:07> Current Vout=5.23V, Iout=0.98A
+<2019-02-14 10:12:07> System starts up because the button is clicked.
+1550139132
+2020-01-01 00:00
+1577836800
+System datetime (1550139132) is before cutoff datetime (1577836800).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+[2019-02-14 10:12:13] Schedule next shutdown at: 2019-02-21 10:12:00
+[2019-02-14 10:12:13] Schedule next startup at: 2019-02-21 12:12:00
+--------------- 2019-02-14 10:12:13 ---------------
+Schedule next shutdown at: 2019-02-21 10:12:00
+[2019-02-14 10:12:14] Schedule next shutdown at: 2019-02-21 10:12:00
+Schedule next startup at:  2019-02-21 12:12:00
+[2019-02-14 10:12:14] Schedule next startup at: 2019-02-21 12:12:00
+---------------------------------------------------
+
+    BEGIN 2019-02-14 10:12:00
+    END 2019-02-21 12:12:00
+    ON D7.0 H0.0 M0.0 S0.0
+    OFF D0.0 H2.0 M0.0 S0.0
+    
+Temp Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_temp_schedule_2019_2_14.wpi.
+Setting system time via cellular
+Python script to retieve time from cellular succeeded
+2025-03-12 10:32:15
+I have just printed the current datetime
+Wed 12 Mar 10:32:15 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 31.5°C / 88.7°F
+>>> Your system time is: 2025-03-12 10:32:15 GMT
+>>> Your RTC time is:    2019-02-14 10:12:38 GMT
+>>> Vout=5.24V, Iout=0.68A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-12 10:32:16] Writing system time to RTC...
+  Done :-)
+<2025-03-12 10:32:16> Done :-)
+
+================================================================================
+>>> Current temperature: 31.375°C / 88.475°F
+>>> Your system time is: 2025-03-12 10:32:16 GMT
+>>> Your RTC time is:    2025-03-12 10:32:16 GMT
+>>> Vout=5.25V, Iout=0.60A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Calculating sunrise and sunset times
+Todays's sunset: 2025-03-12 18:04:16+00:00
+Tomorrow's sunrise 2025-03-13 06:22:48+00:00
+Calculate the weekly schedule
+--------------- 2025-03-12 10:32:18 ---------------
+Schedule next shutdown at: 2025-03-12 12:10:00
+[2025-03-12 10:32:19] Schedule next shutdown at: 2025-03-12 12:10:00
+Schedule next startup at:  2025-03-12 17:54:16
+[2025-03-12 10:32:19] Schedule next startup at: 2025-03-12 17:54:16
+---------------------------------------------------
+
+    BEGIN 2025-03-09 12:00:00
+    END 2025-03-16 12:20:00
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H5.0 M40.0 S47.0
+    ON D0.0 H12.0 M46.0 S34.0
+    OFF D0.0 H5.0 M12.0 S39.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M44.0 S16.0
+    ON D0.0 H12.0 M38.0 S32.0
+    OFF D0.0 H5.0 M17.0 S12.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M47.0 S43.0
+    ON D0.0 H12.0 M30.0 S30.0
+    OFF D0.0 H5.0 M21.0 S47.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2025_3_9.wpi.
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+<2025-03-12 10:32:22> Send out the SYS_UP signal via GPIO-17 pin.
+<2025-03-12 10:32:22> Pending for incoming shutdown command...
+[2025-03-12 10:35:54] Writing system time to RTC...
+<2025-03-12 10:35:55> Done :-)
+[2025-03-12 10:42:00] Copying "on_10m_every_15m.wpi" to "schedule.wpi"...
+[2025-03-12 10:42:00] Running the script...
+[2025-03-12 10:42:01] Schedule next shutdown at: 2025-03-12 10:45:00
+[2025-03-12 10:42:01] Schedule next startup at: 2025-03-12 10:50:00
+[2025-03-12 10:42:01] Done :-)
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 10:50:19] Done :-)
+[2025-03-12 10:50:19] Firmware ID: 0x00
+[2025-03-12 10:50:19] Firmware Revison: 0x05
+[2025-03-12 10:50:19] Current Vout=5.22V, Iout=0.86A
+[2025-03-12 10:50:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 10:50:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 10:50:25] Pending for incoming shutdown command...
+[2025-03-12 10:50:25] Schedule next shutdown at: 2025-03-12 11:00:00
+[2025-03-12 10:50:25] Schedule next startup at: 2025-03-12 11:05:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:05:19] Done :-)
+[2025-03-12 11:05:19] Firmware ID: 0x00
+[2025-03-12 11:05:19] Firmware Revison: 0x05
+[2025-03-12 11:05:19] Current Vout=5.16V, Iout=1.01A
+[2025-03-12 11:05:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:05:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:05:25] Pending for incoming shutdown command...
+[2025-03-12 11:05:25] Schedule next shutdown at: 2025-03-12 11:15:00
+[2025-03-12 11:05:25] Schedule next startup at: 2025-03-12 11:20:00
+[2025-03-12 11:07:22] Copying "on_5m_every_10m.wpi" to "schedule.wpi"...
+[2025-03-12 11:07:22] Running the script...
+[2025-03-12 11:07:22] Schedule next shutdown at: 2025-03-12 11:10:00
+[2025-03-12 11:07:23] Schedule next startup at: 2025-03-12 11:15:00
+[2025-03-12 11:07:23] Done :-)
+                                                                                 [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:15:19] Done :-)
+[2025-03-12 11:15:19] Firmware ID: 0x00
+[2025-03-12 11:15:19] Firmware Revison: 0x05
+[2025-03-12 11:15:19] Current Vout=5.24V, Iout=1.01A
+[2025-03-12 11:15:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:15:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:15:25] Pending for incoming shutdown command...
+[2025-03-12 11:15:25] Schedule next shutdown at: 2025-03-12 11:20:00
+[2025-03-12 11:15:25] Schedule next startup at: 2025-03-12 11:25:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:25:19] Done :-)
+[2025-03-12 11:25:19] Firmware ID: 0x00
+[2025-03-12 11:25:19] Firmware Revison: 0x05
+[2025-03-12 11:25:19] Current Vin=3.93V, Vout=5.21V, Iout=0.9A
+[2025-03-12 11:25:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:35:19] Done :-)
+[2025-03-12 11:35:19] System was previously shut down because of low-voltage.
+[2025-03-12 11:35:19] Firmware ID: 0x00
+[2025-03-12 11:35:19] Firmware Revison: 0x05
+[2025-03-12 11:35:19] Current Vin=3.87V, Vout=5.29V, Iout=1.09A
+[2025-03-12 11:35:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:35:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:35:25] Pending for incoming shutdown command...
+[2025-03-12 11:35:25] Schedule next shutdown at: 2025-03-12 11:40:00
+[2025-03-12 11:35:25] Schedule next startup at: 2025-03-12 11:45:00
+                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:37:47] Done :-)
+[2025-03-12 11:37:47] Firmware ID: 0x00
+[2025-03-12 11:37:47] Firmware Revison: 0x05
+[2025-03-12 11:37:47] Current Vout=5.24V, Iout=0.7A
+[2025-03-12 11:37:47] System starts up because USB 5V is connected.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:37:52] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:37:53] Pending for incoming shutdown command...
+[2025-03-12 11:37:53] Schedule next shutdown at: 2025-03-12 11:40:00
+[2025-03-12 11:37:54] Schedule next startup at: 2025-03-12 11:45:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:45:19] Done :-)
+[2025-03-12 11:45:19] Firmware ID: 0x00
+[2025-03-12 11:45:19] Firmware Revison: 0x05
+[2025-03-12 11:45:19] Current Vin=3.93V, Vout=5.18V, Iout=0.68A
+[2025-03-12 11:45:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:45:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:45:25] Pending for incoming shutdown command...
+[2025-03-12 11:45:25] Schedule next shutdown at: 2025-03-12 11:50:00
+[2025-03-12 11:45:25] Schedule next startup at: 2025-03-12 11:55:00
+[2025-03-12 11:45:58] Shutting down system because input voltge is too low: Vin=3.87V, Vlow=4V
+Shutting down in 15 seconds...Wed 12 Mar 11:45:58 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:47:48] Done :-)
+[2025-03-12 11:47:48] Firmware ID: 0x00
+[2025-03-12 11:47:48] Firmware Revison: 0x05
+[2025-03-12 11:47:48] Current Vout=5.28V, Iout=1.07A
+[2025-03-12 11:47:48] System starts up because USB 5V is connected.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:47:53] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:47:54] Pending for incoming shutdown command...
+[2025-03-12 11:47:54] Schedule next shutdown at: 2025-03-12 11:50:00
+[2025-03-12 11:47:54] Schedule next startup at: 2025-03-12 11:55:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 11:55:19] Done :-)
+[2025-03-12 11:55:19] Firmware ID: 0x00
+[2025-03-12 11:55:19] Firmware Revison: 0x05
+[2025-03-12 11:55:19] Current Vout=5.24V, Iout=0.88A
+[2025-03-12 11:55:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 11:55:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 11:55:25] Pending for incoming shutdown command...
+[2025-03-12 11:55:25] Schedule next shutdown at: 2025-03-12 12:00:00
+[2025-03-12 11:55:25] Schedule next startup at: 2025-03-12 12:05:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:05:19] Done :-)
+[2025-03-12 12:05:19] Firmware ID: 0x00
+[2025-03-12 12:05:19] Firmware Revison: 0x05
+[2025-03-12 12:05:19] Current Vin=3.87V, Vout=5.17V, Iout=0.88A
+[2025-03-12 12:05:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:11:46] Done :-)
+[2025-03-12 12:11:46] Firmware ID: 0x00
+[2025-03-12 12:11:46] Firmware Revison: 0x05
+[2025-03-12 12:11:46] Current Vout=5.18V, Iout=0.81A
+[2025-03-12 12:11:46] System starts up because USB 5V is connected.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:11:51] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:11:52] Pending for incoming shutdown command...
+[2025-03-12 12:11:52] Schedule script is interrupted, revising the schedule...
+[2025-03-12 12:11:52] Schedule next shutdown at: 2025-03-12 12:14:00
+[2025-03-12 12:11:53] Schedule next startup at: 2025-03-12 12:15:00
+[2025-03-12 12:13:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Wed 12 Mar 12:13:59 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:15:19] Done :-)
+[2025-03-12 12:15:19] Firmware ID: 0x00
+[2025-03-12 12:15:19] Firmware Revison: 0x05
+[2025-03-12 12:15:19] Current Vout=5.24V, Iout=0.86A
+[2025-03-12 12:15:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:15:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:15:25] Pending for incoming shutdown command...
+[2025-03-12 12:15:25] Schedule next shutdown at: 2025-03-12 12:20:00
+[2025-03-12 12:15:25] Schedule next startup at: 2025-03-12 12:25:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:25:19] Done :-)
+[2025-03-12 12:25:19] Firmware ID: 0x00
+[2025-03-12 12:25:19] Firmware Revison: 0x05
+[2025-03-12 12:25:19] Current Vin=4.06V, Vout=5.17V, Iout=1.03A
+[2025-03-12 12:25:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:25:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:25:25] Pending for incoming shutdown command...
+[2025-03-12 12:25:25] Schedule next shutdown at: 2025-03-12 12:30:00
+[2025-03-12 12:25:26] Schedule next startup at: 2025-03-12 12:35:00
+                                                                                                                                                          [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:35:19] Done :-)
+[2025-03-12 12:35:19] System was previously shut down because of low-voltage.
+[2025-03-12 12:35:19] Firmware ID: 0x00
+[2025-03-12 12:35:19] Firmware Revison: 0x05
+[2025-03-12 12:35:19] Current Vin=3.87V, Vout=5.24V, Iout=1.07A
+[2025-03-12 12:35:19] System starts up because scheduled startup is due.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:40:52] Done :-)
+[2025-03-12 12:40:52] Firmware ID: 0x00
+[2025-03-12 12:40:52] Firmware Revison: 0x05
+[2025-03-12 12:40:52] Current Vout=5.24V, Iout=0.79A
+[2025-03-12 12:40:52] System starts up because USB 5V is connected.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:40:57] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:40:58] Pending for incoming shutdown command...
+[2025-03-12 12:40:58] Schedule script is interrupted, revising the schedule...
+[2025-03-12 12:40:58] Schedule next shutdown at: 2025-03-12 12:44:00
+[2025-03-12 12:40:59] Schedule next startup at: 2025-03-12 12:45:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:45:20] Done :-)
+[2025-03-12 12:45:20] Firmware ID: 0x00
+[2025-03-12 12:45:20] Firmware Revison: 0x05
+[2025-03-12 12:45:20] Current Vout=5.17V, Iout=0.96A
+[2025-03-12 12:45:20] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:45:25] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:45:25] Pending for incoming shutdown command...
+[2025-03-12 12:45:26] Schedule next shutdown at: 2025-03-12 12:50:00
+[2025-03-12 12:45:26] Schedule next startup at: 2025-03-12 12:55:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 12:55:19] Done :-)
+[2025-03-12 12:55:19] Firmware ID: 0x00
+[2025-03-12 12:55:19] Firmware Revison: 0x05
+[2025-03-12 12:55:19] Current Vout=5.18V, Iout=1.03A
+[2025-03-12 12:55:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 12:55:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 12:55:25] Pending for incoming shutdown command...
+[2025-03-12 12:55:25] Schedule next shutdown at: 2025-03-12 13:00:00
+[2025-03-12 12:55:25] Schedule next startup at: 2025-03-12 13:05:00
+[2025-03-12 12:59:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Wed 12 Mar 12:59:59 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 13:05:22] Done :-)
+[2025-03-12 13:05:22] Firmware ID: 0x00
+[2025-03-12 13:05:22] Firmware Revison: 0x05
+[2025-03-12 13:05:22] Current Vout=5.17V, Iout=0.79A
+[2025-03-12 13:05:22] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 13:05:27] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 13:05:28] Pending for incoming shutdown command...
+[2025-03-12 13:05:28] Schedule next shutdown at: 2025-03-12 13:10:00
+[2025-03-12 13:05:28] Schedule next startup at: 2025-03-12 13:15:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 13:15:20] Done :-)
+[2025-03-12 13:15:20] Firmware ID: 0x00
+[2025-03-12 13:15:20] Firmware Revison: 0x05
+[2025-03-12 13:15:20] Current Vout=5.22V, Iout=0.92A
+[2025-03-12 13:15:20] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 13:15:25] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 13:15:26] Pending for incoming shutdown command...
+[2025-03-12 13:15:26] Schedule next shutdown at: 2025-03-12 13:20:00
+[2025-03-12 13:15:26] Schedule next startup at: 2025-03-12 13:25:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 13:25:19] Done :-)
+[2025-03-12 13:25:19] Firmware ID: 0x00
+[2025-03-12 13:25:19] Firmware Revison: 0x05
+[2025-03-12 13:25:19] Current Vout=5.24V, Iout=0.88A
+[2025-03-12 13:25:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 13:25:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 13:25:25] Pending for incoming shutdown command...
+[2025-03-12 13:25:25] Schedule next shutdown at: 2025-03-12 13:30:00
+[2025-03-12 13:25:25] Schedule next startup at: 2025-03-12 13:35:00
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-12 13:35:19] Done :-)
+[2025-03-12 13:35:19] Firmware ID: 0x00
+[2025-03-12 13:35:19] Firmware Revison: 0x05
+[2025-03-12 13:35:19] Current Vout=5.25V, Iout=0.98A
+[2025-03-12 13:35:19] System starts up because scheduled startup is due.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-12 13:35:24] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-12 13:35:25] Pending for incoming shutdown command...
+[2025-03-12 13:35:25] Schedule next shutdown at: 2025-03-12 13:40:00
+[2025-03-12 13:35:25] Schedule next startup at: 2025-03-12 13:45:00
+[2025-03-12 13:37:05] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-12 13:37:05] Running the script...
+[2025-03-12 13:37:06] Schedule next shutdown at: 2025-03-13 04:00:00
+[2025-03-12 13:37:06] Schedule next startup at: 2025-03-13 21:00:00
+[2025-03-12 13:37:06] Done :-)
+[2025-03-12 16:42:03] Copying "out_of_date_on_every_night.wpi" to "schedule.wpi"...
+[2025-03-12 16:42:03] Running the script...
+[2025-03-12 16:42:03] The schedule script has ended already.
+[2025-03-12 16:42:03] Done :-)
