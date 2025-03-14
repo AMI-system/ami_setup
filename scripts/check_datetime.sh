@@ -18,8 +18,8 @@ schedule_start=""
 schedule_end=""
 # Extract start and end time from schedule.wpi (given the schedule.wpi file exists)
 if [[ -f "$schedule_file" ]]; then
-	schedule_start=$(grep -m1 "^BEGIN" "$schedule_file" | awk '{print $2, $3}')
-	schedule_end=$(grep -m1 "^END" "$schedule_file" | awk '{print $2, $3}')
+	schedule_start=$(grep -m1 "BEGIN" "$schedule_file" | awk '{print $2, $3}')
+	schedule_end=$(grep -m1 "END" "$schedule_file" | awk '{print $2, $3}')
 fi
 # Convert extracted schedule start and end times (in format YYYY-MM-DD HH:MM:SS) to timestamps (number of seconds since Jan 1, 1970)
 if [[ -n "$schedule_start" && -n "$schedule_end" ]]; then # If schedule start and end as non-empty 
