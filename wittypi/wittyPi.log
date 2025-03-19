@@ -13372,3 +13372,1493 @@ Cannot open device /dev/video0, exiting.
 Cannot open device /dev/video0, exiting.
 [2025-03-14 14:45:39] Send out the SYS_UP signal via GPIO-17 pin.
 [2025-03-14 14:45:39] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-14 14:53:09] Done :-)
+[2025-03-14 14:53:09] Firmware ID: 0x00
+[2025-03-14 14:53:09] Firmware Revison: 0x05
+[2025-03-14 14:53:09] Current Vout=5.18V, Iout=0.7A
+[2025-03-14 14:53:09] System starts up because the button is clicked.
+1741963994
+2024-01-01 00:00
+1704067200
+Schedule start: 2025-03-09 12:00:00 (1741521600)
+Schedule end: 2025-03-16 12:20:00 (1742127600)
+System datetime (1741963994) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-14 14:53:16] Schedule next shutdown at: 2025-03-15 06:28:13
+[2025-03-14 14:53:16] Schedule next startup at: 2025-03-15 11:50:00
+Todays's sunset: 2025-03-14 18:07:43+00:00
+Tomorrow's sunrise 2025-03-15 06:18:13+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-14 14:53:19] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-14 14:53:20] Pending for incoming shutdown command...
+[2025-03-15 06:28:13] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Sat 15 Mar 06:28:13 GMT 2025
+Good Bye Sat 15 Mar 06:28:29 GMT 2025
+[2025-03-15 06:28:29] Halting all processes and then shutdown Raspberry Pi...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 09:16:09] Done :-)
+[2025-03-17 09:16:09] Firmware ID: 0x00
+[2025-03-17 09:16:09] Firmware Revison: 0x05
+[2025-03-17 09:16:09] Current Vout=5.3V, Iout=1.03A
+[2025-03-17 09:16:09] System starts up because USB 5V is connected.
+1742202974
+2024-01-01 00:00
+1704067200
+Schedule start: 2025-03-09 12:00:00 (1741521600)
+Schedule end: 2025-03-16 12:20:00 (1742127600)
+Time is correct but current time is outside of the schedule. Regenerating the schedule.
+Calculating sunrise and sunset times
+[2025-03-17 09:16:15] The schedule script has ended already.
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate the weekly schedule
+--------------- 2025-03-17 09:16:18 ---------------
+Schedule next shutdown at: 2025-03-18 06:21:20
+[2025-03-17 09:16:18] Schedule next shutdown at: 2025-03-18 06:21:20
+Schedule next startup at:  2025-03-18 11:50:00
+[2025-03-17 09:16:18] Schedule next startup at: 2025-03-18 11:50:00
+---------------------------------------------------
+
+    BEGIN 2025-03-16 12:00:00
+    END 2025-03-23 12:20:00
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H5.0 M52.0 S53.0
+    ON D0.0 H12.0 M18.0 S27.0
+    OFF D0.0 H5.0 M28.0 S40.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M56.0 S19.0
+    ON D0.0 H12.0 M10.0 S25.0
+    OFF D0.0 H5.0 M33.0 S16.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M59.0 S44.0
+    ON D0.0 H12.0 M2.0 S24.0
+    OFF D0.0 H5.0 M37.0 S52.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2025_3_16.wpi.
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 09:16:21] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 09:16:22] Pending for incoming shutdown command...
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] RTC has bad time, write system time into RTC
+[xxxx-xx-xx xx:xx:xx] Writing system time to RTC...
+<2019-02-14 10:12:07> Done :-)
+<2019-02-14 10:12:07> System was previously shut down because of low-voltage.
+<2019-02-14 10:12:07> Firmware ID: 0x00
+<2019-02-14 10:12:07> Firmware Revison: 0x05
+<2019-02-14 10:12:07> Current Vout=5.24V, Iout=1.11A
+<2019-02-14 10:12:07> System starts up because the button is clicked.
+1550139132
+2024-01-01 00:00
+1704067200
+Schedule start: 2025-03-16 12:00:00 (1742126400)
+Schedule end: 2025-03-23 12:20:00 (1742732400)
+System datetime (1550139132) is before cutoff datetime (1704067200).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+[2019-02-14 10:12:13] Schedule next shutdown at: 2025-03-16 12:10:00
+[2019-02-14 10:12:13] Schedule next startup at: 2025-03-17 18:02:53
+--------------- 2019-02-14 10:12:14 ---------------
+Schedule next shutdown at: 2019-02-21 10:12:00
+[2019-02-14 10:12:14] Schedule next shutdown at: 2019-02-21 10:12:00
+Schedule next startup at:  2019-02-21 12:12:00
+[2019-02-14 10:12:14] Schedule next startup at: 2019-02-21 12:12:00
+---------------------------------------------------
+
+    BEGIN 2019-02-14 10:12:00
+    END 2019-02-21 12:12:00
+    ON D7.0 H0.0 M0.0 S0.0
+    OFF D0.0 H2.0 M0.0 S0.0
+    
+Temp Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_temp_schedule_2019_2_14.wpi.
+Setting system time via cellular
+Python script to retieve time from cellular succeeded
+2025-03-17 09:28:00
+I have just printed the current datetime
+Mon 17 Mar 09:28:00 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 32.75°C / 90.95°F
+>>> Your system time is: 2025-03-17 09:28:00 GMT
+>>> Your RTC time is:    2019-02-14 10:14:17 GMT
+>>> Vout=5.22V, Iout=0.94A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-17 09:28:00] Writing system time to RTC...
+  Done :-)
+<2025-03-17 09:28:01> Done :-)
+
+================================================================================
+>>> Current temperature: 32.75°C / 90.95°F
+>>> Your system time is: 2025-03-17 09:28:01 GMT
+>>> Your RTC time is:    2025-03-17 09:28:00 GMT
+>>> Vout=5.24V, Iout=1.01A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Calculating sunrise and sunset times
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate the weekly schedule
+--------------- 2025-03-17 09:28:02 ---------------
+Schedule next shutdown at: 2025-03-18 06:21:20
+[2025-03-17 09:28:04] Schedule next shutdown at: 2025-03-18 06:21:20
+Schedule next startup at:  2025-03-18 11:50:00
+[2025-03-17 09:28:04] Schedule next startup at: 2025-03-18 11:50:00
+---------------------------------------------------
+
+    BEGIN 2025-03-16 12:00:00
+    END 2025-03-23 12:20:00
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H5.0 M52.0 S53.0
+    ON D0.0 H12.0 M18.0 S27.0
+    OFF D0.0 H5.0 M28.0 S40.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M56.0 S19.0
+    ON D0.0 H12.0 M10.0 S25.0
+    OFF D0.0 H5.0 M33.0 S16.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M59.0 S44.0
+    ON D0.0 H12.0 M2.0 S24.0
+    OFF D0.0 H5.0 M37.0 S52.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2025_3_16.wpi.
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+<2025-03-17 09:28:07> Send out the SYS_UP signal via GPIO-17 pin.
+<2025-03-17 09:28:07> Pending for incoming shutdown command...
+[2025-03-17 09:29:29] Copying "on_5m_every_10m.wpi" to "schedule.wpi"...
+[2025-03-17 09:29:29] Running the script...
+[2025-03-17 09:29:30] Schedule next shutdown at: 2025-03-17 09:30:00
+[2025-03-17 09:29:30] Schedule next startup at: 2025-03-17 09:35:00
+[2025-03-17 09:29:31] Done :-)
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 09:35:19] Done :-)
+[2025-03-17 09:35:19] Firmware ID: 0x00
+[2025-03-17 09:35:19] Firmware Revison: 0x05
+[2025-03-17 09:35:19] Current Vout=5.24V, Iout=0.81A
+[2025-03-17 09:35:19] System starts up because scheduled startup is due.
+1742204124
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742204124) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 09:35:25] Schedule next shutdown at: 2025-03-17 09:40:00
+[2025-03-17 09:35:26] Schedule next startup at: 2025-03-17 09:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 09:35:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 09:35:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 09:42:32] Done :-)
+[2025-03-17 09:42:32] Firmware ID: 0x00
+[2025-03-17 09:42:32] Firmware Revison: 0x05
+[2025-03-17 09:42:32] Current Vout=5.15V, Iout=1.09A
+[2025-03-17 09:42:32] System starts up because the button is clicked.
+1742204557
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742204557) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 09:42:38] Schedule script is interrupted, revising the schedule...
+[2025-03-17 09:42:38] Schedule next shutdown at: 2025-03-17 09:44:00
+[2025-03-17 09:42:39] Schedule next startup at: 2025-03-17 09:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 09:42:42] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 09:42:43] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 09:45:19] Done :-)
+[2025-03-17 09:45:19] Firmware ID: 0x00
+[2025-03-17 09:45:19] Firmware Revison: 0x05
+[2025-03-17 09:45:19] Current Vout=5.17V, Iout=0.92A
+[2025-03-17 09:45:19] System starts up because scheduled startup is due.
+1742204724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742204724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 09:45:25] Schedule next shutdown at: 2025-03-17 09:50:00
+[2025-03-17 09:45:25] Schedule next startup at: 2025-03-17 09:55:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 09:45:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 09:45:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 09:55:19] Done :-)
+[2025-03-17 09:55:19] Firmware ID: 0x00
+[2025-03-17 09:55:19] Firmware Revison: 0x05
+[2025-03-17 09:55:19] Current Vout=5.16V, Iout=1.18A
+[2025-03-17 09:55:19] System starts up because scheduled startup is due.
+1742205324
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742205324) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 09:55:25] Schedule next shutdown at: 2025-03-17 10:00:00
+[2025-03-17 09:55:26] Schedule next startup at: 2025-03-17 10:05:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 09:55:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 09:55:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:05:19] Done :-)
+[2025-03-17 10:05:19] Firmware ID: 0x00
+[2025-03-17 10:05:19] Firmware Revison: 0x05
+[2025-03-17 10:05:19] Current Vout=5.18V, Iout=0.81A
+[2025-03-17 10:05:19] System starts up because scheduled startup is due.
+1742205924
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742205924) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:05:25] Schedule next shutdown at: 2025-03-17 10:10:00
+[2025-03-17 10:05:26] Schedule next startup at: 2025-03-17 10:15:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:05:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:05:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:15:19] Done :-)
+[2025-03-17 10:15:19] Firmware ID: 0x00
+[2025-03-17 10:15:19] Firmware Revison: 0x05
+[2025-03-17 10:15:19] Current Vout=5.23V, Iout=0.79A
+[2025-03-17 10:15:19] System starts up because scheduled startup is due.
+1742206524
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742206524) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:15:25] Schedule next shutdown at: 2025-03-17 10:20:00
+[2025-03-17 10:15:25] Schedule next startup at: 2025-03-17 10:25:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:15:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:15:30] Pending for incoming shutdown command...
+[2025-03-17 10:19:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 17 Mar 10:19:59 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:25:19] Done :-)
+[2025-03-17 10:25:19] Firmware ID: 0x00
+[2025-03-17 10:25:19] Firmware Revison: 0x05
+[2025-03-17 10:25:19] Current Vout=5.23V, Iout=0.94A
+[2025-03-17 10:25:19] System starts up because scheduled startup is due.
+1742207124
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742207124) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:25:25] Schedule next shutdown at: 2025-03-17 10:30:00
+[2025-03-17 10:25:25] Schedule next startup at: 2025-03-17 10:35:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:25:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:25:30] Pending for incoming shutdown command...
+[2025-03-17 10:30:00] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 17 Mar 10:30:00 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:35:19] Done :-)
+[2025-03-17 10:35:19] Firmware ID: 0x00
+[2025-03-17 10:35:19] Firmware Revison: 0x05
+[2025-03-17 10:35:19] Current Vout=5.24V, Iout=1.05A
+[2025-03-17 10:35:19] System starts up because scheduled startup is due.
+1742207724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742207724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:35:25] Schedule next shutdown at: 2025-03-17 10:40:00
+[2025-03-17 10:35:26] Schedule next startup at: 2025-03-17 10:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:35:30] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:35:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:45:19] Done :-)
+[2025-03-17 10:45:19] Firmware ID: 0x00
+[2025-03-17 10:45:19] Firmware Revison: 0x05
+[2025-03-17 10:45:19] Current Vout=5.24V, Iout=1.05A
+[2025-03-17 10:45:19] System starts up because scheduled startup is due.
+1742208324
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742208324) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:45:25] Schedule next shutdown at: 2025-03-17 10:50:00
+[2025-03-17 10:45:26] Schedule next startup at: 2025-03-17 10:55:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:45:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:45:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 10:55:19] Done :-)
+[2025-03-17 10:55:19] Firmware ID: 0x00
+[2025-03-17 10:55:19] Firmware Revison: 0x05
+[2025-03-17 10:55:19] Current Vout=5.23V, Iout=1.05A
+[2025-03-17 10:55:19] System starts up because scheduled startup is due.
+1742208924
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742208924) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 10:55:25] Schedule next shutdown at: 2025-03-17 11:00:00
+[2025-03-17 10:55:26] Schedule next startup at: 2025-03-17 11:05:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 10:55:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 10:55:30] Pending for incoming shutdown command...
+[2025-03-17 10:59:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 17 Mar 10:59:59 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:05:19] Done :-)
+[2025-03-17 11:05:19] Firmware ID: 0x00
+[2025-03-17 11:05:19] Firmware Revison: 0x05
+[2025-03-17 11:05:19] Current Vout=5.3V, Iout=1.03A
+[2025-03-17 11:05:19] System starts up because scheduled startup is due.
+1742209524
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742209524) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:05:25] Schedule next shutdown at: 2025-03-17 11:10:00
+[2025-03-17 11:05:26] Schedule next startup at: 2025-03-17 11:15:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:05:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:05:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:15:18] Done :-)
+[2025-03-17 11:15:18] Firmware ID: 0x00
+[2025-03-17 11:15:18] Firmware Revison: 0x05
+[2025-03-17 11:15:18] Current Vout=5.23V, Iout=0.73A
+[2025-03-17 11:15:18] System starts up because scheduled startup is due.
+1742210123
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742210123) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:15:24] Schedule next shutdown at: 2025-03-17 11:20:00
+[2025-03-17 11:15:25] Schedule next startup at: 2025-03-17 11:25:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:15:28] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:15:28] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:25:19] Done :-)
+[2025-03-17 11:25:19] Firmware ID: 0x00
+[2025-03-17 11:25:19] Firmware Revison: 0x05
+[2025-03-17 11:25:19] Current Vout=5.23V, Iout=0.83A
+[2025-03-17 11:25:19] System starts up because scheduled startup is due.
+1742210724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742210724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:25:25] Schedule next shutdown at: 2025-03-17 11:30:00
+[2025-03-17 11:25:26] Schedule next startup at: 2025-03-17 11:35:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:25:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:25:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:35:20] Done :-)
+[2025-03-17 11:35:20] Firmware ID: 0x00
+[2025-03-17 11:35:20] Firmware Revison: 0x05
+[2025-03-17 11:35:20] Current Vout=5.23V, Iout=1.05A
+[2025-03-17 11:35:20] System starts up because scheduled startup is due.
+1742211325
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742211325) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:35:26] Schedule next shutdown at: 2025-03-17 11:40:00
+[2025-03-17 11:35:27] Schedule next startup at: 2025-03-17 11:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:35:30] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:35:31] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:45:19] Done :-)
+[2025-03-17 11:45:19] Firmware ID: 0x00
+[2025-03-17 11:45:19] Firmware Revison: 0x05
+[2025-03-17 11:45:19] Current Vout=5.31V, Iout=1.18A
+[2025-03-17 11:45:19] System starts up because scheduled startup is due.
+1742211924
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742211924) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:45:25] Schedule next shutdown at: 2025-03-17 11:50:00
+[2025-03-17 11:45:26] Schedule next startup at: 2025-03-17 11:55:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:45:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:45:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 11:55:19] Done :-)
+[2025-03-17 11:55:19] Firmware ID: 0x00
+[2025-03-17 11:55:19] Firmware Revison: 0x05
+[2025-03-17 11:55:19] Current Vout=5.24V, Iout=1.33A
+[2025-03-17 11:55:19] System starts up because scheduled startup is due.
+1742212524
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742212524) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 11:55:25] Schedule next shutdown at: 2025-03-17 12:00:00
+[2025-03-17 11:55:26] Schedule next startup at: 2025-03-17 12:05:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 11:55:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 11:55:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:05:19] Done :-)
+[2025-03-17 12:05:19] Firmware ID: 0x00
+[2025-03-17 12:05:19] Firmware Revison: 0x05
+[2025-03-17 12:05:19] Current Vout=5.17V, Iout=0.98A
+[2025-03-17 12:05:19] System starts up because scheduled startup is due.
+1742213124
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742213124) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:05:25] Schedule next shutdown at: 2025-03-17 12:10:00
+[2025-03-17 12:05:26] Schedule next startup at: 2025-03-17 12:15:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:05:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:05:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:15:19] Done :-)
+[2025-03-17 12:15:19] Firmware ID: 0x00
+[2025-03-17 12:15:19] Firmware Revison: 0x05
+[2025-03-17 12:15:19] Current Vout=5.24V, Iout=0.9A
+[2025-03-17 12:15:19] System starts up because scheduled startup is due.
+1742213724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742213724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:15:25] Schedule next shutdown at: 2025-03-17 12:20:00
+[2025-03-17 12:15:26] Schedule next startup at: 2025-03-17 12:25:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:15:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:15:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:25:19] Done :-)
+[2025-03-17 12:25:19] Firmware ID: 0x00
+[2025-03-17 12:25:19] Firmware Revison: 0x05
+[2025-03-17 12:25:19] Current Vout=5.18V, Iout=0.9A
+[2025-03-17 12:25:19] System starts up because scheduled startup is due.
+1742214324
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742214324) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:25:25] Schedule next shutdown at: 2025-03-17 12:30:00
+[2025-03-17 12:25:26] Schedule next startup at: 2025-03-17 12:35:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:25:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:25:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:35:19] Done :-)
+[2025-03-17 12:35:19] Firmware ID: 0x00
+[2025-03-17 12:35:19] Firmware Revison: 0x05
+[2025-03-17 12:35:19] Current Vout=5.24V, Iout=0.92A
+[2025-03-17 12:35:19] System starts up because scheduled startup is due.
+1742214924
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742214924) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:35:25] Schedule next shutdown at: 2025-03-17 12:40:00
+[2025-03-17 12:35:26] Schedule next startup at: 2025-03-17 12:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:35:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:35:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:45:19] Done :-)
+[2025-03-17 12:45:19] Firmware ID: 0x00
+[2025-03-17 12:45:19] Firmware Revison: 0x05
+[2025-03-17 12:45:19] Current Vout=5.23V, Iout=1.11A
+[2025-03-17 12:45:19] System starts up because scheduled startup is due.
+1742215524
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742215524) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:45:25] Schedule next shutdown at: 2025-03-17 12:50:00
+[2025-03-17 12:45:26] Schedule next startup at: 2025-03-17 12:55:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:45:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:45:29] Pending for incoming shutdown command...
+[2025-03-17 12:49:59] Shutting down system because scheduled shutdown is due.
+Shutting down in 15 seconds...Mon 17 Mar 12:49:59 GMT 2025
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 12:55:19] Done :-)
+[2025-03-17 12:55:19] Firmware ID: 0x00
+[2025-03-17 12:55:19] Firmware Revison: 0x05
+[2025-03-17 12:55:19] Current Vout=5.29V, Iout=1.22A
+[2025-03-17 12:55:19] System starts up because scheduled startup is due.
+1742216124
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742216124) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 12:55:25] Schedule next shutdown at: 2025-03-17 13:00:00
+[2025-03-17 12:55:26] Schedule next startup at: 2025-03-17 13:05:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 12:55:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 12:55:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:05:19] Done :-)
+[2025-03-17 13:05:19] Firmware ID: 0x00
+[2025-03-17 13:05:19] Firmware Revison: 0x05
+[2025-03-17 13:05:19] Current Vout=5.23V, Iout=1.03A
+[2025-03-17 13:05:19] System starts up because scheduled startup is due.
+1742216724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742216724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:05:25] Schedule next shutdown at: 2025-03-17 13:10:00
+[2025-03-17 13:05:26] Schedule next startup at: 2025-03-17 13:15:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:05:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:05:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:15:19] Done :-)
+[2025-03-17 13:15:19] Firmware ID: 0x00
+[2025-03-17 13:15:19] Firmware Revison: 0x05
+[2025-03-17 13:15:19] Current Vout=5.24V, Iout=1.07A
+[2025-03-17 13:15:19] System starts up because scheduled startup is due.
+1742217324
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742217324) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:15:25] Schedule next shutdown at: 2025-03-17 13:20:00
+[2025-03-17 13:15:26] Schedule next startup at: 2025-03-17 13:25:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:15:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:15:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:25:19] Done :-)
+[2025-03-17 13:25:19] Firmware ID: 0x00
+[2025-03-17 13:25:19] Firmware Revison: 0x05
+[2025-03-17 13:25:19] Current Vout=5.23V, Iout=0.81A
+[2025-03-17 13:25:19] System starts up because scheduled startup is due.
+1742217924
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742217924) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:25:25] Schedule next shutdown at: 2025-03-17 13:30:00
+[2025-03-17 13:25:26] Schedule next startup at: 2025-03-17 13:35:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:25:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:25:29] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:35:19] Done :-)
+[2025-03-17 13:35:19] Firmware ID: 0x00
+[2025-03-17 13:35:19] Firmware Revison: 0x05
+[2025-03-17 13:35:19] Current Vout=5.29V, Iout=0.77A
+[2025-03-17 13:35:19] System starts up because scheduled startup is due.
+1742218524
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742218524) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:35:25] Schedule next shutdown at: 2025-03-17 13:40:00
+[2025-03-17 13:35:26] Schedule next startup at: 2025-03-17 13:45:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:35:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:35:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:45:19] Done :-)
+[2025-03-17 13:45:19] Firmware ID: 0x00
+[2025-03-17 13:45:19] Firmware Revison: 0x05
+[2025-03-17 13:45:19] Current Vout=5.24V, Iout=0.9A
+[2025-03-17 13:45:19] System starts up because scheduled startup is due.
+1742219124
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742219124) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:45:25] Schedule next shutdown at: 2025-03-17 13:50:00
+[2025-03-17 13:45:26] Schedule next startup at: 2025-03-17 13:55:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:45:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:45:30] Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-17 13:55:19] Done :-)
+[2025-03-17 13:55:19] Firmware ID: 0x00
+[2025-03-17 13:55:19] Firmware Revison: 0x05
+[2025-03-17 13:55:19] Current Vout=5.29V, Iout=0.94A
+[2025-03-17 13:55:19] System starts up because scheduled startup is due.
+1742219724
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 00:05:00 (1654038300)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1742219724) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-17 13:55:25] Schedule next shutdown at: 2025-03-17 14:00:00
+[2025-03-17 13:55:26] Schedule next startup at: 2025-03-17 14:05:00
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-17 13:55:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-17 13:55:29] Pending for incoming shutdown command...
+[2025-03-17 13:59:54] Copying "on_every_night.wpi" to "schedule.wpi"...
+[2025-03-17 13:59:54] Running the script...
+[2025-03-17 13:59:55] Schedule next shutdown at: 2025-03-18 04:00:00
+[2025-03-17 13:59:55] Schedule next startup at: 2025-03-18 21:00:00
+[2025-03-17 13:59:55] Done :-)
+[xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] RTC has bad time, write system time into RTC
+[xxxx-xx-xx xx:xx:xx] Writing system time to RTC...
+<2019-02-14 10:12:07> Done :-)
+<2019-02-14 10:12:07> Firmware ID: 0x00
+<2019-02-14 10:12:07> Firmware Revison: 0x05
+<2019-02-14 10:12:07> Current Vout=5.24V, Iout=0.86A
+<2019-02-14 10:12:07> System starts up because USB 5V is connected.
+1550139132
+2024-01-01 00:00
+1704067200
+Schedule start: 2022-06-01 22:00:00 (1654117200)
+Schedule end: 2035-07-31 23:59:59 (2069535599)
+System datetime (1550139132) is before cutoff datetime (1704067200).
+Setting temporary schedule to keep Pi on for next 7 days while it attempts to reset time
+[2019-02-14 10:12:13] Schedule next shutdown at: 2022-06-02 05:00:00
+[2019-02-14 10:12:13] Schedule next startup at: 2022-06-02 22:00:00
+--------------- 2019-02-14 10:12:13 ---------------
+Schedule next shutdown at: 2019-02-21 10:12:00
+[2019-02-14 10:12:14] Schedule next shutdown at: 2019-02-21 10:12:00
+Schedule next startup at:  2019-02-21 12:12:00
+[2019-02-14 10:12:14] Schedule next startup at: 2019-02-21 12:12:00
+---------------------------------------------------
+
+    BEGIN 2019-02-14 10:12:00
+    END 2019-02-21 12:12:00
+    ON D7.0 H0.0 M0.0 S0.0
+    OFF D0.0 H2.0 M0.0 S0.0
+    
+Temp Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_temp_schedule_2019_2_14.wpi.
+Setting system time via cellular
+Python script to retieve time from cellular succeeded
+2025-03-17 16:04:06
+I have just printed the current datetime
+Mon 17 Mar 16:04:06 GMT 2025
+I have just set the date from cellular
+spawn sudo /home/pi/wittypi/wittyPi.sh
+================================================================================
+|                                                                              |
+|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |
+|                                                                              |
+|            < Version 4.13 >     by Dun Cat B.V. (UUGear)                     |
+|                                                                              |
+================================================================================
+>>> Current temperature: 25.5°C / 77.9°F
+>>> Your system time is: 2025-03-17 16:04:06 GMT
+>>> Your RTC time is:    2019-02-14 10:13:09 GMT
+>>> Vout=5.25V, Iout=0.68A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 1
+  Writing system time to RTC...
+[2025-03-17 16:04:06] Writing system time to RTC...
+  Done :-)
+<2025-03-17 16:04:07> Done :-)
+
+================================================================================
+>>> Current temperature: 25.375°C / 77.675°F
+>>> Your system time is: 2025-03-17 16:04:07 GMT
+>>> Your RTC time is:    2025-03-17 16:04:06 GMT
+>>> Vout=5.31V, Iout=0.60A
+Now you can:
+  1. Write system time to RTC
+  2. Write RTC time to system
+  3. Synchronize with network time
+  4. Schedule next shutdown [21 10:12:00]
+  5. Schedule next startup  [21 12:12:00]
+  6. Choose schedule script [in use]
+  7. Set low voltage threshold  [4V]
+  8. Set recovery voltage threshold  [4.7V]
+  9. Set over temperature action
+ 10. Set below temperature action
+ 11. View/change other settings...
+ 12. Reset data...
+ 13. Exit
+What do you want to do? (1~13) 13
+Calculating sunrise and sunset times
+Todays's sunset: 2025-03-17 18:12:53+00:00
+Tomorrow's sunrise 2025-03-18 06:11:20+00:00
+Calculate the weekly schedule
+--------------- 2025-03-17 16:04:09 ---------------
+Schedule next shutdown at: 2025-03-18 06:21:20
+[2025-03-17 16:04:10] Schedule next shutdown at: 2025-03-18 06:21:20
+Schedule next startup at:  2025-03-18 11:50:00
+[2025-03-17 16:04:10] Schedule next startup at: 2025-03-18 11:50:00
+---------------------------------------------------
+
+    BEGIN 2025-03-16 12:00:00
+    END 2025-03-23 12:20:00
+    ON D0.0 H0.0 M10.0 S0.0
+    OFF D1.0 H5.0 M52.0 S53.0
+    ON D0.0 H12.0 M18.0 S27.0
+    OFF D0.0 H5.0 M28.0 S40.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M56.0 S19.0
+    ON D0.0 H12.0 M10.0 S25.0
+    OFF D0.0 H5.0 M33.0 S16.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H5.0 M59.0 S44.0
+    ON D0.0 H12.0 M2.0 S24.0
+    OFF D0.0 H5.0 M37.0 S52.0
+    ON D1.0 H0.0 M20.0 S0.0
+    OFF D0.0 H0.0 M10.0 S0.0
+    
+Witty Pi schedule generated and saved to /home/pi/wittypi/schedules/witty_pi_schedule_2025_3_16.wpi.
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+<2025-03-17 16:04:13> Send out the SYS_UP signal via GPIO-17 pin.
+<2025-03-17 16:04:14> Pending for incoming shutdown command...
+                                                                                                                                         [xxxx-xx-xx xx:xx:xx] Witty Pi daemon (v4.13) is started.
+[xxxx-xx-xx xx:xx:xx] Running on Raspberry Pi 4 Model B Rev 1.4
+[xxxx-xx-xx xx:xx:xx] Seems RTC has good time, write RTC time into system
+[xxxx-xx-xx xx:xx:xx] Writing RTC time to system...
+[2025-03-18 11:50:19] Done :-)
+[2025-03-18 11:50:19] Firmware ID: 0x00
+[2025-03-18 11:50:19] Firmware Revison: 0x05
+[2025-03-18 11:50:19] Current Vout=5.23V, Iout=0.79A
+[2025-03-18 11:50:19] System starts up because scheduled startup is due.
+1742298624
+2024-01-01 00:00
+1704067200
+Schedule start: 2025-03-16 12:00:00 (1742126400)
+Schedule end: 2025-03-23 12:20:00 (1742732400)
+System datetime (1742298624) is after cutoff datetime (1704067200).
+No time change required.
+System datetime is within the current schedule
+No need to reset schedule.
+Calculating sunrise and sunset times
+[2025-03-18 11:50:26] Schedule next shutdown at: 2025-03-19 12:10:00
+[2025-03-18 11:50:26] Schedule next startup at: 2025-03-19 18:06:19
+Todays's sunset: 2025-03-18 18:14:36+00:00
+Tomorrow's sunrise 2025-03-19 06:09:02+00:00
+Calculate moth recording schedule and set in crontab
+Calculate birds recording schedule and set in crontab
+Calculate bats recording schedule and set in crontab
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+Cannot open device /dev/video0, exiting.
+[2025-03-18 11:50:29] Send out the SYS_UP signal via GPIO-17 pin.
+[2025-03-18 11:50:30] Pending for incoming shutdown command...
